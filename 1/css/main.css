@@ -1,6 +1,6 @@
 .body{
-    height:2277 px;
-    width: 1920 px;
+    height:2100 px;
+    width: 1170 px;
     background-color: white;
 }
 
@@ -51,6 +51,7 @@
 /*-----------------------*/
 footer{
     width: 100%;
+    height: 10%;
     background-color: gray;
 }
 

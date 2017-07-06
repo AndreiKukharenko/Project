@@ -7,6 +7,18 @@ header{
 
 }
 
+.header__logo-txt-up{
+    text-align: right;
+    color:gray;
+    font-size: 20px;
+}
+
+.header__logo-txt-low{
+    text-align: right;
+    color:gray;
+    font-size: 15px;
+}
+
 .header__navigation{
 
 }
