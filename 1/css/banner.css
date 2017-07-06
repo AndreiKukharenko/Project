@@ -1,0 +1,13 @@
+.banner{
+width: 100%;
+}
+
+.banner__text{
+font-family: serif;
+color: blueviolet;
+position: relative;
+}
+
+.banner__text__modifier{
+    
+}
