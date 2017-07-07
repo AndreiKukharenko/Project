@@ -1,3 +1,19 @@
+@font-face {
+    font-family: 'source-sans-pro';
+    src: url('..fonts/SourceSansPro-Black.otf'); 
+    src: url('..fonts/SourceSansPro-Blacklt.otf'); 
+    src: url(fonts/SourceSansPro-Bold.otf); 
+    src: url(fonts/SourceSansPro-ExtraLight.otf); 
+    src: url(fonts/SourceSansPro-ExtraLightlt.otf); 
+    src: url(fonts/SourceSansPro-lt.otf); 
+    src: url(fonts/SourceSansPro-Lightlt.otf); 
+    src: url(fonts/SourceSansPro-Regular.otf); 
+    src: url(fonts/SourceSansPro-Semibold.otf); 
+    src: url(fonts/SourceSansPro-Semiboldlt.otf); 
+    font-weight: normal;
+    font-style: normal;
+   }
+
 header{
     width: 100%;
     background-color: white;
@@ -16,35 +32,46 @@ header{
 }
 
 
-.header__logo-txt-up{
+.header__logo-txt-top{
     text-align: right;
     color:gray;
     font-size: 20px;
+    
 }
 
-.header__logo-txt-low{
+.header__logo-txt-bottom{
     text-align: right;
     color:gray;
     font-size: 15px;
+    
+    
 }
 
 .header__navigation{
-
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    width: 70%;
 }
 
 .header__navigation__buttons{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: source-sans-pro;
     color: crimson;
 }
 
 .header__navigation-list{
-    list-style: none; 
+    list-style-type: none; 
     margin: 0; 
     padding-left: 0;
     overflow: hidden;
+    
 }
 
 .header__navigation-a{
-  text-decoration: none; /*убирает подчеркивание*/
-  display: inline-block;
+  display: inline;
+}
+
+.header__navigation-ref{
+    text-align: center;
+    text-decoration: none; /*убирает подчеркивание*/
 }
