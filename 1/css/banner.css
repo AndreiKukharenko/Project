@@ -1,13 +1,26 @@
 .banner{
 width: 100%;
+position: relative;
+
 }
 
 .banner__text{
 font-family: serif;
-color: blueviolet;
-position: relative;
+color: white;
+z-index: 2;
+background-color: blueviolet;
+font-size: 15px;
+text-align: center;
+bottom: 50%;
+left: 50%; 
+position: absolute;
 }
 
-.banner__text__modifier{
-    
+.banner__text-top{
+width: fit-content;
+}
+
+.banner__text-low{
+width: fit-content;
+
 }

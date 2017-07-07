@@ -1,11 +1,20 @@
 header{
     width: 100%;
+    background-color: white;
 
 }
 
 .header__logo{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 
 }
+
+.header__line-par{
+    background-color: coral;
+    height: 5px;
+    border: none;
+}
+
 
 .header__logo-txt-up{
     text-align: right;
@@ -26,4 +35,16 @@ header{
 .header__navigation__buttons{
     font-family: Arial, Helvetica, sans-serif;
     color: crimson;
+}
+
+.header__navigation-list{
+    list-style: none; 
+    margin: 0; 
+    padding-left: 0;
+    overflow: hidden;
+}
+
+.header__navigation-a{
+  text-decoration: none; /*убирает подчеркивание*/
+  display: inline-block;
 }

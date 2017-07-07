@@ -51,12 +51,16 @@
 /*-----------------------*/
 footer{
     width: 100%;
-    height: 10%;
+    height: 5%;
     background-color: gray;
+    position: fixed;
+    left: 0;
+    bottom: 0;
 }
 
 .footer__text{
 color: slategray;
+text-align: center;
 }
 
 .footer__text__des{
