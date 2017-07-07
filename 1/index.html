@@ -12,10 +12,11 @@
 
 <body >
     <header>
-    <div class="header__logo">
         <div class="header__line">
             <hr class="header__line-par">
         </div>
+    <div class="header__logo">
+
         <a href="">
             <img src="images/logoBell.png" alt="logo">
         </a>
@@ -27,17 +28,17 @@
         <nav class="header__navigation__buttons">
             <ul class="header__navigation-list">
                 
-                <li class="header__navigation-a">
-                    <a class="header__navigation-ref" href="#">HOME</a>
+                <li>
+                    <a class="header__navigation-ref" href="">HOME</a>
                 </li>
                 <li>
-                    <a class="header__navigation-ref" href="#">SERVICES</a>
+                    <a class="header__navigation-ref" href="">SERVICES</a>
                 </li>
                 <li>
-                    <a class="header__navigation-ref" href="#">PORTFOLIO</a>
+                    <a class="header__navigation-ref" href="">PORTFOLIO</a>
                 </li>
                 <li>
-                    <a class="header__navigation-ref" href="#">CONTACT</a>
+                    <a class="header__navigation-ref" href="">CONTACT</a>
                 </li>
             </ul>
         </nav>
@@ -46,9 +47,9 @@
     </header>
 
     <section class="banner">
-        <img src="images/maiPhoto.png" alt="mainPhoto">
+        <img src="images/mainPhoto.png" alt="mainPhoto">
         <div class="banner__text">
-            <a href="">
+            <a href="" style="text-decoration: none">
                 <h3 >
                     <span class="banner__text-top">Alivuam tinc</span>
                 </h3>
@@ -88,13 +89,15 @@
 
 
     <section class="middlerow">
+
         <div class="middlerow__container-left">
             <img src="images/rocket.png" alt="rocket">
             <span class="middlerow__headers-upper">Jorem ipsum</span>
             <span class="middlerow__headers-lower">Cestibulum auctor dabipus neque</span>
             <span class="middlerow__headers-txt">Morbi in sem quis dui placerat omare.</span>
             <div class="middlerow__button">
-                <a href="http://www.tut.by"> More...
+                <a href="http://www.tut.by" style="text-decoration: none"> More...
+                                                   <!-- или стили здесь нельзя? -->
                 <img src="images/btn.png" alt="button_left">
             </div>
         </div>
@@ -107,12 +110,13 @@
             <span class="middlerow__headers-lower">Cestibulum auctor dabipus neque</span>
             <span class="middlerow__headers-txt">Laoreet in sem quis dui placerat ornare. Pellentesque odio nisi</span>
             <div class="middlerow__button">
-                <a href="http://www.tut.by"> More...
+                <a href="http://www.tut.by" style="text-decoration: none"> More...
                     <img src="images/btn.png" alt="button_right">
                 </a>
             </div>
         </div>
     </section>
+
 
     <section class="mobile-devices">
         <div class="mobile-devices__pictures">
@@ -120,11 +124,11 @@
             <img src="images/mobilePhone.png" alt="mobilePhone">
         </div>
 
-        <div class="mobile-devices__text">
-            <h3>Vivamus vestibulum nulla nec ante</h3>
+        <div class="mobile-devices__text"> <!-- не унаследовался фоновый цвет -->
+            <h3>Vivamus vestibulum nulla nec ante</h3> <!-- может лучше дополнительно обернуть в span? -->
             <h5>ofb;lsfilshfodslfkvhns;lapodjs;asldmfjsldfkmn</h5>
 
-            <span class="mobile-devices__text__maintext">Morbi in sem quis dui placerat omare.osidhlsn psofjskd  pjsw;efmj;lsjss s ijisdijfl  ijisdijfl
+            <span class="mobile-devices__text-maintext">Morbi in sem quis dui placerat omare.osidhlsn psofjskd  pjsw;efmj;lsjss s ijisdijfl  ijisdijfl
                 kdhfkd. sbguhk sudhfksjdfk siklifjls  nvkisu;as,kcvn . </span>
 
             <div class="mobile-devices__button">

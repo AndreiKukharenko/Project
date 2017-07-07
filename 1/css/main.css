@@ -21,18 +21,9 @@
 }
 
 .mainTitle__button1{
-    background-image: url('images/btn.png');
+    background-image: url(../images/btn.png);
     
 }
-
-
-
-
-
-
-
-
-
 
 
 .middlerow{
@@ -46,11 +37,18 @@
 .middlerow__container-right{
 
 }
-/*---------------------------*/
+
+
 
 .mobile-devices{
-
+    background-color: darkorchid;
 }
+
+.mobile-devices__text{
+float: right;
+}
+
+
 
 
 .options{
