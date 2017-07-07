@@ -25,9 +25,14 @@ header{
     font-family: source-sans-pro;
 }
 
+.header__logo-picture{
+    background-image: url(../images/logoBell.png);
+    display: block;
+}
+
 .header__line-par{
     background-color: coral;
-    height: 5px;
+    height: 2px;
     border: none;
 }
 
@@ -56,7 +61,6 @@ header{
 
 .header__navigation__buttons{
     font-family: source-sans-pro;
-    color: black; 
 }
 
 .header__navigation-list{
@@ -91,4 +95,6 @@ header{
 .header__navigation-ref{
     text-align: center;
     text-decoration: none; /*убрать подчеркивание*/
+    color: black; 
+    
 }

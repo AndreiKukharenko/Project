@@ -1,0 +1,17 @@
+footer{
+    width: 100%;
+    height: 107px;
+    background-color: gray;
+    /*position: fixed;*/
+    left: 0;
+    bottom: 0;
+}
+
+.footer__text{
+color: slategray;
+text-align: center;
+}
+
+.footer__text__des{
+color:darkorchid;
+}

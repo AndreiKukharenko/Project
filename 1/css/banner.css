@@ -17,9 +17,8 @@
 
 .banner{
 width: 1314px;
-position: relative;
-height: 740px;
-
+height: 440px;
+background-image: url(../images/mainPhoto.png);
 }
 
 .banner__text{
@@ -27,11 +26,10 @@ font-family: serif;
 color: white;
 z-index: 2;
 background-color: blueviolet;
+background-size: auto;
 font-size: 15px;
 text-align: center;
-bottom: 50%;
-left: 50%; 
-position: absolute;
+
 }
 
 .banner__text-top{
