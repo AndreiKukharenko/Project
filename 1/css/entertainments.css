@@ -6,7 +6,28 @@
     text-decoration: none;
 }
 
+.entertainments__rocket{
+    float: left;
+}
+
 .entertainments__rocketbox{
     width: 585px;
     float: left;
 }
+
+
+
+
+
+
+    padding: 10px,15px;
+
+.entertainments__microphone{
+    float: left;
+}
+
+
+.entertainments__headers-upper{
+    font-size: 20px;
+}
+

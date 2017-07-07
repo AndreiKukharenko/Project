@@ -22,21 +22,27 @@ background-image: url(../images/mainPhoto.png);
 }
 
 .banner__text{
-font-family: serif;
-color: white;
+    box-sizing: content-box;
+font-family: source-sans-pro;
 z-index: 2;
 background-color: blueviolet;
-background-size: auto;
-font-size: 15px;
+background-clip: content-box;
+font-size: inherit;
 text-align: center;
-
+padding-top: 180px; 
+text-decoration: none;
 }
 
 .banner__text-top{
 width: fit-content;
+color: white;
+background-size: auto;
+
 }
 
 .banner__text-bottom{
-width: fit-content;
+width:min-content;
+color: white;
+background-size: auto;
 
 }
