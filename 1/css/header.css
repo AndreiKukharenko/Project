@@ -17,12 +17,12 @@
 header{
     width: 100%;
     background-color: white;
+    height: 80px;
 
 }
 
 .header__logo{
     font-family: source-sans-pro;
-
 }
 
 .header__line-par{
@@ -56,7 +56,7 @@ header{
 
 .header__navigation__buttons{
     font-family: source-sans-pro;
-    color: crimson;
+    color: black; 
 }
 
 .header__navigation-list{
@@ -69,10 +69,26 @@ header{
 
 .header__navigation-list li{
   display: inline;
-    
 }
+
+ /*  экспериментальное - работает норм
+.header__navigation-list li a:link {
+  color: #497DDD; 
+  border-bottom: 1px dashed; 
+}
+.header__navigation-list li a:visited {
+  color: #EF7D55;
+}
+.header__navigation-list li a:hover {
+  color: #154088; 
+  border-bottom: .07em solid;
+}
+.header__navigation-list li a:active {
+  color: #497DDD; 
+  border-bottom: 1px dashed;
+}  */
 
 .header__navigation-ref{
     text-align: center;
-    text-decoration: none; /*убирает подчеркивание*/
+    text-decoration: none; /*убрать подчеркивание*/
 }

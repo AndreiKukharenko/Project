@@ -45,7 +45,9 @@
 }
 
 .mobile-devices__text{
-float: right;
+    float: right;
+    background-color: darkorchid;
+
 }
 
 
