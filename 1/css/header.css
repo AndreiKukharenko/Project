@@ -21,13 +21,20 @@ header{
     box-sizing: border-box;
 }
 
+
 .header__logo{
     font-family: source-sans-pro;
 }
 
 .header__logo-picture{
-    background-image: url(../images/logoBell.png);
+    float: left;
+}
+
+.header__logo-picture::after{
+    content: url(../images/logoBell.png);
     display: block;
+    width: 29px;
+    height: 32px;
 }
 
 /*
@@ -52,6 +59,8 @@ header{
     -webkit-margin-after: 0px;
     -webkit-margin-start: 0;
     -webkit-margin-end: 0;
+    margin-bottom: 5px;
+    
 }
 
 
@@ -91,7 +100,7 @@ header{
   display: inline;
 }
 
- /*  экспериментальное - работает норм
+ /* экспериментальное - работает норм
 .header__navigation-list li a:link {
   color: #497DDD; 
   border-bottom: 1px dashed; 

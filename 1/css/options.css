@@ -19,6 +19,7 @@
     width: 1170px;
 }
 
+/*       text    */
 .options__text{
     font-family: source-sans-pro;
     text-align: center;
@@ -40,17 +41,34 @@
     margin: auto;
 }
 
+
+/*    pictures   */
+
 .options__pics a{
     display: block;
     width: 31px;
-height: 32px;
+    height: 32px;
 }
 
+.options__pics__button-left{
+    float: left;
+}
+
+.options__pics__button-left::after{
+    content: url(../images/arrowLeft.png); 
+    display: block;
+    width: 31px;
+    height: 32px;
+}
 
 .options__pics__button-right::after{
     /*background-image: url(../images/arrowRight.png);*/
     content: url(../images/arrowRight.png); 
     display: block;
     width: 31px;
-height: 32px;
+    height: 32px;
+}
+
+.options__mainPicture-photo{
+    width: 252px;
 }

@@ -23,25 +23,27 @@ background-image: url(../images/mainPhoto.png);
 
 .banner__text{
     box-sizing: content-box;
-font-family: source-sans-pro;
-background-color: blueviolet;
-background-clip: content-box;
-text-align: center;
-padding-top: 180px; 
+    font-family: source-sans-pro;
+    background-color: blueviolet;
+    background-clip: content-box;
+    text-align: center;
+    padding-top: 180px; 
 }
+
+.banner__text a{
+    text-decoration: none;
+}
+
 
 .banner__text-top{
 width: fit-content;
 color: white;
 background-size: auto;
-text-decoration: none;
-
 }
+
 
 .banner__text-bottom{
 width:min-content;
 color: white;
 background-size: auto;
-text-decoration: none;
-
 }
