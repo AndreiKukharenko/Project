@@ -16,7 +16,7 @@
 
 
 .banner{
-width: 1314px;
+width: 1170px;
 height: 440px;
 background-image: url(../images/mainPhoto.png);
 }
@@ -24,19 +24,17 @@ background-image: url(../images/mainPhoto.png);
 .banner__text{
     box-sizing: content-box;
 font-family: source-sans-pro;
-z-index: 2;
 background-color: blueviolet;
 background-clip: content-box;
-font-size: inherit;
 text-align: center;
 padding-top: 180px; 
-text-decoration: none;
 }
 
 .banner__text-top{
 width: fit-content;
 color: white;
 background-size: auto;
+text-decoration: none;
 
 }
 
@@ -44,5 +42,6 @@ background-size: auto;
 width:min-content;
 color: white;
 background-size: auto;
+text-decoration: none;
 
 }

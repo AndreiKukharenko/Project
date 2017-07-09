@@ -16,16 +16,41 @@
 
 .options{
     height: 546px;
+    width: 1170px;
 }
 
 .options__text{
     font-family: source-sans-pro;
+    text-align: center;
+}
+
+.options__text h2{
+    color: #d46ab7;
+    font-size: bold;
+
+}
+
+.options__text h5{
+    color: #fab905;
 }
 
 .options__text-content{
-
+    color: black;
+    width: 500px;
+    margin: auto;
 }
 
-.options__pics{
-    
+.options__pics a{
+    display: block;
+    width: 31px;
+height: 32px;
+}
+
+
+.options__pics__button-right::after{
+    /*background-image: url(../images/arrowRight.png);*/
+    content: url(../images/arrowRight.png); 
+    display: block;
+    width: 31px;
+height: 32px;
 }

@@ -1,12 +1,71 @@
-
+@font-face {
+    font-family: 'source-sans-pro';
+    src: url(fonts/SourceSansPro-Black.otf); 
+    src: url(fonts/SourceSansPro-Blacklt.otf); 
+    src: url(fonts/SourceSansPro-Bold.otf); 
+    src: url(fonts/SourceSansPro-ExtraLight.otf); 
+    src: url(fonts/SourceSansPro-ExtraLightIt.otf); 
+    src: url(../fonts/SourceSansPro-lt.otf); 
+    src: url(../fonts/SourceSansPro-LightIt.otf); 
+    src: url(../fonts/SourceSansPro-Regular.otf); 
+    src: url(../fonts/SourceSansPro-Semibold.otf);
+    src: url(../fonts/SourceSansPro-SemiboldIt.otf); 
+    font-weight: normal;
+    font-style: normal;
+   }
 
 .mobileDevices{
-    background-color: darkorchid;
+    background-color: #d46ab7;
     height: 350px;
+    width: 1170px;
+}
+
+.mobileDevices__pictures{
+    float:left;
+}
+
+.mobileDevices__pictures-tablet{
+    margin-LEFT: 20px;
+    margin-top: 20px;
+}
+
+.mobileDevices__pictures-phone{
+    margin-left: -20px;
 }
 
 .mobileDevices__text{
-    float: right;
-    background-color: darkorchid;
+    font-family: source-sans-pro;
+    padding-top: 30px;
+    padding-left: 70px;
+    width: 90%;
+    font-size: 20px;
+}
 
+
+.mobileDevices__text h3{
+    color: white;
+   
+}
+
+
+.mobileDevices__text h5{
+    color: white;
+}
+
+
+
+.mobileDevices__text-maintext{
+    color: #fab905;
+
+}
+
+.mobileDevices__button a{
+    content: url(../images/btn.png); 
+    display: block;
+    z-index: 1;
+}
+.mobileDevices__button a::after{
+    text-decoration: none;
+    display: block;
+    z-index: 2;
 }

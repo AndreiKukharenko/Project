@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/options.css">
     <link rel="stylesheet" href="css/mobileDevices.css">
     <link rel="stylesheet" href="css/entertainments.css">
+    <link rel="stylesheet" href="css/footer.css">
     
 </head>
 
@@ -21,11 +22,12 @@
         </div>
 
         <div class="header__logo">
-            <div class="header__logo-picture">
-                <a href="#"></a>
-        </div>
+            
+                <a href="#"><div class="header__logo-picture"></div></a>
+            
 
             <span class="header__logo-txt-top">Site name</span>
+            
             <span class="header__logo-txt-bottom">Captions goes here</span>
         </div>
 
@@ -66,19 +68,18 @@
 
 
     <section class="mainTitle">
-        <div class="mainTitle__header">
-            <p class="mainTitle__header__text">
-                Morbi interdum mollis sapien edac risus
-            </p>
-        </div>
 
         <div class="mainTitle__text">
-            <p class="mainTitle__text__text">
+            <div class="mainTitle__text-head">
+                Morbi interdum mollis sapien edac risus
+            </div>
+            <div class="mainTitle__text-content">
                 Integer vitae libero ac risus egestas placerat 
                 lectus arcu pulvinar risus vitae facilis libero 
                 doloro a purus
-            </p>
+            </div>
         </div>
+
         <div class="mainTitle__buttons">
             <div class="mainTitle__button1">
                 <a href="#"> 
@@ -97,7 +98,8 @@
     <section class="entertainments">
 
         <div class="entertainments__rocketbox">
-
+            <div class="entertainments__rocketbox-content">
+                
             <div class="entertainments__rocket">
                 <img src="images/rocket.png" alt="rocket">
             </div>
@@ -107,25 +109,26 @@
                 <p/>
                 <span class="entertainments__headers-lower">Cestibulum auctor dabipus neque</span>
                 <p/>
-                <span class="entertainments__headers-txt">Morbi in sem quis dui placerat omare.  Pellentesque odio nisi, euismod in, 
+                <span class="entertainments__headers-txt">Morbi in sem quis dui placerat omare.  PellePellentesque odio nisi, euismod in, 
                     placerat a, ultricies in, diam am dui mi,
                     tincidunt quis, accumsan portittor, facilies
                 </span>
                 <div class="entertainments__button">
                     <a href="#" > More...
-                    <img src="images/btn.png" alt="button_left">
+                    <img src="images/btn.png" alt="button_left" style="background-blend-mode: hue">
                     </a>
                 </div>
 
             </div>
 
-
+            </div>
         </div>
 
         <!-- there is a border between left-right containers -->
 
         <div class="entertainments__microphonebox">
-
+            <div class="entertainments__microphonebox-content">
+            
             <div class="entertainments__microphone">
                 <img src="images/microphone.png" alt="microphone">
             </div>
@@ -147,26 +150,32 @@
                 </div>
             </div>
 
+            </div>
         </div>
     </section>
 
 
     <section class="mobileDevices">
         <div class="mobileDevices__pictures">
-            <img src="images/tablet.png" alt="tablet">
-            <img src="images/mobilePhone.png" alt="mobilePhone">
+            <img src="images/tablet.png" alt="tablet" class="mobileDevices__pictures-tablet">
+            <img src="images/mobilePhone.png" alt="mobilePhone" class="mobileDevices__pictures-phone">
         </div>
 
         <div class="mobileDevices__text"> 
             <h3>Vivamus vestibulum nulla nec ante</h3>
-            <h5>ofb;lsfilshfodslfkvhns;lapodjs;asldmfjsldfkmn</h5>
+            <h5>Cestibulum auyctor dapibus neque lobortis 
+                lorem at ipsum semper sagittis
+            </h5>
 
-            <span class="mobileDevices__text-maintext">Morbi in sem quis dui placerat omare.osidhlsn psofjskd  pjsw;efmj;lsjss s ijisdijfl  ijisdijfl
-                kdhfkd. sbguhk sudhfksjdfk siklifjls  nvkisu;as,kcvn . </span>
+            <span class="mobileDevices__text-maintext">Morbi in sem quis dui placerat omare. 
+                Pellentesque odio nisi, euismod in, placerat a, ultricies in, diam am dui mi,
+                    tincidunt quis, accumsan portittor, facilies biib sem quis placerat ornare.
+                    Pellentesque odio nisi, euismod in, pharetra a, ultr     Suspendisse commodo ullacomper magna. 
+                    </span>
 
             <div class="mobileDevices__button">
                 <a href="http://www.tut.by"> More... </a>
-                    <img src="images/btn.png" alt="button_right">
+                    <!--img src="images/btn.png" alt="button_right"-->
                 </a>    
             </div>
         </div>
@@ -174,12 +183,14 @@
 
     <section class="options">
         <div class="options__text">
-            <h3>Bulum nulla necante</h3>
-            <h4>Cestibulum auctor dapibus oidhkld</h4>
+            <h2>Bulum nulla necante</h3>
+            <h5>Cestibulum auctor dapibus oidhkld</h4>
 
-            <span class="options__text-content">
-                Morbi in sem quis dui placerat omare. aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-            </span>
+            <div class="options__text-content">
+                Morbi in sem quis dui placerat omare. PellePellentesque odio nisi, euismod in, 
+                    placerat a, ultricies in, diam am dui mi,
+                    tincidunt quis, accumsan portittor, facilies.
+            </div>
         </div>
 
         <div class="options__pics">
@@ -194,22 +205,22 @@
                 <img src="images/screenPhoto.png" alt="screenPhoto">
             </div>
 
-            <div class="options__pics__button-right">
-                <a href="#"></a>
-                <img src="images/arrowRight.png" alt="arrowRight">
-            </div>
+            
+            <a href="#"  class="options__pics__button-right"></a>
+             
 
         </div>
     </section>
 
 
-    <footer >
-        <div>
+    <footer>
+        <div class="footer__container">
             <span class="footer__text">
                 Copyright(c) website name. 
-                <span class="footer__text__des">Designed by:
+                <span class="footer__text-spec">Designed by:
                     <a href="http://www.alltemplateneeds.com">www.alltemplateneeds.com</a>
-
+                </span>
+                <span>
                 Images from:<a href="http://www.wallpaperswide.com">www.wallpaperswide.com</a>,
                 <a href="http://www.photorack.net">www.photorack.net</a>
                 </span>

@@ -1,26 +1,58 @@
+@font-face {
+    font-family: 'source-sans-pro';
+    src: url(fonts/SourceSansPro-Black.otf); 
+    src: url(fonts/SourceSansPro-Blacklt.otf); 
+    src: url(fonts/SourceSansPro-Bold.otf); 
+    src: url(fonts/SourceSansPro-ExtraLight.otf); 
+    src: url(fonts/SourceSansPro-ExtraLightIt.otf); 
+    src: url(../fonts/SourceSansPro-lt.otf); 
+    src: url(../fonts/SourceSansPro-LightIt.otf); 
+    src: url(../fonts/SourceSansPro-Regular.otf); 
+    src: url(../fonts/SourceSansPro-Semibold.otf);
+    src: url(../fonts/SourceSansPro-SemiboldIt.otf); 
+    font-weight: normal;
+    font-style: normal;
+   }
+
 
 .mainTitle{
-    width: 100%;
+    width: 1170px;
     height: 272px;
-    background-color: yellow;
+    background-color: orange;
     text-align: center;
 }
 
 .mainTitle__text{
     color: white;
-    
+    font-family: source-sans-pro;
+    width: 500px;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
+.mainTitle__text-head{
+    font-weight: bold;
+    font-size: 25px;
+    padding-bottom: 15px;
+}
+
+.mainTitle__text-content{
+    font-size: 20px;
+}
 .mainTitle__buttons{
 }
 
 .mainTitle__button1{
     background-image: url(../images/btn.png);
+    background: no-repeat;
     float: left;
 }
 
 .mainTitle__button2{
     background-image: url(../images/btn.png);
+    background: no-repeat;
 }
 
 .mainTitle__button1 a{

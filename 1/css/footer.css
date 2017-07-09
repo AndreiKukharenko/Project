@@ -1,17 +1,28 @@
 footer{
-    width: 100%;
+    width: 1170px;
     height: 107px;
-    background-color: gray;
+    background-color: #f5f0f0;
     /*position: fixed;*/
     left: 0;
     bottom: 0;
 }
 
-.footer__text{
-color: slategray;
-text-align: center;
+
+.footer__container{
+    padding-top: 50px;
+    padding-left: 100px;
 }
 
-.footer__text__des{
-color:darkorchid;
+.footer__text{
+    color: slategray;
+    text-align: center;
+}
+
+.footer__text a{
+    text-decoration: none;
+}
+
+
+.footer__text-spec{
+    color:darkorchid;
 }
