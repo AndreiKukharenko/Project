@@ -19,11 +19,30 @@
     width: 1170px;
 }
 
+
+/***** BUTTONS  ****/ 
 .entertainments__button a{
     text-decoration: none;
-    
+    color: white;
 }
 
+.entertainments__button {
+    border-radius: 7px;
+    font-family: inherit;
+    background: #fab905;
+    padding: 10px 15px 10px 15px;
+    border: solid black 0px;
+}
+
+.entertainments__button:hover {
+    background: #bd4a9e;
+}
+
+
+
+
+
+/****   CONTENT AND BOXES  ****/
 .entertainments__rocket{
     float: left;
 }

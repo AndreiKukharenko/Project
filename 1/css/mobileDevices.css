@@ -15,7 +15,7 @@
    }
 
 .mobileDevices{
-    background-color: #d46ab7;
+    background-color: #AC6F7F;
     height: 350px;
     width: 1170px;
 }
@@ -53,19 +53,23 @@
 }
 
 
-
 .mobileDevices__text-maintext{
     color: #fab905;
-
 }
 
 .mobileDevices__button a{
-    content: url(../images/btn.png); 
-    display: block;
-    z-index: 1;
-}
-.mobileDevices__button a::after{
     text-decoration: none;
-    display: block;
-    z-index: 2;
+}
+
+.mobileDevices__button {
+    border-radius: 7px;
+    font-family: inherit;
+    color: #AC6F7F;
+    background: white;
+    padding: 10px 15px 10px 15px;
+    border: solid black 0px;
+}
+
+.mobileDevices__button:hover {
+    background: violet;
 }

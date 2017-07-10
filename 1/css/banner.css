@@ -39,7 +39,7 @@ background-image: url(../images/mainPhoto.png);
 .banner__text-top{
     width: fit-content;
     background-size: auto;
-    background-color: blueviolet;
+    background-color: #AC6F7F;
     font-size: 45px;
 }
 
@@ -47,6 +47,6 @@ background-image: url(../images/mainPhoto.png);
 .banner__text-bottom{
     width:min-content;
     background-size: auto;
-    background-color: blueviolet;
+    background-color: #AC6F7F;
     font-size: 40px;
 }
