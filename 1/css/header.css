@@ -18,7 +18,9 @@ header{
     width: 100%;
     background-color: white;
     height: 80px;
-    box-sizing: border-box;
+    border-top-color: #FDBD1F;
+    box-sizing: content-box;
+    border-top-style: solid;
 }
 
 
@@ -28,7 +30,6 @@ header{
 }
 
 .header__logo-picture{
-    float: left;
     position: relative;
     top: 10px;
     left: 10px;
@@ -42,20 +43,10 @@ header{
 }
 
 
-.header__line-par{
-    background-color: #FCBD1A;
-    height: 2px;
-    border: none;
-    width: 1170px;
-    -webkit-margin-before: 0px;
-    -webkit-margin-after: 0px;
-    -webkit-margin-start: 0;
-    -webkit-margin-end: 0;
-    margin-bottom: 5px;
-}
-
 .header__logo-txt{
-    
+    position: relative;
+    left: 50px;
+    bottom: 25px;
 }
 
 .header__logo-txt-top{
@@ -70,52 +61,50 @@ header{
     margin: auto;
     
 }
-    /*****  NAVIGATION BUTTONS   ***/
+     
 .header__navigation{
     margin: auto;
     list-style-type: none;
-    width: 70%;
     height: inherit;
     display: inline-block;
-    float: right;
+    width: 89%;
+
 }
+
 
 .header__navigation__buttons{
     font-family: source-sans-pro;
-    width: inherit; 
-}
-
-.header__navigation-list{
-    list-style-type: none; 
-    padding-left: 0;
-    overflow: hidden;
     float: right;
 }
+/*****  NAVIGATION BUTTONS  ***/
 
-.header__navigation-list li{
-  display: inline-block;
-}
-
-.header__navigation a{
-    text-align: center;
-    text-decoration: none; /*убрать подчеркивание*/
-    color: black; 
+header__navigation__buttons ul {
+	margin: 0;
+	padding: 0;
 }
 
-  /*экспериментальное - работает норм*/
-.header__navigation-list li a:link {
-  color: #497DDD; 
-  border-bottom: 1px dashed; 
+header__navigation__buttons li {
+	list-style-position: inside;
+	font: 14px source-sans-pro;
+	padding: 10px;
 }
-.header__navigation-list li a:visited {
-  color: #EF7D55;
+
+.header__navigation-list li {
+	display: inline-block;
+	padding: 10px 30px;
+	margin: 0;
 }
+
+.header__navigation-list li.active {
+	background: #29c5e6;
+	color: #fff;
+}
+
+.header__navigation-list a {
+	color: #b2b2b2;
+	text-decoration: none;
+}
+
 .header__navigation-list li a:hover {
   color: #FCBD1A; 
-  border-bottom: .07em solid;
 }
-.header__navigation-list li a:active {
-  color: #497DDD; 
-  border-bottom: 1px dashed;
-}  
-
