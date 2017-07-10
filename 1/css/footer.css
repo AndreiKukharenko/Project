@@ -26,4 +26,5 @@ footer{
 
 .footer__text-spec{
     color:darkorchid;
+    display: inline-block;
 }

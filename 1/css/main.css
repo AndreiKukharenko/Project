@@ -1,6 +1,7 @@
-.body{
-    height:2100 px;
-    width: 1170 px;
+.page{
+    height:2100px;
+    width: 1170px;
     background-color: white;
+    margin: auto;
 }
 

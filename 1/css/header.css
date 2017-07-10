@@ -41,21 +41,9 @@ header{
     height: 32px;
 }
 
-/*
-.header__logo-picture a{
-    position: absolute;  
-    top: 0;  
-    left: 0;  
-    display: block;  
-    width: 100%;  
-    height: 100%;  
-    text-decoration: none;  
-    z-index: 1;  
-}
-*/
 
 .header__line-par{
-    background-color: coral;
+    background-color: #FCBD1A;
     height: 2px;
     border: none;
     width: 1170px;
@@ -64,9 +52,11 @@ header{
     -webkit-margin-start: 0;
     -webkit-margin-end: 0;
     margin-bottom: 5px;
-    
 }
 
+.header__logo-txt{
+    
+}
 
 .header__logo-txt-top{
     color:gray;
@@ -80,31 +70,39 @@ header{
     margin: auto;
     
 }
-
+    /*****  NAVIGATION BUTTONS   ***/
 .header__navigation{
-    margin: 0;
-    padding: 0;
+    margin: auto;
     list-style-type: none;
     width: 70%;
+    height: inherit;
+    display: inline-block;
+    float: right;
 }
 
 .header__navigation__buttons{
     font-family: source-sans-pro;
+    width: inherit; 
 }
 
 .header__navigation-list{
     list-style-type: none; 
-    margin: 0; 
     padding-left: 0;
     overflow: hidden;
     float: right;
 }
 
 .header__navigation-list li{
-  display: inline;
+  display: inline-block;
 }
 
- /* экспериментальное - работает норм
+.header__navigation a{
+    text-align: center;
+    text-decoration: none; /*убрать подчеркивание*/
+    color: black; 
+}
+
+  /*экспериментальное - работает норм*/
 .header__navigation-list li a:link {
   color: #497DDD; 
   border-bottom: 1px dashed; 
@@ -113,16 +111,11 @@ header{
   color: #EF7D55;
 }
 .header__navigation-list li a:hover {
-  color: #154088; 
+  color: #FCBD1A; 
   border-bottom: .07em solid;
 }
 .header__navigation-list li a:active {
   color: #497DDD; 
   border-bottom: 1px dashed;
-}  */
+}  
 
-.header__navigation-ref{
-    text-align: center;
-    text-decoration: none; /*убрать подчеркивание*/
-    color: black; 
-}

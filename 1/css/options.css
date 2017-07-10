@@ -38,6 +38,8 @@
     color: black;
     width: 500px;
     margin: auto;
+    position: relative;
+    bottom: 15px;
 }
 
 
@@ -47,10 +49,13 @@
     display: block;
     width: 31px;
     height: 32px;
+    position: relative;
 }
 
 .options__pics__button-left{
     float: left;
+    top: 100px;
+    left: 150px;
 }
 
 .options__pics__button-left::after{
@@ -61,7 +66,8 @@
 }
 
 .options__pics__button-right{
-
+    bottom: 350px;
+    left: 700px;
 }
 
 .options__pics__button-right::after{
@@ -82,7 +88,24 @@
 
 .options__mainPicture-photo{
     width: initial;
-    /*position: relative;
-    top: -50px;
-    left: -70px;*/
+}
+
+.options__mainPicture-notebook{
+
+}
+
+.options__mainPicture-screen{
+    border-width: 0px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 8px; 
+    position: relative;
+    bottom: 255px;
+    left: 83px;
+    height: 168px;
+    width: 251px;
+    background-image: url(../images/mainPhoto.png);
+    background-position-x: -607px;
+    background-position-y: 504px;
+    background-size: cover;
 }

@@ -41,7 +41,6 @@
 
 
 
-
 /****   CONTENT AND BOXES  ****/
 .entertainments__rocket{
     float: left;
@@ -54,13 +53,13 @@
 
 
 .entertainments__rocketbox{
-    width: 585px;
+    width: 50%;
     height: inherit;
     float: left;
 }
 
 .entertainments__microphonebox{
-    width: 585px;
+    width: 50%;
     height: inherit;
     float: right;
 }

@@ -27,6 +27,8 @@
 .mobileDevices__pictures-tablet{
     margin-LEFT: 20px;
     margin-top: 20px;
+    position: relative;
+    z-index: 1;
 }
 
 .mobileDevices__pictures-phone{
@@ -37,8 +39,9 @@
     font-family: source-sans-pro;
     padding-top: 30px;
     padding-left: 70px;
-    width: 90%;
+    width: 60%;
     font-size: 20px;
+    margin-left: 250px;
 }
 
 

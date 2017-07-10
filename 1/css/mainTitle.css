@@ -44,7 +44,7 @@
 /*******  BUTTONS ********/
 
 .mainTitle__buttons{
-    width: 250px;
+    width: 50%;
     margin: auto;
 }
 
@@ -62,6 +62,7 @@
     background: #AC6F7F;
     padding: 10px 15px 10px 15px;
     border: solid black 0px;
+    margin: 5px 15px;
 }
 
 .mainTitle__button:hover {
