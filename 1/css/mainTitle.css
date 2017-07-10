@@ -48,21 +48,27 @@
     margin: auto;
 }
 
-.mainTitle__button a{
+.mainTitle__button{
     text-decoration: none;
-    color: orange;
     font-size: 20px;
 }
 
+.mainTitle__buttons a{
+    display: inline-block;
+    height: 30px;
+    width: 160px;
+}
 
 .mainTitle__button {
     border-radius: 7px;
     font-family: inherit;
-    color: white;
+    color: #FDBD1F;
     background: #AC6F7F;
-    padding: 10px 15px 10px 15px;
+    padding: 5px 10px 10px 10px;
     border: solid black 0px;
     margin: 5px 15px;
+    cursor: pointer;
+
 }
 
 .mainTitle__button:hover {

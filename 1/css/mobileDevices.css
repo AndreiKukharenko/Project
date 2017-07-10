@@ -47,7 +47,6 @@
 
 .mobileDevices__text h3{
     color: white;
-   
 }
 
 
@@ -60,10 +59,6 @@
     color: #fab905;
 }
 
-.mobileDevices__button a{
-    text-decoration: none;
-}
-
 .mobileDevices__button {
     border-radius: 7px;
     font-family: inherit;
@@ -71,8 +66,13 @@
     background: white;
     padding: 10px 15px 10px 15px;
     border: solid black 0px;
+    cursor: pointer;
 }
 
 .mobileDevices__button:hover {
     background: violet;
+}
+
+.mobileDevices__button a{
+    text-decoration: none;
 }

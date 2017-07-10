@@ -16,6 +16,8 @@ footer{
 .footer__text{
     color: slategray;
     text-align: center;
+    display: block;
+    padding-top: 50px;
 }
 
 .footer__text a{
