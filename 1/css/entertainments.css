@@ -21,6 +21,7 @@
 
 .entertainments__button a{
     text-decoration: none;
+    
 }
 
 .entertainments__rocket{
@@ -34,12 +35,14 @@
 
 
 .entertainments__rocketbox{
-    width: 584px;
+    width: 585px;
+    height: inherit;
     float: left;
 }
 
 .entertainments__microphonebox{
-    width: 584px;
+    width: 585px;
+    height: inherit;
     float: right;
 }
 
@@ -51,7 +54,7 @@
 .entertainments__microphone{
     float: left;
     border-right-color: grey;
-    border-right-width: 2px;
+    border-right-width: 2px; /* ??????????????????*/
 }
 
 /* text properties */
@@ -73,4 +76,5 @@
 
 .entertainments__headers-txt{
     color: black;
+    width: 400px;
 }

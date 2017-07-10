@@ -24,7 +24,6 @@ background-image: url(../images/mainPhoto.png);
 .banner__text{
     box-sizing: content-box;
     font-family: source-sans-pro;
-    background-color: blueviolet;
     background-clip: content-box;
     text-align: center;
     padding-top: 180px; 
@@ -32,18 +31,22 @@ background-image: url(../images/mainPhoto.png);
 
 .banner__text a{
     text-decoration: none;
+    color: white;
+    
 }
 
 
 .banner__text-top{
-width: fit-content;
-color: white;
-background-size: auto;
+    width: fit-content;
+    background-size: auto;
+    background-color: blueviolet;
+    font-size: 45px;
 }
 
 
 .banner__text-bottom{
-width:min-content;
-color: white;
-background-size: auto;
+    width:min-content;
+    background-size: auto;
+    background-color: blueviolet;
+    font-size: 40px;
 }

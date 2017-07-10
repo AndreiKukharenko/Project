@@ -24,10 +24,14 @@ header{
 
 .header__logo{
     font-family: source-sans-pro;
+    float: left;
 }
 
 .header__logo-picture{
     float: left;
+    position: relative;
+    top: 10px;
+    left: 10px;
 }
 
 .header__logo-picture::after{
@@ -65,15 +69,15 @@ header{
 
 
 .header__logo-txt-top{
-    text-align: right;
     color:gray;
     font-size: 20px;
+    margin: auto;
 }
 
 .header__logo-txt-bottom{
-    text-align: right;
     color:gray;
     font-size: 15px;
+    margin: auto;
     
 }
 

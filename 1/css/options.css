@@ -19,7 +19,7 @@
     width: 1170px;
 }
 
-/*       text    */
+            /****       text    ****/
 .options__text{
     font-family: source-sans-pro;
     text-align: center;
@@ -27,7 +27,6 @@
 
 .options__text h2{
     color: #d46ab7;
-    font-size: bold;
 
 }
 
@@ -42,7 +41,7 @@
 }
 
 
-/*    pictures   */
+         /****    pictures and buttons   ****/
 
 .options__pics a{
     display: block;
@@ -61,6 +60,10 @@
     height: 32px;
 }
 
+.options__pics__button-right{
+
+}
+
 .options__pics__button-right::after{
     /*background-image: url(../images/arrowRight.png);*/
     content: url(../images/arrowRight.png); 
@@ -69,6 +72,17 @@
     height: 32px;
 }
 
+
+.options__mainPicture{
+    width: 555px;
+    height: inherit;
+    margin: auto;
+}
+
+
 .options__mainPicture-photo{
-    width: 252px;
+    width: initial;
+    /*position: relative;
+    top: -50px;
+    left: -70px;*/
 }
