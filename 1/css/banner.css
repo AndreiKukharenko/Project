@@ -1,28 +1,13 @@
-@font-face {
-    font-family: 'source-sans-pro';
-    src: url(fonts/SourceSansPro-Black.otf); 
-    src: url(fonts/SourceSansPro-Blacklt.otf); 
-    src: url(fonts/SourceSansPro-Bold.otf); 
-    src: url(fonts/SourceSansPro-ExtraLight.otf); 
-    src: url(fonts/SourceSansPro-ExtraLightIt.otf); 
-    src: url(../fonts/SourceSansPro-lt.otf); 
-    src: url(../fonts/SourceSansPro-LightIt.otf); 
-    src: url(../fonts/SourceSansPro-Regular.otf); 
-    src: url(../fonts/SourceSansPro-Semibold.otf);
-    src: url(../fonts/SourceSansPro-SemiboldIt.otf); 
-    font-weight: normal;
-    font-style: normal;
-}
 
 .banner{
-width: 1170px;
-height: 440px;
-background-image: url(../images/mainPhoto.png);
+    width: 1170px;
+    height: 440px;
+    background-image: url(../images/mainPhoto.png);
 }
 
 .banner__text{
     box-sizing: content-box;
-    font-family: source-sans-pro;
+    font-family: 'source-sans-pro';
     background-clip: content-box;
     text-align: center;
     padding-top: 180px; 
@@ -34,15 +19,11 @@ background-image: url(../images/mainPhoto.png);
 }
 
 .banner__text_top{
-    width: fit-content;
-    background-size: auto;
     background-color: #AC6F7F;
     font-size: 45px;
 }
 
 .banner__text_bottom{
-    width:min-content;
-    background-size: auto;
     background-color: #AC6F7F;
     font-size: 40px;
 }

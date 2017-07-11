@@ -1,18 +1,3 @@
-@font-face {
-    font-family: 'source-sans-pro';
-    src: url(fonts/SourceSansPro-Black.otf); 
-    src: url(fonts/SourceSansPro-Blacklt.otf); 
-    src: url(fonts/SourceSansPro-Bold.otf); 
-    src: url(fonts/SourceSansPro-ExtraLight.otf); 
-    src: url(fonts/SourceSansPro-ExtraLightIt.otf); 
-    src: url(../fonts/SourceSansPro-lt.otf); 
-    src: url(../fonts/SourceSansPro-LightIt.otf); 
-    src: url(../fonts/SourceSansPro-Regular.otf); 
-    src: url(../fonts/SourceSansPro-Semibold.otf);
-    src: url(../fonts/SourceSansPro-SemiboldIt.otf); 
-    font-weight: normal;
-    font-style: normal;
-}
 
 .mainTitle{
     width: 1170px;
@@ -23,7 +8,7 @@
 
 .text{
     color: white;
-    font-family: source-sans-pro;
+    font-family: 'source-sans-pro';
     width: 500px;
     margin: auto;
     text-align: center;
