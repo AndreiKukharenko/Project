@@ -12,25 +12,21 @@ header{
     font-family: 'source-sans-pro';
     float: left;
     width: 20%;
+    height: 100%;
 }
 
 .header__logo--picture{
     position: relative;
-    top: 20px;
+    top: 10px;
     left: 15px;
-}
-
-.header__logo--picture::after{
-    content: url(../images/logoBell.png);
-    display: block;
-    width: 29px;
-    height: 32px;
+    background-image: url(../images/logoBell.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 55px;
 }
 
 .header__logo-text{
-    position: relative;
-    left: 50px;
-    bottom: 15px;
+    margin: -35px 0px 0px 75px;
 }
 
 .header__logo-text--top, .header__logo-text--bottom{

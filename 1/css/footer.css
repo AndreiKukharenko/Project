@@ -6,12 +6,6 @@ footer{
     bottom: 0;
 }
 
-
-.footer__container{
-    padding-top: 50px;
-    padding-left: 100px;
-}
-
 .footer__text{
     color: slategray;
     text-align: center;
@@ -19,13 +13,12 @@ footer{
     padding-top: 50px;
 }
 
-.footer__text a{
+.footer__text--link{
     text-decoration: none;
     color: inherit;
 }
 
-
-.footer__text_emphasized{
+.footer__text--emphasized{
     color:darkorchid;
     display: inline-block;
 }
