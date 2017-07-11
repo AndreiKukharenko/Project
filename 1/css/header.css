@@ -14,13 +14,13 @@ header{
     width: 20%;
 }
 
-.header__logo_picture{
+.header__logo--picture{
     position: relative;
     top: 20px;
     left: 15px;
 }
 
-.header__logo_picture::after{
+.header__logo--picture::after{
     content: url(../images/logoBell.png);
     display: block;
     width: 29px;
@@ -33,13 +33,13 @@ header{
     bottom: 15px;
 }
 
-.header__logo-text_top, .header__logo-text_bottom{
+.header__logo-text--top, .header__logo-text--bottom{
     color:gray;
     font-size: 20px;
     margin: auto;
 }
 
-.header__logo-text_bottom{
+.header__logo-text--bottom{
     font-size: 15px;
 }
      
@@ -58,28 +58,24 @@ header{
     margin-top: 20px;
 }
 
-.navigation__buttons ul {
+.navigation__list{
 	margin: 0;
 	padding: 0;
 }
 
-.navigation__buttons li {
+.navigation__item{
 	list-style-position: inside;
-	font: 14px 'source-sans-pro';
-	padding: 10px;
-}
-
-.navigation__list li {
 	display: inline-block;
 	padding: 10px 30px;
 	margin: 0;
+	font: 14px 'source-sans-pro';
 }
 
-.navigation__list a {
+.navigation__link {
 	color: #b2b2b2;
 	text-decoration: none;
 }
 
-.navigation__list li a:hover {
+.navigation__link:hover {
   color: #FCBD1A; 
 }

@@ -13,17 +13,17 @@
     padding-top: 180px; 
 }
 
-.banner__text a{
+.banner__text--link{
     text-decoration: none;
     color: white;
 }
 
-.banner__text_top{
+.banner__text--top{
     background-color: #AC6F7F;
     font-size: 45px;
 }
 
-.banner__text_bottom{
+.banner__text--bottom{
     background-color: #AC6F7F;
     font-size: 40px;
 }

@@ -9,14 +9,14 @@
     float:left;
 }
 
-.mobileDevices__pictures-tablet{
+.mobileDevices__pictures--tablet{
     margin-LEFT: 20px;
     margin-top: 20px;
     position: relative;
     z-index: 1;
 }
 
-.mobileDevices__pictures-phone{
+.mobileDevices__pictures--phone{
     margin-left: -20px;
 }
 
@@ -29,15 +29,15 @@
     margin-left: 250px;
 }
 
-.mobileDevices__text h3{
+.mobileDevices__text--header-top{
     color: white;
 }
 
-.mobileDevices__text h5{
+.mobileDevices__text--header-bottom{
     color: white;
 }
 
-.mobileDevices__text_maintext{
+.mobileDevices__text--maintext{
     color: #fab905;
     text-align: justify;
 }

@@ -45,12 +45,13 @@
     cursor: pointer;
 }
 
-.buttons a{
+.buttons__single-button:hover {
+    background: white;
+}
+
+.buttons__link{
     display: inline-block;
     height: 30px;
     width: 160px;
 }
 
-.buttons__single-button:hover {
-    background: white;
-}

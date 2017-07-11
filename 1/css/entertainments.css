@@ -38,18 +38,18 @@
     font-family: 'source-sans-pro';
 }
 
-.box__text-upper{
+.box__text--upper{
     font-size: 20px;
     font-weight: bold;
     color: #bd4a9e;
 }
 
-.box__text-lower{
+.box__text--lower{
     font-size: 20px;
     color: #fab905
 }
 
-.box__text-main{
+.box__text--main{
     color: black;
     width: 90%;
     padding-top: 20px;
