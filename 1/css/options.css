@@ -12,7 +12,7 @@
     src: url(../fonts/SourceSansPro-SemiboldIt.otf); 
     font-weight: normal;
     font-style: normal;
-   }
+}
 
 .options{
     height: 546px;
@@ -55,13 +55,13 @@
 
 .options__pics a{
     display: block;
-    width: 31px;
-    height: 32px;
+    width: 33px;
+    height: 33px;
 }
 
 .options__pics-arrow{
-    width: 31px;
-    height: 32px;
+    width: 33px;
+    height: 33px;
     position: relative;
     bottom: 100px;
 }
@@ -83,13 +83,11 @@
 }
 
 .options__pics__button-right::after{
-    /*background-image: url(../images/arrowRight.png);*/
     content: url(../images/arrowRight.png); 
     display: block;
-    width: 31px;
-    height: 32px;
+    width: 33px;
+    height: 33px;
 }
-
 
 .options__mainPicture{
     height: 35%;
@@ -99,10 +97,6 @@
 
 .options__mainPicture-photo{
     width: initial;
-}
-
-.options__mainPicture-notebook{
-
 }
 
 .options__mainPicture-screen{

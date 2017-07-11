@@ -12,7 +12,7 @@
     src: url(../fonts/SourceSansPro-SemiboldIt.otf); 
     font-weight: normal;
     font-style: normal;
-   }
+}
 
 .entertainments{
     height: 303px;
@@ -40,7 +40,6 @@
     background: #bd4a9e;
 }
 
-
 /****   CONTENT AND BOXES  ****/
 .entertainments__rocket{
     float: left;
@@ -50,7 +49,6 @@
     padding-top: 55px;
     padding-left: 45px;
 }
-
 
 .entertainments__rocketbox, .entertainments__microphonebox{
     width: 50%;
@@ -63,7 +61,6 @@
     border-right: grey;
     border-right-width: 2px;
     border-right-style: solid;
-
 }
 
 .entertainments__microphone{
