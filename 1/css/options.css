@@ -29,7 +29,6 @@
     bottom: 15px;
 }
 
-
          /****    pictures and buttons   ****/
 .options__pics{
     display: flex;
@@ -59,7 +58,6 @@
 .options__pics__button-left::after{
     content: url(../images/arrowLeft.png); 
     display: block;
-
 }
 
 .options__pics__button-right{
@@ -79,7 +77,6 @@
     margin: 35px 60px;
 }
 
-
 .options__mainPicture-photo{
     width: initial;
 }
@@ -95,7 +92,6 @@
     height: 168px;
     width: 251px;
     background-image: url(../images/mainPhoto.png);
-    background-position-x: -607px;
-    background-position-y: 504px;
+    background-position: center center;
     background-size: cover;
 }

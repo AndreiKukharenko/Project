@@ -33,16 +33,14 @@ header{
     bottom: 15px;
 }
 
-.header__logo-text_top{
+.header__logo-text_top, .header__logo-text_bottom{
     color:gray;
     font-size: 20px;
     margin: auto;
 }
 
 .header__logo-text_bottom{
-    color:gray;
     font-size: 15px;
-    margin: auto;
 }
      
      /*****  NAVIGATION BUTTONS  ***/

@@ -52,6 +52,7 @@
 .box__text-main{
     color: black;
     width: 90%;
+    padding-top: 20px;
 }
 
 /***** BUTTONS  ****/ 
