@@ -33,14 +33,14 @@ background-image: url(../images/mainPhoto.png);
     color: white;
 }
 
-.banner__text-top{
+.banner__text_top{
     width: fit-content;
     background-size: auto;
     background-color: #AC6F7F;
     font-size: 45px;
 }
 
-.banner__text-bottom{
+.banner__text_bottom{
     width:min-content;
     background-size: auto;
     background-color: #AC6F7F;

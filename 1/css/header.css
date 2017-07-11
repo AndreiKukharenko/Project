@@ -26,6 +26,7 @@ header{
 .header__logo{
     font-family: source-sans-pro;
     float: left;
+    width: 20%;
 }
 
 .header__logo_picture{
@@ -65,12 +66,13 @@ header{
     list-style-type: none;
     height: inherit;
     display: inline-block;
-    width: 89%;
+    width: 80%;
 }
 
 .navigation__buttons{
     font-family: source-sans-pro;
     float: right;
+    margin-top: 20px;
 }
 
 .navigation__buttons ul {

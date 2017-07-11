@@ -52,7 +52,7 @@
     color: white;
 }
 
-.mobileDevices__text-maintext{
+.mobileDevices__text_maintext{
     color: #fab905;
 }
 
@@ -68,8 +68,4 @@
 
 .mobileDevices__button:hover {
     background: violet;
-}
-
-.mobileDevices__button a{
-    text-decoration: none;
 }

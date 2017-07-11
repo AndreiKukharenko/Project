@@ -21,7 +21,7 @@
     text-align: center;
 }
 
-.mainTitle__text{
+.text{
     color: white;
     font-family: source-sans-pro;
     width: 500px;
@@ -31,35 +31,25 @@
     padding-bottom: 50px;
 }
 
-.mainTitle__text-head{
+.text__caption{
     font-weight: bold;
     font-size: 25px;
     padding-bottom: 15px;
 }
 
-.mainTitle__text-content{
+.text__content{
     font-size: 20px;
 }
 
 /*******  BUTTONS ********/
 
-.mainTitle__buttons{
+.buttons{
     width: 50%;
     margin: auto;
 }
 
-.mainTitle__button{
-    text-decoration: none;
+.buttons__single-button{
     font-size: 20px;
-}
-
-.mainTitle__buttons a{
-    display: inline-block;
-    height: 30px;
-    width: 160px;
-}
-
-.mainTitle__button {
     border-radius: 7px;
     font-family: inherit;
     color: #FDBD1F;
@@ -70,6 +60,12 @@
     cursor: pointer;
 }
 
-.mainTitle__button:hover {
+.buttons a{
+    display: inline-block;
+    height: 30px;
+    width: 160px;
+}
+
+.buttons__single-button:hover {
     background: white;
 }
