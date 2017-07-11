@@ -16,7 +16,7 @@
 
 .options{
     height: 546px;
-    width: 1170px;
+    width: 100%;
 }
 
             /****       text    ****/
@@ -27,16 +27,18 @@
 
 .options__text h2{
     color: #d46ab7;
-
+    font-size: 30px;
+    max-height: 10px;
 }
 
 .options__text h5{
     color: #fab905;
+    font-size: 20px;
 }
 
 .options__text-content{
-    color: black;
-    width: 500px;
+    color: gray;
+    width: 70%;
     margin: auto;
     position: relative;
     bottom: 15px;
@@ -44,25 +46,35 @@
 
 
          /****    pictures and buttons   ****/
+.options__pics{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
 
 .options__pics a{
     display: block;
     width: 31px;
     height: 32px;
+}
+
+.options__pics-arrow{
+    width: 31px;
+    height: 32px;
     position: relative;
+    bottom: 100px;
 }
 
 .options__pics__button-left{
     float: left;
-    top: 100px;
     left: 150px;
 }
 
 .options__pics__button-left::after{
     content: url(../images/arrowLeft.png); 
     display: block;
-    width: 31px;
-    height: 32px;
+
 }
 
 .options__pics__button-right{
@@ -80,9 +92,8 @@
 
 
 .options__mainPicture{
-    width: 555px;
-    height: inherit;
-    margin: auto;
+    height: 35%;
+    margin: 35px 60px;
 }
 
 
