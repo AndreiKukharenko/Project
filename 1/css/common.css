@@ -1,13 +1,12 @@
 /* 
-this file contains common rules for some blocks.
-Common rules:
-1. TEXT FORMATTING RULES
-
+this file contains common rules for some blocks:
+1. TEXT BLOCKS
+2. BUTTONS
 */
 
 .text{
     font-family: 'source-sans-pro';
-    padding: 40px 35px 10px 35px;
+    padding: 40px 35px 10px 35px; /*TODO: consider possible removing this from common properties*/
 }
 
 .text__upper{
@@ -26,4 +25,13 @@ Common rules:
     padding-top: 20px;
     padding-right: 20px;
     bottom: 15px;
+}
+
+
+.button{
+    border-radius: 7px;
+    font-family: inherit;
+    padding: 10px 15px 10px 15px;
+    border: solid black 0px;
+    cursor: pointer;
 }

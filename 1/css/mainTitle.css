@@ -6,7 +6,7 @@
     text-align: center;
 }
 
-.text--for-main-title{
+.title-text{
     color: white;
     font-family: 'source-sans-pro';
     width: 500px;
@@ -16,13 +16,13 @@
     padding-bottom: 50px;
 }
 
-.text__caption{
+.title-text__caption{
     font-weight: bold;
     font-size: 25px;
     padding-bottom: 15px;
 }
 
-.text__content{
+.title-text__content{
     font-size: 20px;
 }
 

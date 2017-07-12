@@ -11,19 +11,18 @@
     background-clip: content-box;
     text-align: center;
     padding-top: 180px; 
+    background-color: #AC6F7F;
 }
 
-.text__link--white{
+.banner-text__link--white{
     text-decoration: none;
     color: white;
 }
 
-.text__first-line{
-    background-color: #AC6F7F;
+.banner-text__first-line{
     font-size: 45px;
 }
 
-.text__second-line{
-    background-color: #AC6F7F;
+.banner-text__second-line{
     font-size: 40px;
 }

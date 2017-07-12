@@ -7,10 +7,6 @@
 
 
 /****     BOXES AND IMAGES  ****/
-.box{
-    width: 50%;
-    float: left;
-}
 
 .box__image{
     float: left;
@@ -41,17 +37,12 @@
 
 /***** BUTTONS  ****/ 
 
-.box__button{
-    border-radius: 7px;
-    font-family: inherit;
-    background: #fab905;
-    padding: 10px 15px 10px 15px;
-    border: solid black 0px;
-    cursor: pointer;
+.button__background--yellow{
     color: white;
+    background: #fab905;
     margin-top: 20px;
 }
 
-.box__button:hover {
+.button__background--yellow:hover {
     background: #bd4a9e;
 }

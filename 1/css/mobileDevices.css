@@ -41,21 +41,12 @@
     height: 40%;
 }
 
-.mobileDevices__button {
-    border-radius: 7px;
-    font-family: inherit;
+.button__background--white {
     color: #AC6F7F;
     background: white;
-    padding: 10px 15px 10px 15px;
-    border: solid black 0px;
-    cursor: pointer;
-}
-
-.mobileDevices__button:hover {
-    background: violet;
-}
-
-.mobileDevices__button-link{
-    display: block;
     margin: 10px 0px;
+}
+
+.button__background--white:hover {
+    background: violet;
 }
