@@ -10,8 +10,7 @@
     font-family: 'source-sans-pro';
     background-clip: content-box;
     text-align: center;
-    padding-top: 180px; 
-    background-color: #AC6F7F;
+    padding-top: 200px; 
 }
 
 .banner-text__link--white{
@@ -21,8 +20,12 @@
 
 .banner-text__first-line{
     font-size: 45px;
+    background-color: #AC6F7F;
+    display: inline;
 }
 
 .banner-text__second-line{
     font-size: 40px;
+    background-color: #AC6F7F;
+    display: inline;
 }

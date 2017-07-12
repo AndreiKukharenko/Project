@@ -43,7 +43,7 @@ header{
 .navigation{
     margin: auto;
     list-style-type: none;
-    height: inherit;
+    height: 100%;
     display: inline-block;
     width: 80%;
 }
@@ -51,18 +51,19 @@ header{
 .navigation__buttons{
     font-family: 'source-sans-pro';
     float: right;
-    margin-top: 20px;
+    height: 100%;
 }
 
 .navigation__list{
 	margin: 0;
-	padding: 0;
+    padding: 0;
+    height: 100%;
 }
 
 .navigation__item{
 	list-style-position: inside;
 	display: inline-block;
-	padding: 10px 30px;
+	padding: 0px 30px;
 	margin: 0;
 	font: 14px 'source-sans-pro';
 }
@@ -79,8 +80,5 @@ header{
 /*  реализовать "посветку" для текущего раздела сайта*/
 .navigation__link:focus {
     color: red;
-}
-
-.navigation__item:focus {
-    color: red;
+    background-color: #FCBD1A;
 }
