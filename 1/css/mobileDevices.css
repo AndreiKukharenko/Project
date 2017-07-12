@@ -1,0 +1,57 @@
+
+.mobileDevices{
+    background-color: #AC6F7F;
+    height: 350px;
+    width: 1170px;
+}
+
+.mobileDevices__pictures{
+    float:left;
+}
+
+.mobileDevices__pictures--tablet{
+    margin-LEFT: 20px;
+    margin-top: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.mobileDevices__pictures--phone{
+    margin-left: -20px;
+}
+
+.mobileDevices__text{
+    font-family: 'source-sans-pro';
+    padding-top: 30px;
+    padding-left: 70px;
+    width: 60%;
+    font-size: 20px;
+    margin-left: 250px;
+}
+
+.mobileDevices__text--header-top{
+    color: white;
+}
+
+.mobileDevices__text--header-bottom{
+    color: white;
+}
+
+.mobileDevices__text--maintext{
+    color: #fab905;
+    text-align: justify;
+}
+
+.mobileDevices__button {
+    border-radius: 7px;
+    font-family: inherit;
+    color: #AC6F7F;
+    background: white;
+    padding: 10px 15px 10px 15px;
+    border: solid black 0px;
+    cursor: pointer;
+}
+
+.mobileDevices__button:hover {
+    background: violet;
+}

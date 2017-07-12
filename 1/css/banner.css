@@ -1,0 +1,29 @@
+
+.banner{
+    width: 1170px;
+    height: 440px;
+    background-image: url(../images/mainPhoto.png);
+}
+
+.banner__text{
+    box-sizing: content-box;
+    font-family: 'source-sans-pro';
+    background-clip: content-box;
+    text-align: center;
+    padding-top: 180px; 
+}
+
+.banner__text--link{
+    text-decoration: none;
+    color: white;
+}
+
+.banner__text--top{
+    background-color: #AC6F7F;
+    font-size: 45px;
+}
+
+.banner__text--bottom{
+    background-color: #AC6F7F;
+    font-size: 40px;
+}

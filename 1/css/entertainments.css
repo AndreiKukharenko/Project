@@ -1,0 +1,73 @@
+
+.entertainments{
+    height: 303px;
+    width: 1170px;
+}
+
+
+/****     BOXES AND IMAGES  ****/
+.box__image{
+    float: left;
+    height: 95px;
+    width: 95px;
+}
+
+.box__with-rocket, .box__with-microphone{
+    padding-top: 55px;
+    padding-left: 45px;
+    height: 100%;
+}
+
+.box{
+    width: 50%;
+    height: inherit;
+    float: left;
+}
+
+.box__with-rocket{
+    box-sizing: border-box;
+    border-right: grey;
+    border-right-width: 2px;
+    border-right-style: solid;
+}
+
+/* text properties */
+
+.box__text{
+    padding-left: 100px;
+    font-family: 'source-sans-pro';
+}
+
+.box__text--upper{
+    font-size: 20px;
+    font-weight: bold;
+    color: #bd4a9e;
+}
+
+.box__text--lower{
+    font-size: 20px;
+    color: #fab905
+}
+
+.box__text--main{
+    color: black;
+    width: 90%;
+    padding-top: 20px;
+}
+
+/***** BUTTONS  ****/ 
+
+.box__button{
+    border-radius: 7px;
+    font-family: inherit;
+    background: #fab905;
+    padding: 10px 15px 10px 15px;
+    border: solid black 0px;
+    cursor: pointer;
+    color: white;
+    margin-top: 20px;
+}
+
+.box__button:hover {
+    background: #bd4a9e;
+}

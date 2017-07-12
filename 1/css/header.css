@@ -1,0 +1,77 @@
+
+header{
+    width: 100%;
+    background-color: white;
+    height: 80px;
+    border-top-color: #FDBD1F;
+    box-sizing: content-box;
+    border-top-style: solid;
+}
+
+.header__logo{
+    font-family: 'source-sans-pro';
+    float: left;
+    width: 20%;
+    height: 100%;
+}
+
+.header__logo--picture{
+    position: relative;
+    top: 10px;
+    left: 15px;
+    background-image: url(../images/logoBell.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 55px;
+}
+
+.header__logo-text{
+    margin: -35px 0px 0px 75px;
+}
+
+.header__logo-text--top, .header__logo-text--bottom{
+    color:gray;
+    font-size: 20px;
+    margin: auto;
+}
+
+.header__logo-text--bottom{
+    font-size: 15px;
+}
+     
+     /*****  NAVIGATION BUTTONS  ***/
+.navigation{
+    margin: auto;
+    list-style-type: none;
+    height: inherit;
+    display: inline-block;
+    width: 80%;
+}
+
+.navigation__buttons{
+    font-family: 'source-sans-pro';
+    float: right;
+    margin-top: 20px;
+}
+
+.navigation__list{
+	margin: 0;
+	padding: 0;
+}
+
+.navigation__item{
+	list-style-position: inside;
+	display: inline-block;
+	padding: 10px 30px;
+	margin: 0;
+	font: 14px 'source-sans-pro';
+}
+
+.navigation__link {
+	color: #b2b2b2;
+	text-decoration: none;
+}
+
+.navigation__link:hover {
+  color: #FCBD1A; 
+}
