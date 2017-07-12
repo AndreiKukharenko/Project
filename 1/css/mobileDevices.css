@@ -1,0 +1,52 @@
+
+.mobileDevices{
+    background-color: #AC6F7F;
+    height: 350px;
+    width: 1170px;
+}
+
+.picture{
+    float:left;
+}
+
+.picture__tablet{
+    margin-LEFT: 20px;
+    margin-top: 20px;
+    position: relative;
+}
+
+.picture__phone{
+    margin-left: -20px;
+}
+
+.mobileDevices__text{
+    font-family: 'source-sans-pro';
+    padding-top: 15px;
+    padding-left: 70px;
+    width: 65%;
+    height: 90%;
+    font-size: 20px;
+    margin-left: 250px;
+    position: relative;
+}
+
+.description__first-header, .description__second-header{
+    color: white;
+}
+
+.description__main-text{
+    color: #fab905;
+    text-align: justify;
+    overflow: auto;
+    height: 40%;
+}
+
+.button__background--white {
+    color: #AC6F7F;
+    background: white;
+    margin: 10px 0px;
+}
+
+.button__background--white:hover {
+    background: violet;
+}
