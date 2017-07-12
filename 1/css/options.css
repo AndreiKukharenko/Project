@@ -70,16 +70,12 @@
     display: block;
 }
 
-.options__mainPicture{
+.slider__main-picture{
     height: 35%;
     margin: 35px 60px;
 }
 
-.options__mainPicture-photo{
-    width: initial;
-}
-
-.options__mainPicture-screen{
+.slider__screen{
     border-width: 0px;
     border-style: solid;
     border-color: black;
