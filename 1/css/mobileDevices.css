@@ -5,18 +5,17 @@
     width: 1170px;
 }
 
-.mobileDevices__pictures{
+.picture{
     float:left;
 }
 
-.mobileDevices__pictures--tablet{
+.picture__tablet{
     margin-LEFT: 20px;
     margin-top: 20px;
     position: relative;
-    z-index: 1;
 }
 
-.mobileDevices__pictures--phone{
+.picture__phone{
     margin-left: -20px;
 }
 
@@ -31,11 +30,11 @@
     position: relative;
 }
 
-.mobileDevices__text--header-top, .mobileDevices__text--header-bottom{
+.description__first-header, .description__second-header{
     color: white;
 }
 
-.mobileDevices__text--maintext{
+.description__main-text{
     color: #fab905;
     text-align: justify;
     overflow: auto;

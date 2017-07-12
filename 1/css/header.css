@@ -15,7 +15,7 @@ header{
     height: 100%;
 }
 
-.header__logo--picture{
+.logo__picture{
     position: relative;
     top: 10px;
     left: 15px;
@@ -25,17 +25,17 @@ header{
     height: 55px;
 }
 
-.header__logo-text{
+.logo__text{
     margin: -35px 0px 0px 75px;
 }
 
-.header__logo-text--top, .header__logo-text--bottom{
+.logo__text-first-line, .logo__text-second-line{
     color:gray;
     font-size: 20px;
     margin: auto;
 }
 
-.header__logo-text--bottom{
+.logo__text-second-line{
     font-size: 15px;
 }
      
@@ -72,6 +72,15 @@ header{
 	text-decoration: none;
 }
 
-.navigation__link:hover {
-  color: #FCBD1A; 
+.navigation__link:hover {   
+    color: #FCBD1A; 
+}
+
+/*  реализовать "посветку" для текущего раздела сайта*/
+.navigation__link:focus {
+    color: red;
+}
+
+.navigation__item:focus {
+    color: red;
 }

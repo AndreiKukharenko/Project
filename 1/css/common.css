@@ -1,0 +1,29 @@
+/* 
+this file contains common rules for some blocks.
+Common rules:
+1. TEXT FORMATTING RULES
+
+*/
+
+.text{
+    font-family: 'source-sans-pro';
+    padding: 40px 35px 10px 35px;
+}
+
+.text__upper{
+    font-size: 20px;
+    font-weight: bold;
+    color: #bd4a9e;
+}
+
+.text__lower{
+    font-size: 20px;
+    color: #fab905
+}
+
+.text__main{
+    color: gray;
+    padding-top: 20px;
+    padding-right: 20px;
+    bottom: 15px;
+}

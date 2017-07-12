@@ -14,38 +14,39 @@
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/common.css">
 </head>
 
 <body>
-    <div class="page"> <!-- page wrapper-->
+    <div class="page">
 
-        <header>
-            <div class="header__logo">
-                <a href="#"><div class="header__logo--picture"></div></a>
+        <header  class="header">
+            <div class="header__logo logo">
+                <a href="#"><div class="logo__picture"></div></a>              
             
-                <div class="header__logo-text">
-                    <p class="header__logo-text--top">Site name</p>
-                    <p class="header__logo-text--bottom">Captions goes here</p>
+                <div class="logo__text">
+                    <p class="logo__text-first-line">Site name</p>
+                    <p class="logo__text-second-line">Captions goes here</p>
                 </div>
             </div>
 
-            <div class="navigation">
+            <div class="header__navigation navigation">
                 <nav class="navigation__buttons">
                     <ul class="navigation__list">
                         <li class="navigation__item">
-                            <a href="#" class="navigation__link">HOME</a>
+                            <a class="navigation__link" href="#HOME">HOME</a>
                         </li>
                         <li class="navigation__item">
-                            <a href="#" class="navigation__link">ABOUT</a>
+                            <a class="navigation__link" href="#ABOUT">ABOUT</a>
                         </li>
                         <li class="navigation__item">
-                            <a href="#" class="navigation__link">SERVICES</a>
+                            <a class="navigation__link" href="#SERVICES">SERVICES</a>
                         </li>
                         <li class="navigation__item">
-                            <a href="#" class="navigation__link">PORTFOLIO</a>
+                            <a class="navigation__link" href="#PORTFOLIO">PORTFOLIO</a>
                         </li>
                         <li class="navigation__item">
-                            <a href="#" class="navigation__link">CONTACT</a>
+                            <a class="navigation__link" href="#CONTACT">CONTACT</a>
                         </li>
                     </ul>
                 </nav>
@@ -53,23 +54,19 @@
         </header>
 
         <section class="banner">
-            <div class="banner__text">
-                <h2>
-                    <span class="banner__text--top">
-                        <a href="#" class="banner__text--link">Alivuam tinc</a>
-                    </span>
+            <div class="banner__text text--for-banner">  <!-- ???? -->
+                <h2 class="text__first-line">
+                    <a href="#" class="text__link--white">Alivuam tinc</a>
                 </h2>
-                <h2>
-                    <span class="banner__text--bottom">
-                        <a href="#" class="banner__text--link">Nunc dignissim bla bla id metus</a>
-                    </span>
+                <h2 class="text__second-line">
+                    <a href="#" class="text__link--white">Nunc dignissim bla bla id metus</a>
                 </h2>
             </div>
         </section>
 
 
         <section class="mainTitle">
-            <div class="text">
+            <div class="text--for-main-title">
                 <div class="text__caption">
                     Morbi interdum mollis sapien edac risus
                 </div>
@@ -81,10 +78,10 @@
             </div>
 
             <div class="buttons">
-                <a href="#" class="buttons__link"> 
+                <a class="buttons__link" href="#"> 
                     <button class="buttons__single-button">Lorem Ipsum</button>
                 </a>
-                <a href="#" class="buttons__link">
+                <a class="buttons__link" href="#">
                     <button class="buttons__single-button">Vivamus sin</button>
                 </a>
             </div>
@@ -92,19 +89,15 @@
 
 
         <section class="entertainments">
-            <div class="box">
-                <div class="box__with-rocket">
-                
-                    <div class="box__image">
+            <div class="box box--rocket">
+                    <div class="box__image box__image--rocket">
                         <img src="images/rocket.png" alt="rocket">
                     </div>
 
-                    <div class="box__text">
-                        <div class="box__text--upper">Jorem ipsum</div>
- 
-                        <div class="box__text--lower">Cestibulum auctor dabipus neque</div>
-
-                        <div class="box__text--main">Morbi in sem quis dui placerat omare.  Pellentesque odio nisi, euismod in, 
+                    <div class="box__text text">
+                        <div class="text__upper">Jorem ipsum</div>
+                        <div class="text__lower">Cestibulum auctor dabipus neque</div>
+                        <div class="text__main">Morbi in sem quis dui placerat omare.  Pellentesque odio nisi, euismod in, 
                             placerat a, ultricies in, diam am dui mi,
                             tincidunt quis, accumsan portittor, facilies
                         </div>
@@ -113,23 +106,17 @@
                             <button class="box__button">More...</button>
                         </a>
                     </div>
-
-                </div>
             </div>
 
-            <div class="box">
-                <div class="box__with-microphone">
-            
-                    <div class="box__image">
+            <div class="box box--microphone">
+                    <div class="box__image box__image--microphone">
                         <img src="images/microphone.png" alt="microphone">
                     </div>
 
-                    <div class="box__text">
-                        <div class="box__text--upper">Jorem ipum</div>
-
-                        <div class="box__text--lower">Cestibuluauctor dabipus neque</div>
-
-                        <div class="box__text--main">Laoreet in sem qis dui placerat ornare. 
+                    <div class="box__text text">
+                        <div class="text__upper">Jorem ipum</div>
+                        <div class="text__lower">Cestibuluauctor dabipus neque</div>
+                        <div class="text__main">Laoreet in sem qis dui placerat ornare. 
                             Pelletesque odio nii, euismod in, 
                             placeat a, ultricies in, diam am dui mi,
                             tincidunt quis, accumsan portittor, facilies
@@ -139,24 +126,22 @@
                             <button class="box__button">More...</button>
                         </a>
                     </div>
-
-                </div>
             </div>
         </section>
 
 
         <section class="mobileDevices">
-            <div class="mobileDevices__pictures">
-                <img src="images/tablet.png" alt="tablet" class="mobileDevices__pictures--tablet">
-                <img src="images/mobilePhone.png" alt="mobilePhone" class="mobileDevices__pictures--phone">
+            <div class="mobileDevices__pictures picture">
+                <img src="images/tablet.png" alt="tablet" class="picture__tablet">
+                <img src="images/mobilePhone.png" alt="mobilePhone" class="picture__phone">
             </div>
 
-            <div class="mobileDevices__text"> 
-                <h3 class="mobileDevices__text--header-top">Vivamus vestibulum nulla nec ante</h3>
-                <h5 class="mobileDevices__text--header-bottom">Cestibulum auyctor dapibus neque lobortis 
+            <div class="mobileDevices__text  description">
+                <h3 class="description__first-header">Vivamus vestibulum nulla nec ante</h3>
+                <h5 class="description__second-header">Cestibulum auyctor dapibus neque lobortis 
                     lorem at ipsum semper sagittis</h5>
 
-                <div class="mobileDevices__text--maintext">Morbi in sem quis dui placerat omare. 
+                <div class="description__main-text">Morbi in sem quis dui placerat omare. 
                     Pellentesque odio nisi, euismod in, placerat a, ultricies in, diam am dui mi,
                         tincidunt quis, accumsan portittor, facilies biib sem quis placerat ornare.
                         Pellentesque odio nisi, euismod in, pharetra a, ultr. Suspendisse commodo ullacomper magna. 
@@ -169,11 +154,11 @@
         </section>
 
         <section class="options">
-            <div class="text--options">
-                <h3 class="text--top">Bulum nulla necante</h3>
-                <h5 class="text--middle">Cestibulum auctor dapibus oidhkld labor</h5>
+            <div class="text__options text">
+                <div class="text__upper">Bulum nulla necante</div>
+                <div class="text__lower">Cestibulum auctor dapibus oidhkld labor</div>
 
-                <div class="text--content">
+                <div class="text__main">
                     Morbi in sem quis dui placerat omare. PellePellentesque odio nisi, euismod in, 
                         placerat a, ultricies in, diam am dui mi,
                         tincidunt quis, accumsan portittor, facilies.
@@ -203,16 +188,16 @@
             <span class="footer__text">
                     Copyright(c) website name. 
                 <span class="footer__text--emphasized">Designed by:
-                    <a href="http://www.alltemplateneeds.com" class="footer__text--link">
+                    <a href="http://www.alltemplateneeds.com" class="footer__text--linked">
                         www.alltemplateneeds.com
                     </a>
                 </span>
 
                 <span>/Images from:
-                    <a href="http://www.wallpaperswide.com" class="footer__text--link">
+                    <a href="http://www.wallpaperswide.com" class="footer__text--linked">
                         www.wallpaperswide.com
                     </a>
-                    <a href="http://www.photorack.net" class="footer__text--link">www.photorack.net</a>
+                    <a href="http://www.photorack.net" class="footer__text--linked">www.photorack.net</a>
                 </span>
             </span>
         </footer>

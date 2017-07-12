@@ -5,28 +5,8 @@
 }
 
             /****       text    ****/
-.text--options{
-    font-family: 'source-sans-pro';
+.text__options{
     text-align: center;
-}
-
-.text--top{
-    color: #d46ab7;
-    font-size: 30px;
-    max-height: 10px;
-}
-
-.text--middle{
-    color: #fab905;
-    font-size: 20px;
-}
-
-.text--content{
-    color: gray;
-    width: 70%;
-    margin: auto;
-    position: relative;
-    bottom: 15px;
 }
 
          /****    pictures and buttons   ****/

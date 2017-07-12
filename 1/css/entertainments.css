@@ -2,29 +2,31 @@
 .entertainments{
     height: 303px;
     width: 1170px;
+    display: flex;
 }
 
 
 /****     BOXES AND IMAGES  ****/
+.box{
+    width: 50%;
+    float: left;
+}
+
 .box__image{
     float: left;
     height: 95px;
     width: 95px;
+    padding-top: 55px;
 }
 
-.box__with-rocket, .box__with-microphone{
-    padding-top: 55px;
+.box--rocket, .box--microphone{
     padding-left: 45px;
     height: 100%;
+    display: flex;
+    justify-content: center;
 }
 
-.box{
-    width: 50%;
-    height: inherit;
-    float: left;
-}
-
-.box__with-rocket{
+.box--rocket{
     box-sizing: border-box;
     border-right: grey;
     border-right-width: 2px;
@@ -34,25 +36,7 @@
 /* text properties */
 
 .box__text{
-    padding-left: 100px;
-    font-family: 'source-sans-pro';
-}
-
-.box__text--upper{
-    font-size: 20px;
-    font-weight: bold;
-    color: #bd4a9e;
-}
-
-.box__text--lower{
-    font-size: 20px;
-    color: #fab905
-}
-
-.box__text--main{
-    color: black;
-    width: 90%;
-    padding-top: 20px;
+    text-align: left;
 }
 
 /***** BUTTONS  ****/ 
