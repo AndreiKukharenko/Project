@@ -1,0 +1,91 @@
+
+header{
+    width: 100%;
+    background-color: white;
+    height: 80px;
+    border-top-color: #FDBD1F;
+    box-sizing: content-box;
+    border-top-style: solid;
+}
+
+.header__logo{
+    font-family: 'source-sans-pro';
+    float: left;
+    width: 20%;
+    height: 100%;
+}
+
+.logo__picture{
+    position: relative;
+    top: 10px;
+    left: 15px;
+    background-image: url(../images/logoBell.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 55px;
+}
+
+.logo__text{
+    margin: -35px 0px 0px 75px;
+}
+
+.logo__text-first-line, .logo__text-second-line{
+    color:gray;
+    font-size: 20px;
+    margin: auto;
+}
+
+.logo__text-second-line{
+    font-size: 15px;
+}
+     
+     /*****  NAVIGATION BUTTONS  ***/
+.navigation{
+    margin: auto;
+    list-style-type: none;
+    height: 100%;
+    display: inline-block;
+    width: 80%;
+}
+
+.navigation__buttons{
+    font-family: 'source-sans-pro';
+    font-weight: bold;
+    float: right;
+    height: 100%;
+    width: 100%;
+}
+
+.navigation__list{
+	margin: 0;
+    width: 100%;
+    height: 100%;
+    float: right;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.navigation__item{
+	display: inline-block;
+    width: 13%;
+    height: 100%;
+}
+
+.navigation__link {
+	color: #b2b2b2;
+    text-decoration: none;
+    font-size: 17px;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-align: center; 
+}
+
+.navigation__link:hover {   
+    color: #FCBD1A; 
+}
+
+.navigation__link:focus {
+    color: white;
+    background-color: #FCBD1A;
+}

@@ -1,0 +1,57 @@
+
+.mainTitle{
+    width: 1170px;
+    height: 272px;
+    background-color: #FDBD1F;
+    text-align: center;
+}
+
+.title-text{
+    color: white;
+    font-family: 'source-sans-pro';
+    width: 500px;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.title-text__caption{
+    font-weight: bold;
+    font-size: 25px;
+    padding-bottom: 15px;
+}
+
+.title-text__content{
+    font-size: 20px;
+}
+
+/*******  BUTTONS ********/
+
+.buttons{
+    width: 50%;
+    margin: auto;
+}
+
+.buttons__single-button{
+    font-size: 20px;
+    border-radius: 7px;
+    font-family: inherit;
+    color: #FDBD1F;
+    background: #AC6F7F;
+    padding: 5px 10px 10px 10px;
+    border: solid black 0px;
+    margin: 5px 15px;
+    cursor: pointer;
+}
+
+.buttons__single-button:hover {
+    background: white;
+}
+
+.buttons__link{
+    display: inline-block;
+    height: 30px;
+    width: 160px;
+}
+

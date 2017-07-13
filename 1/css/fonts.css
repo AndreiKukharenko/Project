@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'source-sans-pro';
+    src: url(../fonts/SourceSansPro-Black.ttf); 
+    src: url(../fonts/SourceSansPro-Blacklt.ttf); 
+    src: url(../fonts/SourceSansPro-Bold.ttf);
+    src: url(../fonts/SourceSansPro-ExtraLight.ttf); 
+    /*src: url(../fonts/SourceSansPro-ExtraLightIt.ttf); 
+    src: url(../fonts/SourceSansPro-lt.ttf); 
+    src: url(../fonts/SourceSansPro-LightIt.ttf); 
+    src: url(../fonts/SourceSansPro-Regular.ttf); 
+    src: url(../fonts/SourceSansPro-Semibold.ttf);
+    src: url(../fonts/SourceSansPro-SemiboldIt.ttf);*/
+    font-weight: normal;
+    font-style: normal;
+}
