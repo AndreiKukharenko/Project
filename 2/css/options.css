@@ -1,0 +1,71 @@
+
+.options{
+    /*height: 546px;
+    width: 100%;*/
+}
+
+            /****       text    ****/
+.text__options{
+    text-align: center;
+}
+
+         /****    pictures and buttons   ****/
+.slider{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrow__previous, .arrow__next{
+    display: block;
+    width: 33px;
+    height: 33px;
+}
+
+.arrow{
+    width: 33px;
+    height: 33px;
+    position: relative;
+    bottom: 100px;
+}
+
+.arrow__previous{
+    float: left;
+    left: 150px;
+}
+
+.arrow__previous::after{
+    content: url(../images/arrowLeft.png); 
+    display: block;
+}
+
+.arrow__next{
+    bottom: 350px;
+    left: 700px;
+}
+
+.arrow__next::after{
+    content: url(../images/arrowRight.png); 
+    display: block;
+}
+
+.slider__main-picture{
+    height: 35%;
+    margin: 35px 60px;
+}
+
+.slider__screen{
+    border-width: 0px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 8px; 
+    position: relative;
+    bottom: 255px;
+    left: 83px;
+    height: 168px;
+    width: 251px;
+    background-image: url(../images/mainPhoto.png);
+    background-position: center center;
+    background-size: cover;
+}

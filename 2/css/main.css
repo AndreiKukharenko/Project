@@ -1,0 +1,14 @@
+
+@media screen and (max-width: 768px){
+    .page{
+    width: 768px;
+    }
+
+}
+
+@media screen and (max-width: 412px){
+    .page{
+    width: 412px;
+    }
+}
+

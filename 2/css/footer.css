@@ -1,0 +1,24 @@
+footer{
+    width: 100%;
+    /*height: 107px;*/
+    background-color: #F0F0F0;
+    left: 0;
+    bottom: 0;
+}
+
+.footer__text{
+    color: slategray;
+    text-align: center;
+    display: block;
+    padding-top: 50px;
+}
+
+.footer__text--linked{
+    text-decoration: none;
+    color: inherit;
+}
+
+.footer__text--emphasized{
+    color:darkorchid;
+    display: inline-block;
+}
