@@ -11,7 +11,8 @@
     font-family: 'source-sans-pro';
     background-clip: content-box;
     text-align: center;
-    padding-top: 200px; 
+    padding-top: 12%;
+    padding-bottom: 12%;
 }
 
 .banner-text__link--white{

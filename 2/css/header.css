@@ -1,8 +1,8 @@
 
 header{
     width: 100%;
-    background-color: white;
     height: 80px;
+    background-color: white;
     border-top-color: #FDBD1F;
     box-sizing: content-box;
     border-top-style: solid;
@@ -13,20 +13,25 @@ header{
     float: left;
     width: 20%;
     height: 100%;
+    padding: 10px;
 }
 
 .logo__picture{
-    position: relative;
-    top: 10px;
-    left: 15px;
     background-image: url(../images/logoBell.png);
     background-repeat: no-repeat;
     background-size: contain;
     height: 55px;
 }
 
+    /* write in HTML!!!!*/
+.logo__link{   
+    display: block;
+    width: 20%;
+    float: left;
+}
+
 .logo__text{
-    margin: -35px 0px 0px 75px;
+    padding-left: 50px;
 }
 
 .logo__text-first-line, .logo__text-second-line{
@@ -45,7 +50,7 @@ header{
     list-style-type: none;
     height: 100%;
     display: inline-block;
-    width: 80%;
+    width: 78%;
 }
 
 .navigation__buttons{
@@ -60,14 +65,12 @@ header{
 	margin: 0;
     width: 100%;
     height: 100%;
-    float: right;
-    display: flex;
-    flex-direction: row-reverse;
+    -webkit-padding-start: 0;
 }
 
 .navigation__item{
 	display: inline-block;
-    width: 13%;
+    width: 12%;
     height: 100%;
 }
 
@@ -79,6 +82,7 @@ header{
     width: 100%;
     height: 100%;
     text-align: center; 
+    line-height: 60px;
 }
 
 .navigation__link:hover {   
@@ -88,4 +92,16 @@ header{
 .navigation__link:focus {
     color: white;
     background-color: #FCBD1A;
+}
+
+
+
+@media screen and (max-width: 768px){
+
+
+}
+
+@media screen and (max-width: 412px){
+
+
 }

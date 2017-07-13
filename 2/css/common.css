@@ -6,7 +6,8 @@ this file contains common rules for some blocks:
 
 .text{
     font-family: 'source-sans-pro';
-    padding: 40px 35px 10px 35px; /*TODO: consider possible removing this from common properties*/
+    padding: 30px 20px 20px 20px; /*TODO: consider possible removing this from common properties*/
+    overflow: hidden;
 }
 
 .text__upper{
@@ -23,7 +24,6 @@ this file contains common rules for some blocks:
 .text__main{
     color: gray;
     padding-top: 20px;
-    padding-right: 20px;
     bottom: 15px;
 }
 

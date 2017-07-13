@@ -15,7 +15,7 @@
 }
 
 .box{
-    padding-left: 45px;
+    padding-left: 30px;
     justify-content: center;
     float: left;
     width: 50%; /* - переопределяется при адапт.верстке*/
