@@ -45,12 +45,6 @@
     background: #bd4a9e;
 }
 
-.entertainments-clearfix:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
 @media screen and (max-width: 768px){
     
     .box{
@@ -61,4 +55,8 @@
     border-bottom: grey solid 2px;
     border-right-style: none;
     }
+
+    .button__background--yellow{
+    float: right;
+    }    
 }

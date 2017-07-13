@@ -35,3 +35,9 @@ this file contains common rules for some blocks:
     border: solid black 0px;
     cursor: pointer;
 }
+
+.clearfix:after{
+    content: "";
+    display: table;
+    clear: both;
+}

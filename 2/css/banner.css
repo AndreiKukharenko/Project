@@ -21,13 +21,13 @@
 }
 
 .banner-text__first-line{
-    font-size: 45px;
+    font-size: 4vw;
     background-color: #AC6F7F;
     display: inline;
 }
 
 .banner-text__second-line{
-    font-size: 40px;
+    font-size: 3vw;
     background-color: #AC6F7F;
     display: inline;
 }
