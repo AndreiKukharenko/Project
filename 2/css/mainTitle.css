@@ -4,7 +4,7 @@
     height: 272px;*/
     background-color: #FDBD1F;
     text-align: center;
-    padding: 50px;
+    padding: 30px 25px 40px;
 }
 
 .title-text{
@@ -54,3 +54,14 @@
     width: 160px;
 }
 
+@media screen and (max-width: 768px){
+    
+    .title-text__caption{
+    }
+
+    .title-text__content{
+    }
+
+    .buttons__single-button{
+    }
+}

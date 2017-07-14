@@ -1,7 +1,7 @@
 
 .options{
-    /*height: 546px;
-    width: 100%;*/
+    /*height: 546px;*/
+    max-width: 100%;
 }
 
             /****       text    ****/
@@ -52,7 +52,6 @@
 
 .slider__main-picture{
     height: 35%;
-    margin: 35px 60px;
 }
 
 .slider__screen{
@@ -68,4 +67,18 @@
     background-image: url(../images/mainPhoto.png);
     background-position: center center;
     background-size: cover;
+}
+
+
+@media screen and (max-width: 768px){
+
+
+}
+
+@media screen and (max-width: 412px){
+
+    .slider{
+        display: block;
+    }
+
 }

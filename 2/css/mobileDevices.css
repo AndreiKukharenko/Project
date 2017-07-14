@@ -2,7 +2,7 @@
 .mobileDevices{
     background-color: #AC6F7F;
     /*height: 350px;*/
-    width: 100%;
+    max-width: 100%;
     padding: 20px;
 }
 

@@ -1,21 +1,28 @@
 
 .page{
     height:2100px;
-    max-width: 1024px;
+    max-width: 1170px;
     background-color: white;
     margin: auto;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 1024px){
     .page{
-    width: 768px;
+    max-width: 1024px;
     }
 
 }
 
-@media screen and (max-width: 412px){
+@media screen and (max-width: 768px){
     .page{
-    width: 412px;
+    max-width: 767px;
+    }
+
+}
+
+@media screen and (max-width: 411px){
+    .page{
+    max-width: 412px;
     }
 }
 
