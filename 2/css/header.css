@@ -1,6 +1,8 @@
 
 .header{
     display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
     max-width: 100%;
     background-color: white;
     border-top-color: #FDBD1F;
@@ -10,10 +12,10 @@
 
 .header__logo{
     font-family: 'source-sans-pro';
-    float: left;
+    display: flex;
     width: 20%;
     height: 100%;
-    padding: 10px;
+    padding: 5px 5px 0px;
 }
 
 .logo__picture{
@@ -31,7 +33,6 @@
 }
 
 .logo__text{
-    padding-left: 50px;
 }
 
 .logo__text-first-line, .logo__text-second-line{
@@ -46,11 +47,7 @@
      
      /*****  NAVIGATION BUTTONS  ***/
 .navigation{
-    margin: auto;
-    list-style-type: none;
-    height: 100%;
-    display: block;
-    float: right;
+
 }
 
 .navigation__buttons{
@@ -102,6 +99,10 @@
     .header{
         flex-direction: column;
         /*justify-content: flex-end;*/
+    }
+
+    .navigation{
+            align-self: center;
     }
 
     .header__logo{
