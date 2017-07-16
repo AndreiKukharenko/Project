@@ -2,7 +2,7 @@
 .mobileDevices{
     background-color: #AC6F7F;
     max-width: 100%;
-    padding: 20px;
+    padding: 20px 20px 0px;
 }
 
 .picture{
@@ -21,7 +21,7 @@
 
 .mobileDevices__text{
     font-family: 'source-sans-pro';
-    padding: 5px 30px 15px 30px;
+    padding: 5px 30px 0px 5px;
     font-size: 20px;
     overflow: hidden;
 }
@@ -45,7 +45,7 @@
     background: violet;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 1024px){
     
     .picture{
         float: none;
@@ -56,11 +56,22 @@
     .button__background--white{
         float: right;
     }
+    .mobileDevices__text{
+        padding-right: 0px;
+    }
+    .description__first-header, .description__second-header{
+        text-align: center;
+    }
 
 }
 
-@media screen and (max-width: 412px){
-    
+@media screen and (max-width: 767px){
+    .mobileDevices{
+        padding-top: 0px;
+    }
+    .mobileDevices__text{
+        padding: 0px;
+    }
     .picture{
         display: none;
     }

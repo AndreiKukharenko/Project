@@ -26,22 +26,6 @@
     float: left;
 }
 
-@media screen and (max-width: 768px){
-    
-    .box{
-        width: inherit;
-    }
-
-    .box--rocket{
-    border-bottom: grey solid 2px;
-    border-right-style: none;
-    }
-
-    .button__background--yellow{
-    float: right;
-    }    
-}
-
 /* text properties */
 
 .box__text{
@@ -58,4 +42,21 @@
 
 .button__background--yellow:hover {
     background: #bd4a9e;
+}
+
+@media screen and (max-width: 800px){
+    
+    .box{
+        width: inherit;
+    }
+
+    .box--rocket{
+    border-bottom: grey solid 2px;
+    border-right-style: none;
+    }
+
+    .button__background--yellow{
+    float: right;
+    margin: 0;
+    }    
 }

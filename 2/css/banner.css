@@ -33,17 +33,23 @@
 }
 
 @media screen and (max-width: 1024px){
+    .banner-text__first-line{
+    font-size: 40px;
+    }
 
+    .banner-text__second-line{
+        font-size: 35px;
+    }
 
 }
 
 @media screen and (max-width: 768px){
     .banner-text__first-line{
-    font-size: 35px;
+    font-size: 33px;
     }
 
     .banner-text__second-line{
-        font-size: 30px;
+        font-size: 27px;
     }
 
 }

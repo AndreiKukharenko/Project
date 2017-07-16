@@ -23,3 +23,10 @@ footer{
     color:darkorchid;
     display: inline-block;
 }
+
+@media screen and (max-width: 1024px){
+
+    .footer__text--part-two{
+        display: block;
+    }
+}

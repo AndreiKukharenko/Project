@@ -15,21 +15,19 @@
     display: flex;
     width: 20%;
     height: 100%;
-    padding: 5px 5px 0px;
+    padding: 5px 5px;
 }
 
 .logo__picture{
     background-image: url(../images/logoBell.png);
     background-repeat: no-repeat;
     background-size: contain;
-    height: 55px;
+    height: 100%;
 }
 
 .logo__link{   
     display: block;
     width: 20%;
-    float: left;
-    margin: 0px 10px;
 }
 
 .logo__text{
@@ -101,19 +99,23 @@
     }
 
     .navigation{
-            align-self: center;
+        align-self: center;
     }
 
     .header__logo{
         margin: auto;
-        align-items: center;
+        justify-content: center;
         width: 40%;
         padding: 0;
     }
 
+    .navigation__item{
+        padding-left: 15px;
+    }
     .navigation__link{
         line-height: 30px;
-        
+        font-size: 16px;
+
     }
 }
 

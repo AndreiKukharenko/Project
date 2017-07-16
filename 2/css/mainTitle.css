@@ -13,6 +13,11 @@
     margin: auto;
     text-align: center;
 }
+@media screen and (max-width: 768px){
+    .title-text{
+        width: 80%;
+    }
+}
 
 .title-text__caption{
     font-weight: bold;
@@ -53,17 +58,3 @@
     width: 160px;
 }
 
-@media screen and (max-width: 768px){
-    .title-text{
-        width: 70%;
-    }
-
-    .title-text__caption{
-    }
-
-    .title-text__content{
-    }
-
-    .buttons__single-button{
-    }
-}
