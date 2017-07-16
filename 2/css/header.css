@@ -15,7 +15,7 @@
     display: flex;
     width: 20%;
     height: 100%;
-    padding: 5px 5px;
+    padding: 10px 5px;
 }
 
 .logo__picture{
@@ -30,9 +30,6 @@
     width: 20%;
 }
 
-.logo__text{
-}
-
 .logo__text-first-line, .logo__text-second-line{
     color:gray;
     font-size: 20px;
@@ -44,9 +41,6 @@
 }
      
      /*****  NAVIGATION BUTTONS  ***/
-.navigation{
-
-}
 
 .navigation__buttons{
     font-family: 'source-sans-pro';
@@ -112,16 +106,25 @@
     .navigation__item{
         padding-left: 15px;
     }
+
     .navigation__link{
         line-height: 30px;
         font-size: 16px;
-
     }
 }
 
 @media screen and (max-width: 412px){
     .header__logo{
-        width: 45%;
+        width: 60%;
     }
 
+    .navigation__item{
+        padding-left: 5px;
+    }
+
+    .navigation{
+    border-top-color: #FDBD1F;
+    box-sizing: content-box;
+    border-top-style: solid;
+    }
 }
