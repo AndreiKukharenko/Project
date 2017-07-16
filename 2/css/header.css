@@ -98,7 +98,6 @@
 @media screen and (max-width: 768px){
     .header{
         flex-direction: column;
-        /*justify-content: flex-end;*/
     }
 
     .navigation{
@@ -108,7 +107,7 @@
     .header__logo{
         margin: auto;
         align-items: center;
-        width: 25%;
+        width: 40%;
         padding: 0;
     }
 
@@ -119,6 +118,8 @@
 }
 
 @media screen and (max-width: 412px){
-
+    .header__logo{
+        width: 45%;
+    }
 
 }

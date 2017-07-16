@@ -1,7 +1,6 @@
 
 .mainTitle{
-    /*width: 1170px;
-    height: 272px;*/
+
     background-color: #FDBD1F;
     text-align: center;
     padding: 30px 25px 40px;
@@ -10,7 +9,7 @@
 .title-text{
     color: white;
     font-family: 'source-sans-pro';
-    width: 50%;
+    width: 60%;
     margin: auto;
     text-align: center;
 }
@@ -28,7 +27,7 @@
 /*******  BUTTONS ********/
 
 .buttons{
-    width: 50%;
+    width: 100%;
     margin: auto;
 }
 
@@ -55,7 +54,10 @@
 }
 
 @media screen and (max-width: 768px){
-    
+    .title-text{
+        width: 70%;
+    }
+
     .title-text__caption{
     }
 

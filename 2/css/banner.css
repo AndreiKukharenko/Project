@@ -31,3 +31,29 @@
     background-color: #AC6F7F;
     display: inline;
 }
+
+@media screen and (max-width: 1024px){
+
+
+}
+
+@media screen and (max-width: 768px){
+    .banner-text__first-line{
+    font-size: 35px;
+    }
+
+    .banner-text__second-line{
+        font-size: 30px;
+    }
+
+}
+
+@media screen and (max-width: 412px){
+    .banner-text__first-line{
+    font-size: 30px;
+    }
+
+    .banner-text__second-line{
+        font-size: 25px;
+    }
+}

@@ -4,7 +4,6 @@
     max-width: 100%;
 }
 
-
 /****     BOXES AND IMAGES  ****/
 
 .box__image{
@@ -18,7 +17,7 @@
     padding-left: 30px;
     justify-content: center;
     float: left;
-    width: 50%; /* - переопределяется при адапт.верстке*/
+    width: 50%;
     box-sizing: border-box;
 }
 
