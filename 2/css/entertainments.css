@@ -1,0 +1,62 @@
+
+.entertainments{
+    /*height: 303px;*/
+    max-width: 100%;
+}
+
+/****     BOXES AND IMAGES  ****/
+
+.box__image{
+    float: left;
+    /*height: 95px;*/
+    width: 95px;
+    padding-top: 55px;
+}
+
+.box{
+    padding-left: 30px;
+    justify-content: center;
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.box--rocket{
+    border-right: grey solid 2px;
+    float: left;
+}
+
+/* text properties */
+
+.box__text{
+    text-align: left;
+}
+
+/***** BUTTONS  ****/ 
+
+.button__background--yellow{
+    color: white;
+    background: #fab905;
+    margin-top: 20px;
+}
+
+.button__background--yellow:hover {
+    background: #bd4a9e;
+}
+
+@media screen and (max-width: 800px){
+    
+    .box{
+        width: inherit;
+    }
+
+    .box--rocket{
+    border-bottom: grey solid 2px;
+    border-right-style: none;
+    }
+
+    .button__background--yellow{
+    float: right;
+    margin: 0;
+    }    
+}

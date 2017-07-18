@@ -1,0 +1,60 @@
+
+.mainTitle{
+
+    background-color: #FDBD1F;
+    text-align: center;
+    padding: 30px 25px 40px;
+}
+
+.title-text{
+    color: white;
+    font-family: 'source-sans-pro';
+    width: 60%;
+    margin: auto;
+    text-align: center;
+}
+@media screen and (max-width: 768px){
+    .title-text{
+        width: 80%;
+    }
+}
+
+.title-text__caption{
+    font-weight: bold;
+    font-size: 25px;
+    padding-bottom: 15px;
+}
+
+.title-text__content{
+    font-size: 20px;
+}
+
+/*******  BUTTONS ********/
+
+.buttons{
+    width: 100%;
+    margin: auto;
+}
+
+.buttons__single-button{
+    font-size: 20px;
+    border-radius: 7px;
+    font-family: inherit;
+    color: #FDBD1F;
+    background: #AC6F7F;
+    padding: 5px 10px 10px 10px;
+    border: solid black 0px;
+    margin: 5px 15px;
+    cursor: pointer;
+}
+
+.buttons__single-button:hover {
+    background: white;
+}
+
+.buttons__link{
+    display: inline-block;
+    height: 30px;
+    width: 160px;
+}
+
