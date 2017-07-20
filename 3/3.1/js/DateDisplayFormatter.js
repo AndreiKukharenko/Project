@@ -1,81 +1,146 @@
-var monthNames = ["January", "February", "March", "April", "May", "June",
-  "July", "August", "September", "October", "November", "December"
-];
-/* YYYY YY MM M DD D HH H mm m ss s  */
-var exampleDate = "03/06/19";  // change this name, THAT'S AN INPUT
+(function(global){
 
-var parsePattern = "DD/MM/YY YYYY";
+    var dtf = {
+        monthNames : ["January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+        ],
 
-var parsedDateJSON={
-    year:"", 
-    month:"",
-    date:""
-}
+        /* YYYY YY MM M DD D HH H mm m ss s  */
+        
+        parsedDateJSON : {
+            year:"", 
+            month:"",
+            date:"",
+            datePattern : "",
+            yearPattern : "",
+            monthPattern : ""
+        },
+
+        // S - ???
+        supportedSymbols : {
+            'Y' : {
+                extractionFunc: function(extractedChar, parsedDate){
+                    parsedDate.year += extractedChar;
+                    parsedDate.yearPattern += 'Y';
+                }
+            },
+
+            'y' : {
+                extractionFunc: function(extractedChar, parsedDate){
+                    parsedDate.year += extractedChar;
+                    parsedDate.yearPattern += 'Y';
+                }
+            },
+
+            'M' : {
+                extractionFunc: function(extractedChar, parsedDate){
+                    parsedDate.month += extractedChar;
+                    parsedDate.monthPattern += 'M';
+                }
+            },
+
+            'D' : {
+                extractionFunc: function(extractedChar, parsedDate){
+                    parsedDate.date += extractedChar;
+                    parsedDate.datePattern += 'D';
+                }
+            },
+
+            'H' : {
+                extractionFunc: function(extractedChar, parsedDate){
+                    parsedDate.hours += extractedChar;
+                    parsedDate.hoursPattern += 'D';
+                }
+            },
+
+            'm' : {
+                extractionFunc: function(extractedChar, parsedDate){
+                    parsedDate.minutes += extractedChar;
+                    parsedDate.minutesPattern += 'm';
+                }
+            },
+
+            's' : {
+                extractionFunc: function(extractedChar, parsedDate){
+                    parsedDate.seconds += extractedChar;
+                    parsedDate.secondsPattern += 's';
+                }
+            }
+        },
+
+        parse : function(exampleDate, parsePattern){
+            if(exampleDate === undefined || parsePattern === undefined){
+                return -2;
+            }
+
+            if (exampleDate.length != parsePattern.length){
+                return -1;
+            }
+            var supportedSymbols = this.supportedSymbols;
+            var parsedDateJSON = this.parsedDateJSON;
+            
+            for (var index = 0; index < parsePattern.length; index++) {
+                var patternSymbol = parsePattern[index];
+                if(supportedSymbols.hasOwnProperty(patternSymbol)){
+                    var character = supportedSymbols[patternSymbol];
+                    character.extractionFunc(exampleDate[index], parsedDateJSON);
+                }
+            }
+            // установить выявление и вывод сообщений ошибок
+            console.log(JSON.stringify(parsedDateJSON));
+
+            return new Date(parsedDateJSON.year, parsedDateJSON.month, parsedDateJSON.date);
+        },
+
+        simplyOutput : function(DateJSON) {
+            var parsedDate;
+            parsedDate = new Date(DateJSON.year, DateJSON.month, DateJSON.date);
+
+        },
 
 
-var supportedSymbols ={
-    'Y' : {
-        extractionFunc: function(extractedChar, parsedDate){
-            parsedDate.year += extractedChar;
-            parsedDate.yearPattern += 'Y';
-        }
-    }
+        //formattedDate : "",
 
-};
+        format : function(formatPattern, ){
+            var dd, mm, yyyy;
+            dd = mm = yyyy = true; //flags
+            for (var index = 0; index < formatPattern.length; index++) {
+                let value = formatPattern[index];
+                if (value=="/" || value=="." || value=="-") {
+                    formattedDate += value; 
+                    continue;
+                }
+                if(value==="Y"&& yyyy) {
+                    formattedDate += parsedDateJSON.year; 
+                    yyyy=false;
+                    continue;
+                }
+                else if(value==="M" && mm) {
+                    formattedDate += parsedDateJSON.month;
+                    mm = false;
+                    continue;
+                }
+                else if(value==="D" && dd) {
+                    formattedDate += parsedDateJSON.date;
+                    dd=false;
+                    continue;
+                }
+            }
+            return formattedDate;
+        },
 
-document.querySelector(".buttons__confirm").addEventListener('click', function() {
-    var userInput = document.querySelector(".form__form-for-text");
-    document.writeln(userInput.value)
-}, false);
+        from : function(){
+
+        },
+
+        fromNow : function () {
+            var now = new Date();
+
+        },
 
 
-//document.write("The month name: " + monthNames[dd.getMonth()]);
+    };
 
-for (var index = 0; index < parsePattern.length; index++) {
-
-    var character = parsePattern[index];
-    var symbol = supportedSymbols[character];
-    symbol.extractionFunc(exampleDate[index], parsedDateJSON);
-
-    if(parsePattern[index]==="Y") parsedDateJSON.year+=exampleDate[index];
-    if(parsePattern[index]==="M") parsedDateJSON.month+=exampleDate[index];
-    if(parsePattern[index]==="D") parsedDateJSON.date+=exampleDate[index];
-    //TODO: check  parsed data (is it a number or . or / and so on)
-    // create mapping
-}
-var parsedDate = new Date(parsedDateJSON.year, parsedDateJSON.month, parsedDateJSON.date);
-
-
-
-
-//document.writeln(parsedDate.getFullYear() + "<br></br>" + /*parsedDate.getMonth()*/ monthNames[parsedDate.getMonth()] + "<br></br>" + parsedDate.getDate() );
-
-document.writeln(parsedDate.getFullYear());
-
-var formattedDate = "";
-
-var dd = mm = yyyy = true; //flags
-
-for (var index = 0; index < formatPattern.length; index++) {
-    let value = formatPattern[index];
-    if (value=="/" || value=="." || value=="-") {
-        formattedDate += value; 
-        continue;
-    }
-    if(value==="Y"&& yyyy) {
-        formattedDate += parsedDateJSON.year; 
-        yyyy=false;
-        continue;
-    }
-    else if(value==="M" && mm) {
-        formattedDate += parsedDateJSON.month;
-        mm = false;
-        continue;
-    }
-    else if(value==="D" && dd) {
-        formattedDate += parsedDateJSON.date;
-        dd=false;
-        continue;
-    }
-}
-document.writeln("<br></br>" + formattedDate);
+    global.DTF = dtf;
+        //document.writeln("<br></br>" + formattedDate);
+})(this);

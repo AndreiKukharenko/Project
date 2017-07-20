@@ -13,10 +13,6 @@ var sortedArr=0;
 
     document.write("<br>");
 
- /*   sortedArr = arr.sort(sortNumber);
-    function sortNumber(a,b) {
-    return a - b;
-    }
 
     function output(sortedArray){
         var arrAsString = sortedArray.join(";  ");
@@ -35,3 +31,6 @@ var sortedArr=0;
     document.writeln("<p>bubble sort</p>");
     document.writeln(Sorter.bubbleSort(arr));
     document.writeln("<br>" + Sorter.insertionSort(arr));
+    document.writeln("<br>" + Sorter.selectionSort(arr));
+    document.writeln("<br>" + Sorter.quickSort(arr));
+    
