@@ -6,16 +6,16 @@ document.querySelector(".buttons__confirm").addEventListener('click', function()
 //document.writeln(parsedDate.getFullYear() + "<br></br>" + /*parsedDate.getMonth()*/ monthNames[parsedDate.getMonth()] + "<br></br>" + parsedDate.getDate() );
 
 
-    var exampleDate = "2017$20$07";  // change this name, THAT'S AN INPUT
+    var exampleDate = "2017/20/07";  // change this name, THAT'S AN INPUT
 
     var parsePattern = "YYYY/DD/MM";
 
     var formatPattern = "MM.DD.YYYY";
 
     document.writeln(DTF.parse(exampleDate, parsePattern).fromNow());
+    //document.writeln(DTF.parse(exampleDate, parsePattern));
     document.writeln("<br></br>");
-    document.writeln(DTF.parse(exampleDate, parsePattern));
-
+    //document.writeln(DTF.parse(exampleDate, parsePattern).format(formatPattern, exampleDate));
 
     /*
     DTF.parse(exampleDate, parsePattern) : 

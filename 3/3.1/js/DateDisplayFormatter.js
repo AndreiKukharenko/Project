@@ -17,6 +17,13 @@
             monthPattern : ""
         },
 
+
+        formattedDate : {
+            toString : function() {
+            return "";
+            }, // override to aviod printing [Object Object]
+        },
+
         supportedSymbols : {
             'Y' : {
                 extractionFunc: function(extractedChar, parsedDate){
@@ -69,15 +76,16 @@
         },
 
         parse : function(exampleDate, parsePattern){
-            if(exampleDate === undefined || parsePattern === undefined){
-                return -2;
-            }
+
+            var supportedSymbols = this.supportedSymbols;
+            var parsedDateJSON = this.parsedDateJSON;
 
             if (exampleDate.length != parsePattern.length){
                 return -1;
             }
-            var supportedSymbols = this.supportedSymbols;
-            var parsedDateJSON = this.parsedDateJSON;
+            if(exampleDate === undefined || parsePattern === undefined){
+                return -2;
+            }
             
             for (var index = 0; index < parsePattern.length; index++) {
                 var patternSymbol = parsePattern[index];
@@ -86,8 +94,6 @@
                     character.extractionFunc(exampleDate[index], parsedDateJSON);
                 }
             }
-            // установить выявление и вывод сообщений ошибок
-
             //console.log(JSON.stringify(parsedDateJSON));
 
             this.date = new Date(parsedDateJSON.year, parsedDateJSON.month - 1, parsedDateJSON.date);
@@ -95,16 +101,15 @@
             return this;
         },
 
-
         toString : function() {
-            var ret = this.date;
-           return ret.toDateString();
+            var value = this.date;
+           return value.toDateString();
         },
 
-
-
-        format : function(formatPattern, ){
-            var dd, mm, yyyy;
+        format : function(formatPattern, exampleDate){
+            var dd, mm, yyyy, formattedDate, parsedDateJSON;
+            formattedDate = this.formattedDate;
+            parsedDateJSON = this.parsedDateJSON;
             dd = mm = yyyy = true; //flags
             for (let index = 0; index < formatPattern.length; index++) {
                 let value = formatPattern[index];
@@ -136,16 +141,16 @@
         },
 
         fromNow : function () {
-            var date, now, time; //timeAsDate;
+            var date, now, time, timeAsDate;
             date = this.date;
             now = new Date();
             time = now - date;
-            var timeAsDate = new Date();
-            timeAsDate.setDate(time);
+            timeAsDate = new Date();
+            timeAsDate.setTime(time);
 
-            console.log(timeAsDate);
+            console.log(timeAsDate.getFullYear());
             return time/1000;
-            
+            //считать интервал как разницу между большим и меньшим.
         },
 
 
