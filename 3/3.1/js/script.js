@@ -5,18 +5,17 @@ document.querySelector(".buttons__confirm").addEventListener('click', function()
 
 //document.writeln(parsedDate.getFullYear() + "<br></br>" + /*parsedDate.getMonth()*/ monthNames[parsedDate.getMonth()] + "<br></br>" + parsedDate.getDate() );
 
-//document.writeln(parsedDate.getFullYear());
 
-//document.write("The month name: " + monthNames[dd.getMonth()]);
+    var exampleDate = "2017$20$07";  // change this name, THAT'S AN INPUT
 
+    var parsePattern = "YYYY/DD/MM";
 
-       var exampleDate = "1995$06$15";  // change this name, THAT'S AN INPUT
+    var formatPattern = "MM.DD.YYYY";
 
-        var parsePattern = "YYYY/DD/MM";
-
-        var formatPattern = "MM.DD.YYYY";
-
+    document.writeln(DTF.parse(exampleDate, parsePattern).fromNow());
+    document.writeln("<br></br>");
     document.writeln(DTF.parse(exampleDate, parsePattern));
+
 
     /*
     DTF.parse(exampleDate, parsePattern) : 

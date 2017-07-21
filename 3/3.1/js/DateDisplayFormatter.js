@@ -6,7 +6,8 @@
         ],
 
         /* YYYY YY MM M DD D HH H mm m ss s  */
-        
+
+
         parsedDateJSON : {
             year:"", 
             month:"",
@@ -16,7 +17,6 @@
             monthPattern : ""
         },
 
-        // S - ???
         supportedSymbols : {
             'Y' : {
                 extractionFunc: function(extractedChar, parsedDate){
@@ -87,40 +87,42 @@
                 }
             }
             // установить выявление и вывод сообщений ошибок
-            console.log(JSON.stringify(parsedDateJSON));
 
-            return new Date(parsedDateJSON.year, parsedDateJSON.month, parsedDateJSON.date);
-        },
+            //console.log(JSON.stringify(parsedDateJSON));
 
-        simplyOutput : function(DateJSON) {
-            var parsedDate;
-            parsedDate = new Date(DateJSON.year, DateJSON.month, DateJSON.date);
-
+            this.date = new Date(parsedDateJSON.year, parsedDateJSON.month - 1, parsedDateJSON.date);
+            //date.toDateString();
+            return this;
         },
 
 
-        //formattedDate : "",
+        toString : function() {
+            var ret = this.date;
+           return ret.toDateString();
+        },
+
+
 
         format : function(formatPattern, ){
             var dd, mm, yyyy;
             dd = mm = yyyy = true; //flags
-            for (var index = 0; index < formatPattern.length; index++) {
+            for (let index = 0; index < formatPattern.length; index++) {
                 let value = formatPattern[index];
                 if (value=="/" || value=="." || value=="-") {
                     formattedDate += value; 
                     continue;
                 }
-                if(value==="Y"&& yyyy) {
+                if(value === "Y" && yyyy) {
                     formattedDate += parsedDateJSON.year; 
                     yyyy=false;
                     continue;
                 }
-                else if(value==="M" && mm) {
+                else if(value === "M" && mm) {
                     formattedDate += parsedDateJSON.month;
                     mm = false;
                     continue;
                 }
-                else if(value==="D" && dd) {
+                else if(value === "D" && dd) {
                     formattedDate += parsedDateJSON.date;
                     dd=false;
                     continue;
@@ -134,8 +136,16 @@
         },
 
         fromNow : function () {
-            var now = new Date();
+            var date, now, time; //timeAsDate;
+            date = this.date;
+            now = new Date();
+            time = now - date;
+            var timeAsDate = new Date();
+            timeAsDate.setDate(time);
 
+            console.log(timeAsDate);
+            return time/1000;
+            
         },
 
 
