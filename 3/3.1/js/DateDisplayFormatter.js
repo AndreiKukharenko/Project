@@ -17,6 +17,14 @@
             monthPattern : ""
         },
 
+        formattedDateJSON : {
+            year:"", 
+            month:"",
+            date:"",
+            datePattern : "",
+            yearPattern : "",
+            monthPattern : ""
+        },
 
         formattedDate : {
             toString : function() {
@@ -79,12 +87,16 @@
 
             var supportedSymbols = this.supportedSymbols;
             var parsedDateJSON = this.parsedDateJSON;
-
-            if (exampleDate.length != parsePattern.length){
-                return -1;
+           
+            var parse1 = function(par){ // TODO:implement func for unix-time
+            console.log("ONE PARAMETER");
             }
+
             if(exampleDate === undefined || parsePattern === undefined){
                 return -2;
+            }
+            if (exampleDate.length != parsePattern.length){
+                return -1;
             }
             
             for (var index = 0; index < parsePattern.length; index++) {
@@ -94,7 +106,6 @@
                     character.extractionFunc(exampleDate[index], parsedDateJSON);
                 }
             }
-            //console.log(JSON.stringify(parsedDateJSON));
 
             this.date = new Date(parsedDateJSON.year, parsedDateJSON.month - 1, parsedDateJSON.date);
             //date.toDateString();
@@ -108,11 +119,12 @@
 
         format : function(formatPattern, exampleDate){
             var dd, mm, yyyy, formattedDate, parsedDateJSON;
-            formattedDate = this.formattedDate;
-            parsedDateJSON = this.parsedDateJSON;
-            dd = mm = yyyy = true; //flags
-            for (let index = 0; index < formatPattern.length; index++) {
-                let value = formatPattern[index];
+            var supportedSymbols = this.supportedSymbols;
+            formattedDateJSON = this.formattedDateJSON;
+            //dd = mm = yyyy = true; //flags
+            for (let index = 0; index < formatPattern.length; index++) { //check divider!!!!
+                /*let value = formatPattern[index];
+                
                 if (value=="/" || value=="." || value=="-") {
                     formattedDate += value; 
                     continue;
@@ -131,9 +143,16 @@
                     formattedDate += parsedDateJSON.date;
                     dd=false;
                     continue;
+                }*/
+
+                 var patternSymbol = formatPattern[index];
+                if(supportedSymbols.hasOwnProperty(patternSymbol)){
+                    var character = supportedSymbols[patternSymbol];
+                    character.extractionFunc(exampleDate[index], formattedDateJSON);
                 }
             }
-            return formattedDate;
+            console.log(formattedDateJSON);
+            return formattedDateJSON.toString();
         },
 
         from : function(){
@@ -148,11 +167,12 @@
             timeAsDate = new Date();
             timeAsDate.setTime(time);
 
+            // see http://javascript.ru/Date.parse
+            //считать интервал как разницу между большим и меньшим.
+
             console.log(timeAsDate.getFullYear());
             return time/1000;
-            //считать интервал как разницу между большим и меньшим.
         },
-
 
     };
 

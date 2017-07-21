@@ -3,22 +3,20 @@ document.querySelector(".buttons__confirm").addEventListener('click', function()
     document.writeln(userInput.value)
 }, false);
 
-//document.writeln(parsedDate.getFullYear() + "<br></br>" + /*parsedDate.getMonth()*/ monthNames[parsedDate.getMonth()] + "<br></br>" + parsedDate.getDate() );
-
-
-    var exampleDate = "2017/20/07";  // change this name, THAT'S AN INPUT
+    var exampleDate = "2017/20/07";  
 
     var parsePattern = "YYYY/DD/MM";
 
     var formatPattern = "MM.DD.YYYY";
 
-    document.writeln(DTF.parse(exampleDate, parsePattern).fromNow());
+    //document.writeln(DTF.parse(exampleDate, parsePattern).fromNow());
     //document.writeln(DTF.parse(exampleDate, parsePattern));
-    document.writeln("<br></br>");
-    //document.writeln(DTF.parse(exampleDate, parsePattern).format(formatPattern, exampleDate));
+    //document.writeln(DTF.parse(44));
+    document.writeln(DTF.parse(exampleDate, parsePattern).format(formatPattern, exampleDate));
 
     /*
-    DTF.parse(exampleDate, parsePattern) : 
+    DTF.parse, DTF.format : 
     return -1 : pattern and parsed string don't have the same length;
-    return -2 : undefined
+    return -2 : undefined;
+
     */
