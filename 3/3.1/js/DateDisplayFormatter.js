@@ -1,36 +1,13 @@
 (function(global){
 
     var dtf = {
+
         monthNames : ["January", "February", "March", "April", "May", "June",
         "July", "August", "September", "October", "November", "December"
         ],
 
         /* YYYY YY MM M DD D HH H mm m ss s  */
 
-
-        parsedDateJSON : {
-            year:"", 
-            month:"",
-            date:"",
-            datePattern : "",
-            yearPattern : "",
-            monthPattern : ""
-        },
-
-        formattedDateJSON : {
-            year:"", 
-            month:"",
-            date:"",
-            datePattern : "",
-            yearPattern : "",
-            monthPattern : ""
-        },
-
-        formattedDate : {
-            toString : function() {
-            return "";
-            }, // override to aviod printing [Object Object]
-        },
 
         supportedSymbols : {
             'Y' : {
@@ -86,11 +63,19 @@
         parse : function(exampleDate, parsePattern){
 
             var supportedSymbols = this.supportedSymbols;
-            var parsedDateJSON = this.parsedDateJSON;
-           
-            var parse1 = function(par){ // TODO:implement func for unix-time
-            console.log("ONE PARAMETER");
+
+            var parsedDateJSON = {
+                year:"", 
+                month:"",
+                date:"",
+                datePattern : "",
+                yearPattern : "",
+                monthPattern : ""
             }
+           
+            /*var parse1 = function(par){ // TODO:implement func for unix-time
+            console.log("ONE PARAMETER");
+            }*/
 
             if(exampleDate === undefined || parsePattern === undefined){
                 return -2;
@@ -117,10 +102,26 @@
            return value.toDateString();
         },
 
+
+        formattedDateJSON : {
+            toString : function() {
+            return "";
+            }, // override to aviod printing [Object Object]
+        },
+
         format : function(formatPattern, exampleDate){
             var dd, mm, yyyy, formattedDate, parsedDateJSON;
             var supportedSymbols = this.supportedSymbols;
-            formattedDateJSON = this.formattedDateJSON;
+
+            formattedDateJSON =  {
+                year:"", 
+                month:"",
+                date:"",
+                datePattern : "",
+                yearPattern : "",
+                monthPattern : ""
+            };
+
             //dd = mm = yyyy = true; //flags
             for (let index = 0; index < formatPattern.length; index++) { //check divider!!!!
                 /*let value = formatPattern[index];
@@ -160,16 +161,22 @@
         },
 
         fromNow : function () {
-            var date, now, time, timeAsDate;
+            var date, now, time, timeAsDate; var tempDateS, tempDate;
             date = this.date;
             now = new Date();
+            tempDate = tempDateS = new Date();
+            
             time = now - date;
             timeAsDate = new Date();
             timeAsDate.setTime(time);
 
+            var date0 = new Date(0);
             // see http://javascript.ru/Date.parse
             //считать интервал как разницу между большим и меньшим.
+            tempDateS = timeAsDate - date0;
+            tempDate.setTime(tempDateS);
 
+            console.log(tempDate);
             console.log(timeAsDate.getFullYear());
             return time/1000;
         },

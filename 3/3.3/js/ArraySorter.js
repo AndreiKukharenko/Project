@@ -44,14 +44,46 @@
             return arr;
         },
 
-        quickSort : function(arr){
-            let length = arr.length;
+        quickSort : function(arr, left, right){
+            var i, j, pivot;
+        
+            if (left == right) {
+                left =0;
+                right = arr.length-1;
+            }
+            i = left; 
+            j = right;
+            pivot = arr [Math.floor((i + j)/2)];
+
+            do {
+                while (arr[i] < pivot) {
+                    i++;
+                }
+                
+                while (arr[j] > pivot) {
+                    j--;
+                }
+
+                 if (i <= j) {
+                    [arr[i], arr[j]] = [ arr[j], arr[i]]; //nice swap))
+                    i++;
+                    j--;
+                }  
+            } while (i <= j)
+
+            if (i < right) {
+                this.quickSort(arr, i, right);
+            }
+
+            if (left < j) {
+                this.quickSort(arr, left, j);
+            }   
+
+        return arr;
+        },
 
 
-            
-            return arr;
-        }
-
+        
     }
-    Sorter = sorter;
+    global.Sorter = sorter;
 })(this)

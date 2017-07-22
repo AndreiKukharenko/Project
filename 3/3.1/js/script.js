@@ -9,12 +9,15 @@ document.querySelector(".buttons__confirm").addEventListener('click', function()
 
     var formatPattern = "MM.DD.YYYY";
 
-    //document.writeln(DTF.parse(exampleDate, parsePattern).fromNow());
-    //document.writeln(DTF.parse(exampleDate, parsePattern));
+    document.writeln(DTF.parse(exampleDate, parsePattern));
+    document.writeln("<br></br>");
+    document.writeln(DTF.parse(exampleDate, parsePattern).fromNow());
     //document.writeln(DTF.parse(44));
     document.writeln(DTF.parse(exampleDate, parsePattern).format(formatPattern, exampleDate));
 
-    /*
+
+
+    /*  ERROR CODE
     DTF.parse, DTF.format : 
     return -1 : pattern and parsed string don't have the same length;
     return -2 : undefined;
