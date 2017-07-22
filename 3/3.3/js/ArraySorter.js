@@ -1,5 +1,4 @@
 (function(global){
-
     var sorter = {
         bubbleSort : function(arr){
             let length = arr.length;
@@ -59,13 +58,11 @@
                 while (arr[i] < pivot) {
                     i++;
                 }
-                
                 while (arr[j] > pivot) {
                     j--;
                 }
-
-                 if (i <= j) {
-                    [arr[i], arr[j]] = [ arr[j], arr[i]]; //nice swap))
+                if (i <= j) {
+                    [arr[i], arr[j]] = [arr[j], arr[i]]; //nice swap))
                     i++;
                     j--;
                 }  
@@ -78,12 +75,8 @@
             if (left < j) {
                 this.quickSort(arr, left, j);
             }   
-
         return arr;
         },
-
-
-        
     }
     global.Sorter = sorter;
 })(this)

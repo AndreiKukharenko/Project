@@ -5,9 +5,7 @@ var arr2 = [21, 34, -5, 0, -7];
 
 var arrayOfArrays = [arr, arr1, arr2]
 
-   document.writeln(
-        "<p>Initial arrays:</p>"
-    ) 
+document.writeln("<p>Initial arrays:</p>") 
     
     writeArr = function(arrays){
         arrays.forEach(function (array){
@@ -20,14 +18,14 @@ var arrayOfArrays = [arr, arr1, arr2]
 
     writeArr(arrayOfArrays);
 
-    document.writeln("<p>bubble sort:</p>");
-    document.writeln(Sorter.bubbleSort(arr));
-    document.writeln("<p>insertion sort:</p>");
-    document.writeln(Sorter.insertionSort(arr1) + "<br>");
-    document.writeln("<p>selection sort:</p>");
-    document.writeln(Sorter.selectionSort(arr) + "<br>");
-    document.writeln("<p>quick sort + reverse:</p>");
-    document.writeln(Sorter.quickSort(arr2) + "<br>");
-    document.writeln(Sorter.quickSort(arr2).reverse() + "<br>");
+document.writeln("<p>bubble sort:</p>");
+document.writeln(Sorter.bubbleSort(arr));
+document.writeln("<p>insertion sort:</p>");
+document.writeln(Sorter.insertionSort(arr1) + "<br>");
+document.writeln("<p>selection sort:</p>");
+document.writeln(Sorter.selectionSort(arr) + "<br>");
+document.writeln("<p>quick sort + reverse:</p>");
+document.writeln(Sorter.quickSort(arr2) + "<br>");
+document.writeln(Sorter.quickSort(arr2).reverse() + "<br>");
     
 
