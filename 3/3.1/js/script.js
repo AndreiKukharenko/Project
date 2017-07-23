@@ -9,7 +9,8 @@ document.writeln(DTF.parse(exampleDate, parsePattern));
 document.writeln("<br></br>");
 document.writeln(DTF.parse(exampleDate, parsePattern).fromNow());
 //document.writeln(DTF.parse(44));
-//document.writeln(DTF.parse(exampleDate, parsePattern).format(formatPattern));
+document.writeln("<br></br>");
+document.writeln(DTF.parse(exampleDate, parsePattern).format(formatPattern));
 
 
     /*  ERROR CODE

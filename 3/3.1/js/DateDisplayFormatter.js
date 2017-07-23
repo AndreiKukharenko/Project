@@ -1,13 +1,6 @@
 (function(global){
-
-    var dtf = {
-
-        monthNames : ["January", "February", "March", "April", "May", "June",
-        "July", "August", "September", "October", "November", "December"
-        ],
-
         /* YYYY YY MM M DD D HH H mm m ss s  */
-
+    var dtf = {
         supportedSymbols : {
             'Y' : {
                 extractionFunc: function(extractedChar, parsedDate){
@@ -106,24 +99,25 @@
             return value.toDateString();
         }, // override to aviod printing [object Object]
 
-        /*formattedDateJSON : {
-            toString : function() {
-            return "";
-            }, 
-        },*/
 
         format : function(formatPattern, exampleDate){
             var dd, mm, yyyy, formattedDate, parsedDateJSON, date;
             var supportedSymbols = this.supportedSymbols;
-            var exampleDate = this.date;
+            if(exampleDate==undefined) exampleDate = this.date;
 
             formattedDateJSON =  {
                 year:"", 
                 month:"",
                 date:"",
+                hours: "",
+                minutes:"",
+                seconds: "",
                 datePattern : "",
                 yearPattern : "",
-                monthPattern : ""
+                monthPattern : "",
+                hoursPattern: "",
+                minutesPattern:"",
+                secondsPattern: "",
             };
 
             //dd = mm = yyyy = true; //flags
@@ -149,10 +143,10 @@
                     dd=false;
                     continue;
 }*/
-
                 var patternSymbol = formatPattern[index];
                 if(supportedSymbols.hasOwnProperty(patternSymbol)){
                     var character = supportedSymbols[patternSymbol];
+                    //________________________problem here. exampleDate is an object, not s string
                     character.extractionFunc(exampleDate[index], formattedDateJSON);
                 }
             }
@@ -167,14 +161,13 @@
         fromNow : function () {
             var date, now, time, timeAsDate; 
             date = this.date;
-            console.log(date.getFullYear());
+            console.log(date.getHours());
             now = new Date();
             
             time = now - date;
             timeAsDate = new Date();
             timeAsDate.setTime(time);
 
-            // see http://javascript.ru/Date.parse
             //считать интервал как разницу между большим и меньшим.
 
             console.log(timeAsDate.getFullYear());
