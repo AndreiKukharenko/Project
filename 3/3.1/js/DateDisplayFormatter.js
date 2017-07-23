@@ -40,7 +40,7 @@
             'H' : {
                 extractionFunc: function(extractedChar, parsedDate){
                     parsedDate.hours += extractedChar;
-                    parsedDate.hoursPattern += 'D';
+                    parsedDate.hoursPattern += 'H';
                 }
             },
 
@@ -66,9 +66,15 @@
                 year:"", 
                 month:"",
                 date:"",
+                hours: "",
+                minutes:"",
+                seconds: "",
                 datePattern : "",
                 yearPattern : "",
-                monthPattern : ""
+                monthPattern : "",
+                hoursPattern: "",
+                minutesPattern:"",
+                secondsPattern: "",
             }
            
             /*var parse1 = function(par){ // TODO:implement func for unix-time
@@ -89,7 +95,9 @@
                     character.extractionFunc(exampleDate[index], parsedDateJSON);
                 }
             }
-            this.date = new Date(parsedDateJSON.year, parsedDateJSON.month - 1, parsedDateJSON.date);
+            this.date = new Date(parsedDateJSON.year, parsedDateJSON.month - 1,
+                 parsedDateJSON.date, parsedDateJSON.hours, parsedDateJSON.minutes,
+                  parsedDateJSON.seconds);
             return this;
         },
 
@@ -159,7 +167,7 @@
         fromNow : function () {
             var date, now, time, timeAsDate; 
             date = this.date;
-            console.log(date.parse());
+            console.log(date.getFullYear());
             now = new Date();
             
             time = now - date;
