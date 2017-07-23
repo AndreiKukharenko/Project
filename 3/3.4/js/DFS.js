@@ -16,15 +16,13 @@
             }
             else{
                 for(var prop in obj) {
-                    var f = obj[prop];
-                    if (f.search(find) >= 0) result.push(obj[prop]); // a little problem here
+                    if ((obj[prop] + "").search(find) >= 0) result.push(obj[prop]); 
                     if (prop.search(find) >= 0) result.push(prop);
                     if(obj[prop] instanceof Object || obj[prop] instanceof Array)
                     this.depthFirst(obj[prop], find);
                 }
             }
-        console.log(result);
-
+            return result;
         }
     }
 

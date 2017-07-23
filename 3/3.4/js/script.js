@@ -5,12 +5,17 @@ var car = {
   color: "red",
   wheels: 4,
   engine: {
-    cylinders: 4,
+    cylinders: {
+      count : 4,
+      radius : 76,
+      height : 86
+    },
     size: 2.2
   },
 
   state: "running"
 };
 
-DFS.depthFirst(car, "wh");
+document.writeln(DFS.depthFirst(car, "co"));
+
 
