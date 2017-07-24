@@ -78,7 +78,7 @@
                 return -2;
             }
             if (exampleDate.length != parsePattern.length){
-                return -1;
+                return -1;   // this breaks chaining. how to handle it in correct way?
             }
             
             for (var index = 0; index < parsePattern.length; index++) {
@@ -99,40 +99,12 @@
             return value.toDateString();
         }, // override to avoid printing [object Object]
 
-
-        dateFormatter : {
-        'Y' : {
-            formatterFunc: function(patternSymbol, formattedDateJSON, order, date){
-                formattedDateJSON.Year.pattern += patternSymbol;
-                formattedDateJSON.Year.order = order;
-                formattedDateJSON.Year.value = date.getFullYear();
-            }
-        },
-            
-        'M' : {
-            formatterFunc: function(patternSymbol, formattedDateJSON, order, date){
-                formattedDateJSON.Month.pattern += patternSymbol;
-                formattedDateJSON.Month.order = order;
-                formattedDateJSON.Month.value = date.getMonth();
-                }
-        },
-
-        'D' : {
-            formatterFunc: function(patternSymbol, formattedDateJSON, order, date){
-                formattedDateJSON.Date.pattern += patternSymbol;
-                formattedDateJSON.Date.order = order;
-                formattedDateJSON.Date.value = date.getDate();
-                },
-            }
-        },
-
         format : function(formatPattern, exampleDate){
             var dd, mm, yyyy, formattedDate;
-            var dateFormatter = this.dateFormatter;
+            var dateFormatter = window.dateFormatter;
             if(exampleDate==undefined) exampleDate = this.date;
             var order = 0 ;
-            var dfs = window.dfs;
-            console.log(dfs);
+            var searchEngine = window.searchEngine;
             formattedDateJSON =  {
                 Year: {
                     order : "",
@@ -182,32 +154,33 @@
             console.log(formattedDateJSON);
             var outputOrder = [];
             for (let i = 0; i < formatPattern.length-1; i++) {
-                var search = dfs.searchOrder(formattedDateJSON, i)
+                var search = searchEngine.searchOrder(formattedDateJSON, i)
                 if(search[0]>1) {
-                    outputOrder.push(i);
+                    document.write(search[0]+'/'); // fix THIS!!
                 }
             }
-            console.log(outputOrder);
-            
-            return formattedDateJSON;
+            return formattedDateJSON; // fix THIS!!
         },
 
         from : function(){
 
+            //считать интервал как разницу между большим и меньшим.
         },
 
         fromNow : function () {
-            var date, now, time, timeAsDate; 
+            var date, now, time, timeAsDate, precision = 20; 
             date = this.date;
+            roundTimeOff = window.roundTimeOff;
+            if(!(date instanceof Date)) return -1;
             console.log(date.getHours());
             now = new Date();
             
             time = now - date;
             timeAsDate = new Date();
             timeAsDate.setTime(time);
-            //считать интервал как разницу между большим и меньшим.
-
-            console.log(timeAsDate.getFullYear());
+            console.log(time);
+            var roundedTime =  roundTimeOff.round(time, precision);
+            console.log(roundedTime + 'rounded');
             return time/1000;
         },
 
