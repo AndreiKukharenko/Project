@@ -3,14 +3,14 @@ var exampleDate = "17/20/07 16:55:21";
 
 var parsePattern = "YY/DD/MM HH:mm:ss";
 
-var formatPattern = "MM.DD.YYYY";
+var formatPattern = "MM.DD/YYYY";
 
 //document.writeln(DTF.parse(exampleDate, parsePattern));
 document.writeln("<br></br>");
 //document.writeln(DTF.parse(exampleDate, parsePattern).fromNow());
 //document.writeln(DTF.parse(44));
 document.writeln("<br></br>");
-document.writeln(DTF.parse(exampleDate, parsePattern).format(formatPattern));
+document.writeln("<br></br>" + DTF.parse(exampleDate, parsePattern).format(formatPattern));
 
 
     /*  ERROR CODE
@@ -19,8 +19,3 @@ document.writeln(DTF.parse(exampleDate, parsePattern).format(formatPattern));
     return -2 : parameter undefined;
 
     */
-
-
-
-    
-        

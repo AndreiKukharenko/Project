@@ -105,7 +105,7 @@
             formatterFunc: function(patternSymbol, formattedDateJSON, order, date){
                 formattedDateJSON.Year.pattern += patternSymbol;
                 formattedDateJSON.Year.order = order;
-                formattedDateJSON.Year.year = date.getFullYear();
+                formattedDateJSON.Year.value = date.getFullYear();
             }
         },
             
@@ -113,7 +113,7 @@
             formatterFunc: function(patternSymbol, formattedDateJSON, order, date){
                 formattedDateJSON.Month.pattern += patternSymbol;
                 formattedDateJSON.Month.order = order;
-                formattedDateJSON.Month.month = date.getMonth();
+                formattedDateJSON.Month.value = date.getMonth();
                 }
         },
 
@@ -121,7 +121,7 @@
             formatterFunc: function(patternSymbol, formattedDateJSON, order, date){
                 formattedDateJSON.Date.pattern += patternSymbol;
                 formattedDateJSON.Date.order = order;
-                formattedDateJSON.Date.date = date.getDate();
+                formattedDateJSON.Date.value = date.getDate();
                 },
             }
         },
@@ -131,42 +131,43 @@
             var dateFormatter = this.dateFormatter;
             if(exampleDate==undefined) exampleDate = this.date;
             var order = 0 ;
-            var dfs = this.dfs;
+            var dfs = window.dfs;
+            console.log(dfs);
             formattedDateJSON =  {
                 Year: {
                     order : "",
                     pattern : "",
-                    year : "",
+                    value : "",
                 },
 
                 Month: {
                     order : "",
                     pattern : "",
-                    month : "",
+                    value : "",
                 },
 
                 Date: {
                     order : "",
                     pattern : "",
-                    date : "",
+                    value : "",
                 },
 
                 Hours: {
                     order : "",
                     pattern : "",
-                    hour : "",
+                    value : "",
                 },
 
                 Minutes: {
                     order : "",
                     pattern : "",
-                    minutes : "",
+                    value : "",
                 },
 
                 Seconds: {
                     order : "",
                     pattern : "",
-                    seconds : "",
+                    value : "",
                 }
             };
 
@@ -179,12 +180,14 @@
                 }
             }
             console.log(formattedDateJSON);
-
-            document.writeln(dfs.depthFirst(formattedDateJSON, "ear"));
-            var keys = Object.keys(formattedDateJSON);
-
-            proppropArr= Object.keys(propArr)
-            console.log(proppropArr);
+            var outputOrder = [];
+            for (let i = 0; i < formatPattern.length-1; i++) {
+                var search = dfs.searchOrder(formattedDateJSON, i)
+                if(search[0]>1) {
+                    outputOrder.push(i);
+                }
+            }
+            console.log(outputOrder);
             
             return formattedDateJSON;
         },
@@ -212,6 +215,3 @@
 
     global.DTF = dtf;
 })(this);
-
-
-document.writeln(DTF.parse(exampleDate, parsePattern).format(formatPattern));
