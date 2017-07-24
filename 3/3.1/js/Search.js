@@ -1,6 +1,4 @@
-(function(global){
-    'use strict';
-    var dfs = { 
+    dfs = { 
         depthFirst : function(obj, find, resultParent, pathParent){
 
             var result = resultParent || [];
@@ -18,7 +16,7 @@
                 
                 if (!(obj[i] instanceof Array) && !(obj[i] instanceof Object)
                     && (obj[i]+"").search(find) >= 0) {
-                        result.push(createDescriptionOf (obj[i]));
+                        result.push(createDescriptionOf (obSj[i]));
                 }
                 this.depthFirst(obj[i], find, result, path);
                 }
@@ -52,5 +50,4 @@
             return result;
         }
     };
-    global.DFS = dfs;
-})(this);
+

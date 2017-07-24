@@ -5,9 +5,9 @@ var parsePattern = "YY/DD/MM HH:mm:ss";
 
 var formatPattern = "MM.DD.YYYY";
 
-document.writeln(DTF.parse(exampleDate, parsePattern));
+//document.writeln(DTF.parse(exampleDate, parsePattern));
 document.writeln("<br></br>");
-document.writeln(DTF.parse(exampleDate, parsePattern).fromNow());
+//document.writeln(DTF.parse(exampleDate, parsePattern).fromNow());
 //document.writeln(DTF.parse(44));
 document.writeln("<br></br>");
 document.writeln(DTF.parse(exampleDate, parsePattern).format(formatPattern));
@@ -22,10 +22,5 @@ document.writeln(DTF.parse(exampleDate, parsePattern).format(formatPattern));
 
 
 
-    dateFormatter = {
-        'Y' : {
-            formatterFunc: function(){
-                
-            }
-        }
-    }
+    
+        

@@ -97,60 +97,95 @@
         toString : function() {
             var value = this.date;
             return value.toDateString();
-        }, // override to aviod printing [object Object]
+        }, // override to avoid printing [object Object]
 
+
+        dateFormatter : {
+        'Y' : {
+            formatterFunc: function(patternSymbol, formattedDateJSON, order, date){
+                formattedDateJSON.Year.pattern += patternSymbol;
+                formattedDateJSON.Year.order = order;
+                formattedDateJSON.Year.year = date.getFullYear();
+            }
+        },
+            
+        'M' : {
+            formatterFunc: function(patternSymbol, formattedDateJSON, order, date){
+                formattedDateJSON.Month.pattern += patternSymbol;
+                formattedDateJSON.Month.order = order;
+                formattedDateJSON.Month.month = date.getMonth();
+                }
+        },
+
+        'D' : {
+            formatterFunc: function(patternSymbol, formattedDateJSON, order, date){
+                formattedDateJSON.Date.pattern += patternSymbol;
+                formattedDateJSON.Date.order = order;
+                formattedDateJSON.Date.date = date.getDate();
+                },
+            }
+        },
 
         format : function(formatPattern, exampleDate){
-            var dd, mm, yyyy, formattedDate, parsedDateJSON, date;
-            var supportedSymbols = this.supportedSymbols;
+            var dd, mm, yyyy, formattedDate;
+            var dateFormatter = this.dateFormatter;
             if(exampleDate==undefined) exampleDate = this.date;
-
+            var order = 0 ;
+            var dfs = this.dfs;
             formattedDateJSON =  {
-                year:"", 
-                month:"",
-                date:"",
-                hours: "",
-                minutes:"",
-                seconds: "",
-                datePattern : "",
-                yearPattern : "",
-                monthPattern : "",
-                hoursPattern: "",
-                minutesPattern:"",
-                secondsPattern: "",
+                Year: {
+                    order : "",
+                    pattern : "",
+                    year : "",
+                },
+
+                Month: {
+                    order : "",
+                    pattern : "",
+                    month : "",
+                },
+
+                Date: {
+                    order : "",
+                    pattern : "",
+                    date : "",
+                },
+
+                Hours: {
+                    order : "",
+                    pattern : "",
+                    hour : "",
+                },
+
+                Minutes: {
+                    order : "",
+                    pattern : "",
+                    minutes : "",
+                },
+
+                Seconds: {
+                    order : "",
+                    pattern : "",
+                    seconds : "",
+                }
             };
 
-            //dd = mm = yyyy = true; //flags
             for (let index = 0; index < formatPattern.length; index++) { //check divider!!!!
-/*let value = formatPattern[index];
-                
-                if (value=="/" || value=="." || value=="-") {
-                    formattedDate += value; 
-                    continue;
-                }
-                if(value === "Y" && yyyy) {
-                    formattedDate += parsedDateJSON.year; 
-                    yyyy=false;
-                    continue;
-                }
-                else if(value === "M" && mm) {
-                    formattedDate += parsedDateJSON.month;
-                    mm = false;
-                    continue;
-                }
-                else if(value === "D" && dd) {
-                    formattedDate += parsedDateJSON.date;
-                    dd=false;
-                    continue;
-}*/
                 var patternSymbol = formatPattern[index];
-                if(supportedSymbols.hasOwnProperty(patternSymbol)){
-                    var character = supportedSymbols[patternSymbol];
-                    //________________________problem here. exampleDate is an object, not s string
-                    character.extractionFunc(exampleDate[index], formattedDateJSON);
+                if(dateFormatter.hasOwnProperty(patternSymbol)){
+                    var character = dateFormatter[patternSymbol];
+                    order++;
+                    character.formatterFunc(patternSymbol, formattedDateJSON, order, exampleDate);
                 }
             }
             console.log(formattedDateJSON);
+
+            document.writeln(dfs.depthFirst(formattedDateJSON, "ear"));
+            var keys = Object.keys(formattedDateJSON);
+
+            proppropArr= Object.keys(propArr)
+            console.log(proppropArr);
+            
             return formattedDateJSON;
         },
 
@@ -167,7 +202,6 @@
             time = now - date;
             timeAsDate = new Date();
             timeAsDate.setTime(time);
-
             //считать интервал как разницу между большим и меньшим.
 
             console.log(timeAsDate.getFullYear());
@@ -177,5 +211,7 @@
     };
 
     global.DTF = dtf;
-        //document.writeln("<br></br>" + formattedDate);
 })(this);
+
+
+document.writeln(DTF.parse(exampleDate, parsePattern).format(formatPattern));
