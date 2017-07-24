@@ -6,16 +6,28 @@ var car = {
   wheels: 4,
   engine: {
     cylinders: {
-      count : 4,
-      radius : 76,
-      height : 86
+      count : 4, //engine.cylinders.count
+      radius : {
+        76 : 90
+      },
+      height : [86, 8, 8]
     },
     size: 2.2
   },
 
-  state: "running"
+  state: "stopped"
 };
 
-document.writeln(DFS.depthFirst(car, "co"));
+document.writeln(DFS.depthFirst(car, "6"));
+document.writeln(DFS.depthFirst(car, "o"));
 
 
+            /*[{
+              key:'abc'.
+              value:'78',
+              type:'key'  
+           },{
+              key:'ac',
+              value:'78b',
+              type:'value'  
+           }]*/

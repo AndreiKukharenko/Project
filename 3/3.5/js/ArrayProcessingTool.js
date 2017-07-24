@@ -1,5 +1,5 @@
 (function(global){
-    //'use strict';
+    'use strict';
     var apt = {
         min : function(array){
             var minVal = Number.MAX_VALUE;
@@ -66,7 +66,5 @@
             return sortedArr
         }
     }; 
-
-    global.APT = apt; //example of closure
-
+    global.APT = apt;
 })(this);

@@ -1,30 +1,35 @@
 (function(global){
+    'use strict';
     var dfs = { 
+        depthFirst : function(obj, find, resultParent){
 
-        res: new Array(),
+            var result = resultParent || [];
 
-        depthFirst : function(obj, find){
-
-            var result = this.res;
-
-            if(obj instanceof Array) {
+            if(obj instanceof Array && !(obj instanceof String) ) {
             for(var i = 0; i < obj.length; i++) {
-
-                if (obj[i].search(find) >= 0) result.push(obj[i]);
-                this.depthFirst(obj[i], find);
+                if ((obj[i]+"").search(find) >= 0) result.push(obj[i]);
+                this.depthFirst(obj[i], find, result);
                 }
             }
             else{
-                for(var prop in obj) {
-                    if ((obj[prop] + "").search(find) >= 0) result.push(obj[prop]); 
-                    if (prop.search(find) >= 0) result.push(prop);
-                    if(obj[prop] instanceof Object || obj[prop] instanceof Array)
-                    this.depthFirst(obj[prop], find);
+                var keys = Object.keys(obj);
+                for(let index = 0; index < keys.length; index++) {
+                    let key = keys[index];
+                    let value = obj[key];
+
+                    if ((key + "").search(find) >= 0){
+                        result.push(key);  
+                    }  
+                    if (!(value instanceof Object) && (value+"").search(find) >= 0){
+                        result.push(value);
+                    } 
+                    if(value instanceof Object || value instanceof Array){
+                        this.depthFirst(value, find, result);
+                    }
                 }
             }
             return result;
         }
-    }
-
+    };
     global.DFS = dfs;
-})(this)
+})(this);
