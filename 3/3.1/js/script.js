@@ -15,6 +15,9 @@ document.writeln("<br></br>");
 document.writeln("parse.fromNow()  " + DTF.parse(exampleDate, parsePattern).fromNow(100));
 //document.writeln(DTF.parse(44));
 document.writeln("<br></br>");
+
+document.writeln("parse.from( parse())  " + DTF.parse(exampleDate, parsePattern).from(DTF.parse("20160201", "YYYYMMDD")));
+
 //document.writeln("<br></br>" + DTF.parse(exampleDate, parsePattern).format(formatPattern));
 
 

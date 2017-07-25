@@ -103,6 +103,11 @@
         }, // override to avoid printing [object Object]
 
         format : function(formatPattern, exampleDate){
+            /*
+             var replace = "regex";
+                var re = new RegExp(replace,"g"); // flags gi - global insensitive search
+            "mystring".replace(re, "newstring");   
+        */
             var dd, mm, yyyy, formattedDate;
             var dateFormatter = window.dateFormatter;
             exampleDate = this.date;
@@ -168,9 +173,22 @@
             return formattedDateJSON; // fix THIS!!
         },
 
-        from : function(){
+        from : function(date0){
+            var timeDifference, date1;
+            date1 = this.date;
+            var result = new Date();
+            const precision = 90; // fixed precision = 90%
+            timeIntervalHandler = window.timeIntervalHandler;
+            roundTimeOff = window.roundTimeOff;
+            
+            timeDifference = date0 - date1;
+            timeDifference = (timeDifference > 0) ? timeDifference : -timeDifference; 
+            var roundedTime =  roundTimeOff.round(timeDifference, precision)
+            result.setTime(roundedTime);
+            result.setFullYear(result.getFullYear() - 1970); // -1970, т.к. это нулевая точка для Date
 
-            //считать интервал как разницу между большим и меньшим.
+            var resultAsAString = timeIntervalHandler.stringify(result);
+            return resultAsAString;
         },
 
         fromNow : function (userPrecision) {
