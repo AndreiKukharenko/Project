@@ -3,9 +3,9 @@ var exampleDate = "2017/20/07 16:55:21";
 
 var parsePattern = "YYYY/DD/MM HH:mm:ss";
 
-var formatPattern = "MM.DD/YYYY";
+var formatPattern = "/MM.DD/YYYY YY";
 
-//document.writeln(DTF.parse(exampleDate, parsePattern));
+document.writeln(DTF.parse(exampleDate, parsePattern));
 document.writeln("<br></br>");
 document.writeln(DTF.parse(exampleDate, parsePattern).fromNow());
 //document.writeln(DTF.parse(44));

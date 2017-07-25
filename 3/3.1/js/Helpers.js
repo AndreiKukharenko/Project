@@ -49,27 +49,33 @@ dateFormatter = {
 
 
 roundTimeOff ={
-    round : 
-       function(time, precision){
+    round : function(time, precision){
         // precision in %
         var lowBorder = time*(1 - precision/100);
         var highBorder = time*(1 + precision/100);
-        var roundFunctions = [];
         var index = 0;
-        while (time >=lowBorder && time <= highBorder){
-            var t = roundFunctions[index];
-            t(time);
-            index++;
-        }
-        roundFunctions = [
-            function(time){return Math.floor(time / 1000)},
-            function(time){return Math.floor(time / 1000 * 60)},
-            (time) => (Math.floor(time / 1000 * 60 * 60 )),
-            time => Math.floor(time / 1000 * 60 * 60 * 24),
-            function(time){Math.floor(time / 1000 * 60 * 60 * 24 * 30)}, // 
-            function(time){Math.floor(time / 1000 * 60 * 60 * 24 * 30 * 12)},
+        var roundedTime = time;
+        var roundExecutingFunctions = [
+            time => Math.round(time / 1000) * 1000,
+            time => ((Math.round(time / (1000 * 60))) || 1) * 1000 * 60,
+            time => ((Math.round(time / (1000 * 60 * 60))) || 1 ) * 1000 * 60 * 60,
+            time => ((Math.round(time / (1000 * 60 * 60 * 24))) || 1) * 1000 * 60 * 60 * 24,
+            time => ((Math.round(time / (1000 * 60 * 60 * 24 * 30))) || 1) * 1000 * 60 * 60 * 24 * 30,
+            time => ((Math.round(time / (1000 * 60 * 60 * 24 * 30 * 12))) || 1) * 1000 * 60 * 60 * 24 * 30 * 12,
+            //time => time // после года не округляем, но можно добавить.
         ];
-        console.log(time);
-       } 
+
+        var isInRange = value => (value >= lowBorder && value <= highBorder);
+
+        for(var i = 0; i < roundExecutingFunctions.length; i++){
+           var temp = roundExecutingFunctions[i](roundedTime);
+            console.log(temp);
+            if (!isInRange(temp)){
+                break;
+            }
+            roundedTime = temp;
+        }
+    return roundedTime;
+    } 
     
 }

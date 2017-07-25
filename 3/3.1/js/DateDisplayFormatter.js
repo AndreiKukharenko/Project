@@ -1,6 +1,10 @@
 (function(global){
         /* YYYY YY MM M DD D HH H mm m ss s  */
+
+    //Date.prototype.fromNow = dtf.fromNow();
+
     var dtf = {
+
         supportedSymbols : {
             'Y' : {
                 extractionFunc: function(extractedChar, parsedDate){
@@ -67,8 +71,8 @@
                 monthPattern : "",
                 hoursPattern: "",
                 minutesPattern:"",
-                secondsPattern: "",
-            }
+                secondsPattern: ""
+            };
            
             /*var parse1 = function(par){ // TODO:implement func for unix-time
             console.log("ONE PARAMETER");
@@ -102,7 +106,7 @@
         format : function(formatPattern, exampleDate){
             var dd, mm, yyyy, formattedDate;
             var dateFormatter = window.dateFormatter;
-            if(exampleDate==undefined) exampleDate = this.date;
+            exampleDate = this.date;
             var order = 0 ;
             var searchEngine = window.searchEngine;
             formattedDateJSON =  {
@@ -167,10 +171,12 @@
             //считать интервал как разницу между большим и меньшим.
         },
 
-        fromNow : function () {
-            var date, now, time, timeAsDate, precision = 20; 
+        fromNow : function (userPrecision) {
+            var date, now, time, timeAsDate; 
+            var precision = userPrecision || 20; 
             date = this.date;
             roundTimeOff = window.roundTimeOff;
+
             if(!(date instanceof Date)) return -1;
             console.log(date.getHours());
             now = new Date();
