@@ -1,8 +1,6 @@
 (function(global){
-        /* YYYY YY MM M DD D HH H mm m ss s  */
 
     //Date.prototype.fromNow = dtf.fromNow();
-
     var dtf = {
 
         supportedSymbols : {
@@ -100,7 +98,8 @@
 
         toString : function() {
             var value = this.date;
-            return value.toDateString();
+            //return timeIntervalHandler.stringify(value); // as an alternative 
+            return value.toString();         
         }, // override to avoid printing [object Object]
 
         format : function(formatPattern, exampleDate){
@@ -109,6 +108,9 @@
             exampleDate = this.date;
             var order = 0 ;
             var searchEngine = window.searchEngine;
+
+            var patterns = [ "YYYY", "YY", "MM", "M", "DD", "D", "HH", "H", "mm", "m", "ss", "s" ];
+
             formattedDateJSON =  {
                 Year: {
                     order : "",
@@ -172,22 +174,21 @@
         },
 
         fromNow : function (userPrecision) {
-            var date, now, time, timeAsDate; 
-            var precision = userPrecision || 20; 
+            var date, now, time, timeAsDate;
+            var precision = userPrecision || 80; // default precision = 80%
+
+            now = time = timeAsDate = new Date();
             date = this.date;
             roundTimeOff = window.roundTimeOff;
+            timeIntervalHandler = window.timeIntervalHandler;
 
             if(!(date instanceof Date)) return -1;
-            console.log(date.getHours());
-            now = new Date();
-            
             time = now - date;
-            timeAsDate = new Date();
-            timeAsDate.setTime(time);
-            console.log(time);
-            var roundedTime =  roundTimeOff.round(time, precision);
-            console.log(roundedTime + 'rounded');
-            return time/1000;
+            var roundedTime =  roundTimeOff.round(time, precision); // округляемся
+            timeAsDate.setTime(roundedTime);
+            timeAsDate.setFullYear(timeAsDate.getFullYear() - 1970); // -1970, т.к. это нулевая точка для Date
+            var result = timeIntervalHandler.stringify(timeAsDate);
+            return result;
         },
 
     };
