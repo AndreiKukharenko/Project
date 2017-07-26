@@ -1,65 +1,34 @@
-
-roundTimeOff ={
+  RoundTime = {
     round : function(time, precision){
         // precision in %
         var lowBorder = time*(1 - (100 - precision)/100);
-        var highBorder = time*(1 + (100 - precision)/100);
-        var index = 0;
-        var roundedTime = time;
+        var timeMS, temp;
+        timeMS = temp = time;
         var roundExecutingFunctions = [
-            time => Math.round(time / 1000) * 1000,
-            time => ((Math.round(time / (1000 * 60))) || 1) * 1000 * 60,
-            time => ((Math.round(time / (1000 * 60 * 60))) || 1 ) * 1000 * 60 * 60,
-            time => ((Math.round(time / (1000 * 60 * 60 * 24))) || 1) * 1000 * 60 * 60 * 24,
-            time => ((Math.round(time / (1000 * 60 * 60 * 24 * 30))) || 1) * 1000 * 60 * 60 * 24 * 30,
-            time => ((Math.round(time / (1000 * 60 * 60 * 24 * 30 * 12))) || 1) * 1000 * 60 * 60 * 24 * 30 * 12,
-            //Для повышения точности (например, на декаду) нужно определить промежуточные функции
+            timeAsDate => new Date (timeAsDate.setMilliseconds(0)),
+            timeAsDate => new Date (timeAsDate.setSeconds(0)),
+            timeAsDate => new Date (timeAsDate.setMinutes(0)),
+            timeAsDate => new Date (timeAsDate.setHours(0)),
+            timeAsDate => new Date (timeAsDate.setDate(0)),
+            timeAsDate => new Date (timeAsDate.setMonth(0)),
+            timeAsDate => new Date (timeAsDate.setFullYear(0)),
         ];
-
-        var isInRange = value => (value >= lowBorder && value <= highBorder);
-
-        for(var i = 0; i < roundExecutingFunctions.length; i++){
-           var temp = roundExecutingFunctions[i](roundedTime);
-            if (!isInRange(temp)){
+        var isInRange = value => (value >= lowBorder && value <= time);
+            var timeAsData = new Date();
+        for(let i = 0; i< roundExecutingFunctions.length; i++){
+            timeAsData = new Date(timeMS);
+            timeAsData = roundExecutingFunctions[i](timeAsData);
+            timeMS = timeAsData.getTime();
+            timeMS = (timeMS > 0 ) ? timeMS : 0;
+            if (!isInRange(timeMS)){
                 break;
             }
-            roundedTime = temp;
+        console.log(timeMS);
+            temp = timeMS;
         }
-        return roundedTime;
+        return temp;
     } 
   },
-
-
-  newRoundTime = {
-    round : function(time, precision){
-        // precision in %
-        var lowBorder = time*(1 - (100 - precision)/100);
-        var highBorder = time*(1 + (100 - precision)/100);
-        var index = 0;
-        var roundedTime = time;
-
-        var roundExecutingFunctions = [ ];
-        var array = [ time.getFullYear(), time.getMonth(),
-             time.getDate(), time.getHours(), 
-            time.getMinutes(). time.getSeconds() ];
-
-        
-
-        var isInRange = value => (value >= lowBorder && value <= highBorder);
-
-            time.setSeconds(0);
-
-            if (!isInRange(time)){
-                break;
-            }
-
-            roundedTime = temp;
-        
-        return roundedTime;
-    } 
-  },
-
-
 
 timeIntervalHandler = {
     stringify: function(dateToHandling){

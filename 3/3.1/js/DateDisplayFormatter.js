@@ -117,21 +117,18 @@
         },
 
         toString : function(value) {
-            
             //return timeIntervalHandler.stringify(value); // as an alternative 
             return value.toString();         
         }, // override to avoid printing [object Object]
 
         format : function(formatPattern, exampleDate){
             var formattedDate = formatPattern;
-            //exampleDate = exampleDate || self.date;
 
-            var YYYY, YY, MM, M, DD, D, HH, H, mm, m, ss, s;
-            var patterns = [ "YYYY", "YY", "MM", "M", "DD", "D", "HH", "H", "mm", "m", "ss", "s" ];
-            YYYY = exampleDate.getFullYear() + "";
-            YY = YYYY.slice(-2);
-            MM = (exampleDate.getMonth() + 1) + "";
-            M = MM.slice(-2);
+            var YYYY, YY, MM, M, DD, HH, mm, ss;
+            var patterns = [ "YYYY", "YY", "MM", "M", "DD",  "HH", "mm", "ss" ];
+            YY = (YYYY = exampleDate.getFullYear() + "").slice(-2); 
+            MM = (exampleDate.getMonth() + 1) + ""
+            M = MM.slice(-1);
             DD = exampleDate.getDate() + "";
             HH = exampleDate.getHours() + "";
             mm = exampleDate.getMinutes() + "";
@@ -148,16 +145,14 @@
         from : function(date0, date1){
             var timeDifference;
             var result = new Date();
-            const precision = 90; // fixed precision = 90%
+            const precision = 90; // fixed precision = 90% here
             if(date0 instanceof DateWrapper){
                 date0 = date0.date;
             }
-            timeIntervalHandler = window.timeIntervalHandler;
-            roundTimeOff = window.roundTimeOff;
             
             timeDifference = date0 - date1;
             timeDifference = (timeDifference > 0) ? timeDifference : -timeDifference; 
-            var roundedTime =  roundTimeOff.round(timeDifference, precision)
+            var roundedTime =  RoundTime.round(timeDifference, precision)
             result.setTime(roundedTime);
             result.setFullYear(result.getFullYear() - 1970); // -1970, it's a starting point for Date
 
@@ -170,14 +165,11 @@
             var precision = usersPrecision || 80; // default precision = 80%
 
             now = time = timeAsDate = new Date();
-            roundTimeOff = window.roundTimeOff;
-            timeIntervalHandler = window.timeIntervalHandler;
-
             if(!(date instanceof Date)) return -1;
             time = now - date;
-            var roundedTime =  roundTimeOff.round(time, precision); // округляемся
+            var roundedTime =  RoundTime.round(time, precision); // округляемся
             timeAsDate.setTime(roundedTime);
-            timeAsDate.setFullYear(timeAsDate.getFullYear() - 1970); // -1970, т.к. это нулевая точка для Date
+            timeAsDate.setFullYear(timeAsDate.getFullYear() - 1970);
             var result = timeIntervalHandler.stringify(timeAsDate);
             return result;
         },
