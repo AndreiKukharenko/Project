@@ -1,0 +1,30 @@
+html{
+    overflow-x: hidden;
+}
+
+.page{
+    max-width: 1170px;
+    background-color: white;
+    margin: auto;
+}
+
+@media screen and (max-width: 1024px){
+    .page{
+    max-width: 1024px;
+    }
+
+}
+
+@media screen and (max-width: 768px){
+    .page{
+    max-width: 768px;
+    }
+
+}
+
+@media screen and (max-width: 412px){
+    .page{
+    max-width: 412px;
+    }
+}
+

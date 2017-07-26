@@ -1,0 +1,92 @@
+
+.options{
+    max-width: 100%;
+}
+
+            /****       text    ****/
+.text__options{
+    text-align: center;
+}
+
+         /****    pictures and buttons   ****/
+.slider{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: -100px;
+}
+
+.arrow-link__previous, .arrow-link__next{
+    display: block;
+    width: 33px;
+    height: 33px;
+}
+
+.arrow{
+    width: 33px;
+    height: 33px;
+    position: relative;
+    bottom: 100px;
+}
+
+.arrow-link__previous{
+    float: left;
+    left: 150px;
+}
+
+.arrow-link__previous::after{
+    content: url(../images/arrowLeft.png); 
+    display: block;
+}
+
+.arrow__previous{
+    order: 1;
+}
+
+.arrow-link__next{
+    bottom: 350px;
+    left: 700px;
+}
+
+.arrow-link__next::after{
+    content: url(../images/arrowRight.png); 
+    display: block;
+}
+
+.arrow__next{
+    order:3;
+}
+
+.slider__main-picture{
+    height: 35%;
+    order: 2;
+}
+
+.slider__screen{
+    border-width: 0px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 8px; 
+    position: relative;
+    bottom: 255px;
+    left: 83px;
+    height: 168px;
+    width: 251px;
+    background-image: url(../images/mainPhoto.png);
+    background-position: center center;
+    background-size: cover;
+}
+
+
+@media screen and (max-width: 768px){
+
+    .arrow__previous{
+        left: 50px;
+    }
+
+    .arrow__next{
+        right: 50px;
+    }
+
+}
