@@ -1,6 +1,5 @@
 (function(global){
 
-    //Date.prototype.fromNow = dtf.fromNow();
     var dtf = {
 
         supportedSymbols : {
@@ -72,15 +71,11 @@
                 secondsPattern: ""
             };
            
-            /*var parse1 = function(par){ // TODO:implement func for unix-time
-            console.log("ONE PARAMETER");
-            }*/
-
             if(exampleDate === undefined || parsePattern === undefined){
                 return -2;
             }
             if (exampleDate.length != parsePattern.length){
-                return -1;   // this breaks chaining. how to handle it in correct way?
+                return -1;
             }
             
             for (var index = 0; index < parsePattern.length; index++) {
@@ -103,74 +98,26 @@
         }, // override to avoid printing [object Object]
 
         format : function(formatPattern, exampleDate){
-            /*
-             var replace = "regex";
-                var re = new RegExp(replace,"g"); // flags gi - global insensitive search
-            "mystring".replace(re, "newstring");   
-        */
-            var dd, mm, yyyy, formattedDate;
-            var dateFormatter = window.dateFormatter;
-            exampleDate = this.date;
-            var order = 0 ;
-            var searchEngine = window.searchEngine;
+            var formattedDate = formatPattern;
+            exampleDate = exampleDate || this.date;
 
+            var YYYY, YY, MM, M, DD, D, HH, H, mm, m, ss, s;
             var patterns = [ "YYYY", "YY", "MM", "M", "DD", "D", "HH", "H", "mm", "m", "ss", "s" ];
-
-            formattedDateJSON =  {
-                Year: {
-                    order : "",
-                    pattern : "",
-                    value : "",
-                },
-
-                Month: {
-                    order : "",
-                    pattern : "",
-                    value : "",
-                },
-
-                Date: {
-                    order : "",
-                    pattern : "",
-                    value : "",
-                },
-
-                Hours: {
-                    order : "",
-                    pattern : "",
-                    value : "",
-                },
-
-                Minutes: {
-                    order : "",
-                    pattern : "",
-                    value : "",
-                },
-
-                Seconds: {
-                    order : "",
-                    pattern : "",
-                    value : "",
-                }
-            };
-
-            for (let index = 0; index < formatPattern.length; index++) { //check divider!!!!
-                var patternSymbol = formatPattern[index];
-                if(dateFormatter.hasOwnProperty(patternSymbol)){
-                    var character = dateFormatter[patternSymbol];
-                    order++;
-                    character.formatterFunc(patternSymbol, formattedDateJSON, order, exampleDate);
-                }
+            YYYY = exampleDate.getFullYear()+"";
+            YY = YYYY.slice(-2);
+            MM = (exampleDate.getMonth() + 1) + "";
+            M = MM.slice(-2);
+            DD = exampleDate.getDate() + "";
+            HH = exampleDate.getHours() + "";
+            mm = exampleDate.getMinutes() + "";
+            ss = exampleDate.getSeconds() + "";
+            var values = [YYYY, YY, MM, M, DD, D, HH, H, mm, m, ss, s]
+             
+            for (let i = 0; i < patterns.length; i++) {
+                let regex = new RegExp(patterns[i], "g");
+                formattedDate = formattedDate.replace(regex, values[i]+"");
             }
-            console.log(formattedDateJSON);
-            var outputOrder = [];
-            for (let i = 0; i < formatPattern.length-1; i++) {
-                var search = searchEngine.searchOrder(formattedDateJSON, i)
-                if(search[0]>1) {
-                    document.write(search[0]+'/'); // fix THIS!!
-                }
-            }
-            return formattedDateJSON; // fix THIS!!
+            return formattedDate; 
         },
 
         from : function(date0){
@@ -208,8 +155,8 @@
             var result = timeIntervalHandler.stringify(timeAsDate);
             return result;
         },
-
     };
-
     global.DTF = dtf;
+    Date.prototype.parse = dtf.parse;
+    
 })(this);

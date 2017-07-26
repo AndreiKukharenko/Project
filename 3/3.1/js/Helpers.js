@@ -1,4 +1,4 @@
-searchEngine = { 
+searchEngine = { // redundant
     searchOrder : function(obj, find, resultParent){
             var result = resultParent || [];
             var keys = Object.keys(obj);
@@ -18,35 +18,6 @@ searchEngine = {
             return result;
         }
     };    
-
-
-dateFormatter = {
-        'Y' : {
-            formatterFunc: function(patternSymbol, formattedDateJSON, order, date){
-                formattedDateJSON.Year.pattern += patternSymbol;
-                formattedDateJSON.Year.order = order;
-                formattedDateJSON.Year.value = date.getFullYear();
-            }
-        },
-            
-        'M' : {
-            formatterFunc: function(patternSymbol, formattedDateJSON, order, date){
-                formattedDateJSON.Month.pattern += patternSymbol;
-                formattedDateJSON.Month.order = order;
-                formattedDateJSON.Month.value = date.getMonth();
-                }
-        },
-
-        'D' : {
-            formatterFunc: function(patternSymbol, formattedDateJSON, order, date){
-                formattedDateJSON.Date.pattern += patternSymbol;
-                formattedDateJSON.Date.order = order;
-                formattedDateJSON.Date.value = date.getDate();
-            },
-        },
-        //TODO: add formats
-    }; 
-
 
 roundTimeOff ={
     round : function(time, precision){
