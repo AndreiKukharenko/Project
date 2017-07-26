@@ -1,5 +1,30 @@
 (function(global){
 
+    function DateWrapper(date){
+        var self = this;
+        self.date = date;
+        self.fromNow = function(precision){
+            return dtf.fromNow(self.date, precision);
+        }
+
+        self.parse = function(exampleDate, parsePattern){
+            return dtf.parse(exampleDate, parsePattern);
+        }
+
+        self.from = function(date0){
+            return dtf.from(date0, self.date);
+        }
+
+        self.format = function(formatPattern, exampleDate){
+            return dtf.format(formatPattern, self.date);
+        }
+
+        self.toString = function() {
+            return dtf.toString(self.date);
+        }
+        return self;
+    }
+
     var dtf = {
 
         supportedSymbols : {
@@ -85,25 +110,25 @@
                     character.extractionFunc(exampleDate[index], parsedDateJSON);
                 }
             }
-            this.date = new Date(parsedDateJSON.year, parsedDateJSON.month - 1,
+            date = new Date(parsedDateJSON.year, parsedDateJSON.month - 1,
                  parsedDateJSON.date, parsedDateJSON.hours, parsedDateJSON.minutes,
                   parsedDateJSON.seconds);
-            return this;
+            return new DateWrapper(date);
         },
 
-        toString : function() {
-            var value = this.date;
+        toString : function(value) {
+            
             //return timeIntervalHandler.stringify(value); // as an alternative 
             return value.toString();         
         }, // override to avoid printing [object Object]
 
         format : function(formatPattern, exampleDate){
             var formattedDate = formatPattern;
-            exampleDate = exampleDate || this.date;
+            //exampleDate = exampleDate || self.date;
 
             var YYYY, YY, MM, M, DD, D, HH, H, mm, m, ss, s;
             var patterns = [ "YYYY", "YY", "MM", "M", "DD", "D", "HH", "H", "mm", "m", "ss", "s" ];
-            YYYY = exampleDate.getFullYear()+"";
+            YYYY = exampleDate.getFullYear() + "";
             YY = YYYY.slice(-2);
             MM = (exampleDate.getMonth() + 1) + "";
             M = MM.slice(-2);
@@ -115,16 +140,18 @@
              
             for (let i = 0; i < patterns.length; i++) {
                 let regex = new RegExp(patterns[i], "g");
-                formattedDate = formattedDate.replace(regex, values[i]+"");
+                formattedDate = formattedDate.replace(regex, values[i] + "");
             }
             return formattedDate; 
         },
 
-        from : function(date0){
-            var timeDifference, date1;
-            date1 = this.date;
+        from : function(date0, date1){
+            var timeDifference;
             var result = new Date();
             const precision = 90; // fixed precision = 90%
+            if(date0 instanceof DateWrapper){
+                date0 = date0.date;
+            }
             timeIntervalHandler = window.timeIntervalHandler;
             roundTimeOff = window.roundTimeOff;
             
@@ -132,18 +159,17 @@
             timeDifference = (timeDifference > 0) ? timeDifference : -timeDifference; 
             var roundedTime =  roundTimeOff.round(timeDifference, precision)
             result.setTime(roundedTime);
-            result.setFullYear(result.getFullYear() - 1970); // -1970, т.к. это нулевая точка для Date
+            result.setFullYear(result.getFullYear() - 1970); // -1970, it's a starting point for Date
 
             var resultAsAString = timeIntervalHandler.stringify(result);
             return resultAsAString;
         },
 
-        fromNow : function (userPrecision) {
-            var date, now, time, timeAsDate;
-            var precision = userPrecision || 80; // default precision = 80%
+        fromNow : function (date, usersPrecision) {
+            var now, time, timeAsDate;
+            var precision = usersPrecision || 80; // default precision = 80%
 
             now = time = timeAsDate = new Date();
-            date = this.date;
             roundTimeOff = window.roundTimeOff;
             timeIntervalHandler = window.timeIntervalHandler;
 
@@ -157,6 +183,4 @@
         },
     };
     global.DTF = dtf;
-    Date.prototype.parse = dtf.parse;
-    
 })(this);

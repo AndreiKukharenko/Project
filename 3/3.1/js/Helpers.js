@@ -1,23 +1,3 @@
-searchEngine = { // redundant
-    searchOrder : function(obj, find, resultParent){
-            var result = resultParent || [];
-            var keys = Object.keys(obj);
-                for(let index = 0; index < keys.length; index++) {
-                    let key = keys[index];
-                    let value = obj[key];
-
-                    if((key+"") === 'order' && value === find){
-                        result.push(obj['value'])
-                    } 
-
-                    if(value instanceof Object || value instanceof Array){
-                        this.searchOrder(value, find, result);
-                    }
-                }
-                
-            return result;
-        }
-    };    
 
 roundTimeOff ={
     round : function(time, precision){
@@ -33,7 +13,6 @@ roundTimeOff ={
             time => ((Math.round(time / (1000 * 60 * 60 * 24))) || 1) * 1000 * 60 * 60 * 24,
             time => ((Math.round(time / (1000 * 60 * 60 * 24 * 30))) || 1) * 1000 * 60 * 60 * 24 * 30,
             time => ((Math.round(time / (1000 * 60 * 60 * 24 * 30 * 12))) || 1) * 1000 * 60 * 60 * 24 * 30 * 12,
-            // после года не округляем, но можно добавить. 
             //Для повышения точности (например, на декаду) нужно определить промежуточные функции
         ];
 
@@ -49,6 +28,38 @@ roundTimeOff ={
         return roundedTime;
     } 
   },
+
+
+  newRoundTime = {
+    round : function(time, precision){
+        // precision in %
+        var lowBorder = time*(1 - (100 - precision)/100);
+        var highBorder = time*(1 + (100 - precision)/100);
+        var index = 0;
+        var roundedTime = time;
+
+        var roundExecutingFunctions = [ ];
+        var array = [ time.getFullYear(), time.getMonth(),
+             time.getDate(), time.getHours(), 
+            time.getMinutes(). time.getSeconds() ];
+
+        
+
+        var isInRange = value => (value >= lowBorder && value <= highBorder);
+
+            time.setSeconds(0);
+
+            if (!isInRange(time)){
+                break;
+            }
+
+            roundedTime = temp;
+        
+        return roundedTime;
+    } 
+  },
+
+
 
 timeIntervalHandler = {
     stringify: function(dateToHandling){
