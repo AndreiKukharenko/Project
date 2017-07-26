@@ -127,13 +127,13 @@
             var YYYY, YY, MM, M, DD, HH, mm, ss;
             var patterns = [ "YYYY", "YY", "MM", "M", "DD",  "HH", "mm", "ss" ];
             YY = (YYYY = exampleDate.getFullYear() + "").slice(-2); 
-            MM = (exampleDate.getMonth() + 1) + ""
+            MM = (exampleDate.getMonth() + 1) + "";
             M = MM.slice(-1);
             DD = exampleDate.getDate() + "";
             HH = exampleDate.getHours() + "";
             mm = exampleDate.getMinutes() + "";
             ss = exampleDate.getSeconds() + "";
-            var values = [YYYY, YY, MM, M, DD, D, HH, H, mm, m, ss, s]
+            var values = [YYYY, YY, MM, M, DD, HH, mm, ss]
              
             for (let i = 0; i < patterns.length; i++) {
                 let regex = new RegExp(patterns[i], "g");
