@@ -1,5 +1,5 @@
 (function(global){
-  'use strict';
+  "use strict";
   document.writeln("<p></p>");
 
   var car = {
@@ -14,12 +14,11 @@
         height : [86, 8, 8]
       },
       size: 2.2,
-      new : [12,'23ii423', {aiibc:10}, ['test', 'piing']],
+      new : [12,"23ii423", {aiibc:10}, ["test", "piing"]]
     },
     state: "stopped"
   };
 
   document.writeln(DFS.depthFirst(car, "ii"));
-  document.writeln(DFS.depthFirst(car, "o"));
-
-})(this)
+  document.writeln(DFS.depthFirst(car, 6));
+})(this);

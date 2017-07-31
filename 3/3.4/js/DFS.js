@@ -2,47 +2,45 @@
     'use strict';
     var dfs = { 
         depthFirst : function(obj, find, resultParent, pathParent){
-
+            var path = pathParent || "";
             var result = resultParent || [];
             if(obj instanceof Array && !(obj instanceof String) ) {
-            for(var i = 0; i < obj.length; i++) {
-                var path = pathParent || "";
-                path = path +"[" + i + "].";
-
-               var createDescriptionOf = function(typeEl){
-                    let element = {
-                        value : obj[i],
-                        path : path
+                for(var i = 0; i < obj.length; i++) {
+                    var currentValue = obj[i];
+                    path = path + "[" + i + "].";
+                    var createDescriptionOf = function(typeEl){
+                            let element = {
+                                value : currentValue,
+                                path : path
+                            };
+                            return JSON.stringify(element);
+                        };
+                    
+                    if (!(currentValue instanceof Array) && !(currentValue instanceof Object)
+                        && (currentValue + "").search(find) >= 0) {
+                            result.push(createDescriptionOf (currentValue));
                     }
-                    return JSON.stringify(element);
+                    this.depthFirst(currentValue, find, result, path);
                 }
-                
-                if (!(obj[i] instanceof Array) && !(obj[i] instanceof Object)
-                    && (obj[i] + "").search(find) >= 0) {
-                        result.push(createDescriptionOf (obj[i]));
-                }
-                this.depthFirst(obj[i], find, result, path);
-                }
-            }
-            else{
+            }else{
                 var keys = Object.keys(obj);
                 for(let index = 0; index < keys.length; index++) {
                     let key = keys[index];
                     let value = obj[key];
-                    var path = pathParent || "";
+                    path = path + key + ".";
                     var createDescriptionOf = function(typeEl){
-                        let element = new Object();
-                        element['key'] = key;
-                        element['value'] = value;
-                        element['type'] = typeEl;
-                        element['path'] = path;
+                        let element = {
+                            key : key,
+                            value : obj[i],
+                            type : typeEl,
+                            path : path
+                        };
                         return JSON.stringify(element);
                     }
-                    path = path + key+".";
                     if ((key + "").search(find) >= 0){
                         result.push(createDescriptionOf("key"));  
                     }  
-                    if (!(value instanceof Object) && (value+"").search(find) >= 0){
+                    if (!(value instanceof Object) && (value + "").search(find) >= 0){
                         result.push(createDescriptionOf("value"));
                     } 
                     if(value instanceof Object || value instanceof Array){
