@@ -1,5 +1,5 @@
-"use strict";
 (function(global){
+    "use strict";
     var CustomMapper = {
             mapper : function(fn){
                 let result = [];
@@ -14,5 +14,4 @@
             }
         }
     Array.prototype.mapper = CustomMapper.mapper;
-    //global.customMapper = CustomMapper;
 })(this)

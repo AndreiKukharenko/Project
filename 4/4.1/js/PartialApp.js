@@ -1,5 +1,5 @@
-"use strict";
 (function(global){
+  "use strict";
   var PartialLibrary = {
     partialApp : function(){
       var slice = Array.prototype.slice;

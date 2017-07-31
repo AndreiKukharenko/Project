@@ -10,14 +10,15 @@
                 path = path +"[" + i + "].";
 
                var createDescriptionOf = function(typeEl){
-                    let element = new Object();
-                    element['value'] = obj[i];
-                    element['path'] = path;
+                    let element = {
+                        value : obj[i],
+                        path : path
+                    }
                     return JSON.stringify(element);
                 }
                 
                 if (!(obj[i] instanceof Array) && !(obj[i] instanceof Object)
-                    && (obj[i]+"").search(find) >= 0) {
+                    && (obj[i] + "").search(find) >= 0) {
                         result.push(createDescriptionOf (obj[i]));
                 }
                 this.depthFirst(obj[i], find, result, path);

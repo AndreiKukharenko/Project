@@ -62,7 +62,7 @@
         }, 
 
         sort  : function(array) {
-            var sortedArr = arr.sort(function(a,b) {return a - b});
+            var sortedArr = array.sort(function(a,b) {return a - b});
             return sortedArr
         }
     }; 

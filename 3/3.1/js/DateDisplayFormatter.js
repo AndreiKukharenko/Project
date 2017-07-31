@@ -1,5 +1,5 @@
 (function(global){
-
+    "use strict";
     function DateWrapper(date){
         var self = this;
         self.date = date;
@@ -26,7 +26,6 @@
     }
 
     var dtf = {
-
         supportedSymbols : {
             'Y' : {
                 extractionFunc: function(extractedChar, parsedDate){
@@ -152,7 +151,7 @@
             
             timeDifference = date0 - date1;
             timeDifference = (timeDifference > 0) ? timeDifference : -timeDifference; 
-            var roundedTime =  RoundTime.round(timeDifference, precision)
+            var roundedTime =  roundTime.round(timeDifference, precision)
             result.setTime(roundedTime);
             result.setFullYear(result.getFullYear() - 1970); // -1970, it's a starting point for Date
 
@@ -167,12 +166,12 @@
             now = time = timeAsDate = new Date();
             if(!(date instanceof Date)) return -1;
             time = now - date;
-            var roundedTime =  RoundTime.round(time, precision); // округляемся
+            var roundedTime =  roundTime.round(time, precision);
             timeAsDate.setTime(roundedTime);
             timeAsDate.setFullYear(timeAsDate.getFullYear() - 1970);
             var result = timeIntervalHandler.stringify(timeAsDate);
             return result;
-        },
+        }
     };
     global.DTF = dtf;
 })(this);

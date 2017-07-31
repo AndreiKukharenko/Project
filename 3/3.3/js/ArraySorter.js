@@ -1,6 +1,8 @@
 (function(global){
+   "use strict";
     var sorter = {
-        bubbleSort : function(arr){
+        bubbleSort : function(array){
+            var arr = array.slice(0);;
             var length = arr.length;
             var temp = 0;
             for (let index = length - 1; index >= 0 ; index--) {
@@ -15,7 +17,8 @@
             return arr;
         },
 
-        insertionSort : function(arr){
+        insertionSort : function(array){
+            var arr = array.slice(0);;
             var length = arr.length;
             var temp = 0;
             for (let index = 1; index < length; index++) {
@@ -28,7 +31,8 @@
             return arr;
         },
 
-        selectionSort : function(arr){
+        selectionSort : function(array){
+            var arr = array.slice(0);;
             var length = arr.length;
             var temp = 0;
             for (let index = 0; index < length - 1; index++) {
@@ -46,8 +50,8 @@
         quickSort : function(arr, left, right){
             var i, j, pivot;
             if (left == right) {
-                left =0;
-                right = arr.length-1;
+                left = 0;
+                right = arr.length - 1;
             }
             i = left; 
             j = right;
@@ -74,7 +78,7 @@
                 this.quickSort(arr, left, j);
             }   
         return arr;
-        },
-    }
+        }
+    };
     global.Sorter = sorter;
 })(this)

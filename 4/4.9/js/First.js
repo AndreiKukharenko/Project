@@ -1,12 +1,11 @@
-"use strict";
-
 (function(global){
+    "use strict";
     var First = {
         first : function(fn){
-            let result = "not found";
             if (!this instanceof Array){
                 throw new TypeError();
             }
+            let result = "not found";
             let array = this;
             for (let i = 0; i < array.length; i++){
                 if (fn(array[i])) {
@@ -18,5 +17,4 @@
         }
     }
     Array.prototype.first = First.first;
-    global.first = First;
 })(this)
