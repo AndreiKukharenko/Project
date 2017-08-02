@@ -1,4 +1,5 @@
-(function(global){
-  "use strict";
+(function($){
+    $.fn.dragAndDropPlugin = function(){
 
-})(this)
+    }
+})(jQuery)

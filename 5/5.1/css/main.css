@@ -3,7 +3,6 @@
     text-align: center;
 }
 
-
 .registration{
     background-color: cornflowerblue;
     display: flex;
@@ -20,24 +19,23 @@
     cursor: pointer;
 }
 
-.clearfix:after{
-    content: "";
-    display: table;
-    clear: both;
-}
-
 .text{
     font-family: 'source-sans-pro';
     padding: 30px 20px 20px 20px;
     overflow: hidden;
 }
 
-#contact button[type="submit"]:hover {
+#button[type="submit"]:hover {
   background: #43A047;
-
   transition: background-color 0.3s ease-in-out;
 }
 
-#contact button[type="submit"]:active {
+#button[type="submit"]:active {
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+
+.photo{
+    width: 150px;
+    height: 150px;
 }
