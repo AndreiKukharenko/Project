@@ -18,25 +18,33 @@
          <div class = "registration__inputs--password">
             <input placeholder="Password" type="text" tabindex="1" required autofocus>
          </div>
-         <div class = "registration photo">
-             
+
+         <div class = "photo" ondragover="return false"><!-- -->
+            <p>place for image</p>
+            <form>
+                <input class = "input__file" type="file" multiple />
+            </form>
+        </div>
+
+         <div class = "preview">
+             <img src=""/>
          </div>
-        <fieldset class = "button__submit--register">
+
+        <fieldset class = "button button__submit--register">
             <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Register</button>
         </fieldset>
      </fieldset>
     </section>
-    <section class ="confirmation">
-        <div>
+
+        <div class = "success">
             You’ve been successfully registered on the website!
+            <div class = "button button__submit--Ok">
+                <button name="submit" type="submit" id="contact-submit">Ok</button>
+            </div>
         </div>
-        <div class = "button__submit--Ok">
-            <button name="submit" type="submit" id="contact-submit">Ok</button>
-        </div>
-    </section>
         <script src=js/jquery-3.2.1.js></script>
-        <script src=js/jquery-ui.js></script>
         <script src=js/jqueryPlugin.js></script>
         <script src=js/script.js></script>
+        <!--script src=js/jquery-ui.js></script-->
     </body>
 </html>

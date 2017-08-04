@@ -1,4 +1,9 @@
 (function(global){
-  "use strict";
+    "use strict";
+    $(document).ready(function(){
+
+        $(".imagesSection").lazyLoading();
+
+    })
 
 })(this);

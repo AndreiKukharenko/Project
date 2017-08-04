@@ -1,6 +1,13 @@
 (function(global){
   "use strict";
-    $(".button__submit--register").click(function(){
+    $(document).ready(
+      function(){
+
+          $().dragAndDropPlugin();
+          $(".button__submit--register").click(function(){
+
+            console.log("in sc")
+      })
 
       
     })
