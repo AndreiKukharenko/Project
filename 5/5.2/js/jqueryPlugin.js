@@ -1,22 +1,29 @@
 (function($){
     "use strict";
-    $.fn.lazyLoading = function(selector){
-        if(!selector instanceof String){
+    $.fn.lazyLoading = function(sourceURL){
+        var selectorObject = $(this)[0];
+        if(!selectorObject instanceof Object){
             throw new TypeError();
         }
-        
-        var jsonPlaceholder;
+        var selector;
+        if(selectorObject.id.length >= 1){   // get selector (it can be id or a class)
+            selector = document.getElementById(selectorObject.id);
+        }
+        if(selectorObject.className.length >= 1){
+            selector = document.getElementsByClassName(selectorObject.className)[0];
+        }
+
+        var arrayOfImagesInfoJSON;
         var counter = {
             count : 4 //initial count of images
         };
 
-        $.ajax({ // TODO: promise
+        $.ajax(sourceURL, { // TODO: promise
             type:"GET", 
-            url: "http://jsonplaceholder.typicode.com/photos", 
             success: function(data) {
                 imageHandler(data, counter.count);
-                jsonPlaceholder = data;
-                window.onscroll = scrollControl;
+                arrayOfImagesInfoJSON = data;
+                $(window).scroll(scrollControl);
             }, 
             error: function(jqXHR, textStatus, errorThrown) {
                 alert(jqXHR.status);
@@ -25,34 +32,36 @@
         });
 
         function imageHandler(data, count){
-            jsonPlaceholder = data || jsonPlaceholder;
+            let arrImgInfJson = data || arrayOfImagesInfoJSON;
             if (count){
                 for(let i = 0; i < count; i++){
-                    addImage(jsonPlaceholder[i].id, jsonPlaceholder[i].url, jsonPlaceholder[i].title);
+                    let currentElement = arrImgInfJson[i];
+                    addImageToSelector(currentElement.id, currentElement.url, currentElement.title);
                 }
             }else{
-                let i = counter.count;
-                addImage(jsonPlaceholder[i].id, jsonPlaceholder[i].url, jsonPlaceholder[i].title);
+                let currentElement = arrImgInfJson[counter.count];
+                addImageToSelector(currentElement.id, currentElement.url, currentElement.title);
             }
         };
 
-        function addImage(id, src, title){
+        function addImageToSelector(id, src, title){
             var nextImage = document.createElement("img");
-            nextImage.setAttribute("src", src);
-            nextImage.setAttribute("title", title + id);
-            document.getElementsByClassName("imagesSection")[0].appendChild(nextImage);            
+            $(nextImage).attr("src", src);
+            $(nextImage).attr("title", title + id);
+            $(selector).append(nextImage);            
         };
 
         function scrollControl(){
             var body = document.getElementsByClassName("body")[0];
-            var contentHeight = body.offsetHeight;
-            var yOffset = window.pageYOffset; //Текущая прокрутка сверху
+            var contentHeight = $(body).outerHeight();
+            var yOffset = $(body).scrollTop(); //Текущая прокрутка сверху
             var y = yOffset + window.innerHeight;
             if(y >= contentHeight){
                 counter.count += 1;
                 imageHandler();
             }
+            //setTimeout(()=>{} , 500)
         };
-        console.log(counter.count);
+
     };
 })(jQuery);

@@ -1,8 +1,8 @@
 (function(global){
     "use strict";
     $(document).ready(function(){
-
-        $(".imagesSection").lazyLoading();
+        var url = "http://jsonplaceholder.typicode.com/photos";
+        $(".imagesSection").lazyLoading(url);
 
     })
 
