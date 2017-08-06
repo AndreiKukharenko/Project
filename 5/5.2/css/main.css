@@ -7,8 +7,9 @@
     font-family: 'Times New Roman', Times, serif;
 }
 
-.img{
+img{
     display: block;
+    background: url("giphy.gif") no-repeat;
 }
 
 footer{

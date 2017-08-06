@@ -22,35 +22,35 @@
 
         function imageHandler(data, count){
             let arrImgInfJson = data || arrayOfImagesInfoJSON;
-            
             if (count){
                 for(let i = 0; i < count; i++){
-                    let currentElement = arrImgInfJson[i];
-                    addImageToSelector(currentElement.id, currentElement.url, currentElement.title);// передать объектом
+                    let currentImage = arrImgInfJson[i];
+                    addImageToSelector(currentImage);
                 }
             }else{
-                let currentElement = arrImgInfJson[counter.count];
-                addImageToSelector(currentElement.id, currentElement.url, currentElement.title);
+                let currentImage = arrImgInfJson[counter.count];
+                addImageToSelector(currentImage);
+                counter.count += 1;
             }
         };
 
-        function addImageToSelector(id, src, title){
-            var nextImage = $("<img>",{
-                src: src,
-                title: title + id,
-            }).appendTo($selector);          
+        function addImageToSelector(currentImage){
+            var $div = $("<div>", {
+                class: $selector[0].className + "__image"})
+                .appendTo($selector);
+
+            $("<img>",{
+                src: currentImage.url,
+                title: currentImage.title + currentImage.id,
+            }).appendTo($div);  
         };
 
         function scrollControl(){
-            //debugger;
             var body = document.getElementsByClassName("body")[0];
-            var contentHeight = $(body).outerHeight(); //TODo no body
-            var yOffset = $(body).scrollTop(); //Текущая прокрутка сверху
-            var y = yOffset + window.innerHeight;
-            if(y >= contentHeight){
-                counter.count += 1;
+            var $contentHeight = $(body).outerHeight(); 
+            var $yOffset = $(body).scrollTop(); //Текущая прокрутка сверху
+            if($yOffset + window.innerHeight >= $contentHeight){
                 imageHandler();
-                console.log(counter.count)
             }
         };
     };
