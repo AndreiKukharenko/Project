@@ -3,6 +3,8 @@
     <head>
         <meta name="charset=UTF-8">
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/draganddropstyle.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <title></title>
     </head>    
     
@@ -11,29 +13,28 @@
             <p>Registration page</p>
         </header>
     <section class = "registration">
-     <fieldset class = "registration__inputs">
+     <form class = "registration__inputs">
          <div class = "registration__inputs--login">
-            <input placeholder="Login" type="text" tabindex="1" required autofocus>
+            <input required placeholder="Login" type="text" class="form-control form-control__login"  autofocus>
          </div>
          <div class = "registration__inputs--password">
-            <input placeholder="Password" type="text" tabindex="1" required autofocus>
+            <input required placeholder="Password" type="password" class="form-control form-control__password"  autofocus>
          </div>
 
-         <div class = "photo" ondragover="return false"><!-- -->
-            <p>place for image</p>
-            <form>
-                <input class = "input__file" type="file" multiple />
-            </form>
-        </div>
+        <div id="dragandrophandler">Drag & Drop Files Here</div>
+        <br><br>
+        <div id="status1"></div>
 
-         <div class = "preview">
+        <div class = "preview">
              <img src=""/>
          </div>
 
         <fieldset class = "button button__submit--register">
             <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Register</button>
         </fieldset>
-     </fieldset>
+     </form>
+
+
     </section>
 
         <div class = "success">
@@ -45,6 +46,8 @@
         <script src=js/jquery-3.2.1.js></script>
         <script src=js/jqueryPlugin.js></script>
         <script src=js/script.js></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/dragAndDrop.js"></script>
         <!--script src=js/jquery-ui.js></script-->
     </body>
 </html>
