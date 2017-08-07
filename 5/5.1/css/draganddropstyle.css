@@ -1,13 +1,13 @@
-#dragandrophandler
-{
+.dragandrophandler{
     border:2px dotted #0B85A1;
-    width:300px;
+    width:400px;
     color:#92AAB0;
     text-align:left;vertical-align:middle;
     padding:10px 10px 10 10px;
     margin-bottom:10px;
     font-size:200%;
 }
+
 .progressBar {
     width: 100px;
     height: 22px;

@@ -3,15 +3,14 @@
     $(document).ready(
       function(){
           $().dragAndDropPlugin();
-      
 
-        $(".button__submit--Ok").click(function(){
-            $(".success").hide();
-            resetForm($(".registration"));
-        });
+          $(".button__submit--Ok").click(function(){
+              $(".success").hide();
+              resetForm($(".registration"));
+          });
 
-        function resetForm($form) {
-            $form.find("input:text, input:password, input:file, select, textarea").val("");
-        };
+          function resetForm($form) {
+              $form.find("input:text, input:password, input:file, select, textarea").val("");
+          };
     })
 })(this);
