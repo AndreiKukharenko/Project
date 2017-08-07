@@ -1,10 +1,15 @@
 (function($){
     "use strict";
-    $.fn.lazyLoading = function(sourceURL){
-        var $selector = $($(this)[0]);
+
+    var $body = $("body");
+
+    $.fn.lazyLoading = function(sourceURL, settings){
+        //  TODO  $.extend(counter, settings)
+        var $selector = this; //$($(this)[0]);
         var arrayOfImagesInfoJSON;
         var counter = {
-            count : 4 //initial count of images
+            count : 4, //initial count of images,
+            //a:6
         };
 
         $.ajax(sourceURL, { // TODO: promise
@@ -36,11 +41,13 @@
 
         function addImageToSelector(currentImage){
             var $div = $("<div>", {
-                class: $selector[0].className + "__image"})
+                class: $selector + "__image"})// отвязаться от конкретного селектора, передавать лучше настройкой
                 .appendTo($selector);
 
             $("<img>",{
+                id: "lazyImage__" +  currentImage.id ,
                 src: currentImage.url,
+                alt: currentImage.title,
                 title: currentImage.title + currentImage.id,
             }).appendTo($div);  
         };

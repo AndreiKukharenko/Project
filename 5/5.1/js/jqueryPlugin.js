@@ -3,7 +3,7 @@
     $.fn.dragAndDropPlugin = function(){
         var images;
         function sendFormToServer(formData){
-            var uploadURL ="http://local"; //Upload URL
+            var uploadURL ="http://httpbin.org/post"; //Upload URL
             var jqXHR = $.ajax({
                 url: uploadURL,
                 type: "POST",
@@ -11,15 +11,11 @@
                 processData: false,
                 cache: false,
                 data: formData,
-            }); 
-
-            // http://api.jquery.com/jquery.ajax/  see the jqXHR Object and promise
-            jqXHR.fail(function(jqXHR, textStatus, errorThrown) {
-                alert("upload " + textStatus)
-            });
-
-            jqXHR.done(function(data, textStatus, jqXHR){
+                async: false //deprecated. only to avoid error when request goes to httpbin.org/post 
+            }).done(function(data, textStatus, jqXHR){
                 $(".success").show();
+            }).fail(function(jqXHR, textStatus, errorThrown){
+                alert("upload " + textStatus)
             });
         }
 
@@ -81,17 +77,12 @@
                 var filesAmount = input.length;
                 for (let i = 0; i < filesAmount; i++){
                     var reader = new FileReader();
-
                     reader.onload = function(event){
                         var $img = $("<img>", {
                             src: event.target.result
                         });
                         $img.appendTo(".preview");
                     }
-
-                    /*reader.onload = function(event){
-                        $(".preview img").attr("src", event.target.result).appendTo("preview");
-                    }*/
                     reader.readAsDataURL(input[i]);
                 }
             }
