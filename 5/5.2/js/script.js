@@ -20,5 +20,5 @@
         }).fail(function(jqXHR, textStatus, errorThrown){
                 alert(jqXHR.status + " data loading fail");
         });
-    })
+    });
 })(this);

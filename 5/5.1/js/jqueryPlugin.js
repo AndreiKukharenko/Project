@@ -1,25 +1,36 @@
 (function($){
     "use strict";
     $.fn.dragAndDropPlugin = function(){
+            var $selector = $(this);
+            var images;
         $(document).ready(function(){
-            var obj = $(".dragandrophandler");
-            obj.on("dragenter", function(e){
+            $selector.on("dragenter", function(e){
                 e.stopPropagation();
                 e.preventDefault();
                 $(this).css("border", "2px solid #0B85A1");
             });
 
-            obj.on("drop", function(e){
+            $selector.on("drop", function(e){
                 $(this).css("border", "2px dotted #0B85A1");
                 e.preventDefault();
-                $.fn.images = e.originalEvent.dataTransfer.files;
-                handleImagePreview($.fn.images);
+                images = e.originalEvent.dataTransfer.files;
+                $selector.data("images", images);
+                handleImagePreview(images);
             });
 
-            obj.on("dragover", function(e){
+            $selector.on("dragover", function(e){
                 e.stopPropagation();
                 e.preventDefault();
             });
+            
+            $selector.click(function () {
+                $(".uploadfile").click();
+                $(".uploadfile").on('change', function() {
+                 var files = $(".uploadfile")[0].files;
+                 $selector.data("images", files);
+                handleImagePreview(files);
+                })
+            });            
 
             $(document).on("dragenter", function(e){
                 e.stopPropagation();
@@ -29,7 +40,7 @@
             $(document).on("dragover", function(e){
                 e.stopPropagation();
                 e.preventDefault();
-                obj.css("border", "2px dotted #0B85A1");
+                $selector.css("border", "2px dotted #0B85A1");
             });
 
             $(document).on("drop", function (e){

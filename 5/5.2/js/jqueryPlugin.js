@@ -1,17 +1,17 @@
 (function($){
     "use strict";
-    var settings = {  // default settings
+    var defaultSettings = { 
         count: 4,
         imageId: "lazyImage__",
         selectorToScroll: "body",
         cssClassOfImage: "__image",
         maxCount: 1000,
         preloadHeight: 900
-    }
-    var $selectorToScroll = $(settings.selectorToScroll);
+    };
 
     $.fn.lazyLoading = function(data, userSettings){
-        $.extend(settings, userSettings) //get users settings
+        var settings = $.extend({}, defaultSettings, userSettings); //get users settings
+        var $selectorToScroll = $(settings.selectorToScroll);
         var $selector = this;
         var arrayOfImagesInfoJSON = data;
         $(window).scroll(scrollControl);
@@ -30,7 +30,7 @@
              // stop if there is maximum count of images
             if(settings.count == settings.maxCount){
                 $(window).off("scroll");
-                var $div = $("<div>All images has been loaded<div>").appendTo($selector);
+                var $div = $("<p>All images has been loaded<p>").appendTo($selector);
             }
         }
 

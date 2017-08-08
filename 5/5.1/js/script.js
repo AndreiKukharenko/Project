@@ -2,10 +2,31 @@
   "use strict";
     var registrForm = ".registration";
     var successMsgSelector = ".success";
+    var selector = ".dragandrophandler";
 
-    $(document).ready(
-      function(){
-        $().dragAndDropPlugin();
+    $(document).ready(function(){
+        $(selector).dragAndDropPlugin();
+        $(".button__submit--register").click(function(e){
+            let images = $(selector).data().images;
+            handleFormUpload(images);
+            e.preventDefault();
+        });
+
+        function handleFormUpload(images){
+            var login = $(".form-control__login").val();
+            var password = $(".form-control__password").val();
+            if(images && login && password){
+                var fd = new FormData();
+                fd.append("login", login);
+                fd.append("password", password);
+                for (var i = 0; i < images.length; i++){
+                    fd.append("img" + i, images[i]);
+                }
+            sendFormToServer(fd);
+            }else{
+                alert("please fill form and attach images to the form");
+            }
+        };
 
         function sendFormToServer(formData){
             var uploadURL ="http://httpbin.org/post"; //Upload URL
@@ -18,33 +39,11 @@
                 data: formData,
                 async: false //deprecated. only to avoid error when request goes to httpbin.org/post 
             }).done(function(data, textStatus, jqXHR){
-                $(".success").show();
+                $(successMsgSelector).show();
             }).fail(function(jqXHR, textStatus, errorThrown){
-                alert("upload " + textStatus)
+                alert("upload " + textStatus);
             });
         };
-
-        function handleFormUpload(images){
-            var fd = new FormData();
-            var login = $(".form-control__login").val();
-            var password = $(".form-control__password").val();
-            fd.append("login", login);
-            fd.append("password", password);
-            if(images && login && password){
-                for (var i = 0; i < images.length; i++){
-                    fd.append("img" + i, images[i]);
-                }
-            sendFormToServer(fd);
-            }else{
-                alert("please fill form and attach images to the form");
-            }
-        };
-
-        $(".button__submit--register").click(function(e){
-            let images = $.fn.images;
-            handleFormUpload(images);
-            e.preventDefault();
-        });
 
         $(".button__submit--Ok").click(function(){
             $(successMsgSelector).hide();
@@ -55,5 +54,5 @@
             $form.find("input:text, input:password, input:file, select, textarea").val("");
             $(".preview").empty();
         };
-    })
+    });
 })(this);
