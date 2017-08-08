@@ -47,6 +47,7 @@
                         src: event.target.result
                     });
                     $img.appendTo(".preview");
+                    $("img").click(function(){$(this).remove();});
                 }
                 reader.readAsDataURL(input[i]);
             }
