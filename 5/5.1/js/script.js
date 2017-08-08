@@ -11,6 +11,7 @@
 
           function resetForm($form) {
               $form.find("input:text, input:password, input:file, select, textarea").val("");
+              $(".preview").empty();
           };
     })
 })(this);

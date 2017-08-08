@@ -73,7 +73,6 @@
         });
 
         function handleImagePreview(input){
-            if (input){
                 var filesAmount = input.length;
                 for (let i = 0; i < filesAmount; i++){
                     var reader = new FileReader();
@@ -85,11 +84,15 @@
                     }
                     reader.readAsDataURL(input[i]);
                 }
-            }
         };
         
-        $(".button__submit--register").click(function(){
-            handleFormUpload(images);
+        $(".button__submit--register").click(function(e){
+            if(images){
+                handleFormUpload(images);
+            }else{
+                alert("please attach images to the form");
+            }
+            e.preventDefault();
         });
     }
 })(jQuery);
