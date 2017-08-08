@@ -22,7 +22,7 @@
             }).fail(function(jqXHR, textStatus, errorThrown){
                 alert("upload " + textStatus)
             });
-        }
+        };
 
         function handleFormUpload(images){
             var fd = new FormData();
@@ -40,7 +40,7 @@
             }else{
                 alert("please attach images to the form");
             }
-        }
+        };
 
         $(".button__submit--register").click(function(e){
             let images = $.fn.images;
@@ -48,15 +48,14 @@
             e.preventDefault();
         });
 
+        $(".button__submit--Ok").click(function(){
+            $(successMsgSelector).hide();
+            resetForm($(registrForm));
+        });
 
-          $(".button__submit--Ok").click(function(){
-              $(successMsgSelector).hide();
-              resetForm($(registrForm));
-          });
-
-          function resetForm($form) {
-              $form.find("input:text, input:password, input:file, select, textarea").val("");
-              $(".preview").empty();
-          };
+        function resetForm($form){
+            $form.find("input:text, input:password, input:file, select, textarea").val("");
+            $(".preview").empty();
+        };
     })
 })(this);

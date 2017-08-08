@@ -1,7 +1,6 @@
 (function($){
     "use strict";
     $.fn.dragAndDropPlugin = function(){
-
         $(document).ready(function(){
             var obj = $(".dragandrophandler");
             obj.on("dragenter", function(e){
