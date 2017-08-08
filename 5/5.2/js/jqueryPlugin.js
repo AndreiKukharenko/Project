@@ -1,63 +1,58 @@
 (function($){
     "use strict";
+    var settings = {  // default settings
+        count: 4,
+        imageId: "lazyImage__",
+        selectorToScroll: "body",
+        cssClassOfImage: "__image",
+        maxCount: 1000,
+        preloadHeight: 900
+    }
+    var $selectorToScroll = $(settings.selectorToScroll);
 
-    var $body = $("body");
-
-    $.fn.lazyLoading = function(sourceURL, settings){
-        //  TODO  $.extend(counter, settings)
-        var $selector = this; //$($(this)[0]);
-        var arrayOfImagesInfoJSON;
-        var counter = {
-            count : 4, //initial count of images,
-            //a:6
-        };
-
-        $.ajax(sourceURL, { // TODO: promise
-            type:"GET", 
-            success: function(data) {
-                imageHandler(data, counter.count);
-                arrayOfImagesInfoJSON = data;
-                $(window).scroll(scrollControl);
-            }, 
-            error: function(jqXHR, textStatus, errorThrown) {
-                alert(jqXHR.status);
-            },
-            dataType: "json"
-        });
+    $.fn.lazyLoading = function(data, userSettings){
+        $.extend(settings, userSettings) //get users settings
+        var $selector = this;
+        var arrayOfImagesInfoJSON = data;
+        $(window).scroll(scrollControl);
+        imageHandler(data, settings.count); //load first *settings.count* images
 
         function imageHandler(data, count){
-            let arrImgInfJson = data || arrayOfImagesInfoJSON;
-            if (count){
-                for(let i = 0; i < count; i++){
-                    let currentImage = arrImgInfJson[i];
-                    addImageToSelector(currentImage);
-                }
-            }else{
-                let currentImage = arrImgInfJson[counter.count];
+            for(let i = 0; i < count; i++){
+                let currentImage = data[i];
                 addImageToSelector(currentImage);
-                counter.count += 1;
             }
         };
 
+        function singleImageHandler(){
+            addImageToSelector(data[settings.count]);
+            settings.count += 1;
+             // stop if there is maximum count of images
+            if(settings.count == settings.maxCount){
+                $(window).off("scroll");
+                var $div = $("<div>All images has been loaded<div>").appendTo($selector);
+            }
+        }
+
         function addImageToSelector(currentImage){
             var $div = $("<div>", {
-                class: $selector + "__image"})// отвязаться от конкретного селектора, передавать лучше настройкой
+                class: settings.cssClassOfImage})
                 .appendTo($selector);
 
             $("<img>",{
-                id: "lazyImage__" +  currentImage.id ,
+                id: settings.imageId + currentImage.id ,
                 src: currentImage.url,
                 alt: currentImage.title,
                 title: currentImage.title + currentImage.id,
-            }).appendTo($div);  
+            }).appendTo($div);
         };
 
         function scrollControl(){
-            var body = document.getElementsByClassName("body")[0];
-            var $contentHeight = $(body).outerHeight(); 
-            var $yOffset = $(body).scrollTop(); //Текущая прокрутка сверху
-            if($yOffset + window.innerHeight >= $contentHeight){
-                imageHandler();
+            var $contentHeight = $selectorToScroll.outerHeight(); 
+            var $yOffset = $selectorToScroll.scrollTop(); //Текущая прокрутка сверху
+            var determinedHeight = $yOffset + window.innerHeight + settings.preloadHeight;
+            if(determinedHeight >= $contentHeight){
+                singleImageHandler();
             }
         };
     };
