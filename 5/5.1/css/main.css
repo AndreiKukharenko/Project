@@ -3,6 +3,11 @@
     height: 100%;
 }
 
+.wrapper{
+    margin: auto;
+    width: 500px;
+}
+
 header{
     font-size: 20px;
     text-align: center;
@@ -17,11 +22,6 @@ header{
     height: 400px;
 }
 
-.fieldset{
-    display: block;
-    background-color: coral;
-}
-
 .button{
     border-radius: 7px;
     font-family: inherit;
@@ -29,11 +29,6 @@ header{
     border: solid black 0px;
     cursor: pointer;
     width:100px;
-}
-
-.button__submit--Ok{
-  background: #43A047;
-  transition: background-color 0.3s ease-in-out;
 }
 
 .photo{
@@ -48,16 +43,7 @@ header{
 .success{
     display: none;
     position: relative;
+    border-style: solid;
     border-width: 1px;
-    border-color: black;
+    border-color: green;
 }
-
-.preview img{
-    width:20%;
-    height: inherit;
-    top:-1px;
-    left:-1px;
-    z-index:1;
-    border:none;
-}
-

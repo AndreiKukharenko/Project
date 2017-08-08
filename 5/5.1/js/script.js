@@ -30,15 +30,13 @@
             var password = $(".form-control__password").val();
             fd.append("login", login);
             fd.append("password", password);
-            if(images){
+            if(images && login && password){
                 for (var i = 0; i < images.length; i++){
                     fd.append("img" + i, images[i]);
                 }
-                if(login && password){
-                    sendFormToServer(fd);
-                }
+            sendFormToServer(fd);
             }else{
-                alert("please attach images to the form");
+                alert("please fill form and attach images to the form");
             }
         };
 
