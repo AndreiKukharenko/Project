@@ -1,8 +1,10 @@
 (function($){
     "use strict";
     $.fn.dragAndDropPlugin = function(){
-            var $selector = $(this);
-            var images;
+        var $selector = $(this);
+        var $uploadfileDiv = $(".uploadfile"); 
+        var images;
+
         $(document).ready(function(){
             $selector.on("dragenter", function(e){
                 e.stopPropagation();
@@ -24,11 +26,11 @@
             });
             
             $selector.click(function () {
-                $(".uploadfile").click();
-                $(".uploadfile").on('change', function() {
-                 var files = $(".uploadfile")[0].files;
-                 $selector.data("images", files);
-                handleImagePreview(files);
+                $uploadfileDiv.click();
+                $uploadfileDiv.on("change", function() {
+                    var files = $uploadfileDiv[0].files;
+                    $selector.data("images", files);
+                    handleImagePreview(files);
                 })
             });            
 
