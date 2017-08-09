@@ -2,7 +2,8 @@
     "use strict";
     $.fn.dragAndDropPlugin = function(){
         var $selector = $(this);
-        var $uploadfileDiv = $(".uploadfile"); 
+        var $uploadfileDiv = $(".uploadfile");
+        var $previewSelector = ".preview";
         var images;
 
         $(document).ready(function(){
@@ -57,11 +58,18 @@
                 var reader = new FileReader();
                 reader.onload = function(event){
                     var $img = $("<img>", {
-                        src: event.target.result
+                        src: event.target.result,
+                        class: "image"
                     });
-                    $img.appendTo(".preview");
-                    $("img").click(function(){$(this).remove();});
-                }
+
+                var $div = $($.parseHTML('<div class="imageContainer"><div class="middle">\
+                <div class="text">click to delete</div></div></div>'));
+                $img.appendTo($div);
+                $div.appendTo($previewSelector);
+                $($div).click(function(){
+                    $(this).remove()
+                    ;});
+                };
                 reader.readAsDataURL(input[i]);
             }
         };

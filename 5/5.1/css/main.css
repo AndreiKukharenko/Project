@@ -19,7 +19,6 @@ header{
     align-items: center;
     align-self: center;
     width: 400px;
-    height: 400px;
 }
 
 .button{
@@ -29,15 +28,6 @@ header{
     border: solid black 0px;
     cursor: pointer;
     width:100px;
-}
-
-.photo{
-    position:relative; 
-    overflow:hidden; 
-    width:300px; 
-    height:350px; 
-    background:#f3f3f3; 
-    border:2px dashed #e8e8e8;
 }
 
 .success{
