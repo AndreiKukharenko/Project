@@ -8,6 +8,7 @@ import AppHeader from "../common/AppHeader";
 import FilmPoster from "../films/FilmPoster";
 import CommentList from "../common/Comments";
 import SendMessage from "../common/SendMessage";
+import RatingStars from "../common/RatingStars";
 
 
 class FilmDetails extends Component{
@@ -18,6 +19,7 @@ class FilmDetails extends Component{
                     <div>
                         <AppHeader/>
                         <FilmPoster/>
+                        <RatingStars/>
                       
                         <CommentList/>
                         <SendMessage/>

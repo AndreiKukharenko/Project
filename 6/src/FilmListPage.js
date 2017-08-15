@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-/*import AppHeader from './common/AppHeader'*/
 import AppHeader from '../src/common/AppHeader'
 import { Link, Redirect } from 'react-router-dom';
 
@@ -9,8 +8,6 @@ import OrderBy from './common/OrderBy.js'
 import {List, ListItem} from 'material-ui/List';
 import FilmPoster from './films/FilmPoster.js';
  
-
-
 
 class FilmListPage extends Component{
     constructor(props) {
@@ -38,7 +35,6 @@ class FilmListPage extends Component{
                             <AutoCompleteSearch> </AutoCompleteSearch>
                             <OrderBy></OrderBy>
                         </div>
-
 
                         <List /*nestedItems = {[]}*/>
                             <ListItem  onClick = {this.getfilmDetails}>  <FilmPoster/>  </ListItem>
