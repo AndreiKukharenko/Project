@@ -6,8 +6,9 @@ import Loginscreen from "./Loginscreen";
 import FilmListPage from "./FilmListPage.js";
 
 
-import RouteTest from  "../src/common/RouteTest";
 import { BrowserRouter, Link, Router, Route } from '../node_modules/react-router-dom';
+import RouteTest from  "../src/common/RouteTest";
+import SendMessage from "../src/common/SendMessage";
 
 
 injectTapEventPlugin(); // 

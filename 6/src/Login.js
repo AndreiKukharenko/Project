@@ -4,51 +4,73 @@ import AppBar from "material-ui/AppBar";
 import RaisedButton from "material-ui/RaisedButton";
 import TextField from "material-ui/TextField";
 import axios from "axios";
+import FilmListPage from "./FilmListPage";
+
+import { Redirect, withRouter, Link } from 'react-router-dom';
 
 class Login extends Component {
-constructor(props){
+  constructor(props){
     super(props);
     this.state = {
-    username: "",
-    password: ""
-    }
-}
+      username: "",
+      password: "",
+      auth: false
 
+    }
+  }
+/*
+  getInitialState = ()=>{
+  }
+*/
 handleClick(event){
-    var apiBaseUrl = "http://localhost:3000/api/";
-    //var apiBaseUrl = "http://local";
-    
-    var self = this;
-    var payload = {
+  var apiBaseUrl = "http://httpbin.org/post";
+  //var apiBaseUrl = "http://local";
+  
+  var self = this;
+  var payload = {
     "email": this.state.username,
     "password": this.state.password
+  }
+  axios.post(apiBaseUrl, payload)   // axios - Fetching Data library
+  .then(function (response) {
+    console.log(response);
+    if(response.status === 200){
+      console.log("Login successfull");
+      var uploadScreen = [];
+      //uploadScreen.push(<UploadScreen appContext={self.props.appContext}/>)
+      self.props.appContext.setState({loginPage: [], uploadScreen:uploadScreen});
+      self.setState({auth:true})
+      //console.log(this.state.auth)
+      self.render(true)
     }
-    axios.post(apiBaseUrl + "login", payload)   // axios - Fetching Data library
-    .then(function (response) {
-        console.log(response);
-        if(response.data.code === 200){
-            console.log("Login successfull");
-            var uploadScreen = [];
-            //uploadScreen.push(<UploadScreen appContext={self.props.appContext}/>)
-            self.props.appContext.setState({loginPage: [], uploadScreen:uploadScreen})
-        }
-        else if(response.data.code === 404){ ////////// изменить
-            console.log("Username password do not match");
-            alert("username password do not match")
-        }
-        else{
-        console.log("Username does not exists");
-        alert("Username does not exist");
-        }
-      })
-    .catch(function(error){
-        console.log(error);
-    });
+    else if(response.data.code === 404){ ////////// изменить
+      console.log("Username password do not match");
+      alert("username password do not match")
+    }
+    else{
+      console.log("Username does not exists");
+      alert("Username does not exist");
+    }
+  })
+  .catch(function(error){
+    console.log(error);
+  });
 };
 
-render() {
+render(auth) {
+  
+  /*const {from} = this.props.location.state || { from: { pathname: '/' } }*/
+
+  if(auth){
+    console.log("in render")
     return (
-      <div>
+      <Redirect from="/" to="/RouteTest"/>
+    )
+  }
+
+else{
+  return (
+    <div>
         <MuiThemeProvider>
           <div>
           <AppBar title="Login"/>
@@ -70,6 +92,7 @@ render() {
          </MuiThemeProvider>
       </div>
     );
+  }
   }
 }
 const style = { margin: 15 };
