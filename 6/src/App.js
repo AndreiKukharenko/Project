@@ -5,12 +5,6 @@ import "./App.css";
 import Loginscreen from "./Loginscreen";
 import FilmListPage from "./FilmListPage.js";
 
-
-import { BrowserRouter, Link, Router, Route } from '../node_modules/react-router-dom';
-import RouteTest from  "../src/common/RouteTest";
-import SendMessage from "../src/common/SendMessage";
-
-
 injectTapEventPlugin(); // 
 
 class App extends Component {
@@ -24,7 +18,7 @@ class App extends Component {
     componentWillMount(){
         var loginPage = [];
         loginPage.push(<Loginscreen parentContext = {this}/>);
-        loginPage.push(<FilmListPage parentContext = {this}/>);
+        //loginPage.push(<FilmListPage parentContext = {this}/>);
         
         this.setState({
             loginPage:loginPage

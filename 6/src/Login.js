@@ -4,7 +4,6 @@ import AppBar from "material-ui/AppBar";
 import RaisedButton from "material-ui/RaisedButton";
 import TextField from "material-ui/TextField";
 import axios from "axios";
-import FilmListPage from "./FilmListPage";
 
 import { Redirect, withRouter, Link } from 'react-router-dom';
 
@@ -62,7 +61,7 @@ class Login extends Component {
       if(auth){
         console.log("in render")
         return (
-          <Redirect from="/" to="/RouteTest"/>
+          <Redirect push to="/RouteTest"/>
         )
       }
 
@@ -71,27 +70,31 @@ class Login extends Component {
         <div>
             <MuiThemeProvider>
               <div>
-              <AppBar title="Login"/>
-              <TextField
-                hintText="Enter your Username"
-                floatingLabelText="Username"
-                onChange = {(event,newValue) => this.setState({username:newValue})}
-                />
-              <br/>
+                <AppBar title="Login"/>
                 <TextField
-                  type="password"
-                  hintText="Enter your Password"
-                  floatingLabelText="Password"
-                  onChange = {(event,newValue) => this.setState({password:newValue})}
+                  hintText="Enter your Username"
+                  floatingLabelText="Username"
+                  onChange = {(event,newValue) => this.setState({username:newValue})}
                   />
                 <br/>
-                <RaisedButton label="Submit" primary = {true} style = {style} onClick = {(event) => this.handleClick(event)}/>
-            </div>
+                  <TextField
+                    type="password"
+                    hintText="Enter your Password"
+                    floatingLabelText="Password"
+                    onChange = {(event,newValue) => this.setState({password:newValue})}
+                    />
+                <br/>
+                <RaisedButton 
+                  label="Submit" primary = {true} style = {style} 
+                  onClick = {(event) => this.handleClick(event)}
+                  containerElement = {<Link to="/FilmListPage"/>}
+                />
+              </div>
             </MuiThemeProvider>
           </div>
         );
       }
-      }
+    }
 }
 const style = { margin: 15 };
 export default Login;

@@ -16,12 +16,12 @@ class FilmListPage extends Component{
             redirect: ""
         }
     }
+
     getfilmDetails = () => (
         this.setState({redirect: true})
     )
 
     render() {
-        
         if (this.state.redirect) {
             return <Redirect push to="/FilmDetails" />;
             }
@@ -36,10 +36,9 @@ class FilmListPage extends Component{
                             <OrderBy></OrderBy>
                         </div>
 
-                        <List /*nestedItems = {[]}*/>
-                            <ListItem  onClick = {this.getfilmDetails}>  <FilmPoster/>  </ListItem>
-                            <ListItem>  <FilmPoster/>  </ListItem>
-                            
+                        <List >
+                            <ListItem onClick = {this.getfilmDetails} containerElement = { <FilmPoster/>}>  </ListItem>
+                            <ListItem onClick = {this.getfilmDetails}>  <FilmPoster/>  </ListItem>
                         </List>
 
                     </div>
