@@ -34,8 +34,10 @@ export default class AppHeader extends Component {
                         <MenuItem primaryText="Help" />
                     </IconMenu>
                 }
-                iconElementRight = {<div><FlatButton label="Logout" containerElement={<Link to="/RouteTest"/>} />
-                                        <FlatButton label={"username"} /></div>}
+                iconElementRight = {<div><FlatButton label="Logout" containerElement={<Link to="/"/>} />
+                                        <FlatButton label={"username"} containerElement={<Link to="/RouteTest"/>}/>
+                                    </div>
+                                }
             />
         )
     }

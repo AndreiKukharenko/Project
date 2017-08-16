@@ -7,6 +7,8 @@ import axios from "axios";
 
 import { Redirect, withRouter, Link } from 'react-router-dom';
 
+import FilmsJSON from "./content/filmsGallery.json"
+
 class Login extends Component {
   constructor(props){
     super(props);
@@ -24,7 +26,6 @@ class Login extends Component {
 
     handleClick(event){
       var apiBaseUrl = "http://httpbin.org/post";
-      
       var self = this;
       var payload = {
         "email": this.state.username,
@@ -40,6 +41,9 @@ class Login extends Component {
           self.props.appContext.setState({loginPage: [], uploadScreen:uploadScreen});
           self.setState({auth:true})
           self.render(true)
+          
+          var data = FilmsJSON;
+          localStorage.setItem("Films", JSON.stringify(data));
         }
         else if(response.data.code === 404){ ////////// изменить
           console.log("Username password do not match");

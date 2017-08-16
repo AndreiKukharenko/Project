@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppHeader from '../src/common/AppHeader'
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 import AutoCompleteSearch from './common/AutoCompleteSearch.js'
 import OrderBy from './common/OrderBy.js'
