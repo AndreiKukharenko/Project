@@ -5,7 +5,7 @@ import "./App.css";
 import Loginscreen from "./Loginscreen";
 import FilmListPage from "./FilmListPage.js";
 
-injectTapEventPlugin(); // 
+injectTapEventPlugin(); // for mobile devices (recomended)
 
 class App extends Component {
     constructor(props){
