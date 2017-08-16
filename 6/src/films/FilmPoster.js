@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import CardMedia from 'material-ui/Card';
 import Img from 'react-image'
 
-const getFilms = ()=>{
-    return JSON.parse(localStorage.getItem("Films"));
-}
-
 const posterSmallStyles = {
     image: {
         display: 'block',
@@ -25,29 +21,19 @@ const posterSmallStyles = {
     }
 };   
  
-class FilmPoster extends Component{
-    constructor(props){
-        super(props);
-        this.state = {
-            films: getFilms()
-        }
-      }
+export default  class FilmPoster extends Component{
     render(){
+        
         return(
             <div style = {posterSmallStyles.container}>
                 <Img 
-                    src="https://st.kp.yandex.net/im/kadr/3/0/2/kinopoisk.ru-Twin-Peaks-3020658.jpg"
-                    //src=".../src/content/film_10.jpg"
+                    src={this.props.images.poster}
                     style = {posterSmallStyles.image}
                 />
-             
-                <h4 >{this.state.films[0].title}</h4>
+                <h4>{this.props.title}</h4>
                     <br/>
-                <span style = {posterSmallStyles.text}>FilmDescription</span>
+                <span style = {posterSmallStyles.text}>{this.props.description}</span>
             </div>
         )
     }
 }
-
-export default FilmPoster;
-

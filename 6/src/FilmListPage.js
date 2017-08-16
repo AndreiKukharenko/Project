@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppHeader from '../src/common/AppHeader'
-import { Redirect } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 import AutoCompleteSearch from './common/AutoCompleteSearch.js'
 import OrderBy from './common/OrderBy.js'
 import {List, ListItem} from 'material-ui/List';
 import FilmPoster from './films/FilmPoster.js';
+import FilmList from "./films/FilmList"
  
 
 class FilmListPage extends Component{
@@ -17,9 +18,9 @@ class FilmListPage extends Component{
         }
     }
 
-    getfilmDetails = () => (
+    /*getfilmDetails = () => (
         this.setState({redirect: true})
-    )
+    )*/
 
     render() {
         if (this.state.redirect) {
@@ -36,11 +37,11 @@ class FilmListPage extends Component{
                             <OrderBy></OrderBy>
                         </div>
 
-                        <List >
+                        {/*<List >
                             <ListItem onClick = {this.getfilmDetails} containerElement = { <FilmPoster/>}>  </ListItem>
-                            <ListItem onClick = {this.getfilmDetails}>  <FilmPoster/>  </ListItem>
-                        </List>
-
+                            <ListItem onClick = {this.getfilmDetails} >  <FilmPoster/>  </ListItem>
+                        </List>*/}
+                        <FilmList/>
                     </div>
                 </MuiThemeProvider>
             </div>

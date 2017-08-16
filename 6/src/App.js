@@ -7,7 +7,7 @@ import FilmListPage from "./FilmListPage.js";
 
 injectTapEventPlugin(); // for mobile devices (recomended)
 
-class App extends Component {
+export default class App extends Component {
     constructor(props){
         super(props);
             this.state = {
@@ -33,9 +33,3 @@ class App extends Component {
       );
     }
 }
-
-const style = {
-    margin: 15,
-};
-  
-export default App;

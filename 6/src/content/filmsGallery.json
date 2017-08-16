@@ -5,7 +5,7 @@
     "description": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quasm est autem sunt rem eveniet architecto",
     "rating": 0, 
     "images": {
-        "poster": "/content/images/film1.jpg",
+        "poster": "https://st.kp.yandex.net/im/kadr/3/0/2/kinopoisk.ru-Twin-Peaks-3020658.jpg",
         "screenshots" :[
 
         ]
@@ -26,11 +26,11 @@
 
   {
     "filmId": 2,
-    "title": "sunt aut facere repellat",
+    "title": "Sunt aut facere repellat",
     "description": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quasm est autem sunt rem eveniet architecto",
     "rating": 3,
     "images": {
-        "poster": "/content/images/film2.jpg",
+        "poster": "http://rankin.co.uk/media/DRU_Subway2Sheet_5P_REV-556x420.jpg",
         "screenshots" :[
 
         ]
@@ -50,11 +50,11 @@
   },
   {
     "filmId": 3,
-    "title": "ssint suscipit perspiciatis velit",
+    "title": " suscipit perspiciatis velit",
     "description": "suscipit nam nisi quo aperiam aut\nasperiores eos fugit maiores voluptatibus quia\nv",
     "rating": 5,
     "images": {
-        "poster": "/content/images/film2.jpg",
+        "poster": "http://www.webpark.ru/uploads54/121106/Posters_01.jpg",
         "screenshots" :[
 
         ]
@@ -78,7 +78,7 @@
     "description": "eprehenderit quos placeat\nvelit minima officia doloresita",
     "rating": 4,
     "images": {
-        "poster": "/content/images/film2.jpg",
+        "poster": "http://batona.net/uploads/posts/2012-11/1352188246_23.jpg",
         "screenshots" :[
 
         ]
@@ -93,6 +93,54 @@
             "id": 2,
             "userName": "user 3",
             "text": "another comment to film 4"
+        }     
+    ]
+  },
+  {
+    "filmId": 5,
+    "title": "prehenderit quos placeat\nvelit minima officia dolorests",
+    "description": "e nam\nvoluptas recusandae quis delectus\nofficites impedit repudiandae mola",
+    "rating": 4,
+    "images": {
+        "poster": "http://images.webpark.ru/uploads54/121106/Posters_15.jpg",
+        "screenshots" :[
+
+        ]
+    },     
+    "comments": [
+        {
+            "id": 1,
+            "userName": "username  ipsa ",
+            "text": "comment to 5"
+        },
+        {
+            "id": 2,
+            "userName": "user 3",
+            "text": "another comment to film 5"
+        }     
+    ]
+  },
+  {
+    "filmId": 6,
+    "title": "Dos placeat\nvelit minima officia dolorests",
+    "description": "itaque id aut magnam\npraesentium quia et euis delectus\nofficites impedit repudiandae mola",
+    "rating": 5,
+    "images": {
+        "poster": "http://images.webpark.ru/uploads54/121106/Posters_21.jpg",
+        "screenshots" :[
+
+        ]
+    },     
+    "comments": [
+        {
+            "id": 1,
+            "userName": "username  ipsa ",
+            "text": "comment to 6"
+        },
+        {
+            "id": 2,
+            "userName": "userrrrr",
+            "text": "another comment to film 6"
         }     
     ]
   }

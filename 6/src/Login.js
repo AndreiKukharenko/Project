@@ -4,6 +4,7 @@ import AppBar from "material-ui/AppBar";
 import RaisedButton from "material-ui/RaisedButton";
 import TextField from "material-ui/TextField";
 import axios from "axios";
+import PropTypes from 'prop-types';
 
 import { Redirect, withRouter, Link } from 'react-router-dom';
 
@@ -18,11 +19,6 @@ class Login extends Component {
       auth: false
     }
   }
-
-    static propTypes = {
-      username: React.PropTypes.string.isRequired,
-      password: React.PropTypes.string.isRequired,
-    }
 
     handleClick(event){
       var apiBaseUrl = "http://httpbin.org/post";
@@ -99,6 +95,12 @@ class Login extends Component {
         );
       }
     }
+}
+
+
+Login.propTypes = {
+  username: React.PropTypes.string.isRequired,
+  password: React.PropTypes.string.isRequired,
 }
 const style = { margin: 15 };
 export default Login;
