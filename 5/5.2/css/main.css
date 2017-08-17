@@ -1,0 +1,17 @@
+.header{
+    font-size: 20px;
+    text-align: center;
+}
+
+.text{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+img{
+    display: block;
+}
+
+footer{
+    font-size: 25px;
+    height: 200px;
+}

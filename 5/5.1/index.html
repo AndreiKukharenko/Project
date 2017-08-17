@@ -1,0 +1,48 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <meta name="charset=UTF-8">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/draganddropstyle.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <title></title>
+    </head>    
+    
+    <body>
+        <header>
+            <p>Registration page</p>
+        </header>
+        <div class = "wrapper">    
+        <div class = "registration">
+            <form class = "registration__inputs">
+                <div class = "registration__inputs--login">
+                    <input required placeholder="Login" type="text" class="form-control form-control__login"  autofocus>
+                </div>
+                <div class = "registration__inputs--password">
+                    <input required placeholder="Password" type="password" class="form-control form-control__password"  autofocus>
+                </div>
+
+                <div class="dragandrophandler">Drag&drop files or just click here</div>
+                <input type="file" multiple class = "uploadfile"/>
+
+                <div class = "preview">
+                </div>
+
+                <div class = "button__submit">
+                    <button name="submit" type="submit" class="button button__submit--register" data-submit="...Sending">Register</button>
+                </div>
+            </form>
+        </div>
+        <div class = "success">
+            You’ve been successfully registered on the website!
+            <div class = "button__submit">
+                <button name="submit" type="submit" class="btn btn-success button__submit--Ok">Ok</button>
+            </div>
+        </div>
+    </div>
+        <script src = "js/jquery-3.2.1.js"></script>
+        <script src = "js/jqueryPlugin.js"></script>
+        <script src = "js/script.js"></script>
+        <script src = "js/dragAndDrop.js"></script>
+    </body>
+</html>
