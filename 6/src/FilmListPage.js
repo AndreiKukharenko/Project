@@ -18,10 +18,6 @@ class FilmListPage extends Component{
         }
     }
 
-    /*getfilmDetails = () => (
-        this.setState({redirect: true})
-    )*/
-
     render() {
         if (this.state.redirect) {
             return <Redirect push to="/FilmDetails" />;
@@ -36,11 +32,6 @@ class FilmListPage extends Component{
                             <AutoCompleteSearch> </AutoCompleteSearch>
                             <OrderBy></OrderBy>
                         </div>
-
-                        {/*<List >
-                            <ListItem onClick = {this.getfilmDetails} containerElement = { <FilmPoster/>}>  </ListItem>
-                            <ListItem onClick = {this.getfilmDetails} >  <FilmPoster/>  </ListItem>
-                        </List>*/}
                         <FilmList/>
                     </div>
                 </MuiThemeProvider>

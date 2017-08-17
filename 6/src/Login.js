@@ -6,6 +6,7 @@ import TextField from "material-ui/TextField";
 import axios from "axios";
 import PropTypes from 'prop-types';
 
+import {store} from "./App"
 import { Redirect, withRouter, Link } from 'react-router-dom';
 
 import FilmsJSON from "./content/filmsGallery.json"
@@ -20,6 +21,7 @@ class Login extends Component {
     }
   }
 
+
     handleClick(event){
       var apiBaseUrl = "http://httpbin.org/post";
       var self = this;
@@ -31,13 +33,14 @@ class Login extends Component {
       .then(function (response) {
         console.log(response);
         if(response.status === 200){
-          console.log("Login successfull");
+          console.log("username" + self.state.username);
           var uploadScreen = [];
           //uploadScreen.push(<UploadScreen appContext={self.props.appContext}/>)
           self.props.appContext.setState({loginPage: [], uploadScreen:uploadScreen});
-          self.setState({auth:true})
           self.render(true)
           
+
+          //self.store.dispatch({type:"userName", payload: self.state.username})
           var data = FilmsJSON;
           localStorage.setItem("Films", JSON.stringify(data));
         }

@@ -27,7 +27,7 @@ export default  class FilmPoster extends Component{
         return(
             <div style = {posterSmallStyles.container}>
                 <Img 
-                    src={this.props.images.poster}
+                    src = {this.props.images.poster}
                     style = {posterSmallStyles.image}
                 />
                 <h4>{this.props.title}</h4>

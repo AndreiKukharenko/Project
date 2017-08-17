@@ -1,39 +1,38 @@
 import React, {Component} from 'react';
 import AutoComplete from 'material-ui/AutoComplete';
 
-const style = {
+const autoCompleteStyle = {
     width: "50%",
-    float: "left"
+    float: "left",
+    //margin: "10px" ??
 }
 
-class AutoCompleteSearch extends Component {
+export default class AutoCompleteSearch extends Component {
   state = {
     dataSource: [],
   };
 
   handleUpdateInput = (value) => {
-    this.setState({
+    /*this.setState({
       dataSource: [
         value,
         value + value,
         value + value + value,
       ],
-    });
+    });*/
   };
   
 
   render() {
     return (
-      <div style = {style}>
+      <div style = {autoCompleteStyle}>
         <AutoComplete
           hintText = "Type anything"
-          dataSource={this.state.dataSource}
+          dataSource={this.state.dataSource}  //Array of strings or nodes used to populate the list.
           onUpdateInput={this.handleUpdateInput}
-          floatingLabelText="Search"
+          floatingLabelText="Search"        // see http://www.material-ui.com/#/components/auto-complete
         />
       </div>
     );
   }
 }
-
-export default AutoCompleteSearch;

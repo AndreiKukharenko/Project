@@ -13,15 +13,14 @@ export default class FilmList extends Component {
     }
 
     render(){
-        var FilmPoster = this.state.films.map((film)=>{
+        var FilmPosters = this.state.films.map((film)=>{
             return <FilmPosterContainer ffilm = {film}/> 
         })
-        console.log(FilmPoster);
-      return (
-        <div >
-            {FilmPoster}
-        </div>
-      )
+        return (
+            <div >
+                {FilmPosters}
+            </div>
+        )
     }
   
   };

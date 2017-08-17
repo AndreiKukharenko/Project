@@ -33,3 +33,4 @@ const mapStateToProps = function(store) {
 
 export default connect(mapStateToProps)(UserListContainer);
 */
+export default userInfoReducer;
