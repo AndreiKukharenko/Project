@@ -9,15 +9,23 @@ import FilmDetails from "./films/FilmDetails"
 
 import { BrowserRouter, Link, Route } from 'react-router-dom';
 
+import { createStore, combineReducers } from 'redux';
+import { Provider } from 'react-redux'
+import combinedReducer from "./reducers/comboReducer";
+
+export const store = createStore(combinedReducer);
+
+
 ReactDOM.render(
     <BrowserRouter>
-        <div>
-            <Route exact path = "/" component = {App}/>
-            <Route exact path = "/RouteTest" component = {RouteTest}/>
-            <Route exact path = "/FilmListPage" component = {FilmListPage}/>
-            <Route exact path = "/FilmDetails" component = {FilmDetails}/>
-            
-        </div>
+        <Provider store = {store}>  
+            <div>
+                <Route exact path = "/" component = {App}/>
+                <Route exact path = "/RouteTest" component = {RouteTest}/>
+                <Route exact path = "/FilmListPage" component = {FilmListPage}/>
+                <Route exact path = "/FilmDetails" component = {FilmDetails}/>
+            </div>
+        </Provider>
     </BrowserRouter>,
        document.getElementById('root'));
 registerServiceWorker();

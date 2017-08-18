@@ -6,7 +6,8 @@ import TextField from "material-ui/TextField";
 import axios from "axios";
 import PropTypes from 'prop-types';
 
-import {store} from "./App"
+import store from "./App";
+import {connect} from "react-redux";
 import { Redirect, withRouter, Link } from 'react-router-dom';
 
 import FilmsJSON from "./content/filmsGallery.json"
@@ -37,12 +38,12 @@ class Login extends Component {
           var uploadScreen = [];
           //uploadScreen.push(<UploadScreen appContext={self.props.appContext}/>)
           self.props.appContext.setState({loginPage: [], uploadScreen:uploadScreen});
-          self.render(true)
           
-
-          //self.store.dispatch({type:"userName", payload: self.state.username})
+          
+          self.store.dispatch({type:"userName", payload: self.state.username})
           var data = FilmsJSON;
           localStorage.setItem("Films", JSON.stringify(data));
+          self.render(true)
         }
         else if(response.data.code === 404){ ////////// изменить
           console.log("Username password do not match");

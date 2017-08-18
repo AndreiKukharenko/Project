@@ -1,36 +1,15 @@
+import React from 'react';
 import { createStore, combineReducers} from "redux";
 
+import { USERNAME } from "../constants/constants";
+
 const userInfoReducer = (state={}, action) => {
+    let userInfoReducer = null;
+    switch(action.type){
+      case USERNAME:
+      userInfoReducer = [...state, ]
+    }
     return state;
 }
-/*
-import React from 'react';
-import { connect } from 'react-redux';
-import store from '../path/to/store';
-import axios from 'axios';
-import UserList from '../views/list-user';
 
-const UserListContainer = React.createClass({
-  componentDidMount: function() {
-    axios.get('/path/to/user-api').then(response => {
-      store.dispatch({
-        type: 'USER_LIST_SUCCESS',
-        users: response.data
-      });
-    });
-  },
-
-  render: function() {
-    return <UserList users={this.props.users} />;
-  }
-});
-
-const mapStateToProps = function(store) {
-  return {
-    users: store.userState.users
-  };
-}
-
-export default connect(mapStateToProps)(UserListContainer);
-*/
 export default userInfoReducer;
