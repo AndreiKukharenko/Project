@@ -9,6 +9,8 @@ import IconMenu from 'material-ui/IconMenu';
 import MenuItem from 'material-ui/MenuItem';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 
+import {store} from "../index";
+
 const styles = {
     title: {
         cursor: 'pointer',
@@ -16,7 +18,19 @@ const styles = {
     },
 };
 
+
 export default class AppHeader extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            username: ""
+        };
+    store.subscribe(() => {
+        this.setState({
+          username: store.getState().userName
+        });
+      });
+    }
     render(){
         return(
             <AppBar
@@ -35,7 +49,7 @@ export default class AppHeader extends Component {
                     </IconMenu>
                 }
                 iconElementRight = {<div><FlatButton label="Logout" containerElement={<Link to="/"/>} />
-                                        <FlatButton label={"username"} containerElement={<Link to="/RouteTest"/>}/>
+                                        <FlatButton label={this.state.username} containerElement={<Link to="/RouteTest"/>}/>
                                     </div>
                                 }
             />

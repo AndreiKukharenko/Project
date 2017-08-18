@@ -12,16 +12,15 @@ import { Redirect, withRouter, Link } from 'react-router-dom';
 
 import FilmsJSON from "./content/filmsGallery.json"
 
+
 class Login extends Component {
     constructor(props){
         super(props);
         this.state = {
             username: "",
             password: "",
-            auth: false
         }
     }
-
 
     handleClick(event){
         var apiBaseUrl = "http://httpbin.org/post";
@@ -32,17 +31,13 @@ class Login extends Component {
         }
       axios.post(apiBaseUrl, payload)   // axios - Fetching Data library
       .then(function (response) {
-        console.log(response);
         if(response.status === 200){
-          console.log("username" + self.state.username);
-          var uploadScreen = [];
-          //uploadScreen.push(<UploadScreen appContext={self.props.appContext}/>)
-          self.props.appContext.setState({loginPage: [], uploadScreen:uploadScreen});
-          
-          self.store.dispatch({type:"userName", payload: self.state.username})
-          var data = FilmsJSON;
-          localStorage.setItem("Films", JSON.stringify(data));
-          self.render(true)
+          console.log(store);
+
+          self.store.dispatch({type:"userName", userName: self.state.username})
+
+          localStorage.setItem("Films", JSON.stringify(FilmsJSON));
+
         }else if(response.data.code === 404){ ////////// изменить
           console.log("Username password do not match");
           alert("username password do not match")
@@ -56,51 +51,36 @@ class Login extends Component {
       });
     };
 
-    render(auth) {
-      /*const {from} = this.props.location.state || { from: { pathname: '/' } }*/
-
-      if(auth){
-        console.log("in render")
+    render() {
         return (
-          <Redirect push to="/RouteTest"/>
-        )
-      }
-
-    else{
-      return (
-        <div>
-            <MuiThemeProvider>
-              <div>
-                <AppBar title="Login"/>
-                <TextField
-                  hintText="Enter your Username"
-                  floatingLabelText="Username"
-                  onChange = {(event,newValue) => this.setState({username:newValue})}
-                  />
-                <br/>
+          <div>
+              <MuiThemeProvider>
+                <div>
+                  <AppBar title="Login"/>
                   <TextField
-                    type="password"
-                    hintText="Enter your Password"
-                    floatingLabelText="Password"
-                    onChange = {(event,newValue) => this.setState({password:newValue})}
+                    hintText="Enter your Username"
+                    floatingLabelText="Username"
+                    onChange = {(event,newValue) => this.setState({username:newValue})}
                     />
-                <br/>
-                <RaisedButton 
-                  label="Submit" primary = {true} style = {style} 
-                  onClick = {(event) => this.handleClick(event)}
-                  containerElement = {<Link to="/FilmListPage"/>}
-                />
-              </div>
-            </MuiThemeProvider>
-          </div>
-        );
-      }
+                  <br/>
+                    <TextField
+                      type="password"
+                      hintText="Enter your Password"
+                      floatingLabelText="Password"
+                      onChange = {(event,newValue) => this.setState({password:newValue})}
+                      />
+                  <br/>
+                  <RaisedButton 
+                    label="Submit" primary = {true} style = {style} 
+                    onClick = {(event) => this.handleClick(event)}
+                    containerElement = {<Link to="/FilmListPage"/>}
+                  />
+                </div>
+              </MuiThemeProvider>
+            </div>
+          );
     }
 }
 
-Login.propTypes = {
-  username: React.PropTypes.string.isRequired,
-  password: React.PropTypes.string.isRequired,
-}
 const style = { margin: 15 };
 export default Login;

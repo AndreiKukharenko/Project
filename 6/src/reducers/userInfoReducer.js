@@ -3,13 +3,22 @@ import { createStore, combineReducers} from "redux";
 
 import { USERNAME } from "../constants/constants";
 
-const userInfoReducer = (state={}, action) => {
+const uName = (action)=>{
+    return{
+      type: action.type,
+      text:action.userName
+    }
+}
+
+
+const userInfoReducer = (state="", action) => {
     let userInfoReducer = null;
     switch(action.type){
       case USERNAME:
-      userInfoReducer = [...state, ]
+        userInfoReducer = [...state, uName(action) ]
+      default:
+       return state;
     }
-    return state;
 }
 
 export default userInfoReducer;

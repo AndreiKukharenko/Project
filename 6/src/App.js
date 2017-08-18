@@ -12,14 +12,12 @@ export default class App extends Component {
         super(props);
             this.state = {
             loginPage: [],
-            uploadScreen: []
             }
     };
 
     componentWillMount(){
         var loginPage = [];
         loginPage.push(<Loginscreen parentContext = {this}/>);
-        //loginPage.push(<FilmListPage parentContext = {this}/>);
         
         this.setState({
             loginPage:loginPage
@@ -29,7 +27,6 @@ export default class App extends Component {
       return (
             <div className="App">
                 {this.state.loginPage}
-                {this.state.uploadScreen}
             </div>
       );
     }
