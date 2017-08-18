@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppHeader from '../src/common/AppHeader'
-import { Link, Redirect } from 'react-router-dom';
 
 import AutoCompleteSearch from './common/AutoCompleteSearch.js'
 import OrderBy from './common/OrderBy.js'
-import {List, ListItem} from 'material-ui/List';
-import FilmPoster from './films/FilmPoster.js';
 import FilmList from "./films/FilmList"
  
 
@@ -19,10 +16,6 @@ class FilmListPage extends Component{
     }
 
     render() {
-        if (this.state.redirect) {
-            return <Redirect push to="/FilmDetails" />;
-            }
-        
         return (
             <div>
                 <MuiThemeProvider>

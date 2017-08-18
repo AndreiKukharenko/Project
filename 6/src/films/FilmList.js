@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 
 import FilmPosterContainer from "./FilmPosterContainer"
-
 
 export default class FilmList extends Component {
     constructor(props){
@@ -22,5 +20,4 @@ export default class FilmList extends Component {
             </div>
         )
     }
-  
-  };
+};

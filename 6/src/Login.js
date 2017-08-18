@@ -13,23 +13,23 @@ import { Redirect, withRouter, Link } from 'react-router-dom';
 import FilmsJSON from "./content/filmsGallery.json"
 
 class Login extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      username: "",
-      password: "",
-      auth: false
+    constructor(props){
+        super(props);
+        this.state = {
+            username: "",
+            password: "",
+            auth: false
+        }
     }
-  }
 
 
     handleClick(event){
-      var apiBaseUrl = "http://httpbin.org/post";
-      var self = this;
-      var payload = {
-        "email": this.state.username,
-        "password": this.state.password
-      }
+        var apiBaseUrl = "http://httpbin.org/post";
+        var self = this;
+        var payload = {
+            "email": this.state.username,
+            "password": this.state.password
+        }
       axios.post(apiBaseUrl, payload)   // axios - Fetching Data library
       .then(function (response) {
         console.log(response);
@@ -39,17 +39,14 @@ class Login extends Component {
           //uploadScreen.push(<UploadScreen appContext={self.props.appContext}/>)
           self.props.appContext.setState({loginPage: [], uploadScreen:uploadScreen});
           
-          
           self.store.dispatch({type:"userName", payload: self.state.username})
           var data = FilmsJSON;
           localStorage.setItem("Films", JSON.stringify(data));
           self.render(true)
-        }
-        else if(response.data.code === 404){ ////////// изменить
+        }else if(response.data.code === 404){ ////////// изменить
           console.log("Username password do not match");
           alert("username password do not match")
-        }
-        else{
+        }else{
           console.log("Username does not exists");
           alert("Username does not exist");
         }
@@ -100,7 +97,6 @@ class Login extends Component {
       }
     }
 }
-
 
 Login.propTypes = {
   username: React.PropTypes.string.isRequired,

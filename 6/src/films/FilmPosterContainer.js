@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import CardMedia from 'material-ui/Card';
 import Img from 'react-image'
-import { Link, Redirect, Route } from 'react-router-dom';
 
 import FilmPoster from "./FilmPoster";
 import FilmDetails from "./FilmDetails";
@@ -14,10 +13,6 @@ export default class FilmPosterContainer extends Component{
         };
     }
 
-    getfilmDetails = () => (
-        this.setState({redirect: true})
-    ) 
-
     render(){
         var props = {
             id: this.state.film.filmId,
@@ -28,18 +23,8 @@ export default class FilmPosterContainer extends Component{
             comments: this.state.film.comments
         }
 
-        if (this.state.redirect) {
-            return(
-                <Redirect push to={{
-                    pathname: '/FilmDetails',
-                    search: "?" + props.id
-                }}> </Redirect>
-            )
-             
-        }
-
         return(
-            <div onClick = {this.getfilmDetails}>
+            <div >
                 <FilmPoster {...props} />
             </div>
         )

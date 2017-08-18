@@ -23,7 +23,7 @@ ReactDOM.render(
                 <Route exact path = "/" component = {App}/>
                 <Route exact path = "/RouteTest" component = {RouteTest}/>
                 <Route exact path = "/FilmListPage" component = {FilmListPage}/>
-                <Route exact path = "/FilmDetails" component = {FilmDetails}/>
+                <Route path = "/FilmDetails/:filmId" component = {FilmDetails}/>
             </div>
         </Provider>
     </BrowserRouter>,

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import CardMedia from 'material-ui/Card';
 import Img from 'react-image'
 
+import { Link, Redirect } from 'react-router-dom';
+
 const posterSmallStyles = {
     image: {
         display: 'block',
@@ -17,22 +19,28 @@ const posterSmallStyles = {
         borderStyle: 'solid'
     },
     text: {
-        fontSize:'25px'
+        fontSize:'25px',
+        padding: "10px",
+        display: "block"
     }
 };   
  
 export default  class FilmPoster extends Component{
     render(){
-        
         return(
             <div style = {posterSmallStyles.container}>
-                <Img 
-                    src = {this.props.images.poster}
-                    style = {posterSmallStyles.image}
-                />
-                <h4>{this.props.title}</h4>
+
+                <Link to={{
+                    pathname: '/FilmDetails/' + this.props.id,
+                }}>
+                    <Img 
+                        src = {this.props.images.poster}
+                        style = {posterSmallStyles.image}
+                    />
+                    <span style = {posterSmallStyles.text}>{this.props.title}</span>
+                </Link>
                     <br/>
-                <span style = {posterSmallStyles.text}>{this.props.description}</span>
+                <span>{this.props.description}</span>
             </div>
         )
     }
