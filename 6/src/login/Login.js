@@ -6,14 +6,14 @@ import TextField from "material-ui/TextField";
 import axios from "axios";
 import PropTypes from 'prop-types';
 
-//import store from "../src/index";
 import {connect} from "react-redux";
 import { bindActionCreators } from 'redux'
 import { Redirect, withRouter, Link } from 'react-router-dom';
 
-import FilmsJSON from "./content/filmsGallery.json"
+import FilmsJSON from "../content/filmsGallery.json"
+//import setUserName from "../src/actions/setUserName"
 
-import setUserName from "../src/actions/setUserName"
+import setUserName from '../actions/setUserName'
 
 class Login extends Component {
     constructor(props){

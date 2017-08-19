@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import injectTapEventPlugin from "react-tap-event-plugin";
 // Needed for onTouchTap http://stackoverflow.com/a/34015469/988941
 import "./App.css";
-import Loginscreen from "./Loginscreen";
+import Loginscreen from "./login/Loginscreen";
 //import FilmListPage from "./FilmListPage.js";
 
 injectTapEventPlugin(); // for mobile devices (recomended)

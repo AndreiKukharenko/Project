@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import RouteTest from  "../src/common/RouteTest";
-import FilmListPage from "./FilmListPage";
+import FilmListPage from "./filmListPage/FilmListPage";
 import FilmDetails from "./films/FilmDetails"
 
 import { BrowserRouter, Route } from 'react-router-dom';

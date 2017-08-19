@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import AppHeader from '../src/common/AppHeader'
+import AppHeader from '../common/AppHeader'
 
-import AutoCompleteSearch from './common/AutoCompleteSearch.js'
-import OrderBy from './common/OrderBy.js'
-import FilmList from "./films/FilmList"
+import AutoCompleteSearch from '../common/AutoCompleteSearch.js'
+import OrderBy from '../common/OrderBy.js'
+import FilmList from "../films/FilmList"
  
 
 class FilmListPage extends Component{
