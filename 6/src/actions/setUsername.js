@@ -1,11 +1,10 @@
 import React from 'react';
 
-import { USERNAME } from "../constants.constants"
+import  USERNAME from "../constants/constants"
 
-export const setUserName = (text) => {
-    const action = {
-        type: USERNAME,
-        text
+export default function setUserName (username) {
+    return {
+        type: "USERNAME",
+        username
     }
-    return action;
 }

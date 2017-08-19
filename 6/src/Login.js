@@ -6,12 +6,14 @@ import TextField from "material-ui/TextField";
 import axios from "axios";
 import PropTypes from 'prop-types';
 
-import store from "./App";
+//import store from "../src/index";
 import {connect} from "react-redux";
+import { bindActionCreators } from 'redux'
 import { Redirect, withRouter, Link } from 'react-router-dom';
 
 import FilmsJSON from "./content/filmsGallery.json"
 
+import setUserName from "../src/actions/setUserName"
 
 class Login extends Component {
     constructor(props){
@@ -26,30 +28,30 @@ class Login extends Component {
         var apiBaseUrl = "http://httpbin.org/post";
         var self = this;
         var payload = {
-            "email": this.state.username,
+            "username": this.state.username,
             "password": this.state.password
         }
-      axios.post(apiBaseUrl, payload)   // axios - Fetching Data library
-      .then(function (response) {
-        if(response.status === 200){
-          console.log(store);
+        let action = setUserName(this.state.username);
+        this.props.dispatch(action)
+        //debugger
 
-          self.store.dispatch({type:"userName", userName: self.state.username})
+        axios.post(apiBaseUrl, payload)
+        .then(function (response) {
+          if(response.status === 200){
+            localStorage.setItem("Films", JSON.stringify(FilmsJSON));
 
-          localStorage.setItem("Films", JSON.stringify(FilmsJSON));
-
-        }else if(response.data.code === 404){ ////////// изменить
-          console.log("Username password do not match");
-          alert("username password do not match")
-        }else{
-          console.log("Username does not exists");
-          alert("Username does not exist");
-        }
-      })
-      .catch(function(error){
-        console.log(error);
-      });
-    };
+          }else if(response.data.code === 404){ ////////// изменить
+            console.log("Username password do not match");
+            alert("username password do not match")
+          }else{
+            console.log("Username does not exists");
+            alert("Username does not exist");
+          }
+        })
+        .catch(function(error){
+          console.log(error);
+        });
+      };
 
     render() {
         return (
@@ -83,4 +85,11 @@ class Login extends Component {
 }
 
 const style = { margin: 15 };
-export default Login;
+
+function mapStateToProps (state) {
+  return {
+    username: state.username
+  }
+}
+
+export default connect(mapStateToProps)(Login)

@@ -7,15 +7,15 @@ import RouteTest from  "../src/common/RouteTest";
 import FilmListPage from "./FilmListPage";
 import FilmDetails from "./films/FilmDetails"
 
-import { BrowserRouter, Link, Route } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 
 import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux'
 import combinedReducer from "./reducers/comboReducer";
 
-export const store = createStore(combinedReducer);
 
-
+const store = createStore(combinedReducer);
+console.log(store.getState())
 ReactDOM.render(
     <BrowserRouter>
         <Provider store = {store}>  
@@ -27,5 +27,6 @@ ReactDOM.render(
             </div>
         </Provider>
     </BrowserRouter>,
-       document.getElementById('root'));
+    document.getElementById('root'));
 registerServiceWorker();
+       

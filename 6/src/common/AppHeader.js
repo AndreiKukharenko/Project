@@ -2,14 +2,17 @@ import React, { Component } from 'react';
 import AppBar from 'material-ui/AppBar';
 
 import {Link} from 'react-router-dom';
+import {connect} from "react-redux";
 
 import FlatButton from 'material-ui/FlatButton';
 import IconButton from 'material-ui/IconButton';
 import IconMenu from 'material-ui/IconMenu';
 import MenuItem from 'material-ui/MenuItem';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
+import userInfoReducer from "../reducers/userInfoReducer";
+import setUserName from "../actions/setUserName"
 
-import {store} from "../index";
+import store from "../index";
 
 const styles = {
     title: {
@@ -19,17 +22,9 @@ const styles = {
 };
 
 
-export default class AppHeader extends Component {
+class AppHeader extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            username: ""
-        };
-    store.subscribe(() => {
-        this.setState({
-          username: store.getState().userName
-        });
-      });
     }
     render(){
         return(
@@ -49,7 +44,7 @@ export default class AppHeader extends Component {
                     </IconMenu>
                 }
                 iconElementRight = {<div><FlatButton label="Logout" containerElement={<Link to="/"/>} />
-                                        <FlatButton label={this.state.username} containerElement={<Link to="/RouteTest"/>}/>
+                                        <FlatButton label={this.props.username} containerElement={<Link to="/RouteTest"/>}/>
                                     </div>
                                 }
             />
@@ -57,3 +52,9 @@ export default class AppHeader extends Component {
     }
 };
 
+function mapStateToProps (state) {
+    console.log(state)
+    return { username: state.userInfoReducer.username }
+}
+
+export default connect(mapStateToProps)(AppHeader)
