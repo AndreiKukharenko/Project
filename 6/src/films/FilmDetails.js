@@ -14,14 +14,7 @@ class FilmDetails extends Component{
         super(props);
         var id = this.props.match.params.filmId - 1;
         var currentFilm = this.props.films[id];
-        this.state = {
-            id: currentFilm.filmId,
-            title: currentFilm.title,
-            description: currentFilm.description,
-            rating: currentFilm.rating,
-            images: currentFilm.images,
-            comments: currentFilm.comments
-        }
+        this.state = { ...currentFilm }
     }
     render() {
         return (

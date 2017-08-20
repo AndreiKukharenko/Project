@@ -31,7 +31,7 @@ export default  class FilmPoster extends Component{
             <div style = {posterSmallStyles.container}>
 
                 <Link to={{
-                    pathname: '/FilmDetails/' + this.props.id,
+                    pathname: '/FilmDetails/' + this.props.filmId,
                 }}>
                     <Img 
                         src = {this.props.images.poster}

@@ -12,8 +12,8 @@ class FilmList extends Component {
     }
 
     render(){
-        var FilmPosters = this.state.films.map((film)=>{
-            return <FilmPosterContainer ffilm = {film}/> 
+        var FilmPosters = this.state.films.map((value)=>{
+            return <FilmPosterContainer film = {value}/> 
         })
         return (
             <div >

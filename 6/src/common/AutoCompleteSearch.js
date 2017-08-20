@@ -14,12 +14,9 @@ const autoCompleteStyle = {
     //margin: "10px" ??
 }
 
-
-
 class AutoCompleteSearch extends Component {
     constructor(props){
         super(props);
-        
     }
     // state = {
     // dataSource: [],
@@ -67,5 +64,4 @@ function mapStateToProps (state) {
     }
 }
 
-
-export default connect(mapStateToProps)(AutoCompleteSearch)
+export default connect(mapStateToProps)(AutoCompleteSearch);

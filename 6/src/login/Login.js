@@ -6,7 +6,7 @@ import TextField from "material-ui/TextField";
 import axios from "axios";
 import PropTypes from 'prop-types';
 
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 import { bindActionCreators } from 'redux'
 import { Redirect, withRouter, Link } from 'react-router-dom';
 
