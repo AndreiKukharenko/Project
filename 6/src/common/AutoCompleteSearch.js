@@ -1,28 +1,29 @@
 import React, {Component} from 'react';
 import AutoComplete from 'material-ui/AutoComplete';
 
+import {connect} from "react-redux";
+
 const autoCompleteStyle = {
     div: {
         float: "left",
         width: "50%"
     },
     autoComplete: {
-      width: "300px"
+        width: "300px"
     }
     //margin: "10px" ??
 }
 
-var films = JSON.parse(localStorage.getItem("Films"));//TODO change to getting data from the store
-var titles = films.map((film) => {
-    return film.title;
-});
 
 
-export default class AutoCompleteSearch extends Component {
-    
-    state = {
-    dataSource: [],
-    };
+class AutoCompleteSearch extends Component {
+    constructor(props){
+        super(props);
+        
+    }
+    // state = {
+    // dataSource: [],
+    // };
 
     /*handleUpdateInput = (value) => {
       this.setState({
@@ -36,7 +37,7 @@ export default class AutoCompleteSearch extends Component {
                 <AutoComplete
                 hintText = "Type anything"
                 filter = {AutoComplete.caseInsensitiveFilter}
-                dataSource = {titles}  //Array of strings or nodes used to populate the list.
+                dataSource = {this.props.titles}  //Array of strings or nodes used to populate the list.
                 //onUpdateInput = {this.handleUpdateInput}
                 floatingLabelText = "Search"
                 maxSearchResults = {5}
@@ -54,3 +55,17 @@ export default class AutoCompleteSearch extends Component {
       );
   }
 }
+
+function mapStateToProps (state) {
+    //debugger
+    var filmsObj = JSON.parse(state.films.films);
+    var titles = filmsObj.map((film) => {
+        return film.title;
+    });
+    return {
+        titles: titles
+    }
+}
+
+
+export default connect(mapStateToProps)(AutoCompleteSearch)

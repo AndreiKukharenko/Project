@@ -9,13 +9,21 @@ import FilmDetails from "./films/FilmDetails"
 
 import { BrowserRouter, Route } from 'react-router-dom';
 
-import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux'
-import combinedReducer from "./reducers/comboReducer";
+import { createStore } from 'redux';
+import FilmsJSON from "./content/filmsGallery.json";
+import combineReducers from "./reducers/comboReducer";
 
+const films = JSON.stringify(FilmsJSON);
+const store = createStore(combineReducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
-const store = createStore(combinedReducer);
+store.dispatch({
+    type: "FILMS",
+    films
+})
 console.log(store.getState())
+
+
 ReactDOM.render(
     <BrowserRouter>
         <Provider store = {store}>  

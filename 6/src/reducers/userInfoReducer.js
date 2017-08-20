@@ -3,7 +3,7 @@ import { createStore, combineReducers} from "redux";
 
 import { USERNAME } from "../constants/constants";
 
-const userInfoReducer = (state = {username: ""}, action) => {
+const userInfoReducer = (state = "", action) => {
     switch(action.type){
       case "USERNAME":
         return {...state, username: action.username};

@@ -1,18 +1,16 @@
 import React, { Component } from 'react';
-import AppBar from 'material-ui/AppBar';
 
 import {Link} from 'react-router-dom';
 import {connect} from "react-redux";
 
+import AppBar from 'material-ui/AppBar';
 import FlatButton from 'material-ui/FlatButton';
 import IconButton from 'material-ui/IconButton';
 import IconMenu from 'material-ui/IconMenu';
 import MenuItem from 'material-ui/MenuItem';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
-import userInfoReducer from "../reducers/userInfoReducer";
-import setUserName from "../actions/setUserName"
 
-import store from "../index";
+import setUserName from "../actions/setUserName"
 
 const styles = {
     title: {
@@ -20,7 +18,6 @@ const styles = {
         textAlign: "center"
     },
 };
-
 
 class AppHeader extends Component {
     constructor(props) {
@@ -54,7 +51,8 @@ class AppHeader extends Component {
 
 function mapStateToProps (state) {
     console.log(state)
-    return { username: state.userInfoReducer.username }
+    debugger
+    return { username: state.username }
 }
 
-export default connect(mapStateToProps)(AppHeader)
+export default connect(mapStateToProps)(AppHeader);

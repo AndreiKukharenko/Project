@@ -1,9 +1,10 @@
 import { combineReducers } from 'redux';
 import userInfoReducer from "./userInfoReducer";
+import filmsReducer from "./filmsReducer";
 
-const combinedReducer = combineReducers({
-    userInfoReducer,
-    //todos
+
+export default combineReducers({
+    username: userInfoReducer,
+    films: filmsReducer
+
 })
-
-export default combinedReducer;

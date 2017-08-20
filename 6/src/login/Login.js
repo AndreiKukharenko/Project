@@ -10,9 +10,6 @@ import {connect} from "react-redux";
 import { bindActionCreators } from 'redux'
 import { Redirect, withRouter, Link } from 'react-router-dom';
 
-import FilmsJSON from "../content/filmsGallery.json"
-//import setUserName from "../src/actions/setUserName"
-
 import setUserName from '../actions/setUserName'
 
 class Login extends Component {
@@ -22,6 +19,7 @@ class Login extends Component {
             username: "",
             password: "",
         }
+        this.props = this.state
     }
 
     handleClick(event){
@@ -31,14 +29,13 @@ class Login extends Component {
             "username": this.state.username,
             "password": this.state.password
         }
-        let action = setUserName(this.state.username);
-        this.props.dispatch(action)
+        //let action = setUserName(this.state.username);
+        //this.props.dispatch(action)
         //debugger
-
+        
         axios.post(apiBaseUrl, payload)
         .then(function (response) {
           if(response.status === 200){
-            localStorage.setItem("Films", JSON.stringify(FilmsJSON));
 
           }else if(response.data.code === 404){ ////////// изменить
             console.log("Username password do not match");
@@ -87,9 +84,21 @@ class Login extends Component {
 const style = { margin: 15 };
 
 function mapStateToProps (state) {
-  return {
-    username: state.username
-  }
+    return {
+        username: state.username
+    }
 }
 
-export default connect(mapStateToProps)(Login)
+// const mapDispatchToProps = (dispatch) => {
+//   debugger
+//   return {
+//     handleClick: (username) => {
+//       dispatch({
+//         type: "USERNAME",
+//         username
+//       })
+//     }
+//   }
+// }
+
+export default connect(mapStateToProps /*, mapDispatchToProps*/)(Login)

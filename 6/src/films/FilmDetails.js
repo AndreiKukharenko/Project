@@ -7,10 +7,13 @@ import CommentList from "../common/CommentList";
 import SendMessage from "../common/SendMessage";
 import RatingStars from "../common/RatingStars";
 
+import {connect} from "react-redux";
+
 class FilmDetails extends Component{
     constructor(props){
         super(props);
-        var currentFilm = JSON.parse(localStorage.getItem("Films"))[this.props.match.params.filmId - 1];
+        var id = this.props.match.params.filmId - 1;
+        var currentFilm = this.props.films[id];
         this.state = {
             id: currentFilm.filmId,
             title: currentFilm.title,
@@ -38,4 +41,11 @@ class FilmDetails extends Component{
     }
 }
 
-export default FilmDetails;
+function mapStateToProps (state) {
+    var films = JSON.parse(state.films.films);
+    return {
+        films: films
+    }
+}
+
+export default connect(mapStateToProps)(FilmDetails);

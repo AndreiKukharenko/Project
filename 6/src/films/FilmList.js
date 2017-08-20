@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 
+import {connect} from "react-redux";
 import FilmPosterContainer from "./FilmPosterContainer"
 
-export default class FilmList extends Component {
+class FilmList extends Component {
     constructor(props){
         super(props);
         this.state = {
-            films: JSON.parse(localStorage.getItem("Films"))
+            films: JSON.parse(this.props.films)
         }
     }
 
@@ -21,3 +22,11 @@ export default class FilmList extends Component {
         )
     }
 };
+
+function mapStateToProps (state) {
+    return {
+      films: state.films.films
+    }
+}
+
+export default connect(mapStateToProps)(FilmList)
