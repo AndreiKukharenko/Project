@@ -50,8 +50,7 @@ class AppHeader extends Component {
 };
 
 function mapStateToProps (state) {
-    console.log(state)
-    debugger
+    //debugger
     return { username: state.username }
 }
 

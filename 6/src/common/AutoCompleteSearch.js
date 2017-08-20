@@ -58,7 +58,7 @@ class AutoCompleteSearch extends Component {
 
 function mapStateToProps (state) {
     //debugger
-    var filmsObj = JSON.parse(state.films.films);
+    var filmsObj = JSON.parse(state.films);
     var titles = filmsObj.map((film) => {
         return film.title;
     });

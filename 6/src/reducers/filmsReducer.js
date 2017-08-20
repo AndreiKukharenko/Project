@@ -1,7 +1,7 @@
 const filmsReducer = (state = {}, action) => {
     switch(action.type){
       case "FILMS":
-        return {...state, films: action.films};
+        return action.films;
         break;
       default:
        return state;

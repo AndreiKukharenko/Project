@@ -29,8 +29,8 @@ class Login extends Component {
             "username": this.state.username,
             "password": this.state.password
         }
-        //let action = setUserName(this.state.username);
-        //this.props.dispatch(action)
+        let action = setUserName(this.state.username);
+        this.props.dispatch(action)
         //debugger
         
         axios.post(apiBaseUrl, payload)
@@ -88,17 +88,4 @@ function mapStateToProps (state) {
         username: state.username
     }
 }
-
-// const mapDispatchToProps = (dispatch) => {
-//   debugger
-//   return {
-//     handleClick: (username) => {
-//       dispatch({
-//         type: "USERNAME",
-//         username
-//       })
-//     }
-//   }
-// }
-
-export default connect(mapStateToProps /*, mapDispatchToProps*/)(Login)
+export default connect( mapStateToProps )(Login)

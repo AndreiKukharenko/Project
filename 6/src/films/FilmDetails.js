@@ -42,7 +42,7 @@ class FilmDetails extends Component{
 }
 
 function mapStateToProps (state) {
-    var films = JSON.parse(state.films.films);
+    var films = JSON.parse(state.films);
     return {
         films: films
     }
