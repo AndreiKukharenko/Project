@@ -1,6 +1,4 @@
-import React from 'react';
-
-import  USERNAME from "../constants/constants"
+import  USERNAME from "../constants&types/types"
 
 export default function setUserName (username) {
     return {

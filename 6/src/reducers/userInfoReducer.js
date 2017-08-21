@@ -1,11 +1,8 @@
-import React from 'react';
-import { createStore, combineReducers} from "redux";
-
-import { USERNAME } from "../constants/constants";
+import { USERNAME } from "../constants&types/types";
 
 const userInfoReducer = (state = "", action) => {
     switch(action.type){
-        case "USERNAME":
+        case USERNAME:
           return action.username;
           break;
         default:

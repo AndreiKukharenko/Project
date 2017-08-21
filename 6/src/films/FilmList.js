@@ -7,15 +7,29 @@ class FilmList extends Component {
     constructor(props){
         super(props);
         this.state = {
-            films: JSON.parse(this.props.films)
+            films: JSON.parse(this.props.films),
+            searchTitle: this.props.searchTitle
         }
     }
 
-    render(){
-        var FilmPosters = this.state.films.map((value)=>{
+    nameSearchFilter = (_film) => {
+        //debugger
+        console.log(this.props.searchTitle)
+        var str = this.props.searchTitle;
+        if (str === "" || str == undefined || _film.title.includes(str)) return true;
+        else return false
+    }
+
+    render() {
+        //console.log(this.props)
+        var searchResult = this.state.films.filter(this.nameSearchFilter);
+        var FilmPosters = searchResult.map ((value)=>{
             return <FilmPosterContainer film = {value}/> 
         })
-        return (
+        if(FilmPosters.length == 0){
+            return <span>Not found</span>
+        }
+        else return (
             <div >
                 {FilmPosters}
             </div>
@@ -25,7 +39,8 @@ class FilmList extends Component {
 
 function mapStateToProps (state) {
     return {
-      films: state.films
+      films: state.films,
+      searchTitle: state.searchTitle
     }
 }
 
