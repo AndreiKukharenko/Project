@@ -2,8 +2,11 @@ import React, { Component } from 'react';
 
 import {connect} from "react-redux";
 
-const galleryStyles = {
+import {Carousel} from 'react-responsive-carousel';
 
+const galleryStyles ={
+    display: "flex",
+    justifyContent: "center"
 }
 
 class Gallery extends Component{
@@ -13,28 +16,30 @@ class Gallery extends Component{
 
         }
     }
-    
-    slider(){
-        var screenshots = this.props.screenshots;
-
-    }
 
     render() {
+        var screenshotsToDisplay = this.props.screenshots.map((screenshot)=>{
+            return (<div>
+                        <img src={screenshot} />
+                        <p className="legend">Legend</p>
+                    </div>)
+            }
+        )
         return(
-            <div>
-                <button>previous</button>
-                {this.screenshots}
+            <div style = {galleryStyles}>
+            <Carousel axis="horizontal" 
+                showThumbs={true} showArrows={true} 
+                dynamicHeight width = {"300px"}
 
-                <button>next</button>
-                
-
+            >
+                {screenshotsToDisplay}
+            </Carousel>
             </div>
         ) 
     }
 }
 
 function mapStateToProps(){
-    this.state.films;
     return{
         filmPosters:  ""
     }

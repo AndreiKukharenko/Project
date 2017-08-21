@@ -25,7 +25,8 @@ class FilmDetails extends Component{
                         <AppHeader/>
                         <FilmPoster {...this.state}/>
                         <RatingStars rating = {this.state.rating}/>
-                        {/*<Gallery screenshots = {this.state.images.screenshots}/>*/}                        <CommentList comments = {this.state.comments}/>
+                        <Gallery screenshots = {this.state.images.screenshots}/>                    
+                        <CommentList comments = {this.state.comments}/>
                         <SendMessage/>
                     </div>
                 </MuiThemeProvider>

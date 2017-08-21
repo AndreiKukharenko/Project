@@ -13,7 +13,7 @@ class SendMessage extends Component{
     sendMsg(){
         let field = document.getElementById("commentsField")
         let comment = field.value;
-        debugger
+        //debugger
         if(comment !== ""){
             field.value = "";
         }

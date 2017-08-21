@@ -7,7 +7,7 @@ class CommentList extends Component{
         super(props);
     }
     render(){
-        debugger
+        //debugger
         console.log(newComment)
         var newComment = {
             userName: this.props.username,
