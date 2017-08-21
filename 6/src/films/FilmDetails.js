@@ -6,6 +6,7 @@ import FilmPoster from "../films/FilmPoster";
 import CommentList from "../common/CommentList";
 import SendMessage from "../common/SendMessage";
 import RatingStars from "../common/RatingStars";
+import Gallery from "../common/Gallery";
 
 import {connect} from "react-redux";
 
@@ -24,8 +25,7 @@ class FilmDetails extends Component{
                         <AppHeader/>
                         <FilmPoster {...this.state}/>
                         <RatingStars rating = {this.state.rating}/>
-                      
-                        <CommentList comments = {this.state.comments}/>
+                        {/*<Gallery screenshots = {this.state.images.screenshots}/>*/}                        <CommentList comments = {this.state.comments}/>
                         <SendMessage/>
                     </div>
                 </MuiThemeProvider>

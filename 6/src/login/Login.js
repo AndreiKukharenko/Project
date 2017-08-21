@@ -19,7 +19,6 @@ class Login extends Component {
             username: "",
             password: "",
         }
-        this.props = this.state
     }
 
     handleClick(event){
@@ -29,12 +28,12 @@ class Login extends Component {
             "password": this.state.password
         }
         let action = setUserName(this.state.username);
-        this.props.dispatch(action)
+        this.props.dispatch(action);
         
         axios.post(apiBaseUrl, payload)
         .then(function (response) {
           if(response.status === 200){
-            console.log("successfull request");
+            console.log("request sent successfully");
           }else if(response.data.code === 404){ ////////// изменить
             alert("username password do not match")
           }else{
@@ -84,4 +83,4 @@ function mapStateToProps (state) {
         username: state.username
     }
 }
-export default connect( mapStateToProps )(Login)
+export default connect(mapStateToProps)(Login)

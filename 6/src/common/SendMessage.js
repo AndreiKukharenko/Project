@@ -1,27 +1,29 @@
 import React, { Component } from 'react';
-
+import { connect } from "react-redux";
 import FlatButton from 'material-ui/FlatButton';
 import TextField from 'material-ui/TextField';
+
+import sendComment from '../actions/sendComment'
 
 const styles = {
     width: "512px"
 }
 
-const sendMsg = () =>{
-    let field = document.getElementById("commentsField")
-    let comment = field.value;
-    if(field !== ""){
-        field.value = "";
-    }
-}
-
 class SendMessage extends Component{
-
+    sendMsg(){
+        let field = document.getElementById("commentsField")
+        let comment = field.value;
+        debugger
+        if(comment !== ""){
+            field.value = "";
+        }
+        this.props.dispatch(sendComment(comment));
+    }
     render(){
         return(
             <div>
                 <FlatButton label="Send Message" primary={true} 
-                            onClick = {sendMsg} style = {this.styles} />
+                            onClick = {() => this.sendMsg()} style = {this.styles} />
                 <TextField
                     id = "commentsField"
                     hintText = "Message text"
@@ -34,5 +36,4 @@ class SendMessage extends Component{
         )
     }
 }
-
-export default SendMessage;
+export default connect()(SendMessage);

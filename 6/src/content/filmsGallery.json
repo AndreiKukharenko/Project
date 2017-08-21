@@ -3,11 +3,18 @@
     "filmId": 1,
     "title": "1 film: sunt aut facere repellat",
     "description": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quasm est autem sunt rem eveniet architecto",
-    "rating": 0, 
+    "rating": 1, 
     "images": {
         "poster": "https://st.kp.yandex.net/im/kadr/3/0/2/kinopoisk.ru-Twin-Peaks-3020658.jpg",
         "screenshots" :[
-
+            "http://placehold.it/150/92c952",
+            "http://placehold.it/150/9c184f",
+            "http://placehold.it/150/45601a",
+            "http://placehold.it/150/602b9e",
+            "http://placehold.it/150/ea51da",
+            "http://placehold.it/150/ca50ac",
+            "http://placehold.it/150/6ad437",
+            "http://placehold.it/150/b4412f"
         ]
     },
     "comments": [
@@ -32,7 +39,14 @@
     "images": {
         "poster": "http://rankin.co.uk/media/DRU_Subway2Sheet_5P_REV-556x420.jpg",
         "screenshots" :[
-
+            "http://placehold.it/150/ea51da",
+            "http://placehold.it/150/ca50ac",
+            "http://placehold.it/150/6ad437",
+            "http://placehold.it/150/b4412f",
+            "http://placehold.it/150/92c952",
+            "http://placehold.it/150/9c184f",
+            "http://placehold.it/150/45601a",
+            "http://placehold.it/150/602b9e"
         ]
     },     
     "comments": [
@@ -56,7 +70,14 @@
     "images": {
         "poster": "http://www.webpark.ru/uploads54/121106/Posters_01.jpg",
         "screenshots" :[
-
+            "http://placehold.it/150/121fa4",
+            "http://placehold.it/150/cde4c1",
+            "http://placehold.it/150/ea51da",
+            "http://placehold.it/150/ca50ac",
+            "http://placehold.it/150/6ad437",
+            "http://placehold.it/150/b4412f",
+            "http://placehold.it/150/323599",
+            "http://placehold.it/150/cd5a92"
         ]
     },     
     "comments": [
@@ -80,7 +101,10 @@
     "images": {
         "poster": "http://batona.net/uploads/posts/2012-11/1352188246_23.jpg",
         "screenshots" :[
-
+            "http://placehold.it/150/6ad437",
+            "http://placehold.it/150/b4412f",
+            "http://placehold.it/150/323599",
+            "http://placehold.it/150/cd5a92"
         ]
     },     
     "comments": [
@@ -104,7 +128,10 @@
     "images": {
         "poster": "http://images.webpark.ru/uploads54/121106/Posters_15.jpg",
         "screenshots" :[
-
+            "http://placehold.it/150/6ad437",
+            "http://placehold.it/150/b4412f",
+            "http://placehold.it/150/323599",
+            "http://placehold.it/150/cd5a92"
         ]
     },     
     "comments": [
@@ -128,7 +155,10 @@
     "images": {
         "poster": "http://images.webpark.ru/uploads54/121106/Posters_21.jpg",
         "screenshots" :[
-
+            "http://placehold.it/150/6ad437",
+            "http://placehold.it/150/b4412f",
+            "http://placehold.it/150/323599",
+            "http://placehold.it/150/cd5a92"
         ]
     },     
     "comments": [

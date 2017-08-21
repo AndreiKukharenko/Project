@@ -14,7 +14,7 @@ class FilmList extends Component {
 
     nameSearchFilter = (_film) => {
         var str = this.props.searchTitle;
-        if (str === "" || str == undefined || _film.title.includes(str)) return true;
+        if (str === "" || str === undefined || _film.title.includes(str)) return true;
         else return false
     }
 
@@ -23,7 +23,7 @@ class FilmList extends Component {
         var FilmPosters = searchResult.map ((value)=>{
             return <FilmPosterContainer film = {value}/> 
         })
-        if(FilmPosters.length == 0){
+        if(FilmPosters.length === 0){
             return <span>Not found</span>
         }
         else return (

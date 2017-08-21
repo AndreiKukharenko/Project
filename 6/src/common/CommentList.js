@@ -1,19 +1,25 @@
 import React, { Component } from 'react';
-
+import { connect } from "react-redux";
 import Comment from "./Comment";
 
-export default class CommentList extends Component{
+class CommentList extends Component{
     constructor(props){
         super(props);
-        this.state = {
-            comments: this.props.comments
-        }
     }
     render(){
-        var commentsToFilm = this.state.comments.map((commentToFilm)=>{
+        debugger
+        console.log(newComment)
+        var newComment = {
+            userName: this.props.username,
+            text: this.props.newComment
+        }
+        var commentsToFilm = this.props.comments.map((commentToFilm)=>{
             return <Comment comment = {commentToFilm}/>        
             }
         )
+        if(newComment.userName !== "" || newComment.text !== ""){
+            commentsToFilm.push(<Comment comment = {newComment}/>)
+        }
         return(
             <div>
                 {commentsToFilm}
@@ -21,3 +27,12 @@ export default class CommentList extends Component{
         )
     }
 }
+
+function mapStateToProps (state) {
+    return {
+        newComment: state.sendComment,
+        username: state.username
+    }
+}
+
+export default connect(mapStateToProps)(CommentList)

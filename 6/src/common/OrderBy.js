@@ -14,11 +14,13 @@ const styles = {
  */
 export default class OrderBy extends Component {
     state = {
-        value: 1,
+        value: 2,
     };
 
-    handleChange = (event, index, value) => this.setState({value});
-
+    handleChange = (event, index, value) => {
+        console.log(value)
+        this.setState({value});
+    }
     render() {
         return (
             <div>
@@ -28,7 +30,7 @@ export default class OrderBy extends Component {
                 onChange={this.handleChange}
                 autoWidth={true}
               >
-                <MenuItem value={1} primaryText="Name" />
+                <MenuItem value={"name"} primaryText="Name" />
                 <MenuItem value={2} primaryText="Year" />
                 <MenuItem value={3} primaryText="Director" />
                 <MenuItem value={4} primaryText="Rating" />
