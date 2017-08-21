@@ -5,15 +5,8 @@ import AppHeader from '../common/AppHeader'
 import AutoCompleteSearch from '../common/AutoCompleteSearch.js'
 import OrderBy from '../common/OrderBy.js'
 import FilmList from "../films/FilmList"
- 
 
 class FilmListPage extends Component{
-    constructor(props) {
-        super(props)
-        this.state = {
-        }
-    }
-
     render() {
         return (
             <div>

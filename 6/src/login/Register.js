@@ -58,4 +58,3 @@ class Register extends Component {
 const style = {
   margin: 15,
 };
-//export default Register;          temporarily off

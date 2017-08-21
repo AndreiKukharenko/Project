@@ -13,15 +13,12 @@ class FilmList extends Component {
     }
 
     nameSearchFilter = (_film) => {
-        //debugger
-        console.log(this.props.searchTitle)
         var str = this.props.searchTitle;
         if (str === "" || str == undefined || _film.title.includes(str)) return true;
         else return false
     }
 
     render() {
-        //console.log(this.props)
         var searchResult = this.state.films.filter(this.nameSearchFilter);
         var FilmPosters = searchResult.map ((value)=>{
             return <FilmPosterContainer film = {value}/> 

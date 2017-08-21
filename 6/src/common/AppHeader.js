@@ -35,13 +35,13 @@ class AppHeader extends Component {
                         useLayerForClickAway = {true}
                     >
                         <MenuItem primaryText="To list of films" containerElement={<Link to="/FilmListPage"/>} />
-                        <MenuItem primaryText="Send feedback" containerElement={<Link to="/RouteTest"/>} /> 
+                        <MenuItem primaryText="Send feedback" containerElement={<Link to="/"/>} /> 
                         <MenuItem primaryText="Settings" />
                         <MenuItem primaryText="Help" />
                     </IconMenu>
                 }
                 iconElementRight = {<div><FlatButton label="Logout" containerElement={<Link to="/"/>} />
-                                        <FlatButton label={this.props.username} containerElement={<Link to="/RouteTest"/>}/>
+                                        <FlatButton label={this.props.username} containerElement={<Link to="/"/>}/>
                                     </div>
                                 }
             />

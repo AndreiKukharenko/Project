@@ -1,4 +1,4 @@
-const filmsReducer = (state = {}, action) => {
+export const filmsReducer = (state = {}, action) => {
     switch(action.type){
       case "FILMS":
         return action.films;
@@ -7,5 +7,3 @@ const filmsReducer = (state = {}, action) => {
        return state;
     }
 }
-
-export default filmsReducer;

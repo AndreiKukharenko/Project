@@ -10,21 +10,18 @@ const autoCompleteStyle = {
         width: "50%"
     },
     autoComplete: {
-        width: "300px"
+        width: "350px"
     }
-    //margin: "10px" ??
 }
 
 class AutoCompleteSearch extends Component {
     constructor(props){
         super(props);
         this.props = {
-            
         }
     }
 
     handleInput = (value) => {
-        debugger
         this.props.dispatch(searchTitle(value));
     };
   

@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
-import RouteTest from  "../src/common/RouteTest";
 import FilmListPage from "./filmListPage/FilmListPage";
 import FilmDetails from "./films/FilmDetails"
 
@@ -21,15 +20,13 @@ store.dispatch({
     type: "FILMS",
     films
 })
-//console.log(store.getState());
-
 
 ReactDOM.render(
     <BrowserRouter>
         <Provider store = {store}>  
             <div>
                 <Route exact path = "/" component = {App}/>
-                <Route exact path = "/RouteTest" component = {RouteTest}/>
+                {/*<Route exact path = "/RouteTest" component = {RouteTest}/>*/}
                 <Route exact path = "/FilmListPage" component = {FilmListPage}/>
                 <Route path = "/FilmDetails/:filmId" component = {FilmDetails}/>
             </div>
@@ -37,4 +34,3 @@ ReactDOM.render(
     </BrowserRouter>,
     document.getElementById('root'));
 registerServiceWorker();
-       

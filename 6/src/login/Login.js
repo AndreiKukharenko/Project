@@ -24,24 +24,20 @@ class Login extends Component {
 
     handleClick(event){
         var apiBaseUrl = "http://httpbin.org/post";
-        var self = this;
         var payload = {
             "username": this.state.username,
             "password": this.state.password
         }
         let action = setUserName(this.state.username);
         this.props.dispatch(action)
-        //debugger
         
         axios.post(apiBaseUrl, payload)
         .then(function (response) {
           if(response.status === 200){
-
+            console.log("successfull request");
           }else if(response.data.code === 404){ ////////// изменить
-            console.log("Username password do not match");
             alert("username password do not match")
           }else{
-            console.log("Username does not exists");
             alert("Username does not exist");
           }
         })
@@ -77,7 +73,7 @@ class Login extends Component {
                 </div>
               </MuiThemeProvider>
             </div>
-          );
+        );
     }
 }
 

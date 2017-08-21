@@ -1,6 +1,6 @@
 import { USERNAME } from "../constants&types/types";
 
-const userInfoReducer = (state = "", action) => {
+export const userInfoReducer = (state = "", action) => {
     switch(action.type){
         case USERNAME:
           return action.username;
@@ -9,5 +9,3 @@ const userInfoReducer = (state = "", action) => {
           return state;
     }
 }
-
-export default userInfoReducer;
