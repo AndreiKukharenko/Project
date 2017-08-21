@@ -1,9 +1,9 @@
 [
   {
     "filmId": 1,
-    "title": "1 film: sunt aut facere repellat",
+    "title": "film: sunt aut facere repellat",
     "description": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quasm est autem sunt rem eveniet architecto",
-    "rating": 1, 
+    "rating": 3, 
     "images": {
         "poster": "https://st.kp.yandex.net/im/kadr/3/0/2/kinopoisk.ru-Twin-Peaks-3020658.jpg",
         "screenshots" :[
@@ -33,9 +33,9 @@
 
   {
     "filmId": 2,
-    "title": "Sunt aut facere repellat",
+    "title": "Aut facere repellat",
     "description": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quasm est autem sunt rem eveniet architecto",
-    "rating": 3,
+    "rating": 5,
     "images": {
         "poster": "http://rankin.co.uk/media/DRU_Subway2Sheet_5P_REV-556x420.jpg",
         "screenshots" :[
@@ -64,9 +64,9 @@
   },
   {
     "filmId": 3,
-    "title": " suscipit perspiciatis velit",
+    "title": "suscipit perspiciatis velit",
     "description": "suscipit nam nisi quo aperiam aut\nasperiores eos fugit maiores voluptatibus quia\nv",
-    "rating": 5,
+    "rating": 2,
     "images": {
         "poster": "http://www.webpark.ru/uploads54/121106/Posters_01.jpg",
         "screenshots" :[
@@ -95,9 +95,9 @@
   },
   {
     "filmId": 4,
-    "title": "eveniet quod temporibus",
+    "title": "zveniet quod temporibus",
     "description": "eprehenderit quos placeat\nvelit minima officia doloresita",
-    "rating": 4,
+    "rating": 0,
     "images": {
         "poster": "http://batona.net/uploads/posts/2012-11/1352188246_23.jpg",
         "screenshots" :[
@@ -174,5 +174,4 @@
         }     
     ]
   }
-
 ]

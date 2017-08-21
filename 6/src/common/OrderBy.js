@@ -2,24 +2,24 @@ import React, {Component} from 'react';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 
+import {connect} from "react-redux";
+import orderBy from "../actions/orderBy";
+
 const styles = {
     customWidth: {
       width: 150,
     },
 };
 
-/**
- a controlled component, with the current selection set through the `value` property.
- can be disabled with the `disabled` property.
- */
-export default class OrderBy extends Component {
+
+class OrderBy extends Component {
     state = {
-        value: 2,
+        value: "films id"
     };
 
     handleChange = (event, index, value) => {
-        console.log(value)
         this.setState({value});
+        this.props.dispatch(orderBy(value));
     }
     render() {
         return (
@@ -30,12 +30,14 @@ export default class OrderBy extends Component {
                 onChange={this.handleChange}
                 autoWidth={true}
               >
-                <MenuItem value={"name"} primaryText="Name" />
-                <MenuItem value={2} primaryText="Year" />
-                <MenuItem value={3} primaryText="Director" />
-                <MenuItem value={4} primaryText="Rating" />
+                <MenuItem value={"Films id"} primaryText="Films id" />
+                <MenuItem value={"title"} primaryText="Name" />
+                <MenuItem value={"rating"} primaryText="Rating" />
+                {/*<MenuItem value={"year"} primaryText="Year" />*/}
               </SelectField>
             </div>
         );
     }
 }
+
+export default connect()(OrderBy);
