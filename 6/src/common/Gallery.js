@@ -9,13 +9,6 @@ const galleryStyles ={
 }
 
 class Gallery extends Component{
-    constructor(props){
-        super(props);
-        this.props = {
-
-        }
-    }
-
     render() {
         var screenshotsToDisplay = this.props.screenshots.map((screenshot)=>{
             return (<div>

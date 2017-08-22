@@ -15,9 +15,27 @@ class FilmDetails extends Component{
         super(props);
         var id = this.props.match.params.filmId - 1;
         var currentFilm = this.props.films[id];
-        this.state = { ...currentFilm }
+        debugger
+        this.state = { ...currentFilm, id }
     }
+
+    componentWillMount(){
+        var comment = this.props.newComment;
+        if (comment.length !== 0){
+            var updatedFilm = Object.assign({}, this.state, {comments: this.state.comments.concat(comment)})
+            var films = this.props.films;
+            films[this.state.id] = updatedFilm;
+            debugger
+            
+            this.props.dispatch({
+                type: "FILMS",
+                films
+            })
+        }
+    }
+
     render() {
+        this.componentWillMount();
         return (
             <div>
                 <MuiThemeProvider>  
@@ -36,9 +54,9 @@ class FilmDetails extends Component{
 }
 
 function mapStateToProps (state) {
-    var films = state.films;
     return {
-        films: films
+        films: state.films,
+        newComment: state.sendComment
     }
 }
 

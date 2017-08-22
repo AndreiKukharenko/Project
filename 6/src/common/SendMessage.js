@@ -17,7 +17,7 @@ class SendMessage extends Component{
         if(comment !== ""){
             field.value = "";
         }
-        this.props.dispatch(sendComment(this.props.id/*potential problem here*/, this.props.username, comment));
+        this.props.dispatch(sendComment(this.props.films, this.props.id, this.props.username, comment));
     }
     render(){
         return(
@@ -39,7 +39,8 @@ class SendMessage extends Component{
 
 function mapStateToProps(state){
     return {
-        username: state.username
+        username: state.username,
+        films: state.films
     }
 }
 

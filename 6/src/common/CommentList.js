@@ -5,19 +5,11 @@ import Comment from "./Comment";
 class CommentList extends Component{
 
     render(){
-        //debugger
-        
-        // var newComment = {
-        //     userName: this.props.username,
-        //     text: this.props.newComment
-        // } 
+
         var commentsToFilm = this.props.comments.map((commentToFilm)=>{
             return <Comment comment = {commentToFilm}/>        
             }
         )
-        // if(newComment.userName !== "" || newComment.text !== ""){
-        //     commentsToFilm.push(<Comment comment = {newComment}/>)
-        // }
         return(
             <div>
                 {commentsToFilm}
@@ -29,7 +21,6 @@ class CommentList extends Component{
 function mapStateToProps (state) {
     return {
         newComment: state.sendComment,
-        username: state.username
     }
 }
 
