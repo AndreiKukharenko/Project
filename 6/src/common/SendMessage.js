@@ -17,7 +17,7 @@ class SendMessage extends Component{
         if(comment !== ""){
             field.value = "";
         }
-        this.props.dispatch(sendComment(comment));
+        this.props.dispatch(sendComment(this.props.id/*potential problem here*/, this.props.username, comment));
     }
     render(){
         return(
@@ -36,4 +36,11 @@ class SendMessage extends Component{
         )
     }
 }
-export default connect()(SendMessage);
+
+function mapStateToProps(state){
+    return {
+        username: state.username
+    }
+}
+
+export default connect(mapStateToProps)(SendMessage);

@@ -14,7 +14,7 @@ import { createStore } from 'redux';
 import FilmsJSON from "./content/filmsGallery.json";
 import combineReducers from "./reducers/comboReducer";
 
-const films = JSON.stringify(FilmsJSON);
+const films = FilmsJSON;
 const store = createStore(combineReducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 store.dispatch({

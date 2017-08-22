@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import {connect} from "react-redux";
 
 import {Carousel} from 'react-responsive-carousel';
@@ -20,7 +19,7 @@ class Gallery extends Component{
     render() {
         var screenshotsToDisplay = this.props.screenshots.map((screenshot)=>{
             return (<div>
-                        <img src={screenshot} />
+                        <img src={screenshot} alt ={"alt.text"} />
                         <p className="legend">Legend</p>
                     </div>)
             }

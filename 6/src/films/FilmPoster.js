@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import CardMedia from 'material-ui/Card';
-import Img from 'react-image'
-
 import { Link, Redirect } from 'react-router-dom';
+
+import Img from 'react-image';
 
 const posterSmallStyles = {
     image: {

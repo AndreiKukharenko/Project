@@ -5,16 +5,9 @@ import MenuItem from 'material-ui/MenuItem';
 import {connect} from "react-redux";
 import orderBy from "../actions/orderBy";
 
-const styles = {
-    customWidth: {
-      width: 150,
-    },
-};
-
-
 class OrderBy extends Component {
     state = {
-        value: "films id"
+        value: "Films id"
     };
 
     handleChange = (event, index, value) => {

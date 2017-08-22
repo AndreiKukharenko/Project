@@ -7,14 +7,14 @@ class FilmList extends Component {
     constructor(props){
         super(props);
         this.state = {
-            films: JSON.parse(this.props.films),
+            films: this.props.films,
             searchTitle: this.props.searchTitle
         }
     }
 
     nameSearchFilter = (_film) => {
-        var str = this.props.searchTitle;
-        if (str === "" || str === undefined || _film.title.includes(str)) return true;
+        var str = this.props.searchTitle.toLocaleUpperCase();
+        if (str === "" || str === undefined || _film.title.toLocaleUpperCase().includes(str)) return true;
         else return false;
     }
 
@@ -32,19 +32,23 @@ class FilmList extends Component {
         });
     }
 
-    render() {
+    getOrderedFilteredPosters = () => {
         var searchResult = this.state.films.filter(this.nameSearchFilter);
         if(searchResult.length === 0){
             return <span>Not found</span>
         }
         var filteredResult = this.orderByfilter(searchResult);
         console.log(filteredResult)
-        var FilmPosters = filteredResult.map ((value)=>{
+        let FilmPosters = filteredResult.map ((value)=>{
             return <FilmPosterContainer film = {value}/> 
         })
+        return FilmPosters;
+    }
+
+    render() {
         return (
             <div >
-                {FilmPosters}
+                {this.getOrderedFilteredPosters()}
             </div>
         )
     }

@@ -27,7 +27,7 @@ class FilmDetails extends Component{
                         <RatingStars rating = {this.state.rating}/>
                         <Gallery screenshots = {this.state.images.screenshots}/>                    
                         <CommentList comments = {this.state.comments}/>
-                        <SendMessage/>
+                        <SendMessage id = {this.state.filmId}/>
                     </div>
                 </MuiThemeProvider>
             </div>
@@ -36,7 +36,7 @@ class FilmDetails extends Component{
 }
 
 function mapStateToProps (state) {
-    var films = JSON.parse(state.films);
+    var films = state.films;
     return {
         films: films
     }

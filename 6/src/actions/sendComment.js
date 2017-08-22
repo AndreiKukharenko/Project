@@ -1,8 +1,15 @@
-import SEND_COMMENT from "../constants&types/types"
+import SEND_COMMENT from "../constants&types/types";
+import update from 'immutability-helper';
 
-export default function sendComment (comment) {
+export default function sendComment (id, username, comment) {
     return {
         type: "SEND_COMMENT",
-        comment
+        comment: comment,
+        
+        // newComment: {
+        // id: id,
+        // username: username,
+        // comment: comment
+        // }
     }
 }
