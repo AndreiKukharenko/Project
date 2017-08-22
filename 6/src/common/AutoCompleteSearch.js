@@ -3,16 +3,7 @@ import AutoComplete from 'material-ui/AutoComplete';
 
 import {connect} from "react-redux";
 import searchTitle from '../actions/searchTitle'
-
-const autoCompleteStyle = {
-    div: {
-        float: "left",
-        width: "50%"
-    },
-    autoComplete: {
-        width: "350px"
-    }
-}
+import {autoCompleteStyle} from "../styles";
 
 class AutoCompleteSearch extends Component {
     constructor(props){
@@ -31,7 +22,7 @@ class AutoCompleteSearch extends Component {
                 <AutoComplete
                 hintText = "Type anything"
                 filter = {AutoComplete.caseInsensitiveFilter}
-                dataSource = {this.props.titles}  //Array of strings or nodes used to populate the list.
+                dataSource = {this.props.titles}
                 floatingLabelText = "Search"
                 maxSearchResults = {5}
                 style = {autoCompleteStyle.autoComplete}
@@ -47,7 +38,7 @@ function mapStateToProps (state) {
         return film.title;
     });
     return {
-        titles: titles
+        titles
     }
 }
 

@@ -1,4 +1,4 @@
-import SEARCH_TITLE from "../constants&types/types"
+import SEARCH_TITLE from "../constantsAndTypes/types"
 
 export default function searchTitle (searchTitle) {
     return {

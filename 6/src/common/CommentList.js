@@ -3,9 +3,7 @@ import { connect } from "react-redux";
 import Comment from "./Comment";
 
 class CommentList extends Component{
-
     render(){
-
         var commentsToFilm = this.props.comments.map((commentToFilm)=>{
             return <Comment comment = {commentToFilm}/>        
             }

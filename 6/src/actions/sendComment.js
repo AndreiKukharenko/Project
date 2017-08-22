@@ -1,4 +1,4 @@
-import SEND_COMMENT from "../constants&types/types";
+import SEND_COMMENT from "../constantsAndTypes/types";
 
 export default function sendComment (films, id, username, comment) {
     return {

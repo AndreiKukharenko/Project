@@ -1,4 +1,4 @@
-import { USERNAME } from "../constants&types/types";
+import { USERNAME } from "../constantsAndTypes/types";
 
 export const userInfoReducer = (state = "", action) => {
     switch(action.type){

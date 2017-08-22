@@ -2,28 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 import Img from 'react-image';
+import {posterSmallStyles} from "../styles";
 
-const posterSmallStyles = {
-    image: {
-        display: 'block',
-        float: 'left',
-        height: '400px',
-        width: '450px',
-        alt: "rocket"
-    },
-    container:{
-        padding: '10px',
-        height: '450px', 
-        borderSize: '1px',
-        borderStyle: 'solid'
-    },
-    text: {
-        fontSize:'25px',
-        padding: "10px",
-        display: "block"
-    }
-};   
- 
 export default  class FilmPoster extends Component{
     render(){
         return(

@@ -5,7 +5,8 @@ import "./carousel.css";
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import FilmListPage from "./filmListPage/FilmListPage";
-import FilmDetails from "./films/FilmDetails"
+import FilmDetails from "./films/FilmDetails";
+import {styles} from "./styles";
 
 import { BrowserRouter, Route } from 'react-router-dom';
 
@@ -25,7 +26,7 @@ store.dispatch({
 ReactDOM.render(
     <BrowserRouter>
         <Provider store = {store}>  
-            <div>
+            <div style = {styles}>
                 <Route exact path = "/" component = {App}/>
                 {/*<Route exact path = "/RouteTest" component = {RouteTest}/>*/}
                 <Route exact path = "/FilmListPage" component = {FilmListPage}/>

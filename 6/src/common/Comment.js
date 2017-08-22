@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
 
-const commentStyles = {
-
-}
-
 export default class Comment extends Component{
     render(){
         return(

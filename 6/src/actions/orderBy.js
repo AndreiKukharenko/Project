@@ -1,4 +1,4 @@
-import {ORDER_BY} from "../constants&types/types"
+import {ORDER_BY} from "../constantsAndTypes/types"
 
 export default function orderBy (orderBy) {
     return {
