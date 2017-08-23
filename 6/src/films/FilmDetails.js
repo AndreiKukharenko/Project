@@ -10,40 +10,21 @@ import Gallery from "../common/Gallery";
 
 import {connect} from "react-redux";
 
-class FilmDetails extends Component{
-    constructor(props){
-        super(props);
-        var id = this.props.match.params.filmId - 1;
-        var currentFilm = this.props.films[id];
-        this.state = { ...currentFilm }
-    }
-
-    // ComponentWillReceiveProps(nextProps){
-    //     this.setState();
-    // }
-
+export default class FilmDetails extends Component{
     render() {
         return (
             <div>
                 <MuiThemeProvider>  
                     <div>
                         <AppHeader/>
-                        <FilmPoster {...this.state}/>
-                        <RatingStars rating = {this.state.rating}/>
-                        <Gallery screenshots = {this.state.images.screenshots}/>                    
-                        <CommentList comments = {this.state.comments}/>
-                        <SendMessage id = {this.state.filmId}/>
+                        <FilmPoster {...this.props}/>
+                        <RatingStars rating = {this.props.rating}/>
+                        <Gallery screenshots = {this.props.images.screenshots}/>                    
+                        <CommentList comments = {this.props.comments}/>
+                        <SendMessage id = {this.props.filmId}/>
                     </div>
                 </MuiThemeProvider>
             </div>
         );
     }
 }
-
-function mapStateToProps (state) {
-    return {
-        films: state.films,
-    }
-}
-
-export default connect(mapStateToProps)(FilmDetails);

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import Comment from "./Comment";
 
-class CommentList extends Component{
+export default class CommentList extends Component{
     render(){
         var commentsToFilm = this.props.comments.map((commentToFilm)=>{
             return <Comment comment = {commentToFilm}/>        
@@ -15,11 +15,3 @@ class CommentList extends Component{
         )
     }
 }
-
-function mapStateToProps (state) {
-    return {
-        newComment: state.sendComment,
-    }
-}
-
-export default connect(mapStateToProps)(CommentList);

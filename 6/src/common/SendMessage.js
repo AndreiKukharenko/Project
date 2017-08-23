@@ -3,12 +3,6 @@ import { connect } from "react-redux";
 import FlatButton from 'material-ui/FlatButton';
 import TextField from 'material-ui/TextField';
 
-import sendComment from '../actions/sendComment'
-
-const styles = {
-    width: "512px"
-}
-
 class SendMessage extends Component{
     sendMsg(){
         let field = document.getElementById("commentsField")
@@ -52,5 +46,8 @@ function mapStateToProps(state){
         films: state.films
     }
 }
-
 export default connect(mapStateToProps)(SendMessage);
+
+const styles = {
+    width: "512px"
+}
