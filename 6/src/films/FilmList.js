@@ -38,8 +38,8 @@ class FilmList extends Component {
             return <span>Not found</span>
         }
         var filteredResult = this.orderByfilter(searchResult);
-        let FilmPosters = filteredResult.map ((value)=>{
-            return <FilmPosterContainer film = {value}/> 
+        let FilmPosters = filteredResult.map ((value, index)=>{
+            return <FilmPosterContainer film = {value} key = {index}/> 
         })
         return FilmPosters;
     }

@@ -10,9 +10,10 @@ const galleryStyles ={
 
 class Gallery extends Component{
     render() {
-        var screenshotsToDisplay = this.props.screenshots.map((screenshot)=>{
-            return (<div>
-                        <img src={screenshot} alt ={"alt.text"} />
+        var screenshotsToDisplay = this.props.screenshots.map((screenshot, index)=>{
+            //debugger
+            return (<div key ={index}> 
+                        <img src={screenshot}  alt ={"alt.text"} />
                         <p className="legend">Legend</p>
                     </div>)
             }

@@ -4,11 +4,9 @@ import AppBar from "material-ui/AppBar";
 import RaisedButton from "material-ui/RaisedButton";
 import TextField from "material-ui/TextField";
 import axios from "axios";
-import PropTypes from 'prop-types';
 
 import { connect } from "react-redux";
-import { bindActionCreators } from 'redux'
-import { Redirect, withRouter, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import setUserName from '../actions/setUserName'
 
@@ -29,12 +27,15 @@ class Login extends Component {
         }
         let action = setUserName(this.state.username);
         this.props.dispatch(action);
-        
-        axios.post(apiBaseUrl, payload)
+        this.sendRequest(apiBaseUrl, payload);
+      };
+      
+      sendRequest(url, payload){
+        axios.post(url, payload)
         .then(function (response) {
           if(response.status === 200){
             console.log("request sent successfully");
-          }else if(response.data.code === 404){ ////////// изменить
+          }else if(response.data.code === 404){ //~
             alert("username password do not match")
           }else{
             alert("Username does not exist");
@@ -43,7 +44,7 @@ class Login extends Component {
         .catch(function(error){
           console.log(error);
         });
-      };
+      }
 
     render() {
         return (

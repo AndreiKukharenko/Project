@@ -13,7 +13,6 @@ import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import setUserName from "../actions/setUserName";
 import {styles} from "../styles";
 
-
 class AppHeader extends Component {
     constructor(props) {
         super(props);

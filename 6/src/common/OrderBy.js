@@ -26,7 +26,6 @@ class OrderBy extends Component {
                 <MenuItem value={"Films id"} primaryText="Films id" />
                 <MenuItem value={"title"} primaryText="Name" />
                 <MenuItem value={"rating"} primaryText="Rating" />
-                {/*<MenuItem value={"year"} primaryText="Year" />*/}
               </SelectField>
             </div>
         );

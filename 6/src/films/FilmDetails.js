@@ -8,8 +8,6 @@ import SendMessage from "../common/SendMessage";
 import RatingStars from "../common/RatingStars";
 import Gallery from "../common/Gallery";
 
-import {connect} from "react-redux";
-
 export default class FilmDetails extends Component{
     render() {
         return (
