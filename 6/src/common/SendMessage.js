@@ -12,12 +12,21 @@ const styles = {
 class SendMessage extends Component{
     sendMsg(){
         let field = document.getElementById("commentsField")
-        let comment = field.value;
-        //debugger
-        if(comment !== ""){
+        let commentText = field.value;
+        if(commentText !== ""){
             field.value = "";
         }
-        this.props.dispatch(sendComment(this.props.films, this.props.id, this.props.username, comment));
+        var comment = {
+            "id": 3, //just for example
+            "userName": this.props.username,
+            "text": commentText
+        }
+        var films = this.props.films;
+        var id = this.props.id - 1;
+        var currentFilm = films[id];
+        var updatedFilm = Object.assign({}, currentFilm, {comments: currentFilm.comments.concat(comment)})
+        films[id] = updatedFilm;
+        this.props.dispatch({type: "FILMS", films })
     }
     render(){
         return(

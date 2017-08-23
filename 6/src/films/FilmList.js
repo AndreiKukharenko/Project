@@ -38,7 +38,6 @@ class FilmList extends Component {
             return <span>Not found</span>
         }
         var filteredResult = this.orderByfilter(searchResult);
-        console.log(filteredResult)
         let FilmPosters = filteredResult.map ((value)=>{
             return <FilmPosterContainer film = {value}/> 
         })
