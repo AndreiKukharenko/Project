@@ -9,14 +9,11 @@ import IconButton from 'material-ui/IconButton';
 import IconMenu from 'material-ui/IconMenu';
 import MenuItem from 'material-ui/MenuItem';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
+import EditorInsertEmoticon from 'material-ui/svg-icons/editor/insert-emoticon';
 
-import setUserName from "../actions/setUserName";
 import {styles} from "../styles";
 
 class AppHeader extends Component {
-    constructor(props) {
-        super(props);
-    }
     render(){
         return(
             <AppBar
@@ -35,7 +32,7 @@ class AppHeader extends Component {
                     </IconMenu>
                 }
                 iconElementRight = {<div><FlatButton label="Logout" containerElement={<Link to="/"/>} />
-                                        <FlatButton label={this.props.username} containerElement={<Link to="/"/>}/>
+                                        <FlatButton label={this.props.username} icon = {<EditorInsertEmoticon/>} containerElement={<Link to="/"/>}/>
                                     </div>
                                 }
             />

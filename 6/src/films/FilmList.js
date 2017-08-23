@@ -25,11 +25,12 @@ class FilmList extends Component {
 
     sortJSON = (data, key, way) => {
         if (key === "") return data;
-        return data.sort(function(a, b) {
+        var sortedJSON = data.sort(function(a, b) {
             var x = a[key]; var y = b[key];
             if(way === 'ascending' ) { return ((x < y) ? -1 : ((x > y) ? 1 : 0)); }
-            else if (way !== 'ascending') { return ((x > y) ? -1 : ((x < y) ? 1 : 0)); }
+            else { return ((x > y) ? -1 : ((x < y) ? 1 : 0)); }
         });
+        return sortedJSON;
     }
 
     getOrderedFilteredPosters = () => {

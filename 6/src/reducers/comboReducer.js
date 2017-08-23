@@ -1,8 +1,8 @@
 import {combineReducers} from 'redux';
 import {userInfoReducer} from "./userInfoReducer";
 import {filmsReducer} from "./filmsReducer";
-import {searchTitleReducer} from "./searchTitleReducer";
-import {orderByReducer} from "./orderByReducer"
+import {searchTitleReducer} from "./orderSearchReducers";
+import {orderByReducer} from "./orderSearchReducers"
 
 export default combineReducers({
     username: userInfoReducer,

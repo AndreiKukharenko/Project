@@ -1,8 +1,8 @@
-import  USERNAME from "../constantsAndTypes/types"
+import {USERNAME} from "../constantsAndTypes/types"
 
 export default function setUserName (username) {
     return {
-        type: "USERNAME",
+        type: USERNAME,
         username
     }
 }

@@ -6,12 +6,6 @@ import searchTitle from '../actions/searchTitle'
 import {autoCompleteStyle} from "../styles";
 
 class AutoCompleteSearch extends Component {
-    constructor(props){
-        super(props);
-        this.props = {
-        }
-    }
-
     handleInput = (value) => {
         this.props.dispatch(searchTitle(value));
     };
