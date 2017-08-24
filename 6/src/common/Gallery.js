@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import {connect} from "react-redux";
-
 import {Carousel} from 'react-responsive-carousel';
 
 export default class Gallery extends Component{

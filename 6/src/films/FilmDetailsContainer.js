@@ -4,7 +4,7 @@ import {connect} from "react-redux";
 
 class FilmDetailsContainer extends Component{
     render(){
-        var id = this.props.match.params.filmId - 1;
+        var id = this.props.match.params.filmId;
         var currentFilm = this.props.films[id];
         return(
             <div >

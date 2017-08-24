@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import FlatButton from 'material-ui/FlatButton';
 import TextField from 'material-ui/TextField';
 
+import addComment from "../actions/addComment";
+
 class SendMessage extends Component{
     constructor(props){
         super(props);
@@ -16,12 +18,8 @@ class SendMessage extends Component{
             "userName": this.props.username,
             "text": commentText
         }
-        var films = this.props.films;
-        var id = this.props.id - 1;
-        var currentFilm = films[id];
-        var updatedFilm = Object.assign({}, currentFilm, {comments: currentFilm.comments.concat(comment)})
-        films[id] = updatedFilm;
-        this.props.dispatch({type: "FILMS", films: [...films] })
+        let action = addComment(comment, this.props.id);
+        this.props.dispatch(action);
         if(commentText !== ""){
             this.setState({value: ""});
         }

@@ -1,8 +1,8 @@
 import {FILMS} from "../constantsAndTypes/types"
 
-export default function orderBy (orderBy) {
+export default function changeFilms (films) {
     return {
         type: FILMS,
-        orderBy
+        films
     }
 }
