@@ -4,14 +4,15 @@ import FlatButton from 'material-ui/FlatButton';
 import TextField from 'material-ui/TextField';
 
 class SendMessage extends Component{
-    sendMsg(){
-        let field = document.getElementById("commentsField")
-        let commentText = field.value;
-        if(commentText !== ""){
-            field.value = "";
+    constructor(props){
+        super(props);
+        this.state = {
+            value: ""
         }
+    }
+    sendMsg(){
+        let commentText = this.state.value;
         var comment = {
-            "id": 3, //just for example
             "userName": this.props.username,
             "text": commentText
         }
@@ -21,20 +22,24 @@ class SendMessage extends Component{
         var updatedFilm = Object.assign({}, currentFilm, {comments: currentFilm.comments.concat(comment)})
         films[id] = updatedFilm;
         this.props.dispatch({type: "FILMS", films })
+        if(commentText !== ""){
+            this.setState({value: ""});
+        }
     }
     render(){
         return(
             <div>
-                <FlatButton label="Send Message" primary={true} 
-                            onClick = {() => this.sendMsg()} style = {this.styles} />
                 <TextField
-                    id = "commentsField"
                     hintText = "Message text"
                     multiLine = {true}
                     rows = {2}
                     rowsMax = {4}
                     style = {styles}
+                    onChange = {(event, text)=> this.setState({value: text}) }
+                    value = {this.state.value}
                 />
+                <FlatButton label="Send Message" primary={true} 
+                            onClick = {() => this.sendMsg()} />
             </div >
         )
     }

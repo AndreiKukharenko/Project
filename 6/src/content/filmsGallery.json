@@ -19,12 +19,10 @@
     },
     "comments": [
         {
-            "id": 1,
             "userName": "username1",
             "text": "comment"
         },
         {
-            "id": 2,
             "userName": "username2",
             "text": "another comment"
         }   
@@ -51,12 +49,10 @@
     },     
     "comments": [
         {
-            "id": 1,
             "userName": "username1",
             "text": "comment to 2"
         },
         {
-            "id": 2,
             "userName": "username2",
             "text": "another comment to film 2"
         }     
@@ -82,12 +78,10 @@
     },     
     "comments": [
         {
-            "id": 1,
             "userName": "username dolorum rerum ipsa laboriosam",
             "text": "comment to 3"
         },
         {
-            "id": 2,
             "userName": "username3",
             "text": "another comment to film 3"
         }     
@@ -109,12 +103,10 @@
     },     
     "comments": [
         {
-            "id": 1,
             "userName": "username  ipsa laboriosam",
             "text": "comment to 4"
         },
         {
-            "id": 2,
             "userName": "user 3",
             "text": "another comment to film 4"
         }     
@@ -136,12 +128,10 @@
     },     
     "comments": [
         {
-            "id": 1,
             "userName": "username  ipsa ",
             "text": "comment to 5"
         },
         {
-            "id": 2,
             "userName": "user 3",
             "text": "another comment to film 5"
         }     
@@ -163,12 +153,10 @@
     },     
     "comments": [
         {
-            "id": 1,
             "userName": "username  ipsa ",
             "text": "comment to 6"
         },
         {
-            "id": 2,
             "userName": "userrrrr",
             "text": "another comment to film 6"
         }     
