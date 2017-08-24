@@ -6,7 +6,6 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import FilmListPage from "./filmListPage/FilmListPage";
 import FilmDetailsContainer from "./films/FilmDetailsContainer";
-import {styles} from "./styles";
 
 import { BrowserRouter, Route } from 'react-router-dom';
 
@@ -26,7 +25,7 @@ store.dispatch({
 ReactDOM.render(
     <BrowserRouter>
         <Provider store = {store}>  
-            <div style = {styles}>
+            <div>
                 <Route exact path = "/" component = {App}/>
                 <Route exact path = "/FilmListPage" component = {FilmListPage}/>
                 <Route path = "/FilmDetails/:filmId" component = {FilmDetailsContainer}/>

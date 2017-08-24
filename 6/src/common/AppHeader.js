@@ -11,13 +11,11 @@ import MenuItem from 'material-ui/MenuItem';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import EditorInsertEmoticon from 'material-ui/svg-icons/editor/insert-emoticon';
 
-import {styles} from "../styles";
-
 class AppHeader extends Component {
     render(){
         return(
-            <AppBar
-                title={<span style={styles.title}>Film list page</span>}
+            <AppBar className = {"appBar"}
+                title={<span className = {"appBar__title"}>Film list page</span>}
                 iconElementLeft = {
                     <IconMenu
                         iconButtonElement={<IconButton><MoreVertIcon /></IconButton>}

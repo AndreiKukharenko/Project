@@ -2,21 +2,20 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 import Img from 'react-image';
-import {posterSmallStyles} from "../styles";
 
 export default  class FilmPoster extends Component{
     render(){
         return(
-            <div style = {posterSmallStyles.container}>
+            <div className = {"filmPoster"} >
 
                 <Link to={{
                     pathname: '/FilmDetails/' + this.props.filmId,
                 }}>
-                    <Img 
+                    <Img className = {"filmPoster__picture"}
                         src = {this.props.images.poster}
-                        style = {posterSmallStyles.image}
+                        alt = {"poster"}
                     />
-                    <span style = {posterSmallStyles.text}>{this.props.title}</span>
+                    <span className = {"filmPoster__title"} >{this.props.title}</span>
                 </Link>
                     <br/>
                 <span>{this.props.description}</span>

@@ -26,13 +26,13 @@ class SendMessage extends Component{
     }
     render(){
         return(
-            <div>
+            <div className = {"comments-field"}>
                 <TextField
                     hintText = "Message text"
                     multiLine = {true}
                     rows = {2}
                     rowsMax = {4}
-                    style = {styles}
+                    className = {"comments-field__text"}
                     onChange = {(event, text)=> this.setState({value: text}) }
                     value = {this.state.value}
                 />
@@ -50,7 +50,3 @@ function mapStateToProps(state){
     }
 }
 export default connect(mapStateToProps)(SendMessage);
-
-const styles = {
-    width: "512px"
-}

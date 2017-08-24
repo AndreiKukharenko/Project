@@ -1,5 +1,43 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+    margin: 0;
+    padding: 5px;
+    font-family: sans-serif;
+}
+
+.filmPoster {
+    padding: 10px;
+    height: 450px; 
+    border-width: 0.7px;
+    border-style: solid
+}
+
+.filmPoster__picture{
+    display: block;
+    float: left;
+    height: 400px;
+    width: 450px;
+}
+
+.filmPoster__title {
+  font-size: 25px;
+  padding: 10px;
+  display: block
+}
+
+.autocomplete{
+  float: left;
+  width: 50%
+}
+
+.autocomplete__field{
+  width: 350px
+}
+
+.appBar__title{
+  cursor: pointer;
+  text-align: center
+}
+
+.comments-field__text{
+  width: 512px
 }

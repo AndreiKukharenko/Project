@@ -3,7 +3,6 @@ import AutoComplete from 'material-ui/AutoComplete';
 
 import {connect} from "react-redux";
 import searchTitle from '../actions/searchTitle'
-import {autoCompleteStyle} from "../styles";
 
 class AutoCompleteSearch extends Component {
     handleInput = (value) => {
@@ -15,14 +14,14 @@ class AutoCompleteSearch extends Component {
   
     render() {
         return (
-            <div style = {autoCompleteStyle.div}>
+            <div className = {"autocomplete"}>
                 <AutoComplete
                     hintText = "Type anything"
                     filter = {AutoComplete.caseInsensitiveFilter}
                     dataSource = {this.props.titles}
                     floatingLabelText = "Search"
                     maxSearchResults = {5}
-                    style = {autoCompleteStyle.autoComplete}
+                    className = {"autocomplete__field"}
                     onNewRequest = {this.handleInput}
                     onUpdateInput = {this.handleField}
                 />
