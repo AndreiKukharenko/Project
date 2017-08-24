@@ -3,12 +3,7 @@ import {connect} from "react-redux";
 
 import {Carousel} from 'react-responsive-carousel';
 
-const galleryStyles ={
-    display: "flex",
-    justifyContent: "center"
-}
-
-class Gallery extends Component{
+export default class Gallery extends Component{
     render() {
         var screenshotsToDisplay = this.props.screenshots.map((screenshot, index)=>{
             return (<div key ={index}> 
@@ -18,11 +13,10 @@ class Gallery extends Component{
             }
         )
         return(
-            <div style = {galleryStyles}>
+            <div>
             <Carousel axis="horizontal" 
                 showThumbs={true} showArrows={true} 
                 dynamicHeight width = {"300px"}
-
             >
                 {screenshotsToDisplay}
             </Carousel>
@@ -30,11 +24,3 @@ class Gallery extends Component{
         ) 
     }
 }
-
-function mapStateToProps(){
-    return{
-        filmPosters:  ""
-    }
-}
-
-export default connect(mapStateToProps)(Gallery);

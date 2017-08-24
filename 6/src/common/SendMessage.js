@@ -21,7 +21,7 @@ class SendMessage extends Component{
         var currentFilm = films[id];
         var updatedFilm = Object.assign({}, currentFilm, {comments: currentFilm.comments.concat(comment)})
         films[id] = updatedFilm;
-        this.props.dispatch({type: "FILMS", films })
+        this.props.dispatch({type: "FILMS", films: [...films] })
         if(commentText !== ""){
             this.setState({value: ""});
         }
