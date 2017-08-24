@@ -9,18 +9,22 @@ class AutoCompleteSearch extends Component {
     handleInput = (value) => {
         this.props.dispatch(searchTitle(value));
     };
+    handleField = (searchText) => {
+        if (searchText === "") this.props.dispatch(searchTitle(searchText));
+    };
   
     render() {
         return (
             <div style = {autoCompleteStyle.div}>
                 <AutoComplete
-                hintText = "Type anything"
-                filter = {AutoComplete.caseInsensitiveFilter}
-                dataSource = {this.props.titles}
-                floatingLabelText = "Search"
-                maxSearchResults = {5}
-                style = {autoCompleteStyle.autoComplete}
-                onNewRequest = {this.handleInput}
+                    hintText = "Type anything"
+                    filter = {AutoComplete.caseInsensitiveFilter}
+                    dataSource = {this.props.titles}
+                    floatingLabelText = "Search"
+                    maxSearchResults = {5}
+                    style = {autoCompleteStyle.autoComplete}
+                    onNewRequest = {this.handleInput}
+                    onUpdateInput = {this.handleField}
                 />
           </div>
       );

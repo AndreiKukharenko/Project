@@ -6,16 +6,16 @@ import AutoCompleteSearch from '../common/AutoCompleteSearch.js'
 import OrderBy from '../common/OrderBy.js'
 import FilmList from "../films/FilmList"
 
-class FilmListPage extends Component{
+export default class FilmListPage extends Component{
     render() {
         return (
             <div>
                 <MuiThemeProvider>
                     <div>
-                        <AppHeader> </AppHeader> 
+                        <AppHeader/> 
                         <div>
-                            <AutoCompleteSearch> </AutoCompleteSearch>
-                            <OrderBy></OrderBy>
+                            <AutoCompleteSearch/>
+                            <OrderBy/>
                         </div>
                         <FilmList/>
                     </div>
@@ -24,5 +24,3 @@ class FilmListPage extends Component{
         );
     }
 }
-
-export default FilmListPage;

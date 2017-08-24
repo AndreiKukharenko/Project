@@ -8,7 +8,6 @@ class FilmList extends Component {
         super(props);
         this.state = {
             films: this.props.films,
-            searchTitle: this.props.searchTitle
         }
     }
 
