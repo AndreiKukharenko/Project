@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Registration";
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="user-reg form-horizontal">
+        <h4>Для регистрации зарегистриуйтесь)</h4>
+        
+    </div>
+}
+
+<div>
+    @Html.ActionLink("На главную", "Index", new { area = string.Empty, controller = "Home" })
+</div>
