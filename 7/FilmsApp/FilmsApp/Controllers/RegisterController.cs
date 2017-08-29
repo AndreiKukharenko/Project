@@ -1,14 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using FilmsApp.DAL.ViewModels;
+using FilmsApp.DAL.Models;
 
 namespace FilmsApp.Controllers
 {
     public class RegisterController : Controller
     {
+        private readonly DbSet<User> _currentUserDbSet;
+
+        private bool registered = false;
+
         // GET: Register
         public ActionResult Index()
         {
@@ -26,37 +31,26 @@ namespace FilmsApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Register(UserRegistrationViewModel model)
         {
+
+            User user = new User();
             if (ModelState.IsValid)
             {
-
+                user.FirstName = model.FirstName;
+                user.LastName = model.LastName;
+                user.Login = model.Login;
+                user.Password = model.Password;
+                user.PhoneNumber = model.PhoneNumber;
+                user.BirthDate = model.BirthDate;
+                user.Email = model.Email;
+                // check if passwordConfirm = password
+                _currentUserDbSet.Add(user);
+                registered = true;
             }
-                return View();
+            
+                return Content("registered");
         }
 
 
-
-
-        // GET: Register/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: Register/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
 
     }
 }

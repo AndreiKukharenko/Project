@@ -10,7 +10,7 @@
     @Html.AntiForgeryToken()
 
     <div class="user-reg form-horizontal">
-        <h4>Для регистрации заполните следующую форму:</h4>
+        <h4>To register, please fill out the following form:</h4>
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
         <div class="form-group">
@@ -79,9 +79,10 @@
 
 
 @section scripts{
-
+    <script src="~/Scripts/jquery-3.1.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/inputmask/jquery.inputmask.min.js"></script>
     @*System.Web.Optimization.Scripts.Render("~/bundles/jqueryval")*@
-
     @*System.Web.Optimization.Scripts.Render("~/bundles/inputmask")*@
 
 }

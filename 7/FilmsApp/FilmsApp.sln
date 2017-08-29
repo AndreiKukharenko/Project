@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilmsApp.Tests", "FilmsApp.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilmsApp.DAL", "FilmsApp.DAL\FilmsApp.DAL.csproj", "{6C7B3CC5-A1CA-4539-B7AF-6810DEF96B9F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary1", "ClassLibrary1\ClassLibrary1.csproj", "{26A0B33F-01EA-46A4-913B-F94450E29A28}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,10 +26,6 @@ Global
 		{6C7B3CC5-A1CA-4539-B7AF-6810DEF96B9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C7B3CC5-A1CA-4539-B7AF-6810DEF96B9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C7B3CC5-A1CA-4539-B7AF-6810DEF96B9F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{26A0B33F-01EA-46A4-913B-F94450E29A28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{26A0B33F-01EA-46A4-913B-F94450E29A28}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{26A0B33F-01EA-46A4-913B-F94450E29A28}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{26A0B33F-01EA-46A4-913B-F94450E29A28}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

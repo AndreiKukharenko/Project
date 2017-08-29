@@ -9,7 +9,7 @@ namespace FilmsApp.DAL.ViewModels
 {
     public class UserRegistrationViewModel
     {
-        [Display(Name ="Имя")]
+        [Display(Name ="Name")]
         public string FirstName { get; set; }
 
         /// <summary>
