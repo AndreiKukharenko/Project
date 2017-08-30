@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FilmsApp.DAL.Context;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,13 +9,20 @@ namespace FilmsApp.Controllers
 {
     public class FilmController : Controller
     {
+        private FilmsContext _db;
+
+        public FilmController()
+        {
+            _db = new FilmsContext();
+        }
         /// <summary>
         /// 
         /// </summary>
         /// <returns></returns>
         public ActionResult Index()
         {
-            return View();
+            var films = _db.Films.ToList();
+            return View(films);
         }
 
         /// <summary>

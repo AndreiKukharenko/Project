@@ -108,6 +108,7 @@
   <ItemGroup>
     <Compile Include="Context\FilmsContext.cs" />
     <Compile Include="Context\UserIdentityContext.cs" />
+    <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Migrations\201708292132191_Initial.cs" />
     <Compile Include="Migrations\201708292132191_Initial.Designer.cs">
       <DependentUpon>201708292132191_Initial.cs</DependentUpon>
@@ -122,6 +123,7 @@
     <Compile Include="Models\FilmsImage.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\FilmsRepository.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\UserRegistrationViewModel.cs" />
   </ItemGroup>

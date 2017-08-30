@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using System.Data.Entity;
-using System.Data.Entity.ModelConfiguration;
 using FilmsApp.DAL.Models;
 
 namespace FilmsApp.DAL.Context

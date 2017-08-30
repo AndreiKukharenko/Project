@@ -1,11 +1,10 @@
-﻿
+﻿@model System.Collections.Generic.List<FilmsApp.DAL.Models.Film>
 @{
     ViewBag.Title = "Index";
 }
 @{ 
     Layout = null;
 }
-
   
 <head>
     <link href="~/Content/main.188066ef.css" rel="stylesheet" />
@@ -13,6 +12,10 @@
 
    <body>
         <h2>Film Index</h2>
+       @foreach (var item in Model)
+       {
+        <p>Title: @item.Title, Description: @item.Description</p>
+       }
        <div id="root"></div>
        <!--script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react.js"></!--script>
        <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react-dom.js"></script>
