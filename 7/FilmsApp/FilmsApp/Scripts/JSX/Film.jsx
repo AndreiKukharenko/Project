@@ -1,4 +1,3 @@
-
 class FilmPoster extends Component{
     render(){
         return(

@@ -9,7 +9,7 @@ namespace FilmsApp.DAL.ViewModels
 {
     public class UserRegistrationViewModel
     {
-        [Display(Name ="Name")]
+        [Display(Name ="FirstName")]
         public string FirstName { get; set; }
 
         /// <summary>
@@ -21,12 +21,14 @@ namespace FilmsApp.DAL.ViewModels
         /// <summary>
         /// Users login (nickname)
         /// </summary>
+        [Required]
         [Display(Name ="Your login")]
         public string Login { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
+        [Required(ErrorMessage = "Password is required")]
         [Display(Name ="Password")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
@@ -34,8 +36,10 @@ namespace FilmsApp.DAL.ViewModels
         /// <summary>
         /// 
         /// </summary>
-        [Display(Name = "Confrim password")]
+        [Required(ErrorMessage ="Confirm your password")]
+        [Display(Name = "Confirm password")]
         [DataType(DataType.Password)]
+        [Compare("Password")]
         public string ConfirmPassword { get; set; }
 
         /// <summary>
