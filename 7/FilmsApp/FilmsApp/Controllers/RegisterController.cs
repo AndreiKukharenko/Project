@@ -52,6 +52,7 @@ namespace FilmsApp.Controllers
                 user.Email = model.Email;
                 // check if passwordConfirm = password
                 db.Users.Add(user);
+                db.SaveChanges();
                 registered = true;
             }
             

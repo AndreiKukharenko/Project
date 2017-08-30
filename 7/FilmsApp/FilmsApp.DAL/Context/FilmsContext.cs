@@ -11,9 +11,9 @@ namespace FilmsApp.DAL.Context
     /// </summary>
     public class FilmsContext : DbContext
     {
-        public FilmsContext()
+        public FilmsContext(): base ("FilmsConnection")
         {
-
+            Database.SetInitializer(new FilmsAppInitializer());
         }
 
         /// <summary>
@@ -35,5 +35,6 @@ namespace FilmsApp.DAL.Context
         /// 
         /// </summary>
         public DbSet<FilmsImage> FilmsImages { get; set; }
+
     }
 }

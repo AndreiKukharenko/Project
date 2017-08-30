@@ -79,6 +79,7 @@
     <Compile Include="Models\BaseEntity.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\Film.cs" />
+    <Compile Include="Models\FilmsAppInitializer.cs" />
     <Compile Include="Models\FilmsImage.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
