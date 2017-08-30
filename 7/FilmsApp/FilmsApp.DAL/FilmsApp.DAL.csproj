@@ -71,6 +71,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\FilmsContext.cs" />
+    <Compile Include="Migrations\201708292132191_Initial.cs" />
+    <Compile Include="Migrations\201708292132191_Initial.Designer.cs">
+      <DependentUpon>201708292132191_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BaseEntity.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\Film.cs" />
@@ -84,7 +89,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201708292132191_Initial.resx">
+      <DependentUpon>201708292132191_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6">
       <Visible>False</Visible>

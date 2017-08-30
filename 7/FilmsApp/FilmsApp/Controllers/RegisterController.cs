@@ -5,14 +5,22 @@ using System.Web;
 using System.Web.Mvc;
 using FilmsApp.DAL.ViewModels;
 using FilmsApp.DAL.Models;
+using FilmsApp.DAL.Context;
 
 namespace FilmsApp.Controllers
 {
     public class RegisterController : Controller
     {
-        private readonly DbSet<User> _currentUserDbSet;
+        //private readonly DbSet<User> _currentUserDbSet;
 
         private bool registered = false;
+
+        private FilmsContext db;
+
+        public RegisterController()
+        {
+            db = new FilmsContext();
+        }
 
         // GET: Register
         public ActionResult Index()
@@ -43,7 +51,7 @@ namespace FilmsApp.Controllers
                 user.BirthDate = model.BirthDate;
                 user.Email = model.Email;
                 // check if passwordConfirm = password
-                _currentUserDbSet.Add(user);
+                db.Users.Add(user);
                 registered = true;
             }
             

@@ -9,7 +9,7 @@ namespace FilmsApp.DAL.Context
     /// <summary>
     /// 
     /// </summary>
-    class FilmsContext : DbContext
+    public class FilmsContext : DbContext
     {
         public FilmsContext()
         {

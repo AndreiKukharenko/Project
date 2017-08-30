@@ -10,6 +10,8 @@ namespace FilmsApp.DAL.Models
     /// </summary>
     public class FilmsImage 
     {
+        public int Id { get; set; }
+
         /// <summary>
         /// 
         /// </summary>
