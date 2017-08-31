@@ -16,8 +16,8 @@ namespace FilmsApp.DAL.ViewModels
         /// login or e-mail
         /// </summary>
         [Required(ErrorMessage = "This field is required")]
-        [Display(Name = "Login or E-mail")]
-        public string Identity { get; set; }
+        [Display(Name = "Login")]
+        public string Login { get; set; }
 
         [Required(ErrorMessage = "This field is required")]
         [Display(Name = "Password")]

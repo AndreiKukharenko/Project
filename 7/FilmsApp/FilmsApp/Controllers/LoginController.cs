@@ -41,10 +41,10 @@ namespace FilmsApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                ApplicationUser user = await UserManager.FindAsync(model.Identity, model.Password);
+                ApplicationUser user = await UserManager.FindAsync(model.Login, model.Password);
                 if (user == null)
                 {
-                    ModelState.AddModelError("", "Wrong login/password or password");
+                    ModelState.AddModelError("", "Wrong login or password");
                 }
                 else
                 {
@@ -56,7 +56,7 @@ namespace FilmsApp.Controllers
                         IsPersistent = true
                     }, claim);
                     if (String.IsNullOrEmpty(returnUrl))
-                        return RedirectToAction("Index", "Home");
+                        return RedirectToAction("Index", "Film");
                     return Redirect(returnUrl);
                 }
             }

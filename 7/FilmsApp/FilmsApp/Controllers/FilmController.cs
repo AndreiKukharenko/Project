@@ -1,4 +1,5 @@
 ﻿using FilmsApp.DAL.Context;
+using FilmsApp.DAL.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,10 +12,14 @@ namespace FilmsApp.Controllers
     {
         private FilmsContext _db;
 
+        private FilmsRepository _filmsRepository;
+
         public FilmController()
         {
             _db = new FilmsContext();
+            _filmsRepository = new FilmsRepository(_db);
         }
+
         /// <summary>
         /// 
         /// </summary>
@@ -22,7 +27,8 @@ namespace FilmsApp.Controllers
         public ActionResult Index()
         {
             var films = _db.Films.ToList();
-            return View(films);
+            var films2 = _filmsRepository.GetAll();
+            return View(films2);
         }
 
         /// <summary>

@@ -52,8 +52,22 @@ namespace FilmsApp.DAL.Models
                 Title = "Aut facere repellat",
                 Description = "Aut facere repellatAut facere repellat"
             });
-            context.SaveChanges();
 
+            context.Films.Add(new Film
+            {
+                Id = 2,
+                Title = "suscipit perspiciatis velit",
+                Description = "Aut suscipit perspiciatis velit"
+            });
+
+            context.Films.Add(new Film
+            {
+                Id = 3,
+                Title = "zveniet quod temporibus",
+                Description = "Aurehenderit quos placeat\nvelit minima officia doloresita"
+            });
+
+            context.SaveChanges();
         }
 
         private void addDefaultComments(FilmsContext context)
@@ -64,6 +78,18 @@ namespace FilmsApp.DAL.Models
                 Text = "comment to 1",
                 //User = "1"
             });
+            context.Comments.Add(new Comment
+            {
+                CommentId = 1,
+                Text = "comment to 2",
+            });
+            context.Comments.Add(new Comment
+            {
+                CommentId = 2,
+                Text = "comment to 3",
+            });
+
+            context.SaveChanges();
         }
 
         private void addDefaultImages(FilmsContext context)
@@ -78,6 +104,22 @@ namespace FilmsApp.DAL.Models
             {
                 Id = 1,
                 Poster = "http://rankin.co.uk/media/DRU_Subway2Sheet_5P_REV-556x420.jpg"
+            });
+
+            context.FilmsImages.Add(new FilmsImage
+            {
+                Id = 2,
+                Poster = "http://www.webpark.ru/uploads54/121106/Posters_01.jpg"
+            });
+            context.FilmsImages.Add(new FilmsImage
+            {
+                Id = 3,
+                Poster = "https://cdn.pastemagazine.com/www/blogs/lists/2008.jpg"
+            });
+            context.FilmsImages.Add(new FilmsImage
+            {
+                Id = 4,
+                Poster = "http://images.webpark.ru/uploads54/121106/Posters_15.jpg"
             });
         }
 
