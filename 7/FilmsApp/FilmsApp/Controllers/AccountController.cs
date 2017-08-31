@@ -85,7 +85,7 @@ namespace FilmsApp.Controllers
                         IsPersistent = true
                     }, claim);
                     if (String.IsNullOrEmpty(returnUrl))
-                        return RedirectToAction("Index", "Film");
+                        return RedirectToAction("Index", new { controller = "Film", area = string.Empty });
                     return Redirect(returnUrl);
                 }
             }

@@ -65,6 +65,7 @@ namespace FilmsApp.DAL.Models
                 Title = "zveniet quod temporibus",
                 Description = "Aurehenderit quos placeat\nvelit minima officia doloresita"
             });
+            context.SaveChanges();
         }
 
         private void addDefaultComments(FilmsContext context)

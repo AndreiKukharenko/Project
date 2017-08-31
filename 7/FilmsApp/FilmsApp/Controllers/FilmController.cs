@@ -21,6 +21,7 @@ namespace FilmsApp.Controllers
             _unitofwork = UoW;
         }
 
+        [Authorize]
         public ActionResult Index()
         {
             var films = _unitofwork.FilmsRepository.GetAll();
@@ -41,6 +42,13 @@ namespace FilmsApp.Controllers
                 sortBy = "Name";
 
             return Content($"page №{pageIndex}, sort by {sortBy}");
+        }
+
+        public JsonResult TakeJson()
+        {
+            var jsondata = _unitofwork.FilmsRepository.Get(1);
+            Response.AppendHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+            return Json(jsondata, JsonRequestBehavior.AllowGet);
         }
     }
 }
