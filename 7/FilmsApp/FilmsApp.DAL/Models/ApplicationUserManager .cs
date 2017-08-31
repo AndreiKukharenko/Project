@@ -16,7 +16,7 @@ namespace FilmsApp.DAL.Models
         public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options,
                                                 IOwinContext context)
         {
-            UserIdentityContext db = context.Get<UserIdentityContext>();
+            FilmsContext db = context.Get<FilmsContext>();
             ApplicationUserManager manager = new ApplicationUserManager(new UserStore<ApplicationUser>(db));
             return manager;
         }

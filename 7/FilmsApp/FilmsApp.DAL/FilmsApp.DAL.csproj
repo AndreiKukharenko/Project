@@ -108,12 +108,15 @@
   <ItemGroup>
     <Compile Include="Context\FilmsAppInitializer.cs" />
     <Compile Include="Context\FilmsContext.cs" />
-    <Compile Include="Context\UserIdentityContext.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Interfaces\IUoW.cs" />
     <Compile Include="Migrations\201708292132191_Initial.cs" />
     <Compile Include="Migrations\201708292132191_Initial.Designer.cs">
       <DependentUpon>201708292132191_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708312239555_ChangeContext.cs" />
+    <Compile Include="Migrations\201708312239555_ChangeContext.Designer.cs">
+      <DependentUpon>201708312239555_ChangeContext.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -137,6 +140,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201708292132191_Initial.resx">
       <DependentUpon>201708292132191_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708312239555_ChangeContext.resx">
+      <DependentUpon>201708312239555_ChangeContext.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

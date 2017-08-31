@@ -14,7 +14,7 @@ namespace AspNetIdentityApp
         public void Configuration(IAppBuilder app)
         {
             // настраиваем контекст и менеджер
-            app.CreatePerOwinContext<UserIdentityContext>(UserIdentityContext.Create);
+            app.CreatePerOwinContext<FilmsContext>(FilmsContext.Create);
             app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
             app.UseCookieAuthentication(new CookieAuthenticationOptions
             {

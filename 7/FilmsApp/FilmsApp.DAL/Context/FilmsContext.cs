@@ -2,23 +2,21 @@
 using System.Linq;
 using System.Data.Entity;
 using FilmsApp.DAL.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace FilmsApp.DAL.Context
 {
     /// <summary>
     /// 
     /// </summary>
-    public class FilmsContext : DbContext
+    public class FilmsContext : IdentityDbContext<ApplicationUser>
     {
         public FilmsContext(): base ("FilmsConnection")
         {
             Database.SetInitializer(new FilmsAppInitializer());
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        public DbSet<User> Users { get; set; }
+        //public DbSet<User> Users { get; set; }
 
         /// <summary>
         /// 
@@ -35,5 +33,9 @@ namespace FilmsApp.DAL.Context
         /// </summary>
         public DbSet<FilmsImage> FilmsImages { get; set; }
 
+        public static FilmsContext Create()
+        {
+            return new FilmsContext();
+        }
     }
 }

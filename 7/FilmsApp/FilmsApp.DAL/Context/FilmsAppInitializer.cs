@@ -20,20 +20,20 @@ namespace FilmsApp.DAL.Models
 
         private void addDefaultUsers(FilmsContext context)
         {
-            context.Users.Add(new User
-            {
-                Id = 1,
-                FirstName = "first user",
-                LastName = "last name",
-                Email = "asd@mail.com"
-            });
-            context.Users.Add(new User
-            {
-                Id = 2,
-                FirstName = "second user",
-                LastName = "last name",
-                Email = "asd@mail.com"
-            });
+            //context.Users.Add(new User
+            //{
+            //    Id = 1,
+            //    FirstName = "first user",
+            //    LastName = "last name",
+            //    Email = "asd@mail.com"
+            //});
+            //context.Users.Add(new User
+            //{
+            //    Id = 2,
+            //    FirstName = "second user",
+            //    LastName = "last name",
+            //    Email = "asd@mail.com"
+            //});
         }
 
         private void addDefaultFilms(FilmsContext context)
