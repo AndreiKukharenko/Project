@@ -106,9 +106,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Context\FilmsAppInitializer.cs" />
     <Compile Include="Context\FilmsContext.cs" />
     <Compile Include="Context\UserIdentityContext.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
+    <Compile Include="Interfaces\IUoW.cs" />
     <Compile Include="Migrations\201708292132191_Initial.cs" />
     <Compile Include="Migrations\201708292132191_Initial.Designer.cs">
       <DependentUpon>201708292132191_Initial.cs</DependentUpon>
@@ -119,11 +121,12 @@
     <Compile Include="Models\BaseEntity.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\Film.cs" />
-    <Compile Include="Models\FilmsAppInitializer.cs" />
     <Compile Include="Models\FilmsImage.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\BaseRepository.cs" />
     <Compile Include="Repositories\FilmsRepository.cs" />
+    <Compile Include="UoW\UnitOfWork.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\UserRegistrationViewModel.cs" />
   </ItemGroup>
