@@ -11,7 +11,6 @@ namespace FilmsApp.DAL.Models
     {
         protected override void Seed(FilmsContext context)
         {
-            //base.Seed(context);
             //addDefaultUsers(context);
             addDefaultFilms(context);
             addDefaultComments(context);

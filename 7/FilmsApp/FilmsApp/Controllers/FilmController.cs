@@ -1,4 +1,5 @@
 ﻿using FilmsApp.DAL.Context;
+using FilmsApp.DAL.Models;
 using FilmsApp.DAL.Repositories;
 using System;
 using System.Collections.Generic;
@@ -11,24 +12,19 @@ namespace FilmsApp.Controllers
     public class FilmController : Controller
     {
         private FilmsContext _db;
-
-        private FilmsRepository _filmsRepository;
+        private CommonRepository<Film> _filmRepository;
 
         public FilmController()
         {
             _db = new FilmsContext();
-            _filmsRepository = new FilmsRepository(_db);
+            _filmRepository = new CommonRepository<Film>(_db);
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
+
         public ActionResult Index()
         {
-            var films = _db.Films.ToList();
-            var films2 = _filmsRepository.GetAll();
-            return View(films2);
+            var films = _filmRepository.GetAll();
+            return View(films);
         }
 
         /// <summary>

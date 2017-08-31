@@ -1,54 +1,58 @@
 ﻿using FilmsApp.DAL.Context;
+using FilmsApp.DAL.Interfaces;
 using FilmsApp.DAL.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
+using System.Data.Entity.Core;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace FilmsApp.DAL.Repositories
 {
-    public class FilmsRepository // : IRepository<Film>
+    public class CommonRepository<TEntity> : IRepository<TEntity>
+        where TEntity: BaseEntity
     {
-        private FilmsContext _db;
-
-        public FilmsRepository(FilmsContext db)
+        private DbContext _db;
+        public CommonRepository(DbContext db)
         {
             this._db = db;
+        }
+        private DbSet<TEntity> DbSet
+        {
+            get
+            {
+                return _db.Set<TEntity>();
+            }
         }
 
         public void Delete(int id)
         {
-            _db.Films.Remove(Get(id));
+            DbSet.Remove(Get(id));
         }
 
-        public IEnumerable<Film> Find(Func<Film, bool> predicate)
+        public IEnumerable<TEntity> Find(Func<TEntity, bool> predicate)
         {
-            var films = _db.Films.Where(predicate).ToList();
-
+            var films = DbSet.Where(predicate).ToList();
             return films;
         }
 
-        public Film Get(int id)
+        public TEntity Get(int id)
         {
-            var film = _db.Films.Where(p => p.Id == id).FirstOrDefault();
-
-            //if (film != null)
-
+            var film = DbSet.Find(id);
             return film;
         }
 
-        public IEnumerable<Film> GetAll()
+        public IEnumerable<TEntity> GetAll()
         {
-            var films = _db.Films.ToList();
-
+            var films = DbSet.ToList();
             return films;
         }
 
-        public void Save(Film item)
+        public void Save(TEntity item)
         {
-            _db.Films.Add(item);
+            DbSet.Add(item);
         }
     }
 }
-
