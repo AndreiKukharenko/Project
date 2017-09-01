@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Web;
 using System.Web.Mvc;
-using FilmsApp.DAL.Context;
-using FilmsApp.DAL.Models;
-using FilmsApp.DAL.Repositories;
-using FilmsApp.DAL.UoW;
-using Ninject;
-
-using FilmsApp.App_Start;
 using FilmsApp.DAL.Interfaces;
 
 namespace FilmsApp.Controllers
@@ -47,8 +39,14 @@ namespace FilmsApp.Controllers
         public JsonResult TakeJson()
         {
             var jsondata = _unitofwork.FilmsRepository.Get(1);
-            Response.AppendHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+            //Response.AppendHeader("Access-Control-Allow-Origin", "http://localhost:3000");
             return Json(jsondata, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult ReturnFilms()
+        {
+            var films = _unitofwork.FilmsRepository.GetAll();
+            return Json(films, JsonRequestBehavior.AllowGet);
         }
     }
 }

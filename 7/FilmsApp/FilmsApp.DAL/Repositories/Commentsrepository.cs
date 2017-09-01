@@ -1,13 +1,13 @@
 ﻿using FilmsApp.DAL.Models;
 using System.Data.Entity;
 
-
 namespace FilmsApp.DAL.Repositories
 {
-    public class FilmsRepository : BaseRepository<Film>
+    class CommentsRepository : BaseRepository<Comment>
     {
-        public FilmsRepository(DbContext db) : base(db)
+        public CommentsRepository(DbContext db) : base(db)
         {
         }
+    
     }
 }

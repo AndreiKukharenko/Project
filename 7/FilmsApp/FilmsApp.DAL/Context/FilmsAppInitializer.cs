@@ -119,6 +119,7 @@ namespace FilmsApp.DAL.Models
                 Id = 5,
                 Poster = "http://images.webpark.ru/uploads54/121106/Posters_15.jpg"
             });
+            context.SaveChanges();
         }
 
     }

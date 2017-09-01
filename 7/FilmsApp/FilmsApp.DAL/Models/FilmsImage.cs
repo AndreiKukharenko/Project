@@ -8,18 +8,12 @@ namespace FilmsApp.DAL.Models
     /// <summary>
     /// 
     /// </summary>
-    public class FilmsImage 
+    public class FilmsImage : BaseEntity
     {
-        public int Id { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         public string Poster { get; set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        public string[] Screenshots { get; set; }
+        public Film RelatedFilm {get;set;}
+
+        public string ImageUrl { get; set; }
     }
 }

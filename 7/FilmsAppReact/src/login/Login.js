@@ -34,22 +34,42 @@ class Login extends Component {
         axios({
           method:'get',
           url: url,
-          //dataType: 'jsonp',
-          crossDomain: true
         })
         .then(function (response) {
           if(response.status === 200){
             console.log("request sent successfully");
             console.log(response.data);
           }else if(response.data.code === 404){ //~
-            alert("username password do not match")
+            alert("404")
           }else{
-            alert("Username does not exist");
+            alert("bad request");
           }
         })
         .catch(function(error){
           console.log(error);
         });
+
+        // request to GetCurrentUsername
+        axios({
+          method:'get',
+          url: "http://localhost:61095/Film/GetCurrentUsername",
+        })
+        .then(function (response) {
+          if(response.status === 200){
+            console.log("request to GetCurrentUsername");
+            console.log(response.data);
+          }else if(response.data.code === 404){ //~
+            alert("404")
+          }else{
+            alert("bad request");
+          }
+        })
+        .catch(function(error){
+          console.log(error);
+        });
+
+
+
       }
 
     render() {

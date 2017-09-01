@@ -7,13 +7,13 @@ namespace FilmsApp.DAL.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class ChangeContext : IMigrationMetadata
+    public sealed partial class changeFilmsImageModel : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ChangeContext));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(changeFilmsImageModel));
         
         string IMigrationMetadata.Id
         {
-            get { return "201708312239555_ChangeContext"; }
+            get { return "201709011013027_changeFilmsImageModel"; }
         }
         
         string IMigrationMetadata.Source

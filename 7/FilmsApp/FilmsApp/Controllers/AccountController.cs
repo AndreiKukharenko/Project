@@ -98,5 +98,14 @@ namespace FilmsApp.Controllers
             return RedirectToAction("Login");
         }
 
+
+        public ActionResult GetCurrentUsername()
+        {
+            var user = UserManager.FindById(User.Identity.GetUserId());
+            //Response.AppendHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+
+            return Content(user.ToString());
+        }
+
     }
 }

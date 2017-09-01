@@ -12,12 +12,12 @@ namespace FilmsApp.DAL.UoW
 {
     public class UnitOfWork : IUoW
     {
-        private FilmsContext context = new FilmsContext();
+        private FilmsContext context = new FilmsContext(); //todo: inject context
         private FilmsRepository _filmsRepository;
         //private CommentsRepository _commentsRepository;
         //private FilmsImagesRepository _filmsImagesrepository;
 
-        public FilmsRepository FilmsRepository
+        public FilmsRepository FilmsRepository  //todo: IFilmsRepository
         {
             get
             {

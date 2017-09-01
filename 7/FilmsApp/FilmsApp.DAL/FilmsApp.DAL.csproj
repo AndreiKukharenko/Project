@@ -110,13 +110,13 @@
     <Compile Include="Context\FilmsContext.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Interfaces\IUoW.cs" />
-    <Compile Include="Migrations\201708292132191_Initial.cs" />
-    <Compile Include="Migrations\201708292132191_Initial.Designer.cs">
-      <DependentUpon>201708292132191_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201709010922518_Initial.cs" />
+    <Compile Include="Migrations\201709010922518_Initial.Designer.cs">
+      <DependentUpon>201709010922518_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201708312239555_ChangeContext.cs" />
-    <Compile Include="Migrations\201708312239555_ChangeContext.Designer.cs">
-      <DependentUpon>201708312239555_ChangeContext.cs</DependentUpon>
+    <Compile Include="Migrations\201709011013027_changeFilmsImageModel.cs" />
+    <Compile Include="Migrations\201709011013027_changeFilmsImageModel.Designer.cs">
+      <DependentUpon>201709011013027_changeFilmsImageModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -128,6 +128,8 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\BaseRepository.cs" />
+    <Compile Include="Repositories\CommentsRepository.cs" />
+    <Compile Include="Repositories\FilmsImagesRepository.cs" />
     <Compile Include="Repositories\FilmsRepository.cs" />
     <Compile Include="UoW\UnitOfWork.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
@@ -136,14 +138,6 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201708292132191_Initial.resx">
-      <DependentUpon>201708292132191_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201708312239555_ChangeContext.resx">
-      <DependentUpon>201708312239555_ChangeContext.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6">
@@ -156,6 +150,14 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201709010922518_Initial.resx">
+      <DependentUpon>201709010922518_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709011013027_changeFilmsImageModel.resx">
+      <DependentUpon>201709011013027_changeFilmsImageModel.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

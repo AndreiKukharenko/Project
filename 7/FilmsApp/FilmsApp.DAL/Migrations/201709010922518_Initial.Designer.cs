@@ -13,7 +13,7 @@ namespace FilmsApp.DAL.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201708292132191_Initial"; }
+            get { return "201709010922518_Initial"; }
         }
         
         string IMigrationMetadata.Source
