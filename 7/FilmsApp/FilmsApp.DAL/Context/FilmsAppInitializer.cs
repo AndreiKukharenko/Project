@@ -42,28 +42,36 @@ namespace FilmsApp.DAL.Models
             {
                 Id = 1,
                 Title = "film: sunt aut facere repellat",
-                Description = "quia et suscipit\nsuscipit recusandae consequuntur expedita et cu"
+                Description = "quia et suscipit\nsuscipit recusandae consequuntur expedita et cu",
+                Poster = "https://st.kp.yandex.net/im/kadr/3/0/2/kinopoisk.ru-Twin-Peaks-3020658.jpg",
+
             });
 
             context.Films.Add(new Film
             {
                 Id = 2,
                 Title = "Aut facere repellat",
-                Description = "Aut facere repellatAut facere repellat"
+                Description = "Aut facere repellatAut facere repellat",
+                Poster = "http://rankin.co.uk/media/DRU_Subway2Sheet_5P_REV-556x420.jpg"
+
             });
 
             context.Films.Add(new Film
             {
                 Id = 3,
                 Title = "suscipit perspiciatis velit",
-                Description = "Aut suscipit perspiciatis velit"
+                Description = "Aut suscipit perspiciatis velit",
+                Poster = "http://www.webpark.ru/uploads54/121106/Posters_01.jpg"
+
             });
 
             context.Films.Add(new Film
             {
                 Id = 4,
                 Title = "zveniet quod temporibus",
-                Description = "Aurehenderit quos placeat\nvelit minima officia doloresita"
+                Description = "Aurehenderit quos placeat\nvelit minima officia doloresita",
+                Poster = "https://cdn.pastemagazine.com/www/blogs/lists/2008.jpg"
+
             });
             context.SaveChanges();
         }

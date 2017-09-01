@@ -5,6 +5,13 @@ import {connect} from "react-redux";
 import searchTitle from '../actions/searchTitle'
 
 class AutoCompleteSearch extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            titles: mapTitles(this.props.films)
+        }
+    }
+    
     handleInput = (value) => {
         this.props.dispatch(searchTitle(value));
     };
@@ -18,7 +25,7 @@ class AutoCompleteSearch extends Component {
                 <AutoComplete
                     hintText = "Type anything"
                     filter = {AutoComplete.caseInsensitiveFilter}
-                    dataSource = {this.props.titles}
+                    dataSource = {this.state.titles}
                     floatingLabelText = "Search"
                     maxSearchResults = {5}
                     className = {"autocomplete__field"}
@@ -30,13 +37,12 @@ class AutoCompleteSearch extends Component {
   }
 }
 
-function mapStateToProps (state) {
-    var titles = state.films.map((film) => {
-        return film.title;
+function mapTitles (films) {
+    var titles = films.map((film) => {
+        return film.Title;
     });
-    return {
-        titles
-    }
+    return titles;
 }
 
-export default connect(mapStateToProps)(AutoCompleteSearch);
+//export default connect(mapStateToProps)(AutoCompleteSearch);
+export default AutoCompleteSearch;
