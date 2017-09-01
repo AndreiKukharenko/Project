@@ -10,6 +10,8 @@ import IconMenu from 'material-ui/IconMenu';
 import MenuItem from 'material-ui/MenuItem';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import EditorInsertEmoticon from 'material-ui/svg-icons/editor/insert-emoticon';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
 
 class AppHeader extends Component {
     render(){
@@ -23,12 +25,12 @@ class AppHeader extends Component {
                         targetOrigin={{horizontal: 'left', vertical: 'top'}}
                         useLayerForClickAway = {true}
                     >
-                        <MenuItem primaryText="To list of films" containerElement={<Link to="/FilmListPage"/>} />
-                        <MenuItem primaryText="Send feedback" containerElement={<Link to="/"/>} /> 
+                        <MenuItem primaryText="To list of films" containerElement={<Link to="/"/>} />
                         <MenuItem primaryText="Settings" />
                         <MenuItem primaryText="Help" />
                     </IconMenu>
                 }
+                // TODO: Logout
                 iconElementRight = {<div><FlatButton label="Logout" containerElement={<Link to="/"/>} />
                                         <FlatButton label={this.props.username} icon = {<EditorInsertEmoticon/>} containerElement={<Link to="/"/>}/>
                                     </div>

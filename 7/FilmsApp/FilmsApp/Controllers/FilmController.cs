@@ -36,9 +36,9 @@ namespace FilmsApp.Controllers
             return Content($"page №{pageIndex}, sort by {sortBy}");
         }
 
-        public JsonResult TakeJson()
+        public JsonResult ReturnFilmById(int id)
         {
-            var jsondata = _unitofwork.FilmsRepository.Get(1);
+            var jsondata = _unitofwork.FilmsRepository.GetById(id);
             //Response.AppendHeader("Access-Control-Allow-Origin", "http://localhost:3000");
             return Json(jsondata, JsonRequestBehavior.AllowGet);
         }

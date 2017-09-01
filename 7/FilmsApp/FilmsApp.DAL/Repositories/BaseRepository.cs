@@ -27,7 +27,7 @@ namespace FilmsApp.DAL.Repositories
 
         public void Delete(int id)
         {
-            DbSet.Remove(Get(id));
+            DbSet.Remove(GetById(id));
         }
 
         public IEnumerable<TEntity> Find(Func<TEntity, bool> predicate)
@@ -36,16 +36,14 @@ namespace FilmsApp.DAL.Repositories
             return films;
         }
 
-        public TEntity Get(int id)
+        public TEntity GetById(int id)
         {
-            var film = DbSet.Find(id);
-            return film;
+            return DbSet.Find(id);
         }
 
         public IEnumerable<TEntity> GetAll()
         {
-            var films = DbSet.ToList();
-            return films;
+            return DbSet.ToList();
         }
 
         public void Save(TEntity item)

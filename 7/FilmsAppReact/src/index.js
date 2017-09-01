@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import "./carousel.css";
-import App from './App';
 import FilmListPage from "./filmListPage/FilmListPage";
 import FilmDetailsContainer from "./films/FilmDetailsContainer";
 
@@ -21,8 +20,7 @@ ReactDOM.render(
     <BrowserRouter>
         <Provider store = {store}>  
             <div>
-                {/*<Route exact path = "/" component = {App}/>*/}
-                <Route path = "/" component = {FilmListPage}/>
+                <Route exact path = "/" component = {FilmListPage}/>
                 <Route exact path = "/FilmDetails/:filmId" component = {FilmDetailsContainer}/>
             </div>
         </Provider>

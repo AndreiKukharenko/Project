@@ -10,7 +10,7 @@ namespace FilmsApp.DAL.Interfaces
     {
         IEnumerable<T> GetAll();
 
-        T Get(int id);
+        T GetById(int id);
 
         IEnumerable<T> Find(Func<T, Boolean> predicate);
 

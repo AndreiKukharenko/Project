@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 import {connect} from "react-redux";
 import FilmPosterContainer from "./FilmPosterContainer";
-import axios from "axios";
 
 class FilmList extends Component {
     constructor(props){
@@ -71,5 +70,3 @@ function mapStateToProps (state) {
 }
 
 export default connect(mapStateToProps)(FilmList);
-
-//export default FilmList

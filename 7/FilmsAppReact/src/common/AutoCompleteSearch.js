@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 import AutoComplete from 'material-ui/AutoComplete';
-
-import {connect} from "react-redux";
 import searchTitle from '../actions/searchTitle'
 
 export default class AutoCompleteSearch extends Component {
@@ -13,10 +11,10 @@ export default class AutoCompleteSearch extends Component {
     }
     
     handleInput = (value) => {
-        this.props.dispatch(searchTitle(value));
+        this.props.dispatch(searchTitle(value)); 
     };
     handleField = (searchText) => {
-        if (searchText === "") this.props.dispatch(searchTitle(searchText));
+        if (searchText === "") this.props.dispatch(searchTitle(searchText)); // TODO: Implement on server-side
     };
   
     render() {

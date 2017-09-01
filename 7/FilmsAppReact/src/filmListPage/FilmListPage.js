@@ -22,7 +22,6 @@ export default class FilmListPage extends Component{
         })
         .then(function (response) {
             if(response.status === 200){
-                console.log("request sent successfully");
                 self.setState({films: response.data})
             }else {
                 alert("bad request");
