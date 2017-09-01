@@ -3,13 +3,14 @@ using System.Linq;
 using System.Data.Entity;
 using FilmsApp.DAL.Models;
 using Microsoft.AspNet.Identity.EntityFramework;
+using FilmsApp.DAL.Interfaces;
 
 namespace FilmsApp.DAL.Context
 {
     /// <summary>
     /// 
     /// </summary>
-    public class FilmsContext : IdentityDbContext<ApplicationUser>
+    public class FilmsContext : IdentityDbContext<ApplicationUser>, IFilmsContext
     {
         public FilmsContext(): base ("FilmsConnection")
         {

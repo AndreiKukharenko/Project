@@ -20,7 +20,15 @@ namespace FilmsApp.DAL.Models
         /// </summary>
         public string  Description { get; set; }
 
+        /// <summary>
+        /// 
+        /// </summary>
         public string Poster { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public int Rating { get; set; }
 
         /// <summary>
         /// 

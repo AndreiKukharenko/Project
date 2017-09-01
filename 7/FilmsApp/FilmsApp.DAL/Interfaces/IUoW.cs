@@ -5,11 +5,12 @@ namespace FilmsApp.DAL.Interfaces
 {
     public interface IUoW : IDisposable
     {
-        FilmsRepository FilmsRepository { get; }
+        IFilmsRepository FilmsRepository { get; }
 
-        //CommentsRepository CommentsRepository { get; }
+        ICommentsRepository CommentsRepository { get; }
 
-        //FilmsImagesRepository FilmsImagesrepository { get; }
+        IFilmsImagesRepository FilmsImagesRepository { get; }
+
         void Save();
     }
 }

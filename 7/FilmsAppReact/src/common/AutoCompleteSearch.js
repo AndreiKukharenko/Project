@@ -4,7 +4,7 @@ import AutoComplete from 'material-ui/AutoComplete';
 import {connect} from "react-redux";
 import searchTitle from '../actions/searchTitle'
 
-class AutoCompleteSearch extends Component {
+export default class AutoCompleteSearch extends Component {
     constructor(props){
         super(props);
         this.state = {
@@ -43,6 +43,3 @@ function mapTitles (films) {
     });
     return titles;
 }
-
-//export default connect(mapStateToProps)(AutoCompleteSearch);
-export default AutoCompleteSearch;

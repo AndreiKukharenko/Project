@@ -11,33 +11,26 @@ export default class FilmListPage extends Component{
     constructor(props){
         super(props);
         this.state = {
-
         }
     }
 
     componentDidMount(){
-        //if(!this.state){
-            var self = this;
-            axios({
-                method:'get',
-                url: "http://localhost:61095/Film/ReturnFilms",
-              })
-              .then(function (response) {
-                if(response.status === 200){
-                  console.log("request sent successfully");
-                  console.log(response.data);
-                  self.setState({films: response.data})
-                }else if(response.data.code === 404){ //~
-                  alert("404")
-                }else{
-                  alert("bad request");
-                }
-              })
-              .catch(function(error){
-                console.log(error);
-              });
-
-        //}
+        var self = this;
+        axios({
+            method:'get',
+            url: "http://localhost:61095/Film/ReturnFilms",
+        })
+        .then(function (response) {
+            if(response.status === 200){
+                console.log("request sent successfully");
+                self.setState({films: response.data})
+            }else {
+                alert("bad request");
+            }
+        })
+        .catch(function(error){
+            console.log(error);
+        });
     }
     
     render() {
@@ -58,7 +51,7 @@ export default class FilmListPage extends Component{
             );
         }
         else {
-            return (<div>loading</div>)
+            return (<div> Loading. Please wait</div>)
         }
     }
 }

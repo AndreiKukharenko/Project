@@ -46,7 +46,6 @@ class SendMessage extends Component{
 function mapStateToProps(state){
     return {
         username: state.username,
-        films: state.films
     }
 }
 export default connect(mapStateToProps)(SendMessage);

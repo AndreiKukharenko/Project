@@ -44,7 +44,7 @@ namespace FilmsApp.DAL.Models
                 Title = "film: sunt aut facere repellat",
                 Description = "quia et suscipit\nsuscipit recusandae consequuntur expedita et cu",
                 Poster = "https://st.kp.yandex.net/im/kadr/3/0/2/kinopoisk.ru-Twin-Peaks-3020658.jpg",
-
+                Rating = 5
             });
 
             context.Films.Add(new Film
@@ -52,8 +52,8 @@ namespace FilmsApp.DAL.Models
                 Id = 2,
                 Title = "Aut facere repellat",
                 Description = "Aut facere repellatAut facere repellat",
-                Poster = "http://rankin.co.uk/media/DRU_Subway2Sheet_5P_REV-556x420.jpg"
-
+                Poster = "http://rankin.co.uk/media/DRU_Subway2Sheet_5P_REV-556x420.jpg",
+                Rating = 3,
             });
 
             context.Films.Add(new Film
@@ -61,8 +61,8 @@ namespace FilmsApp.DAL.Models
                 Id = 3,
                 Title = "suscipit perspiciatis velit",
                 Description = "Aut suscipit perspiciatis velit",
-                Poster = "http://www.webpark.ru/uploads54/121106/Posters_01.jpg"
-
+                Poster = "http://www.webpark.ru/uploads54/121106/Posters_01.jpg",
+                Rating = 1
             });
 
             context.Films.Add(new Film
@@ -70,8 +70,8 @@ namespace FilmsApp.DAL.Models
                 Id = 4,
                 Title = "zveniet quod temporibus",
                 Description = "Aurehenderit quos placeat\nvelit minima officia doloresita",
-                Poster = "https://cdn.pastemagazine.com/www/blogs/lists/2008.jpg"
-
+                Poster = "https://cdn.pastemagazine.com/www/blogs/lists/2008.jpg",
+                Rating = 2
             });
             context.SaveChanges();
         }

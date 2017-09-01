@@ -65,7 +65,6 @@ class FilmList extends Component {
 
 function mapStateToProps (state) {
     return {
-      //films: state.films,
       searchTitle: state.searchTitle,
       orderBy: state.orderBy
     }

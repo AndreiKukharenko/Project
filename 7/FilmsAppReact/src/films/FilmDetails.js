@@ -16,10 +16,10 @@ export default class FilmDetails extends Component{
                     <div>
                         <AppHeader/>
                         <FilmPoster {...this.props}/>
-                        <RatingStars rating = {this.props.rating}/>
-                        <Gallery screenshots = {this.props.images.screenshots}/>                    
-                        <CommentList comments = {this.props.comments}/>
-                        <SendMessage id = {this.props.filmId}/>
+                        <RatingStars rating = {this.props.Rating}/>
+                        {/*<Gallery screenshots = {this.props.images.screenshots}/>*/} 
+                        {/*<CommentList comments = {this.props.Comments}/>*/}
+                        <SendMessage id = {this.props.Id}/>
                     </div>
                 </MuiThemeProvider>
             </div>

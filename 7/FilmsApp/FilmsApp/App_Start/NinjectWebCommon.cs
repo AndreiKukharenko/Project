@@ -14,6 +14,7 @@ namespace FilmsApp.App_Start
     using FilmsApp.DAL.UoW;
     using System.Web.Mvc;
     using Ninject.Web.Mvc;
+    using DAL.Context;
 
     public static class NinjectWebCommon 
     {
@@ -50,6 +51,8 @@ namespace FilmsApp.App_Start
                 kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
 
                 kernel.Bind<IUoW>().To<UnitOfWork>();
+                kernel.Bind<IFilmsContext>().To<FilmsContext>();
+
 
                 RegisterServices(kernel);
                 return kernel;

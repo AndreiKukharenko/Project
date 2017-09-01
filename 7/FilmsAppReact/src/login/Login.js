@@ -21,7 +21,6 @@ class Login extends Component {
 
     handleClick(event){
         var apiBaseUrl = "http://localhost:61095/Film/TakeJson";
-
         let action = setUserName(this.state.username);
         this.props.dispatch(action);
         this.sendRequest(apiBaseUrl);
@@ -45,27 +44,6 @@ class Login extends Component {
         .catch(function(error){
           console.log(error);
         });
-
-        // request to GetCurrentUsername
-        // axios({
-        //   method:'get',
-        //   url: "http://localhost:61095/Film/GetCurrentUsername",
-        // })
-        // .then(function (response) {
-        //   if(response.status === 200){
-        //     console.log("request to GetCurrentUsername");
-        //     console.log(response.data);
-        //   }else if(response.data.code === 404){ //~
-        //     alert("404")
-        //   }else{
-        //     alert("bad request");
-        //   }
-        // })
-        // .catch(function(error){
-        //   console.log(error);
-        // });
-
-
 
       }
 

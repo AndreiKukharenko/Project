@@ -1,9 +1,10 @@
 ﻿using FilmsApp.DAL.Models;
+using FilmsApp.DAL.Interfaces;
 using System.Data.Entity;
 
 namespace FilmsApp.DAL.Repositories
 {
-    class CommentsRepository : BaseRepository<Comment>
+    public class CommentsRepository : BaseRepository<Comment>, ICommentsRepository
     {
         public CommentsRepository(DbContext db) : base(db)
         {

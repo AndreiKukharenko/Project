@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import FilmDetails from "./FilmDetails";
 import {connect} from "react-redux";
 
-class FilmDetailsContainer extends Component{
+export default class FilmDetailsContainer extends Component{
     render(){
         var id = this.props.match.params.filmId;
+        console.log(id)
+// get currentFilm from server here 
         var currentFilm = this.props.films[id];
         return(
             <div >
@@ -13,9 +15,3 @@ class FilmDetailsContainer extends Component{
         )
     }
 }
-function mapStateToProps(state){
-    return{
-        films: state.films
-    }
-}
-export default connect(mapStateToProps)(FilmDetailsContainer);

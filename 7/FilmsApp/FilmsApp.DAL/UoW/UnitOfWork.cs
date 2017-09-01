@@ -3,37 +3,58 @@ using FilmsApp.DAL.Interfaces;
 using FilmsApp.DAL.Models;
 using FilmsApp.DAL.Repositories;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FilmsApp.DAL.UoW
 {
     public class UnitOfWork : IUoW
     {
-        private FilmsContext context = new FilmsContext(); //todo: inject context
-        private FilmsRepository _filmsRepository;
-        //private CommentsRepository _commentsRepository;
-        //private FilmsImagesRepository _filmsImagesrepository;
+        private FilmsContext _context; //todo: inject _context
+        private IFilmsRepository _filmsRepository;
+        private ICommentsRepository _commentsRepository;
+        private IFilmsImagesRepository _filmsImagesrepository;
 
-        public FilmsRepository FilmsRepository  //todo: IFilmsRepository
+        public UnitOfWork(FilmsContext context)
+        {
+            _context = context;
+        }
+
+        public IFilmsRepository FilmsRepository
         {
             get
             {
                 if (this._filmsRepository == null)
                 {
-                    this._filmsRepository = new FilmsRepository(context);
+                    this._filmsRepository = new FilmsRepository(_context);
                 }
                 return _filmsRepository;
             }
         }
-        // add properties for other repositories
-
+        public ICommentsRepository CommentsRepository
+        {
+            get
+            {
+                if (this._commentsRepository == null)
+                {
+                    this._commentsRepository = new CommentsRepository(_context);
+                }
+                return _commentsRepository;
+            }
+        }
+        public IFilmsImagesRepository FilmsImagesRepository
+        {
+            get
+            {
+                if (this._filmsImagesrepository == null)
+                {
+                    this._filmsImagesrepository = new FilmsImagesRepository(_context);
+                }
+                return _filmsImagesrepository;
+            }
+        }
 
         public void Save()
         {
-            context.SaveChanges();
+            _context.SaveChanges();
         }
 
         private bool disposed = false;
@@ -44,7 +65,7 @@ namespace FilmsApp.DAL.UoW
             {
                 if (disposing)
                 {
-                    context.Dispose();
+                    _context.Dispose();
                 }
             }
             this.disposed = true;
