@@ -38,20 +38,17 @@ namespace FilmsApp.Controllers
             var films = _unitofwork.FilmsRepository.GetAll();
             if (!String.IsNullOrEmpty(searchString))
             {
-                films = films.Where(s => s.Title.ToUpper().Contains(searchString.ToUpper())
-                                       || s.Description.ToUpper().Contains(searchString.ToUpper()));
+                films = films.Where(s => s.Title.ToUpper().Contains(searchString.ToUpper())).ToList();
             }
             switch (sortOrder)
             {
-                case "FilmId":
-                    films = films.OrderByDescending(s => s.Id);
-                    break;
-                case "Name":
+                case "Title":
                     films = films.OrderBy(s => s.Title);
                     break;
                 case "Rating":
                     films = films.OrderByDescending(s => s.Rating);
                     break;
+                case "FilmId":
                 default:
                     films = films.OrderBy(s => s.Id);
                     break;

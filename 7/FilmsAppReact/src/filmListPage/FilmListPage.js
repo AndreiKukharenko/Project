@@ -6,8 +6,10 @@ import AutoCompleteSearch from '../common/AutoCompleteSearch.js'
 import OrderBy from '../common/OrderBy.js'
 import FilmList from "../films/FilmList";
 import axios from "axios";
+import {connect} from "react-redux";
 
-export default class FilmListPage extends Component{
+
+class FilmListPage extends Component{
     constructor(props){
         super(props);
         this.state = {
@@ -15,24 +17,40 @@ export default class FilmListPage extends Component{
     }
 
     componentDidMount(){
+        this.getFilms(this.props.orderBy, this.props.searchTitle);
+    }
+
+    componentWillReceiveProps(nextProps) {
+        //debugger
+        this.getFilms(this.props.orderBy, this.props.searchTitle);
+    } 
+
+    getFilms(sortOrder, searchString){
         var self = this;
         axios({
             method:'get',
-            url: "http://localhost:61095/Film/ReturnFilms",
+            url: "http://localhost:61095/Film/SortAndSearch",
+            params: {
+                sortOrder, 
+                searchString
+            }
         })
         .then(function (response) {
             if(response.status === 200){
-                self.setState({films: response.data})
+                self.setState({films: response.data});
+                //self.render()
             }else {
                 alert("bad request");
             }
         })
         .catch(function(error){
+            self.setState({error: error.message})
             console.log(error);
         });
     }
-    
+
     render() {
+        //debugger
         if (this.state.films) {
             return (
                 <div>
@@ -49,8 +67,22 @@ export default class FilmListPage extends Component{
                 </div>
             );
         }
+        else if (this.state.error){
+            return (<div> {this.state.error}</div>)
+        }
         else {
             return (<div> Loading. Please wait</div>)
         }
     }
 }
+
+
+
+function mapStateToProps(state){
+    return {
+        searchTitle: state.searchTitle,
+        orderBy: state.orderBy
+    }
+}
+
+export default connect(mapStateToProps)(FilmListPage);

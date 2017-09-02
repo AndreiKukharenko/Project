@@ -14,7 +14,7 @@ import orderBy from "../src/actions/orderBy";
 
 const store = createStore(combineReducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
-store.dispatch(orderBy("Name"));
+store.dispatch(orderBy("FilmId"));
 
 ReactDOM.render(
     <BrowserRouter>

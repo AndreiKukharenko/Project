@@ -7,7 +7,7 @@ import orderBy from "../actions/orderBy";
 
 class OrderBy extends Component {
     state = {
-        value: "Films id"
+        value: "FilmId"
     };
 
     handleChange = (event, index, value) => {
@@ -23,9 +23,9 @@ class OrderBy extends Component {
                 onChange={this.handleChange}
                 autoWidth={true}
               >
-                <MenuItem value={"Films id"} primaryText="Films id" />
-                <MenuItem value={"title"} primaryText="Name" />
-                <MenuItem value={"rating"} primaryText="Rating" />
+                <MenuItem value={"FilmId"} primaryText="FilmId" />
+                <MenuItem value={"Title"} primaryText="Title" />
+                <MenuItem value={"Rating"} primaryText="Rating" />
               </SelectField>
             </div>
         );
