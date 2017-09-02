@@ -46,6 +46,7 @@ namespace FilmsApp.DAL.Migrations
                         Title = c.String(),
                         Description = c.String(),
                         Poster = c.String(),
+                        Rating = c.Int(nullable: false),
                         IsDeleted = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);

@@ -3,16 +3,16 @@ namespace FilmsApp.DAL.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class addedrating : DbMigration
+    public partial class changeModels : DbMigration
     {
         public override void Up()
         {
-            AddColumn("dbo.Films", "Rating", c => c.Int(nullable: false));
+            DropColumn("dbo.AspNetUsers", "Login");
         }
         
         public override void Down()
         {
-            DropColumn("dbo.Films", "Rating");
+            AddColumn("dbo.AspNetUsers", "Login", c => c.String());
         }
     }
 }

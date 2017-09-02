@@ -22,8 +22,8 @@ namespace FilmsApp.DAL.ViewModels
         /// Users login (nickname)
         /// </summary>
         [Required]
-        [Display(Name ="Your login")]
-        public string Login { get; set; }
+        [Display(Name ="Your login (username)")]
+        public string UserName { get; set; }
 
         /// <summary>
         /// 

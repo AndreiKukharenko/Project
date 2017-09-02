@@ -17,7 +17,7 @@ namespace FilmsApp.DAL.Repositories
         {
             this._db = db;
         }
-        private DbSet<TEntity> DbSet
+        protected DbSet<TEntity> DbSet
         {
             get
             {
@@ -32,8 +32,7 @@ namespace FilmsApp.DAL.Repositories
 
         public IEnumerable<TEntity> Find(Func<TEntity, bool> predicate)
         {
-            var films = DbSet.Where(predicate).ToList();
-            return films;
+            return DbSet.Where(predicate).ToList();
         }
 
         public TEntity GetById(int id)

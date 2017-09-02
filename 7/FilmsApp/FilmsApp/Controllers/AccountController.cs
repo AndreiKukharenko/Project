@@ -40,7 +40,7 @@ namespace FilmsApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                ApplicationUser user = new ApplicationUser { Login = model.Login, Email = model.Email, UserName = model.FirstName };
+                ApplicationUser user = new ApplicationUser { Email = model.Email, UserName = model.UserName };
                 IdentityResult result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -70,7 +70,7 @@ namespace FilmsApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                ApplicationUser user = await UserManager.FindAsync(model.Login, model.Password);
+                ApplicationUser user = await UserManager.FindAsync(model.UserName, model.Password);
                 if (user == null)
                 {
                     ModelState.AddModelError("", "Wrong login or password");
@@ -99,11 +99,9 @@ namespace FilmsApp.Controllers
         }
 
 
-        public ActionResult GetCurrentUsername()
+        public ActionResult GetCurrentUsername() //TOdDO: Fix the problem
         {
             var user = UserManager.FindById(User.Identity.GetUserId());
-            //Response.AppendHeader("Access-Control-Allow-Origin", "http://localhost:3000");
-
             return Content(user.ToString());
         }
 

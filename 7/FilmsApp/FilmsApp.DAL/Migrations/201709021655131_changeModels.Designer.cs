@@ -7,13 +7,13 @@ namespace FilmsApp.DAL.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class addedrating : IMigrationMetadata
+    public sealed partial class changeModels : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(addedrating));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(changeModels));
         
         string IMigrationMetadata.Id
         {
-            get { return "201709011450372_addedrating"; }
+            get { return "201709021655131_changeModels"; }
         }
         
         string IMigrationMetadata.Source
