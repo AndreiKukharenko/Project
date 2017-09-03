@@ -2,6 +2,10 @@
 using System.Web.Mvc;
 using FilmsApp.DAL.Interfaces;
 using System.Linq;
+using Microsoft.AspNet.Identity.EntityFramework;
+using FilmsApp.DAL.Models;
+using FilmsApp.DAL.Context;
+using Microsoft.AspNet.Identity;
 
 namespace FilmsApp.Controllers
 {
@@ -82,5 +86,13 @@ namespace FilmsApp.Controllers
             return Json(screenshots, JsonRequestBehavior.AllowGet);
         }
 
+        public ActionResult GetCurrentUsername()
+        {
+            var context = new FilmsContext();
+            var store = new UserStore<ApplicationUser>(context);
+            var manager = new UserManager<ApplicationUser>(store);
+            var user = manager.FindById(User.Identity.GetUserId());
+            return Content(user.UserName);
+        }
     }
 }

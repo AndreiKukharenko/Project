@@ -97,13 +97,6 @@ namespace FilmsApp.Controllers
             AuthenticationManager.SignOut();
             return RedirectToAction("Login");
         }
-
-
-        public ActionResult GetCurrentUsername() //TOdDO: Fix the problem
-        {
-            var user = UserManager.FindById(User.Identity.GetUserId());
-            return Content(user.ToString());
-        }
-
+        
     }
 }

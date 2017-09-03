@@ -1,4 +1,6 @@
 ﻿using FilmsApp.DAL.Context;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,29 +13,34 @@ namespace FilmsApp.DAL.Models
     {
         protected override void Seed(FilmsContext context)
         {
-            //addDefaultUsers(context);
+            addDefaultUsers(context);
             addDefaultFilms(context);
             addDefaultComments(context);
             addDefaultImages(context);
-            context.SaveChanges();
         }
 
         private void addDefaultUsers(FilmsContext context)
         {
-            //context.Users.Add(new User
-            //{
-            //    Id = 1,
-            //    FirstName = "first user",
-            //    LastName = "last name",
-            //    Email = "asd@mail.com"
-            //});
-            //context.Users.Add(new User
-            //{
-            //    Id = 2,
-            //    FirstName = "second user",
-            //    LastName = "last name",
-            //    Email = "asd@mail.com"
-            //});
+            var store = new UserStore<ApplicationUser>(context);
+            var manager = new UserManager<ApplicationUser>(store);
+            ApplicationUser newUser1 = new ApplicationUser {
+                FirstName = "first user",
+                LastName = "lastname",
+                Email = "asd@mail.com",
+                UserName = "test1",
+                Password = "qwerty1"
+            };
+            ApplicationUser newUser2 = new ApplicationUser
+            {
+                FirstName = "second user",
+                LastName = "lastName",
+                Email = "aqwe@mail.com",
+                UserName = "test",
+                Password = "qwerty2"
+            };
+            manager.Create(newUser1);
+            manager.Create(newUser2);
+            context.SaveChanges();
         }
 
         private void addDefaultFilms(FilmsContext context)
@@ -53,7 +60,7 @@ namespace FilmsApp.DAL.Models
                 Title = "Aut facere repellat",
                 Description = "Aut facere repellatAut facere repellat",
                 Poster = "http://rankin.co.uk/media/DRU_Subway2Sheet_5P_REV-556x420.jpg",
-                Rating = 3,
+                Rating = 3.9,
             });
 
             context.Films.Add(new Film
@@ -68,10 +75,26 @@ namespace FilmsApp.DAL.Models
             context.Films.Add(new Film
             {
                 Id = 4,
-                Title = "zveniet quod temporibus",
+                Title = "Pveniet quod temporibus",
                 Description = "Aurehenderit quos placeat\nvelit minima officia doloresita",
                 Poster = "https://cdn.pastemagazine.com/www/blogs/lists/2008.jpg",
-                Rating = 2
+                Rating = 5
+            });
+            context.Films.Add(new Film
+            {
+                Id = 5,
+                Title = "Bgeniet quod temporibus",
+                Description = "Aurehendeminima officia doloredsdgsi ta",
+                Poster = "https://68.media.tumblr.com/bd5ba144c5439ce5144c77a2cf284819/tumblr_oh7o1lIL0B1r8n53qo1_1280.jpg",
+                Rating = 4
+            });
+            context.Films.Add(new Film
+            {
+                Id = 6,
+                Title = "Bsearch quod temporibus",
+                Description = "Cvhendeminima officia doloredsdgsi ta",
+                Poster = "https://upload.wikimedia.org/wikipedia/ru/archive/c/cf/20090517000555%21The_Invasion_film_poster_%28ru%29.jpg",
+                Rating = 3.1
             });
             context.SaveChanges();
         }
@@ -82,7 +105,6 @@ namespace FilmsApp.DAL.Models
             {
                 CommentId = 1,
                 Text = "comment to 1",
-                //User = "1"
             });
             context.Comments.Add(new Comment
             {
@@ -94,8 +116,6 @@ namespace FilmsApp.DAL.Models
                 CommentId = 3,
                 Text = "comment to 3",
             });
-
-            context.SaveChanges();
         }
 
         private void addDefaultImages(FilmsContext context)
@@ -127,7 +147,6 @@ namespace FilmsApp.DAL.Models
                 Id = 5,
                 Poster = "http://images.webpark.ru/uploads54/121106/Posters_15.jpg"
             });
-            context.SaveChanges();
         }
 
     }

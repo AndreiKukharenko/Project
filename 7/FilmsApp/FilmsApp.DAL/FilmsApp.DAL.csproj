@@ -114,17 +114,13 @@
     <Compile Include="Interfaces\IFilmsRepository.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Interfaces\IUoW.cs" />
-    <Compile Include="Migrations\201709012108208_InitialCreate.cs" />
-    <Compile Include="Migrations\201709012108208_InitialCreate.Designer.cs">
-      <DependentUpon>201709012108208_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201709022302228_InitialCreate.cs" />
+    <Compile Include="Migrations\201709022302228_InitialCreate.Designer.cs">
+      <DependentUpon>201709022302228_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201709012118484_Init.cs" />
-    <Compile Include="Migrations\201709012118484_Init.Designer.cs">
-      <DependentUpon>201709012118484_Init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201709021655131_changeModels.cs" />
-    <Compile Include="Migrations\201709021655131_changeModels.Designer.cs">
-      <DependentUpon>201709021655131_changeModels.cs</DependentUpon>
+    <Compile Include="Migrations\201709022303203_init.cs" />
+    <Compile Include="Migrations\201709022303203_init.Designer.cs">
+      <DependentUpon>201709022303203_init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
@@ -160,14 +156,11 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201709012108208_InitialCreate.resx">
-      <DependentUpon>201709012108208_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201709022302228_InitialCreate.resx">
+      <DependentUpon>201709022302228_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709012118484_Init.resx">
-      <DependentUpon>201709012118484_Init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201709021655131_changeModels.resx">
-      <DependentUpon>201709021655131_changeModels.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201709022303203_init.resx">
+      <DependentUpon>201709022303203_init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

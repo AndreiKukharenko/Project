@@ -7,22 +7,39 @@ import OrderBy from '../common/OrderBy.js'
 import FilmList from "../films/FilmList";
 import axios from "axios";
 import {connect} from "react-redux";
+import changeFilms from "../actions/changeFilms";
+import setUserName from "../actions/setUserName";
 
 
 class FilmListPage extends Component{
     constructor(props){
         super(props);
         this.state = {
+            orderBy: this.props.orderBy,
         }
     }
 
     componentDidMount(){
         this.getFilms(this.props.orderBy, this.props.searchTitle);
+        this.getCurrentUserName();
     }
 
     componentWillReceiveProps(nextProps) {
+        var array1 = nextProps.films;
+        var array2 = this.props.films;
+        function arraysAreEqual(arr1,arr2){
+            if(arr2 instanceof Object ||
+                arr2 === undefined){
+                return false
+            }
+            else return (arr1.join('') === arr2.join(''));
+          }
         //debugger
-        this.getFilms(this.props.orderBy, this.props.searchTitle);
+        if ( arraysAreEqual(array1, array2)
+                || nextProps.searchTitle !== this.props.searchTitle
+                || nextProps.orderBy !== this.props.orderBy){
+            this.getFilms(this.props.orderBy, this.props.searchTitle);
+        }
     } 
 
     getFilms(sortOrder, searchString){
@@ -38,7 +55,29 @@ class FilmListPage extends Component{
         .then(function (response) {
             if(response.status === 200){
                 self.setState({films: response.data});
-                //self.render()
+                //TODo: consider using special bool props
+                self.props.dispatch(changeFilms(response.data))
+            }else {
+                alert("bad request");
+            }
+        })
+        .catch(function(error){
+            self.setState({error: error.message})
+            console.log(error);
+        });
+    }
+
+
+    getCurrentUserName(){
+        var self = this;
+        axios({
+            method:'get',
+            url: "http://localhost:61095/Film/GetCurrentUsername",
+        })
+        .then(function (response) {
+            if(response.status === 200){
+                //self.setState({films: response.data});
+                self.props.dispatch(setUserName(response.data))
             }else {
                 alert("bad request");
             }
@@ -50,7 +89,6 @@ class FilmListPage extends Component{
     }
 
     render() {
-        //debugger
         if (this.state.films) {
             return (
                 <div>
@@ -76,12 +114,11 @@ class FilmListPage extends Component{
     }
 }
 
-
-
 function mapStateToProps(state){
     return {
         searchTitle: state.searchTitle,
-        orderBy: state.orderBy
+        orderBy: state.orderBy,
+        films: state.films
     }
 }
 

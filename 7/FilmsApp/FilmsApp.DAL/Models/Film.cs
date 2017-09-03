@@ -28,7 +28,7 @@ namespace FilmsApp.DAL.Models
         /// <summary>
         /// 
         /// </summary>
-        public int Rating { get; set; }
+        public double Rating { get; set; }
 
         /// <summary>
         /// 

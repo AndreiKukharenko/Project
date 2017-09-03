@@ -14,6 +14,10 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
 class AppHeader extends Component {
+    logout = () => {
+        //debugger
+        fetch("http://localhost:61095/Account/Logout")
+    }
     render(){
         return(
             <AppBar className = {"appBar"}
@@ -30,8 +34,7 @@ class AppHeader extends Component {
                         <MenuItem primaryText="Help" />
                     </IconMenu>
                 }
-                // TODO: Logout
-                iconElementRight = {<div><FlatButton label="Logout" containerElement={<Link to="/"/>} />
+                iconElementRight = {<div><FlatButton label="Logout" onClick= {this.logout} />
                                         <FlatButton label={this.props.username} icon = {<EditorInsertEmoticon/>} containerElement={<Link to="/"/>}/>
                                     </div>
                                 }
