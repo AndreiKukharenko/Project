@@ -21,8 +21,7 @@ namespace FilmsApp.Controllers
         [Authorize]
         public ActionResult Index()
         {
-            var films = _unitofwork.FilmsRepository.GetAll();
-            return View(films);
+            return View();
         }
 
         // ToDo: watch this

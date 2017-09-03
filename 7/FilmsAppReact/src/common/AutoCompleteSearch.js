@@ -2,21 +2,53 @@ import React, {Component} from 'react';
 import AutoComplete from 'material-ui/AutoComplete';
 import searchTitle from '../actions/searchTitle'
 import {connect} from "react-redux";
+import axios from "axios";
+import changeFilms from "../actions/changeFilms";
 
 class AutoCompleteSearch extends Component {
     constructor(props){
         super(props);
         this.state = {
-            titles: mapTitles(this.props.films)
+            titles: this.mapTitles(this.props.films)
         }
     }
     
     handleInput = (value) => {
-        this.props.dispatch(searchTitle(value)); 
+        this.getFilms(value);
     };
     handleField = (searchText) => {
-        if (searchText === "") this.props.dispatch(searchTitle(searchText)); // TODO: Implement on server-side
+        this.getFilms(searchText);
     };
+
+    mapTitles = (films) => {
+        var titles = films.map((film) => {
+            return film.Title;
+        });
+        return titles;
+    }
+
+    getFilms = (searchString) => {
+        var self = this;
+        axios({
+            method:'get',
+            url: "http://localhost:61095/Film/SortAndSearch",
+            params: {
+                searchString 
+            }
+        })
+        .then(function (response) {
+            if(response.status === 200){
+                self.setState({films: response.data});
+                self.props.dispatch(changeFilms(response.data))
+            }else {
+                alert("bad request");
+            }
+        })
+        .catch(function(error){
+            self.setState({error: error.message})
+            console.log(error);
+        });
+    }
   
     render() {
         return (
@@ -36,10 +68,10 @@ class AutoCompleteSearch extends Component {
   }
 }
 
-function mapTitles (films) {
-    var titles = films.map((film) => {
-        return film.Title;
-    });
-    return titles;
+function mapStateToProps(state){
+    return {
+        films: state.films
+    }
 }
-export default connect()(AutoCompleteSearch);
+
+export default connect(mapStateToProps)(AutoCompleteSearch);

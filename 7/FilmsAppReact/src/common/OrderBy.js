@@ -25,7 +25,7 @@ class OrderBy extends Component {
             method:'get',
             url: "http://localhost:61095/Film/SortAndSearch",
             params: {
-                sortOrder, 
+                sortOrder
             }
         })
         .then(function (response) {
