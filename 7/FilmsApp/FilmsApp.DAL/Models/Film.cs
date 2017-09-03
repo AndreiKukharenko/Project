@@ -18,7 +18,7 @@ namespace FilmsApp.DAL.Models
         /// <summary>
         /// 
         /// </summary>
-        public string  Description { get; set; }
+        public string Description { get; set; }
 
         /// <summary>
         /// 
@@ -33,11 +33,11 @@ namespace FilmsApp.DAL.Models
         /// <summary>
         /// 
         /// </summary>
-        public FilmsImage[] Images { get; set; }
+        public ICollection<FilmsImage> Images { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public Comment[] Comments { get; set; }
+        public ICollection<Comment> Comments { get; set; }
     }
 }

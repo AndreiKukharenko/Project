@@ -1,9 +1,11 @@
-﻿using FilmsApp.DAL.Interfaces;
+﻿using FilmsApp.DAL.Context;
+using FilmsApp.DAL.Interfaces;
 using FilmsApp.DAL.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,8 +14,8 @@ namespace FilmsApp.DAL.Repositories
     public abstract class BaseRepository<TEntity> : IRepository<TEntity>
             where TEntity : BaseEntity
     {
-        private DbContext _db;
-        public BaseRepository(DbContext db)
+        private FilmsContext _db;
+        public BaseRepository(FilmsContext db)
         {
             this._db = db;
         }
@@ -22,6 +24,13 @@ namespace FilmsApp.DAL.Repositories
             get
             {
                 return _db.Set<TEntity>();
+            }
+        }
+        protected FilmsContext Database
+        {
+            get
+            {
+                return _db;
             }
         }
 
@@ -50,4 +59,5 @@ namespace FilmsApp.DAL.Repositories
             DbSet.Add(item);
         }
     }
+
 }

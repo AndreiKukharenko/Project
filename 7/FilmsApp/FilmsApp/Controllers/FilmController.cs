@@ -6,6 +6,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using FilmsApp.DAL.Models;
 using FilmsApp.DAL.Context;
 using Microsoft.AspNet.Identity;
+using System.Linq.Expressions;
 
 namespace FilmsApp.Controllers
 {
@@ -22,17 +23,6 @@ namespace FilmsApp.Controllers
         public ActionResult Index()
         {
             return View();
-        }
-
-        // ToDo: watch this
-        public ActionResult List(int? pageIndex, string sortBy)
-        {
-            if (!pageIndex.HasValue)
-                pageIndex = 1;
-            if (String.IsNullOrWhiteSpace(sortBy))
-                sortBy = "Name";
-
-            return Content($"page №{pageIndex}, sort by {sortBy}");
         }
 
         //TODO: move this logic to BLL or implement in repository
@@ -72,19 +62,6 @@ namespace FilmsApp.Controllers
             return Json(films, JsonRequestBehavior.AllowGet);
         }
 
-        public JsonResult ReturnComments(int id)
-        {
-            // *******************************************************! get comment by FilmId
-            var comments = _unitofwork.CommentsRepository.GetById(id);
-            return Json(comments, JsonRequestBehavior.AllowGet);
-        }
-
-        public JsonResult ReturnScreenshots(int id)
-        {
-            var screenshots = _unitofwork.FilmsImagesRepository.GetById(id);
-            return Json(screenshots, JsonRequestBehavior.AllowGet);
-        }
-
         public ActionResult GetCurrentUsername()
         {
             var context = new FilmsContext();
@@ -93,5 +70,32 @@ namespace FilmsApp.Controllers
             var user = manager.FindById(User.Identity.GetUserId());
             return Content(user.UserName);
         }
+
+        Expression<Func<FilmsImage, bool>> GetImg(int id){ 
+            return img => img.FilmId == id;
+        }
+
+        public JsonResult ReturnImages(int id)
+        {
+            var images = _unitofwork.FilmsImagesRepository.GetAll(n => n.FilmId == id);
+            return Json(images, JsonRequestBehavior.AllowGet);
+        }
+
+
+
+        //
+        public JsonResult ReturnScreenshots(int id)
+        {
+            throw new NotImplementedException();
+            var screenshots = _unitofwork.FilmsImagesRepository.GetById(id);
+            return Json(screenshots, JsonRequestBehavior.AllowGet);
+        }
+        public JsonResult ReturnComments(int id)
+        {
+            throw new NotImplementedException();
+            var comments = _unitofwork.CommentsRepository.GetById(id);
+            return Json(comments, JsonRequestBehavior.AllowGet);
+        }
+
     }
 }

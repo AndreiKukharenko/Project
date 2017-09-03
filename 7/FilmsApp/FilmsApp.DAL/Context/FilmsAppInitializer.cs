@@ -103,50 +103,43 @@ namespace FilmsApp.DAL.Models
         {
             context.Comments.Add(new Comment
             {
-                CommentId = 1,
                 Text = "comment to 1",
+                IsDeleted = false
             });
             context.Comments.Add(new Comment
             {
-                CommentId = 2,
                 Text = "comment to 2",
+                IsDeleted = false
             });
             context.Comments.Add(new Comment
             {
-                CommentId = 3,
                 Text = "comment to 3",
+                IsDeleted = false
             });
+            context.SaveChanges();
         }
 
         private void addDefaultImages(FilmsContext context)
         {
-            context.FilmsImages.Add(new FilmsImage
-            {
-                Id = 1,
-                Poster = "https://st.kp.yandex.net/im/kadr/3/0/2/kinopoisk.ru-Twin-Peaks-3020658.jpg",
-            });
+            context.FilmsImages.Add(new FilmsImage { Id = 1, ImageUrl = "http://placehold.it/150/92c952", FilmId = 1, IsDeleted = false });
+            context.FilmsImages.Add(new FilmsImage { Id = 2, ImageUrl = "http://placehold.it/150/771796", FilmId = 1, IsDeleted = false });
+            context.FilmsImages.Add(new FilmsImage { Id = 3, ImageUrl = "http://placehold.it/150/24f355", FilmId = 1, IsDeleted = false });
+            context.FilmsImages.Add(new FilmsImage { Id = 3, ImageUrl = "http://placehold.it/150/24f355", FilmId = 1, IsDeleted = false });
+            context.FilmsImages.Add(new FilmsImage { Id = 4, ImageUrl = "http://placehold.it/150/d32776", FilmId = 2, IsDeleted = false });
+            context.FilmsImages.Add(new FilmsImage { Id = 5, ImageUrl = "http://placehold.it/150/f66b97", FilmId = 2, IsDeleted = false });
+            context.FilmsImages.Add(new FilmsImage { Id = 6, ImageUrl = "http://placehold.it/150/56a8c2", FilmId = 3, IsDeleted = false });
+            context.FilmsImages.Add(new FilmsImage { Id = 7, ImageUrl = "http://placehold.it/150/b0f7cc", FilmId = 3, IsDeleted = false });
+            context.FilmsImages.Add(new FilmsImage { Id = 8, ImageUrl = "http://placehold.it/150/54176f", FilmId = 3, IsDeleted = false });
+            context.FilmsImages.Add(new FilmsImage { Id = 9, ImageUrl = "http://placehold.it/150/810b14", FilmId = 4, IsDeleted = false });
+            context.FilmsImages.Add(new FilmsImage { Id = 10, ImageUrl = "http://placehold.it/150/66b7d2", FilmId = 4, IsDeleted = false });
+            context.FilmsImages.Add(new FilmsImage { Id = 11, ImageUrl = "http://placehold.it/150/197d29", FilmId = 4, IsDeleted = false });
+            context.FilmsImages.Add(new FilmsImage { Id = 12, ImageUrl = "http://placehold.it/150/f9cee5", FilmId = 4, IsDeleted = false });
+            context.FilmsImages.Add(new FilmsImage { Id = 13, ImageUrl = "http://placehold.it/150/9c184f", FilmId = 5, IsDeleted = false });
+            context.FilmsImages.Add(new FilmsImage { Id = 14, ImageUrl = "http://placehold.it/150/5e12c6", FilmId = 5, IsDeleted = false });
+            context.FilmsImages.Add(new FilmsImage { Id = 15, ImageUrl = "http://placehold.it/150/b0f7cc", FilmId = 6, IsDeleted = false });
+            context.FilmsImages.Add(new FilmsImage { Id = 16, ImageUrl = "http://placehold.it/150/b0f7cc", FilmId = 6, IsDeleted = false });
 
-            context.FilmsImages.Add(new FilmsImage
-            {
-                Id = 2,
-                Poster = "http://rankin.co.uk/media/DRU_Subway2Sheet_5P_REV-556x420.jpg"
-            });
-
-            context.FilmsImages.Add(new FilmsImage
-            {
-                Id = 3,
-                Poster = "http://www.webpark.ru/uploads54/121106/Posters_01.jpg"
-            });
-            context.FilmsImages.Add(new FilmsImage
-            {
-                Id = 4,
-                Poster = "https://cdn.pastemagazine.com/www/blogs/lists/2008.jpg"
-            });
-            context.FilmsImages.Add(new FilmsImage
-            {
-                Id = 5,
-                Poster = "http://images.webpark.ru/uploads54/121106/Posters_15.jpg"
-            });
+            context.SaveChanges();
         }
 
     }

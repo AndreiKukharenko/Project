@@ -10,9 +10,9 @@ namespace FilmsApp.DAL.Models
     /// </summary>
     public class FilmsImage : BaseEntity
     {
-        public string Poster { get; set; }
-
         public Film RelatedFilm {get;set;}
+
+        public int FilmId { get; set; }
 
         public string ImageUrl { get; set; }
     }
