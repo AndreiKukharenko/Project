@@ -16,6 +16,7 @@ class FilmListPage extends Component{
         super(props);
         this.state = {
             orderBy: this.props.orderBy,
+            films: this.props.films
         }
     }
 
@@ -24,33 +25,12 @@ class FilmListPage extends Component{
         this.getCurrentUserName();
     }
 
-    componentWillReceiveProps(nextProps) {
-        var array1 = nextProps.films;
-        var array2 = this.props.films;
-        function arraysAreEqual(arr1,arr2){
-            if(arr2 instanceof Object ||
-                arr2 === undefined){
-                return false
-            }
-            else return (arr1.join('') === arr2.join(''));
-          }
-        //debugger
-        if ( arraysAreEqual(array1, array2)
-                || nextProps.searchTitle !== this.props.searchTitle
-                || nextProps.orderBy !== this.props.orderBy){
-            this.getFilms(this.props.orderBy, this.props.searchTitle);
-        }
-    } 
-
     getFilms(sortOrder, searchString){
         var self = this;
         axios({
             method:'get',
-            url: "http://localhost:61095/Film/SortAndSearch",
-            params: {
-                sortOrder, 
-                searchString
-            }
+            url: "http://localhost:61095/Film/ReturnFilms",
+ 
         })
         .then(function (response) {
             if(response.status === 200){
@@ -76,7 +56,6 @@ class FilmListPage extends Component{
         })
         .then(function (response) {
             if(response.status === 200){
-                //self.setState({films: response.data});
                 self.props.dispatch(setUserName(response.data))
             }else {
                 alert("bad request");
@@ -99,7 +78,7 @@ class FilmListPage extends Component{
                                 <AutoCompleteSearch films = {this.state.films}/>
                                 <OrderBy/>
                             </div>
-                            <FilmList films = {this.state.films}/>
+                            <FilmList films = {this.props.films}/>
                         </div>
                     </MuiThemeProvider>
                 </div>

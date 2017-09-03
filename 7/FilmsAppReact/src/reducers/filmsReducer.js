@@ -1,7 +1,7 @@
 import {FILMS} from "../constantsAndTypes/types";
 import {ADD_COMMENT} from "../constantsAndTypes/types";
 
-export const filmsReducer = (state = {}, action) => {
+export const filmsReducer = (state = [], action) => {
     switch(action.type){
       case FILMS:
         return action.films;
