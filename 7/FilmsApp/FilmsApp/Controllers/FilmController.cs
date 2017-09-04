@@ -24,8 +24,21 @@ namespace FilmsApp.Controllers
             _filmservice = filmservice;
         }
 
+        private ApplicationUser CurrentUser
+        {
+            get
+            {
+                var store = new UserStore<ApplicationUser>(new FilmsContext());
+                var manager = new UserManager<ApplicationUser>(store);
+                var user = manager.FindById(User.Identity.GetUserId());
+                return user;
+            }
+        }
+
         public ActionResult Index()
         {
+            if (CurrentUser == null) ViewBag.CurrentUserName = "not logged in"; // for debug
+            else ViewBag.CurrentUserName = CurrentUser.UserName;
             return View();
         }
 
@@ -71,16 +84,11 @@ namespace FilmsApp.Controllers
             return Json(films, JsonRequestBehavior.AllowGet);
         }
 
-        public ActionResult GetCurrentUsername()
+        public ActionResult AddComment(int filmId, string text)
         {
-            var context = new FilmsContext();
-            var store = new UserStore<ApplicationUser>(context);
-            var manager = new UserManager<ApplicationUser>(store);
-            var user = manager.FindById(User.Identity.GetUserId());
-            if (HttpContext.Request.UrlReferrer.AbsoluteUri == "http://localhost:3000/" ||
-                user == null)
-            return Content(""); // for debug only
-            else return Content(user.UserName);
+            _unitOfWork.CommentsRepository.AddItem(
+                new Comment { FilmId = filmId, Text = text });
+            return new HttpStatusCodeResult(200);
         }
 
     }

@@ -11,10 +11,13 @@ import { Provider } from 'react-redux'
 import { createStore } from 'redux';
 import combineReducers from "./reducers/comboReducer";
 import orderBy from "../src/actions/orderBy";
+import setUserName from "../src/actions/setUserName";
 
 const store = createStore(combineReducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 store.dispatch(orderBy("FilmId"));
+
+//store.dispatch(setUserName(currentUserName)) commented for DEBUG on localhost:3000 only!
 
 ReactDOM.render(
     <BrowserRouter>

@@ -13,7 +13,6 @@ class FilmList extends Component {
 
     getPosters = () => {
         var films = this.props.films;
-        
         let FilmPosters = films.map ((value, index)=>{
             return <FilmPosterContainer film = {value} key = {index}/> 
         })

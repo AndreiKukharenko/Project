@@ -8,8 +8,6 @@ import FilmList from "../films/FilmList";
 import axios from "axios";
 import {connect} from "react-redux";
 import changeFilms from "../actions/changeFilms";
-import setUserName from "../actions/setUserName";
-
 
 class FilmListPage extends Component{
     constructor(props){
@@ -22,7 +20,6 @@ class FilmListPage extends Component{
 
     componentDidMount(){
         this.getFilms(this.props.orderBy, this.props.searchTitle);
-        this.getCurrentUserName();
     }
 
     getFilms(sortOrder, searchString){
@@ -30,33 +27,12 @@ class FilmListPage extends Component{
         axios({
             method:'get',
             url: "http://localhost:61095/Film/ReturnFilms",
- 
         })
         .then(function (response) {
             if(response.status === 200){
                 self.setState({films: response.data});
                 //TODo: consider using special bool props
                 self.props.dispatch(changeFilms(response.data))
-            }else {
-                alert("bad request");
-            }
-        })
-        .catch(function(error){
-            self.setState({error: error.message})
-            console.log(error);
-        });
-    }
-
-
-    getCurrentUserName(){
-        var self = this;
-        axios({
-            method:'get',
-            url: "http://localhost:61095/Film/GetCurrentUsername",
-        })
-        .then(function (response) {
-            if(response.status === 200){
-                self.props.dispatch(setUserName(response.data))
             }else {
                 alert("bad request");
             }

@@ -4,6 +4,7 @@ import FlatButton from 'material-ui/FlatButton';
 import TextField from 'material-ui/TextField';
 
 import addComment from "../actions/addComment";
+import axios from "axios";
 
 class SendMessage extends Component{
     constructor(props){
@@ -18,8 +19,31 @@ class SendMessage extends Component{
             "userName": this.props.username,
             "text": commentText
         }
-        let action = addComment(comment, this.props.id);
-        this.props.dispatch(action);
+
+        //----
+        var self = this;
+        axios({
+            method:'get',
+            url: "http://localhost:61095/Film/AddComment",
+            params: {
+                filmId: this.props.match.params.filmId,
+                text: commentText
+            }
+        })
+        .then(function (response) {
+            if(response.status === 200){
+                // render new comment var comment = {..}
+            }else {
+                alert("bad request");
+            }
+        })
+        .catch(function(error){
+            console.log(error.message);
+        });
+        //---------
+
+        this.props.dispatch(addComment(comment, this.props.id));
+
         if(commentText !== ""){
             this.setState({value: ""});
         }

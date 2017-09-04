@@ -17,7 +17,7 @@ namespace FilmsApp.DAL.Interfaces
 
         IEnumerable<T> GetAll(Expression<Func<T, Boolean>> predicate);
 
-        void Save(T item);
+        void AddItem(T item);
 
         void Delete(int id);
     }

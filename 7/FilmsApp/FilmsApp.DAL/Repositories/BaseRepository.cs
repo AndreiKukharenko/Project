@@ -6,8 +6,6 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FilmsApp.DAL.Repositories
 {
@@ -52,9 +50,10 @@ namespace FilmsApp.DAL.Repositories
             return DbSet.Where(predicate).ToList();
         }
 
-        public void Save(TEntity item)
+        public void AddItem(TEntity item)
         {
             DbSet.Add(item);
+            _db.SaveChanges();
         }
     }
 }
