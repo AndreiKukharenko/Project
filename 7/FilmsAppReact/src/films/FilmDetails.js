@@ -16,16 +16,17 @@ export default class FilmDetails extends Component{
         }
     }
     render() {
+        var currentFilm = this.state.currentFilm;
         return (
             <div>
                 <MuiThemeProvider>  
                     <div>
                         <AppHeader/>
-                        <FilmPosterContainer film = {this.state.currentFilm}/>
-                        <RatingStars rating = {this.state.currentFilm.Rating}/>
-                        {/*<Gallery screenshots = {this.props.images.screenshots}/>*/}
+                        <FilmPosterContainer film = {currentFilm}/>
+                        <RatingStars rating = {currentFilm.Rating}/>
+                        <Gallery screenshots = {currentFilm.Images}/>
                         {/*<CommentList comments = {this.props.Comments}/>*/}
-                        <SendMessage id = {this.state.currentFilm.Id}/>
+                        <SendMessage id = {currentFilm.Id}/>
                     </div>
                 </MuiThemeProvider>
             </div>

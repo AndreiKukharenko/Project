@@ -20,7 +20,6 @@ export default class FilmDetailsContainer extends Component{
         })
         .then(function (response) {
             if(response.status === 200){
-                console.log(response.data);
                 self.setState({currentFilm: response.data});
             }else {
                 alert("bad request");

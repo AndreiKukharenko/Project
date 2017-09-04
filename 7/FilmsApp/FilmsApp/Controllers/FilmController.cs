@@ -24,7 +24,6 @@ namespace FilmsApp.Controllers
             _filmservice = filmservice;
         }
 
-        [Authorize]
         public ActionResult Index()
         {
             return View();

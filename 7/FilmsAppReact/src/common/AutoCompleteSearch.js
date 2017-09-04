@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import AutoComplete from 'material-ui/AutoComplete';
-import searchTitle from '../actions/searchTitle'
 import {connect} from "react-redux";
 import axios from "axios";
 import changeFilms from "../actions/changeFilms";

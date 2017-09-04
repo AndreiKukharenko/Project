@@ -5,7 +5,7 @@ export default class Gallery extends Component{
     render() {
         var screenshotsToDisplay = this.props.screenshots.map((screenshot, index)=>{
             return (<div key ={index}> 
-                        <img src={screenshot}  alt ={"alt.text"} />
+                        <img src={screenshot.ImageUrl}  alt ={"alt.text"} />
                         <p className="legend">Legend</p>
                     </div>)
             }
