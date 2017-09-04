@@ -1,46 +1,42 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using FilmsApp.DAL.Interfaces;
 using FilmsApp.BLL.DTO;
 using FilmsApp.BLL.Interfaces;
+using FilmsApp.DAL.Models;
 
 namespace FilmsApp.BLL.Services
 {
     public class FilmsService : IFilmService
     {
-        private IUoW _unitofwork;
+        private IUoW _unitOfWork;
 
         public FilmsService(IUoW UoW)
         {
-            _unitofwork = UoW;
+            _unitOfWork = UoW;
         }
 
         public IEnumerable<FilmDTO> GetAllFilms()
         {
-            List<FilmDTO> filmsDTO = new List<FilmDTO>();
-            var films = _unitofwork.FilmsRepository.GetAll();
-            foreach (var film in films)
+            // todo: IQueryable
+            var films = _unitOfWork.FilmsRepository.GetAll();
+
+            return films.Select(film => new FilmDTO
             {
-                filmsDTO.Add(new FilmDTO
-                {
-                    Id = film.Id,
-                    Title = film.Title,
-                    Description = film.Description,
-                    Poster = film.Poster,
-                    Rating = film.Rating,
-                    });
-            }
-            return filmsDTO;
+                Id = film.Id,
+                Title = film.Title,
+                Description = film.Description,
+                Poster = film.Poster,
+                Rating = film.Rating,
+            }).ToList();
         }
 
         public FilmDTO GetFilmById(int id)
         {
-            var film = _unitofwork.FilmsRepository.GetAll(p => p.Id == id).FirstOrDefault();
-            var images = GetFilmsImagesByFilmId(id);
-            //var comments = _unitofwork.CommentsRepository.GetAll(p => p.FilmId == id);
+            var film = _unitOfWork.FilmsRepository.GetById(id);
+
+            //var comments = _unitOfWork.CommentsRepository.GetAll(p => p.FilmId == id);
 
             var filmDTO = new FilmDTO
                 {
@@ -49,22 +45,20 @@ namespace FilmsApp.BLL.Services
                     Description = film.Description,
                     Poster = film.Poster,
                     Rating = film.Rating,
-                    Images = images,
+                    Images = film.Images.Select(BuildImageDTO).ToList(), //EF resolves it
                     //Comments = comments
                 };
             return filmDTO;
         }
 
 
-        private ImagesDTO GetFilmsImagesByFilmId(int id)
+        private ImageDTO BuildImageDTO(FilmsImage image)
         {
-            var images = _unitofwork.FilmsImagesRepository.GetAll(p => p.FilmId == id).FirstOrDefault();
-
-            var imagesDTO = new ImagesDTO
+            var imagesDTO = new ImageDTO
             {
-                Id = images.Id,
-                FilmId = images.FilmId,
-                ImageUrl = images.ImageUrl
+                //Id = image.Id,
+                //FilmId = image.FilmId,
+                ImageUrl = image.ImageUrl
             };
 
             return imagesDTO;

@@ -11,14 +11,16 @@ using FilmsApp.BLL.Interfaces;
 
 namespace FilmsApp.Controllers
 {
+    // TODO [Authorize]
+    //[Authorize] 
     public class FilmController : Controller
     {
-        private IUoW _unitofwork;
+        private IUoW _unitOfWork;
         private IFilmService _filmservice;
 
-        public FilmController(IUoW UoW, IFilmService filmservice)
+        public FilmController(IUoW unitOfWork, IFilmService filmservice)
         {
-            _unitofwork = UoW;
+            _unitOfWork = unitOfWork;
             _filmservice = filmservice;
         }
 
@@ -28,7 +30,7 @@ namespace FilmsApp.Controllers
             return View();
         }
 
-        //TODO: move this logic to BLL or implement in repository
+        //TODO: move this logic to BLL
         public JsonResult SortAndSearch(string sortOrder, string searchString)
         {
             var films = _filmservice.GetAllFilms();
@@ -58,21 +60,18 @@ namespace FilmsApp.Controllers
             else return Json(films, JsonRequestBehavior.AllowGet);
         }
 
-        //[Authorize]
         public JsonResult ReturnFilmById(int id)
         {
             var film = _filmservice.GetFilmById(id);
             return Json(film, JsonRequestBehavior.AllowGet);
         }
 
-        //[Authorize]
         public JsonResult ReturnFilms()
         {
             var films = _filmservice.GetAllFilms();
             return Json(films, JsonRequestBehavior.AllowGet);
         }
 
-        //[Authorize]
         public ActionResult GetCurrentUsername()
         {
             var context = new FilmsContext();
@@ -86,9 +85,8 @@ namespace FilmsApp.Controllers
 
         public JsonResult ReturnImages(int id)
         {
-            var images = _unitofwork.FilmsImagesRepository.GetAll(n => n.FilmId == id);
+            var images = _unitOfWork.FilmsImagesRepository.GetAll(n => n.FilmId == id);
             return Json(images, JsonRequestBehavior.AllowGet);
         }
-
     }
 }

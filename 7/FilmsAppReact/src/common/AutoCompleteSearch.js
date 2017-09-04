@@ -9,23 +9,25 @@ class AutoCompleteSearch extends Component {
     constructor(props){
         super(props);
         this.state = {
-            titles: this.mapTitles(this.props.films)
+            titles: []
         }
     }
     
     handleInput = (value) => {
         this.getFilms(value);
+        this.mapTitles();
     };
     handleField = (searchText) => {
         if (searchText === "") this.getFilms("");
         this.getFilms(searchText);
     };
 
-    mapTitles = (films) => {
+    mapTitles = () => {
+        var films = this.props.films;
         var titles = films.map((film) => {
             return film.Title;
         });
-        return titles;
+        this.setState({titles})
     }
 
     getFilms = (searchString) => {
