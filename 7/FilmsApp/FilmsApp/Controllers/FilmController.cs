@@ -73,8 +73,7 @@ namespace FilmsApp.Controllers
 
         public ActionResult GetCurrentUsername()
         {
-            var context = new FilmsContext();
-            var store = new UserStore<ApplicationUser>(context);
+            var store = new UserStore<ApplicationUser>(new FilmsContext());
             var manager = new UserManager<ApplicationUser>(store);
             var user = manager.FindById(User.Identity.GetUserId());
             if (HttpContext.Request.UrlReferrer.AbsoluteUri == "http://localhost:3000/")
@@ -82,10 +81,5 @@ namespace FilmsApp.Controllers
             else return Content(user.UserName);
         }
 
-        public JsonResult ReturnImages(int id)
-        {
-            var images = _unitOfWork.FilmsImagesRepository.GetAll(n => n.FilmId == id);
-            return Json(images, JsonRequestBehavior.AllowGet);
-        }
     }
 }

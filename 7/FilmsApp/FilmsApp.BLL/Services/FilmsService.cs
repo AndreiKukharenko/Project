@@ -36,8 +36,6 @@ namespace FilmsApp.BLL.Services
         {
             var film = _unitOfWork.FilmsRepository.GetById(id);
 
-            //var comments = _unitOfWork.CommentsRepository.GetAll(p => p.FilmId == id);
-
             var filmDTO = new FilmDTO
                 {
                     Id = film.Id,
@@ -46,7 +44,7 @@ namespace FilmsApp.BLL.Services
                     Poster = film.Poster,
                     Rating = film.Rating,
                     Images = film.Images.Select(BuildImageDTO).ToList(), //EF resolves it
-                    //Comments = comments
+                    Comments = film.Comments.Select(BuildCommentDTO).ToList()
                 };
             return filmDTO;
         }
@@ -56,6 +54,7 @@ namespace FilmsApp.BLL.Services
         {
             var imagesDTO = new ImageDTO
             {
+                //todo: check these fields
                 //Id = image.Id,
                 //FilmId = image.FilmId,
                 ImageUrl = image.ImageUrl
@@ -63,10 +62,18 @@ namespace FilmsApp.BLL.Services
 
             return imagesDTO;
         }
-        
-        //private CommentsDTO GetCommentsByFilmId(int id)
-        //{
-        //    return new CommentsDTO;
-        //}
+
+        private CommentDTO BuildCommentDTO(Comment comment)
+        {
+            var commentDTO = new CommentDTO
+            {
+                FilmId = comment.FilmId,
+                //User = comment.User.FirstName,
+                Text = comment.Text
+            };
+
+            return commentDTO;
+        }
+
     }
 }

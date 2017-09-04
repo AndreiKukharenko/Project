@@ -25,7 +25,7 @@ export default class FilmDetails extends Component{
                         <FilmPosterContainer film = {currentFilm}/>
                         <RatingStars rating = {currentFilm.Rating}/>
                         <Gallery screenshots = {currentFilm.Images}/>
-                        {/*<CommentList comments = {this.props.Comments}/>*/}
+                        <CommentList comments = {currentFilm.Comments}/>
                         <SendMessage id = {currentFilm.Id}/>
                     </div>
                 </MuiThemeProvider>

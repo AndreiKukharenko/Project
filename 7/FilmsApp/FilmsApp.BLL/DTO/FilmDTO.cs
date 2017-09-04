@@ -17,6 +17,6 @@ namespace FilmsApp.BLL.DTO
 
         public ICollection<ImageDTO> Images { get; set; }
 
-        //public ICollection<Comment> Comments { get; set; }
+        public ICollection<CommentDTO> Comments { get; set; }
     }
 }
