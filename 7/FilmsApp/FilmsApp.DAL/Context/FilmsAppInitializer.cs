@@ -1,11 +1,6 @@
 ﻿using FilmsApp.DAL.Context;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FilmsApp.DAL.Models
 {
@@ -17,6 +12,7 @@ namespace FilmsApp.DAL.Models
             addDefaultFilms(context);
             addDefaultComments(context);
             addDefaultImages(context);
+            context.SaveChanges();
         }
 
         private void addDefaultUsers(FilmsContext context)
@@ -38,9 +34,17 @@ namespace FilmsApp.DAL.Models
                 UserName = "test",
                 Password = "qwerty2"
             };
-            manager.Create(newUser1);
-            manager.Create(newUser2);
-            context.SaveChanges();
+            ApplicationUser newUser3 = new ApplicationUser
+            {
+                FirstName = "third user",
+                LastName = "lastName",
+                Email = "we@mail.com",
+                UserName = "test3",
+                Password = "qwerty3"
+            };
+            manager.Create(newUser1, "qwerty1");
+            manager.Create(newUser2, "qwerty2");
+            manager.Create(newUser3, "qwerty3");
         }
 
         private void addDefaultFilms(FilmsContext context)
@@ -96,31 +100,15 @@ namespace FilmsApp.DAL.Models
                 Poster = "https://upload.wikimedia.org/wikipedia/ru/archive/c/cf/20090517000555%21The_Invasion_film_poster_%28ru%29.jpg",
                 Rating = 3.1
             });
-            context.SaveChanges();
         }
 
         private void addDefaultComments(FilmsContext context)
         {
-            context.Comments.Add(new Comment
-            {
-                FilmId = 1,
-                Text = "comment to 1",
-                IsDeleted = false,
-                
-            });
-            context.Comments.Add(new Comment
-            {
-                FilmId = 2,
-                Text = "comment to 2",
-                IsDeleted = false
-            });
-            context.Comments.Add(new Comment
-            {
-                FilmId = 3,
-                Text = "comment to 3",
-                IsDeleted = false
-            });
-            context.SaveChanges();
+            context.Comments.Add(new Comment { FilmId = 1, Text = "comment to 1", IsDeleted = false, UserName = "test" });
+            context.Comments.Add(new Comment { FilmId = 1, Text = "another comment to 1", IsDeleted = false, UserName = "test3" });
+            context.Comments.Add(new Comment { FilmId = 2, Text = "comment to 2", IsDeleted = false, UserName = "test3" });
+            context.Comments.Add(new Comment { FilmId = 2, Text = "another comment to 2", IsDeleted = false, UserName = "test1" });
+            context.Comments.Add(new Comment { FilmId = 3, Text = "comment to 3", IsDeleted = false, UserName = "test1" });
         }
 
         private void addDefaultImages(FilmsContext context)
@@ -142,9 +130,6 @@ namespace FilmsApp.DAL.Models
             context.FilmsImages.Add(new FilmsImage { Id = 14, ImageUrl = "http://placehold.it/150/5e12c6", FilmId = 5, IsDeleted = false });
             context.FilmsImages.Add(new FilmsImage { Id = 15, ImageUrl = "http://placehold.it/150/b0f7cc", FilmId = 6, IsDeleted = false });
             context.FilmsImages.Add(new FilmsImage { Id = 16, ImageUrl = "http://placehold.it/150/b0f7cc", FilmId = 6, IsDeleted = false });
-
-            context.SaveChanges();
         }
-
     }
 }
