@@ -15,6 +15,7 @@ namespace FilmsApp
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            //watch error
         }
     }
 }

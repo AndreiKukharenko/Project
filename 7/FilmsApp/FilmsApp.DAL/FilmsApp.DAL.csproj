@@ -114,6 +114,11 @@
     <Compile Include="Interfaces\IFilmsRepository.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Interfaces\IUoW.cs" />
+    <Compile Include="Migrations\201709041548574_Init.cs" />
+    <Compile Include="Migrations\201709041548574_Init.Designer.cs">
+      <DependentUpon>201709041548574_Init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\ApplicationUserManager .cs" />
     <Compile Include="Models\BaseEntity.cs" />
@@ -123,7 +128,7 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\BaseRepository.cs" />
-    <Compile Include="Repositories\CommentsRepository.cs" />
+    <Compile Include="Repositories\Commentsrepository.cs" />
     <Compile Include="Repositories\FilmsImagesRepository.cs" />
     <Compile Include="Repositories\FilmsRepository.cs" />
     <Compile Include="UoW\UnitOfWork.cs" />
@@ -145,6 +150,11 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201709041548574_Init.resx">
+      <DependentUpon>201709041548574_Init.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

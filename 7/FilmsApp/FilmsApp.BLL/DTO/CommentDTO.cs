@@ -10,8 +10,6 @@ namespace FilmsApp.BLL.DTO
     {
         public string User { get; set; }
 
-        public int FilmId { get; set; }
-
         public string Text { get; set; }
     }
 }

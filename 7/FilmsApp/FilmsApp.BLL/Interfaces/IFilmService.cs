@@ -1,4 +1,5 @@
 ﻿using FilmsApp.BLL.DTO;
+using FilmsApp.DAL.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,5 +13,7 @@ namespace FilmsApp.BLL.Interfaces
         IEnumerable<FilmDTO> GetAllFilms();
 
         FilmDTO GetFilmById(int id);
+
+        //IEnumerable<Film> SortAndSearchFilms(string sortOrder, string searchString);
     }
 }

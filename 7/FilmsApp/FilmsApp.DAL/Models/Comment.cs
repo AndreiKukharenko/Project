@@ -17,8 +17,11 @@ namespace FilmsApp.DAL.Models
 
         public Film RelatedFilm { get; set; }
 
-        [ForeignKey(nameof(RelatedFilm))]
+        //[ForeignKey(nameof(RelatedFilm))]
         public int FilmId { get; set; }
+
+        //[ForeignKey(nameof(User))]
+        public int UserId { get; set; }
 
         public string Text { get; set; }
     }

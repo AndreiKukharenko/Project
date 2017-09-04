@@ -73,11 +73,13 @@ namespace FilmsApp.Controllers
 
         public ActionResult GetCurrentUsername()
         {
-            var store = new UserStore<ApplicationUser>(new FilmsContext());
+            var context = new FilmsContext();
+            var store = new UserStore<ApplicationUser>(context);
             var manager = new UserManager<ApplicationUser>(store);
             var user = manager.FindById(User.Identity.GetUserId());
-            if (HttpContext.Request.UrlReferrer.AbsoluteUri == "http://localhost:3000/")
-                return Content(""); // for debug only
+            if (HttpContext.Request.UrlReferrer.AbsoluteUri == "http://localhost:3000/" ||
+                user == null)
+            return Content(""); // for debug only
             else return Content(user.UserName);
         }
 

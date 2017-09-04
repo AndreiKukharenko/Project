@@ -105,7 +105,8 @@ namespace FilmsApp.DAL.Models
             {
                 FilmId = 1,
                 Text = "comment to 1",
-                IsDeleted = false
+                IsDeleted = false,
+                
             });
             context.Comments.Add(new Comment
             {
@@ -124,8 +125,7 @@ namespace FilmsApp.DAL.Models
 
         private void addDefaultImages(FilmsContext context)
         {
-            context.FilmsImages.Add(new FilmsImage { Id = 1, ImageUrl = "http://placehold.it/150/92c952", FilmId = 1, IsDeleted = false /*,
-            RelatedFilm = context.Films.Find(1)}*/ });
+            context.FilmsImages.Add(new FilmsImage { Id = 1, ImageUrl = "http://placehold.it/150/92c952", FilmId = 1, IsDeleted = false });
             context.FilmsImages.Add(new FilmsImage { Id = 2, ImageUrl = "http://placehold.it/150/771796", FilmId = 1, IsDeleted = false });
             context.FilmsImages.Add(new FilmsImage { Id = 3, ImageUrl = "http://placehold.it/150/24f355", FilmId = 1, IsDeleted = false });
             context.FilmsImages.Add(new FilmsImage { Id = 3, ImageUrl = "http://placehold.it/150/24f355", FilmId = 1, IsDeleted = false });

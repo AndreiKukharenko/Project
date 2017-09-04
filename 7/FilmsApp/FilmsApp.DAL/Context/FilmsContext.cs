@@ -17,21 +17,10 @@ namespace FilmsApp.DAL.Context
             Database.SetInitializer(new FilmsAppInitializer());
         }
 
-        //public DbSet<User> Users { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         public DbSet<Comment> Comments { get; set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
         public DbSet<Film> Films { get; set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
         public DbSet<FilmsImage> FilmsImages { get; set; }
 
         public static FilmsContext Create()

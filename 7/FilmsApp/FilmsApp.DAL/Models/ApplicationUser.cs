@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.Collections.Generic;
 
 namespace FilmsApp.DAL.Models
 {
@@ -12,5 +13,7 @@ namespace FilmsApp.DAL.Models
         public string Password { get; set; }
 
         public DateTime? BirthDate { get; set; }
+
+        public virtual ICollection<Comment> Comments { get; set; }
     }
 }

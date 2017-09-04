@@ -54,9 +54,6 @@ namespace FilmsApp.BLL.Services
         {
             var imagesDTO = new ImageDTO
             {
-                //todo: check these fields
-                //Id = image.Id,
-                //FilmId = image.FilmId,
                 ImageUrl = image.ImageUrl
             };
 
@@ -67,7 +64,6 @@ namespace FilmsApp.BLL.Services
         {
             var commentDTO = new CommentDTO
             {
-                FilmId = comment.FilmId,
                 //User = comment.User.FirstName,
                 Text = comment.Text
             };
