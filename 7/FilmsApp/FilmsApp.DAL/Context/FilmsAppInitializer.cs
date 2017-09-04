@@ -103,16 +103,19 @@ namespace FilmsApp.DAL.Models
         {
             context.Comments.Add(new Comment
             {
+                FilmId = 1,
                 Text = "comment to 1",
                 IsDeleted = false
             });
             context.Comments.Add(new Comment
             {
+                FilmId = 2,
                 Text = "comment to 2",
                 IsDeleted = false
             });
             context.Comments.Add(new Comment
             {
+                FilmId = 3,
                 Text = "comment to 3",
                 IsDeleted = false
             });

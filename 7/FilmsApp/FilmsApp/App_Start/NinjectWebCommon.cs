@@ -5,7 +5,6 @@ namespace FilmsApp.App_Start
 {
     using System;
     using System.Web;
-
     using Microsoft.Web.Infrastructure.DynamicModuleHelper;
 
     using Ninject;
@@ -15,6 +14,8 @@ namespace FilmsApp.App_Start
     using System.Web.Mvc;
     using Ninject.Web.Mvc;
     using DAL.Context;
+    using BLL.Services;
+    using BLL.Interfaces;
 
     public static class NinjectWebCommon 
     {
@@ -52,6 +53,7 @@ namespace FilmsApp.App_Start
 
                 kernel.Bind<IUoW>().To<UnitOfWork>();
                 kernel.Bind<IFilmsContext>().To<FilmsContext>();
+                kernel.Bind<IFilmService>().To<FilmsService>();
 
 
                 RegisterServices(kernel);

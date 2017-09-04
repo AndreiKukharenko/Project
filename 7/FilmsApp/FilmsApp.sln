@@ -7,6 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilmsApp.Web", "FilmsApp\Fi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilmsApp.DAL", "FilmsApp.DAL\FilmsApp.DAL.csproj", "{6C7B3CC5-A1CA-4539-B7AF-6810DEF96B9F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FilmsApp.BLL", "FilmsApp.BLL\FilmsApp.BLL.csproj", "{5660B309-6DF0-4411-ACDE-661CEF00A8DB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6C7B3CC5-A1CA-4539-B7AF-6810DEF96B9F} = {6C7B3CC5-A1CA-4539-B7AF-6810DEF96B9F}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +26,10 @@ Global
 		{6C7B3CC5-A1CA-4539-B7AF-6810DEF96B9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C7B3CC5-A1CA-4539-B7AF-6810DEF96B9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C7B3CC5-A1CA-4539-B7AF-6810DEF96B9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5660B309-6DF0-4411-ACDE-661CEF00A8DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5660B309-6DF0-4411-ACDE-661CEF00A8DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5660B309-6DF0-4411-ACDE-661CEF00A8DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5660B309-6DF0-4411-ACDE-661CEF00A8DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -312,6 +312,10 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FilmsApp.BLL\FilmsApp.BLL.csproj">
+      <Project>{5660B309-6DF0-4411-ACDE-661CEF00A8DB}</Project>
+      <Name>FilmsApp.BLL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FilmsApp.DAL\FilmsApp.DAL.csproj">
       <Project>{6c7b3cc5-a1ca-4539-b7af-6810def96b9f}</Project>
       <Name>FilmsApp.DAL</Name>

@@ -7,16 +7,19 @@ using FilmsApp.DAL.Models;
 using FilmsApp.DAL.Context;
 using Microsoft.AspNet.Identity;
 using System.Linq.Expressions;
+using FilmsApp.BLL.Interfaces;
 
 namespace FilmsApp.Controllers
 {
     public class FilmController : Controller
     {
         private IUoW _unitofwork;
+        private IFilmService _filmservice;
 
-        public FilmController(IUoW UoW)
+        public FilmController(IUoW UoW, IFilmService filmservice)
         {
             _unitofwork = UoW;
+            _filmservice = filmservice;
         }
 
         [Authorize]
@@ -60,7 +63,8 @@ namespace FilmsApp.Controllers
         //[Authorize]
         public JsonResult ReturnFilms()
         {
-            var films = _unitofwork.FilmsRepository.GetAll();
+            var films = _filmservice.GetAllFilms();
+            //var films = _unitofwork.FilmsRepository.GetAll();
             return Json(films, JsonRequestBehavior.AllowGet);
         }
 
