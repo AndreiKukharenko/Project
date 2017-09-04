@@ -22,8 +22,6 @@ namespace FilmsApp.BLL.Services
         {
             List<FilmDTO> filmsDTO = new List<FilmDTO>();
             var films = _unitofwork.FilmsRepository.GetAll();
-            //var images = _unitofwork.FilmsImagesRepository.GetAll();
-            //var comments = _unitofwork.CommentsRepository.GetAll();
             foreach (var film in films)
             {
                 filmsDTO.Add(new FilmDTO
@@ -38,16 +36,13 @@ namespace FilmsApp.BLL.Services
             return filmsDTO;
         }
 
-        public IEnumerable<FilmDTO> GetFilmById(int id)
+        public FilmDTO GetFilmById(int id)
         {
-            List<FilmDTO> filmsDTO = new List<FilmDTO>();
-            var films = _unitofwork.FilmsRepository.GetAll(p => p.Id == id);
-            var images = _unitofwork.FilmsImagesRepository.GetAll(p => p.FilmId == id);
-            var comments = _unitofwork.CommentsRepository.GetAll(p => p.FilmId == id);
+            var film = _unitofwork.FilmsRepository.GetAll(p => p.Id == id).FirstOrDefault();
+            var images = GetFilmsImagesByFilmId(id);
+            //var comments = _unitofwork.CommentsRepository.GetAll(p => p.FilmId == id);
 
-            foreach (var film in films)
-            {
-                filmsDTO.Add(new FilmDTO
+            var filmDTO = new FilmDTO
                 {
                     Id = film.Id,
                     Title = film.Title,
@@ -55,11 +50,29 @@ namespace FilmsApp.BLL.Services
                     Poster = film.Poster,
                     Rating = film.Rating,
                     Images = images,
-                    // Comments = comments
-                });
-            }
-            return filmsDTO;
+                    //Comments = comments
+                };
+            return filmDTO;
         }
 
+
+        private ImagesDTO GetFilmsImagesByFilmId(int id)
+        {
+            var images = _unitofwork.FilmsImagesRepository.GetAll(p => p.FilmId == id).FirstOrDefault();
+
+            var imagesDTO = new ImagesDTO
+            {
+                Id = images.Id,
+                FilmId = images.FilmId,
+                ImageUrl = images.ImageUrl
+            };
+
+            return imagesDTO;
+        }
+        
+        //private CommentsDTO GetCommentsByFilmId(int id)
+        //{
+        //    return new CommentsDTO;
+        //}
     }
 }

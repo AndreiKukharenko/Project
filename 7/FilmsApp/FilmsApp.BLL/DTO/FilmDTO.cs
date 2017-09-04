@@ -15,7 +15,7 @@ namespace FilmsApp.BLL.DTO
 
         public double Rating { get; set; }
 
-        public IEnumerable<FilmsImage> Images { get; set; }
+        public ImagesDTO Images { get; set; }
 
         //public ICollection<Comment> Comments { get; set; }
     }

@@ -41,8 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="DTO\FilmDTO.cs" />
+    <Compile Include="DTO\ImagesDTO.cs" />
     <Compile Include="Interfaces\IFilmService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\FilmsService.cs" />

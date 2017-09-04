@@ -56,7 +56,7 @@ namespace FilmsApp.Controllers
         //[Authorize]
         public JsonResult ReturnFilmById(int id)
         {
-            var film = _unitofwork.FilmsRepository.GetById(id);
+            var film = _filmservice.GetFilmById(id);
             return Json(film, JsonRequestBehavior.AllowGet);
         }
 
@@ -64,7 +64,6 @@ namespace FilmsApp.Controllers
         public JsonResult ReturnFilms()
         {
             var films = _filmservice.GetAllFilms();
-            //var films = _unitofwork.FilmsRepository.GetAll();
             return Json(films, JsonRequestBehavior.AllowGet);
         }
 
@@ -84,21 +83,6 @@ namespace FilmsApp.Controllers
         {
             var images = _unitofwork.FilmsImagesRepository.GetAll(n => n.FilmId == id);
             return Json(images, JsonRequestBehavior.AllowGet);
-        }
-
-
-        //
-        public JsonResult ReturnScreenshots(int id)
-        {
-            throw new NotImplementedException();
-            var screenshots = _unitofwork.FilmsImagesRepository.GetById(id);
-            return Json(screenshots, JsonRequestBehavior.AllowGet);
-        }
-        public JsonResult ReturnComments(int id)
-        {
-            throw new NotImplementedException();
-            var comments = _unitofwork.CommentsRepository.GetById(id);
-            return Json(comments, JsonRequestBehavior.AllowGet);
         }
 
     }

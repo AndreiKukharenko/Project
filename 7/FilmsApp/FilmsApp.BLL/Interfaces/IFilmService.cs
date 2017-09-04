@@ -11,6 +11,6 @@ namespace FilmsApp.BLL.Interfaces
     {
         IEnumerable<FilmDTO> GetAllFilms();
 
-        IEnumerable<FilmDTO> GetFilmById(int id);
+        FilmDTO GetFilmById(int id);
     }
 }
