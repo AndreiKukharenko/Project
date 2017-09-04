@@ -17,6 +17,7 @@ class AutoCompleteSearch extends Component {
         this.getFilms(value);
     };
     handleField = (searchText) => {
+        if (searchText === "") this.getFilms("");
         this.getFilms(searchText);
     };
 

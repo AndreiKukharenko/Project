@@ -31,11 +31,12 @@ namespace FilmsApp.Controllers
         //TODO: move this logic to BLL or implement in repository
         public JsonResult SortAndSearch(string sortOrder, string searchString)
         {
-            var films = _unitofwork.FilmsRepository.GetAll();
+            var films = _filmservice.GetAllFilms();
             if (!String.IsNullOrEmpty(searchString))
             {
                 films = films.Where(s => s.Title.ToUpper().Contains(searchString.ToUpper())).ToList();
             }
+
             switch (sortOrder)
             {
                 case "Title":
@@ -50,7 +51,11 @@ namespace FilmsApp.Controllers
                     break;
             }
 
-            return Json(films, JsonRequestBehavior.AllowGet);
+            if (String.IsNullOrEmpty(searchString))
+            {
+                return Json(films, JsonRequestBehavior.AllowGet);
+            }
+            else return Json(films, JsonRequestBehavior.AllowGet);
         }
 
         //[Authorize]
