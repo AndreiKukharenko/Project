@@ -23,7 +23,7 @@ export default class FilmDetails extends Component{
                         <AppHeader/>
                         <FilmPosterContainer film = {this.state.currentFilm}/>
                         <RatingStars rating = {this.state.currentFilm.Rating}/>
-                        {/*<Gallery screenshots = {this.props.images.screenshots}/>*/} 
+                        <Gallery screenshots = {this.props.images.screenshots}/>
                         {/*<CommentList comments = {this.props.Comments}/>*/}
                         <SendMessage id = {this.state.currentFilm.Id}/>
                     </div>

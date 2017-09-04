@@ -33,11 +33,11 @@ namespace FilmsApp.DAL.Models
         /// <summary>
         /// 
         /// </summary>
-        public ICollection<FilmsImage> Images { get; set; }
+        public virtual ICollection<FilmsImage> Images { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        public ICollection<Comment> Comments { get; set; }
+        public virtual ICollection<Comment> Comments { get; set; }
     }
 }

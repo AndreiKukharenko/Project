@@ -15,11 +15,5 @@ namespace FilmsApp.DAL.Repositories
         public FilmsImagesRepository(FilmsContext db) : base(db)
         {
         }
-
-        public IEnumerable<FilmsImage> GetAll(Expression<Func<FilmsImage, Boolean>> predicate)
-        {
-            var res = Database.FilmsImages.Where(predicate);
-            return res.ToList();
-        }
     }
 }

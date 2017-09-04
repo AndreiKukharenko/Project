@@ -26,13 +26,6 @@ namespace FilmsApp.DAL.Repositories
                 return _db.Set<TEntity>();
             }
         }
-        protected FilmsContext Database
-        {
-            get
-            {
-                return _db;
-            }
-        }
 
         public void Delete(int id)
         {
@@ -54,10 +47,14 @@ namespace FilmsApp.DAL.Repositories
             return DbSet.ToList();
         }
 
+        public IEnumerable<TEntity> GetAll(Expression<Func<TEntity, Boolean>> predicate)
+        {
+            return DbSet.Where(predicate).ToList();
+        }
+
         public void Save(TEntity item)
         {
             DbSet.Add(item);
         }
     }
-
 }

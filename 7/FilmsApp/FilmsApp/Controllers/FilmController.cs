@@ -50,29 +50,30 @@ namespace FilmsApp.Controllers
             return Json(films, JsonRequestBehavior.AllowGet);
         }
 
+        //[Authorize]
         public JsonResult ReturnFilmById(int id)
         {
-            var jsondata = _unitofwork.FilmsRepository.GetById(id);
-            return Json(jsondata, JsonRequestBehavior.AllowGet);
+            var film = _unitofwork.FilmsRepository.GetById(id);
+            return Json(film, JsonRequestBehavior.AllowGet);
         }
 
+        //[Authorize]
         public JsonResult ReturnFilms()
         {
             var films = _unitofwork.FilmsRepository.GetAll();
             return Json(films, JsonRequestBehavior.AllowGet);
         }
 
+        //[Authorize]
         public ActionResult GetCurrentUsername()
         {
             var context = new FilmsContext();
             var store = new UserStore<ApplicationUser>(context);
             var manager = new UserManager<ApplicationUser>(store);
             var user = manager.FindById(User.Identity.GetUserId());
-            return Content(user.UserName);
-        }
-
-        Expression<Func<FilmsImage, bool>> GetImg(int id){ 
-            return img => img.FilmId == id;
+            if (HttpContext.Request.UrlReferrer.AbsoluteUri == "http://localhost:3000/")
+                return Content(""); // for debug only
+            else return Content(user.UserName);
         }
 
         public JsonResult ReturnImages(int id)
@@ -80,7 +81,6 @@ namespace FilmsApp.Controllers
             var images = _unitofwork.FilmsImagesRepository.GetAll(n => n.FilmId == id);
             return Json(images, JsonRequestBehavior.AllowGet);
         }
-
 
 
         //
