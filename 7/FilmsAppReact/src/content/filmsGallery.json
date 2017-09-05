@@ -1,0 +1,165 @@
+[
+  {
+    "filmId": 0,
+    "title": "film: sunt aut facere repellat",
+    "description": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quasm est autem sunt rem eveniet architecto",
+    "rating": 3, 
+    "images": {
+        "poster": "https://st.kp.yandex.net/im/kadr/3/0/2/kinopoisk.ru-Twin-Peaks-3020658.jpg",
+        "screenshots" :[
+            "http://placehold.it/150/92c952",
+            "http://placehold.it/150/9c184f",
+            "http://placehold.it/150/45601a",
+            "http://placehold.it/150/602b9e",
+            "http://placehold.it/150/ea51da",
+            "http://placehold.it/150/ca50ac",
+            "http://placehold.it/150/6ad437",
+            "http://placehold.it/150/b4412f"
+        ]
+    },
+    "comments": [
+        {
+            "userName": "username1",
+            "text": "comment"
+        },
+        {
+            "userName": "username2",
+            "text": "another comment"
+        }   
+    ]
+  },
+
+  {
+    "filmId": 1,
+    "title": "Aut facere repellat",
+    "description": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quasm est autem sunt rem eveniet architecto",
+    "rating": 5,
+    "images": {
+        "poster": "http://rankin.co.uk/media/DRU_Subway2Sheet_5P_REV-556x420.jpg",
+        "screenshots" :[
+            "http://placehold.it/150/ea51da",
+            "http://placehold.it/150/ca50ac",
+            "http://placehold.it/150/6ad437",
+            "http://placehold.it/150/b4412f",
+            "http://placehold.it/150/92c952",
+            "http://placehold.it/150/9c184f",
+            "http://placehold.it/150/45601a",
+            "http://placehold.it/150/602b9e"
+        ]
+    },     
+    "comments": [
+        {
+            "userName": "username1",
+            "text": "comment to 2"
+        },
+        {
+            "userName": "username2",
+            "text": "another comment to film 2"
+        }     
+    ]
+  },
+  {
+    "filmId": 2,
+    "title": "suscipit perspiciatis velit",
+    "description": "suscipit nam nisi quo aperiam aut\nasperiores eos fugit maiores voluptatibus quia\nv",
+    "rating": 2,
+    "images": {
+        "poster": "http://www.webpark.ru/uploads54/121106/Posters_01.jpg",
+        "screenshots" :[
+            "http://placehold.it/150/121fa4",
+            "http://placehold.it/150/cde4c1",
+            "http://placehold.it/150/ea51da",
+            "http://placehold.it/150/ca50ac",
+            "http://placehold.it/150/6ad437",
+            "http://placehold.it/150/b4412f",
+            "http://placehold.it/150/323599",
+            "http://placehold.it/150/cd5a92"
+        ]
+    },     
+    "comments": [
+        {
+            "userName": "username dolorum rerum ipsa laboriosam",
+            "text": "comment to 3"
+        },
+        {
+            "userName": "username3",
+            "text": "another comment to film 3"
+        }     
+    ]
+  },
+  {
+    "filmId": 3,
+    "title": "zveniet quod temporibus",
+    "description": "eprehenderit quos placeat\nvelit minima officia doloresita",
+    "rating": 0,
+    "images": {
+        "poster": "https://cdn.pastemagazine.com/www/blogs/lists/2008.jpg",
+        "screenshots" :[
+            "http://placehold.it/150/6ad437",
+            "http://placehold.it/150/b4412f",
+            "http://placehold.it/150/323599",
+            "http://placehold.it/150/cd5a92"
+        ]
+    },     
+    "comments": [
+        {
+            "userName": "username  ipsa laboriosam",
+            "text": "comment to 4"
+        },
+        {
+            "userName": "user 3",
+            "text": "another comment to film 4"
+        }     
+    ]
+  },
+  {
+    "filmId": 4,
+    "title": "prehenderit quos placeat\nvelit minima officia dolorests",
+    "description": "e nam\nvoluptas recusandae quis delectus\nofficites impedit repudiandae mola",
+    "rating": 4,
+    "images": {
+        "poster": "http://images.webpark.ru/uploads54/121106/Posters_15.jpg",
+        "screenshots" :[
+            "http://placehold.it/150/6ad437",
+            "http://placehold.it/150/b4412f",
+            "http://placehold.it/150/323599",
+            "http://placehold.it/150/cd5a92"
+        ]
+    },     
+    "comments": [
+        {
+            "userName": "username  ipsa ",
+            "text": "comment to 5"
+        },
+        {
+            "userName": "user 3",
+            "text": "another comment to film 5"
+        }     
+    ]
+  },
+  {
+    "filmId": 5,
+    "title": "Dos placeat\nvelit minima officia dolorests",
+    "description": "itaque id aut magnam\npraesentium quia et euis delectus\nofficites impedit repudiandae mola",
+    "rating": 5,
+    "images": {
+        "poster": "http://www.theshiznit.co.uk/media/2012/January/bestpicture/tinker-tailor.jpg",
+        "screenshots" :[
+            "http://placehold.it/150/6ad437",
+            "http://placehold.it/150/b4412f",
+            "http://placehold.it/150/323599",
+            "http://placehold.it/150/cd5a92"
+        ]
+    },     
+    "comments": [
+        {
+            "userName": "username  ipsa ",
+            "text": "comment to 6"
+        },
+        {
+            "userName": "userrrrr",
+            "text": "another comment to film 6"
+        }     
+    ]
+  }
+]
