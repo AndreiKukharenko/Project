@@ -14,7 +14,8 @@ namespace FilmsApp.BLL.Interfaces
 
         FilmDTO GetFilmById(int id);
 
-        //IEnumerable<Film> SortAndSearchFilms(string sortOrder, string searchString);
+        IEnumerable<FilmDTO> SortAndSearch(string sortOrder, string searchString);
+
         bool AddComment(CommentDTO comment);
     }
 }

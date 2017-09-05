@@ -7,6 +7,5 @@ namespace FilmsApp.DAL.Interfaces
 {
     public interface IFilmsImagesRepository : IRepository<FilmsImage>
     {
-        IEnumerable<FilmsImage> GetAll(Expression<Func<FilmsImage, Boolean>> predicate);
     }
 }

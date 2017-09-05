@@ -89,5 +89,38 @@ namespace FilmsApp.BLL.Services
             }
             return true;
         }
+
+        public IEnumerable<FilmDTO> SortAndSearch(string sortOrder, string searchString)
+        {
+            var films = GetAll();
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                films = films.Where(s => s.Title.ToUpper().Contains(searchString.ToUpper())).ToList();
+            }
+
+            switch (sortOrder)
+            {
+                case "Title":
+                    films = films.OrderBy(s => s.Title);
+                    break;
+                case "Rating":
+                    films = films.OrderByDescending(s => s.Rating);
+                    break;
+                case "FilmId":
+                default:
+                    films = films.OrderBy(s => s.Id);
+                    break;
+            }
+
+            if (String.IsNullOrEmpty(searchString))
+            {
+                return films;
+            }
+            else return films;
+        }
+
+
+
+
     }
 }

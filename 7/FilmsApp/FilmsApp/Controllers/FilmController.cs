@@ -42,34 +42,10 @@ namespace FilmsApp.Controllers
             return View();
         }
 
-        //TODO: move this logic to BLL
         public JsonResult SortAndSearch(string sortOrder, string searchString)
         {
-            var films = _filmservice.GetAll();
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                films = films.Where(s => s.Title.ToUpper().Contains(searchString.ToUpper())).ToList();
-            }
-
-            switch (sortOrder)
-            {
-                case "Title":
-                    films = films.OrderBy(s => s.Title);
-                    break;
-                case "Rating":
-                    films = films.OrderByDescending(s => s.Rating);
-                    break;
-                case "FilmId":
-                default:
-                    films = films.OrderBy(s => s.Id);
-                    break;
-            }
-
-            if (String.IsNullOrEmpty(searchString))
-            {
-                return Json(films, JsonRequestBehavior.AllowGet);
-            }
-            else return Json(films, JsonRequestBehavior.AllowGet);
+            var films = _filmservice.SortAndSearch(sortOrder, searchString);
+            return Json(films, JsonRequestBehavior.AllowGet);
         }
 
         public JsonResult ReturnFilmById(int id)

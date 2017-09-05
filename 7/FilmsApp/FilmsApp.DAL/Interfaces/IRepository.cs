@@ -9,13 +9,13 @@ namespace FilmsApp.DAL.Interfaces
 {
     public interface IRepository<T> where T : class
     {
-        IEnumerable<T> GetAll();
+        ICollection<T> GetAll();
 
         T GetById(int id);
 
-        IEnumerable<T> Find(Func<T, Boolean> predicate);
+        ICollection<T> Find(Func<T, Boolean> predicate);
 
-        IEnumerable<T> GetAll(Expression<Func<T, Boolean>> predicate);
+        ICollection<T> GetAll(Expression<Func<T, Boolean>> predicate);
 
         void AddItem(T item);
 

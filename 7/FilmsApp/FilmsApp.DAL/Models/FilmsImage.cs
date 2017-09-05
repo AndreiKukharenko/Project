@@ -11,7 +11,7 @@ namespace FilmsApp.DAL.Models
     /// </summary>
     public class FilmsImage : BaseEntity
     {
-        public Film RelatedFilm {get;set;}
+        public virtual Film RelatedFilm {get;set;}
 
         [ForeignKey(nameof(RelatedFilm))]
         public int FilmId { get; set; }

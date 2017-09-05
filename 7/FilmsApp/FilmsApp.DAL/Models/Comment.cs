@@ -13,9 +13,9 @@ namespace FilmsApp.DAL.Models
     /// </summary>
     public class Comment : BaseEntity
     {
-        public ApplicationUser User { get; set; }
+        public virtual ApplicationUser User { get; set; }
 
-        public Film RelatedFilm { get; set; }
+        public virtual Film RelatedFilm { get; set; }
 
         public int FilmId { get; set; }
 

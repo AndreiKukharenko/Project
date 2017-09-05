@@ -8,14 +8,14 @@ namespace FilmsApp.DAL.Models
     {
         protected override void Seed(FilmsContext context)
         {
-            addDefaultUsers(context);
-            addDefaultFilms(context);
-            addDefaultComments(context);
-            addDefaultImages(context);
+            AddDefaultUsers(context);
+            AddDefaultFilms(context);
+            AddDefaultComments(context);
+            AddDefaultImages(context);
             context.SaveChanges();
         }
 
-        private void addDefaultUsers(FilmsContext context)
+        private void AddDefaultUsers(FilmsContext context)
         {
             var store = new UserStore<ApplicationUser>(context);
             var manager = new UserManager<ApplicationUser>(store);
@@ -47,7 +47,7 @@ namespace FilmsApp.DAL.Models
             manager.Create(newUser3, "qwerty3");
         }
 
-        private void addDefaultFilms(FilmsContext context)
+        private void AddDefaultFilms(FilmsContext context)
         {
             context.Films.Add(new Film
             {
@@ -102,7 +102,7 @@ namespace FilmsApp.DAL.Models
             });
         }
 
-        private void addDefaultComments(FilmsContext context)
+        private void AddDefaultComments(FilmsContext context)
         {
             context.Comments.Add(new Comment { FilmId = 1, Text = "comment to 1", IsDeleted = false, UserName = "test" });
             context.Comments.Add(new Comment { FilmId = 1, Text = "another comment to 1", IsDeleted = false, UserName = "test3" });
@@ -111,7 +111,7 @@ namespace FilmsApp.DAL.Models
             context.Comments.Add(new Comment { FilmId = 3, Text = "comment to 3", IsDeleted = false, UserName = "test1" });
         }
 
-        private void addDefaultImages(FilmsContext context)
+        private void AddDefaultImages(FilmsContext context)
         {
             context.FilmsImages.Add(new FilmsImage { Id = 1, ImageUrl = "http://placehold.it/150/92c952", FilmId = 1, IsDeleted = false });
             context.FilmsImages.Add(new FilmsImage { Id = 2, ImageUrl = "http://placehold.it/150/771796", FilmId = 1, IsDeleted = false });

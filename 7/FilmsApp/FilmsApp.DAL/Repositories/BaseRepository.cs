@@ -30,7 +30,7 @@ namespace FilmsApp.DAL.Repositories
             DbSet.Remove(GetById(id));
         }
 
-        public IEnumerable<TEntity> Find(Func<TEntity, bool> predicate)
+        public ICollection<TEntity> Find(Func<TEntity, bool> predicate)
         {
             return DbSet.Where(predicate).ToList();
         }
@@ -40,12 +40,12 @@ namespace FilmsApp.DAL.Repositories
             return DbSet.Find(id);
         }
 
-        public IEnumerable<TEntity> GetAll()
+        public ICollection<TEntity> GetAll()
         {
             return DbSet.ToList();
         }
 
-        public IEnumerable<TEntity> GetAll(Expression<Func<TEntity, Boolean>> predicate)
+        public ICollection<TEntity> GetAll(Expression<Func<TEntity, Boolean>> predicate)
         {
             return DbSet.Where(predicate).ToList();
         }
