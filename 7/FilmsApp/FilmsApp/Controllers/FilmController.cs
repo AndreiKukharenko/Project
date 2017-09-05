@@ -11,8 +11,7 @@ using FilmsApp.BLL.Interfaces;
 
 namespace FilmsApp.Controllers
 {
-    // TODO [Authorize]
-    //[Authorize] 
+    [Authorize] 
     public class FilmController : Controller
     {
         private IUoW _unitOfWork;

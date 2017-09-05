@@ -95,7 +95,7 @@ namespace FilmsApp.Controllers
         public ActionResult Logout()
         {
             AuthenticationManager.SignOut();
-            return RedirectToAction("Login");
+            return new HttpStatusCodeResult(302);
         }
         
     }

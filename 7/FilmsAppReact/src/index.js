@@ -17,13 +17,14 @@ const store = createStore(combineReducers, window.__REDUX_DEVTOOLS_EXTENSION__ &
 
 store.dispatch(orderBy("FilmId"));
 
-store.dispatch(setUserName(currentUserName)) //commented for DEBUG on localhost:3000 only
+store.dispatch(setUserName(currentUserName)); //comment this for DEBUG on localhost:3000 only
 
 ReactDOM.render(
     <BrowserRouter>
         <Provider store = {store}>  
             <div>
                 <Route exact path = "/" component = {FilmListPage}/>
+                <Route exact path = "/Film/Index" component = {FilmListPage}/>
                 <Route exact path = "/FilmDetails/:filmId" component = {FilmDetailsContainer}/>
             </div>
         </Provider>

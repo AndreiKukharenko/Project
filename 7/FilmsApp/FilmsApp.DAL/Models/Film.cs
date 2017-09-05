@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -10,34 +11,20 @@ namespace FilmsApp.DAL.Models
     /// </summary>
     public class Film : BaseEntity
     {
-        /// <summary>
-        /// 
-        /// </summary>
+        [MinLength(2), MaxLength(50)]
+        [Required]
         public string Title { get; set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        [MinLength(10), MaxLength(300)]
         public string Description { get; set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
+        [Required]
         public string Poster { get; set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
         public double Rating { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
+        
         public virtual ICollection<FilmsImage> Images { get; set; }
 
-        /// <summary>
-        /// 
-        /// </summary>
         public virtual ICollection<Comment> Comments { get; set; }
     }
 }

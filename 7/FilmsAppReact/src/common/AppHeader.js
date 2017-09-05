@@ -15,7 +15,11 @@ injectTapEventPlugin();
 
 class AppHeader extends Component {
     logout = () => {
-        fetch("http://localhost:61095/Account/Logout");
+        fetch("http://localhost:61095/Account/Logout")
+        .then(function(response){
+            if (response.status === 302) 
+                window.location = "http://localhost:61095/Account/Login"
+        });
     }
     render(){
         return(
