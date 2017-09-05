@@ -26,13 +26,13 @@ class SendMessage extends Component{
             method:'get',
             url: "http://localhost:61095/Film/AddComment",
             params: {
-                filmId: this.props.match.params.filmId,
+                filmId: this.props.filmId,
                 text: commentText
             }
         })
         .then(function (response) {
             if(response.status === 200){
-                // render new comment var comment = {..}
+                // render new comment: var comment = {..}
             }else {
                 alert("bad request");
             }

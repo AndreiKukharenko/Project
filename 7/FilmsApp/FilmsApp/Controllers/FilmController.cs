@@ -87,7 +87,7 @@ namespace FilmsApp.Controllers
         public ActionResult AddComment(int filmId, string text)
         {
             _unitOfWork.CommentsRepository.AddItem(
-                new Comment { FilmId = filmId, Text = text });
+                new Comment { FilmId = filmId, Text = text, UserName = CurrentUser.UserName });
             return new HttpStatusCodeResult(200);
         }
 

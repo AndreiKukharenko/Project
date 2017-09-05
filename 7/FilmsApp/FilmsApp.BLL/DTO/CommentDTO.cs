@@ -8,7 +8,7 @@ namespace FilmsApp.BLL.DTO
 {
     public class CommentDTO
     {
-        public string User { get; set; }
+        public string UserName { get; set; }
 
         public string Text { get; set; }
     }

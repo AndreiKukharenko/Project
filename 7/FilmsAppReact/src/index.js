@@ -17,7 +17,7 @@ const store = createStore(combineReducers, window.__REDUX_DEVTOOLS_EXTENSION__ &
 
 store.dispatch(orderBy("FilmId"));
 
-//store.dispatch(setUserName(currentUserName)) commented for DEBUG on localhost:3000 only!
+//store.dispatch(setUserName(currentUserName)) //commented for DEBUG on localhost:3000 only!  TODO: no comment
 
 ReactDOM.render(
     <BrowserRouter>

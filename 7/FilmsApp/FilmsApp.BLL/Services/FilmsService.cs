@@ -64,7 +64,7 @@ namespace FilmsApp.BLL.Services
         {
             var commentDTO = new CommentDTO
             {
-                //User = comment.User.FirstName,
+                UserName = comment.UserName,
                 Text = comment.Text
             };
 
