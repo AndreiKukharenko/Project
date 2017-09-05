@@ -7,9 +7,10 @@ export default class FilmDetailsContainer extends Component{
         super(props);
         this.state = {
         }
+        this.getCurrentFilm = this.getCurrentFilm.bind(this)
     }
 
-    componentDidMount(){
+    getCurrentFilm (){
         var self = this;
         axios({
             method:'get',
@@ -30,11 +31,15 @@ export default class FilmDetailsContainer extends Component{
         });
     }
 
+    componentDidMount(){
+        this.getCurrentFilm();
+    }
+    
     render(){
         if (this.state.currentFilm) {
             return(
                 <div >
-                    <FilmDetails currentFilm = { this.state.currentFilm} />
+                    <FilmDetails currentFilm = { this.state.currentFilm}  reRender = {this.getCurrentFilm}/>
                 </div>
             )
         }else{

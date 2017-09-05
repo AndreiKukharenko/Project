@@ -9,14 +9,8 @@ import RatingStars from "../common/RatingStars";
 import Gallery from "../common/Gallery";
 
 export default class FilmDetails extends Component{
-    constructor(props){
-        super(props);
-        this.state = {
-            currentFilm: this.props.currentFilm
-        }
-    }
     render() {
-        var currentFilm = this.state.currentFilm;
+        var currentFilm = this.props.currentFilm;
         return (
             <div>
                 <MuiThemeProvider>  
@@ -26,7 +20,7 @@ export default class FilmDetails extends Component{
                         <RatingStars rating = {currentFilm.Rating}/>
                         <Gallery screenshots = {currentFilm.Images}/>
                         <CommentList comments = {currentFilm.Comments}/>
-                        <SendMessage filmId = {currentFilm.Id}/>
+                        <SendMessage filmId = {currentFilm.Id} reRender = {this.props.reRender}/>
                     </div>
                 </MuiThemeProvider>
             </div>

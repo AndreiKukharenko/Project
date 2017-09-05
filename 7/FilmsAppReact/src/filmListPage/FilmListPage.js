@@ -31,7 +31,6 @@ class FilmListPage extends Component{
         .then(function (response) {
             if(response.status === 200){
                 self.setState({films: response.data});
-                //TODo: consider using special bool props
                 self.props.dispatch(changeFilms(response.data))
             }else {
                 alert("bad request");

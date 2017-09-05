@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import FlatButton from 'material-ui/FlatButton';
 import TextField from 'material-ui/TextField';
 
-import addComment from "../actions/addComment";
 import axios from "axios";
 
 class SendMessage extends Component{
@@ -15,12 +14,6 @@ class SendMessage extends Component{
     }
     sendMsg(){
         let commentText = this.state.value;
-        var comment = {
-            "userName": this.props.username,
-            "text": commentText
-        }
-
-        //----
         var self = this;
         axios({
             method:'get',
@@ -32,7 +25,7 @@ class SendMessage extends Component{
         })
         .then(function (response) {
             if(response.status === 200){
-                // render new comment: var comment = {..}
+                self.props.reRender();
             }else {
                 alert("bad request");
             }
@@ -40,9 +33,6 @@ class SendMessage extends Component{
         .catch(function(error){
             console.log(error.message);
         });
-        //---------
-
-        this.props.dispatch(addComment(comment, this.props.id));
 
         if(commentText !== ""){
             this.setState({value: ""});
