@@ -44,7 +44,7 @@ namespace FilmsApp.Controllers
                 IdentityResult result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("Index", "Film");
+                    return RedirectToAction("Login", "Account");
                 }
                 else
                 {
@@ -85,7 +85,7 @@ namespace FilmsApp.Controllers
                         IsPersistent = true
                     }, claim);
                     if (String.IsNullOrEmpty(returnUrl))
-                        return RedirectToAction("Index", new { controller = "Film", area = string.Empty });
+                        return RedirectToAction("Index", "Film");
                     return Redirect(returnUrl);
                 }
             }

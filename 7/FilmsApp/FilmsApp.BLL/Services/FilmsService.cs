@@ -17,7 +17,7 @@ namespace FilmsApp.BLL.Services
             _unitOfWork = UoW;
         }
 
-        public IEnumerable<FilmDTO> GetAllFilms()
+        public IEnumerable<FilmDTO> GetAll()
         {
             // todo: IQueryable
             var films = _unitOfWork.FilmsRepository.GetAll();
@@ -67,9 +67,27 @@ namespace FilmsApp.BLL.Services
                 UserName = comment.UserName,
                 Text = comment.Text
             };
-
             return commentDTO;
         }
 
+        public bool AddComment(CommentDTO commentDTO)
+        {
+            try
+            {
+                var comment = new Comment
+                {
+                    FilmId = commentDTO.FilmId,
+                    IsDeleted = false,
+                    Text = commentDTO.Text,
+                    UserName = commentDTO.UserName,
+                };
+                _unitOfWork.CommentsRepository.AddItem(comment);
+            }
+            catch(Exception)
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }

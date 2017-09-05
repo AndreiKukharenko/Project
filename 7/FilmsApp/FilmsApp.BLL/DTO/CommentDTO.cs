@@ -13,5 +13,7 @@ namespace FilmsApp.BLL.DTO
 
         [MaxLength(300), MinLength(2)]
         public string Text { get; set; }
+
+        public int FilmId { get; set; }
     }
 }

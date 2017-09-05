@@ -5,29 +5,14 @@ import axios from "axios";
 import changeFilms from "../actions/changeFilms";
 
 class AutoCompleteSearch extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            titles: []
-        }
-    }
     
     handleInput = (value) => {
         this.getFilms(value);
-        this.mapTitles();
     };
     handleField = (searchText) => {
         if (searchText === "") this.getFilms("");
         this.getFilms(searchText);
     };
-
-    mapTitles = () => {
-        var films = this.props.films;
-        var titles = films.map((film) => {
-            return film.Title;
-        });
-        this.setState({titles})
-    }
 
     getFilms = (searchString) => {
         var self = this;
@@ -40,7 +25,6 @@ class AutoCompleteSearch extends Component {
         })
         .then(function (response) {
             if(response.status === 200){
-                self.setState({films: response.data});
                 self.props.dispatch(changeFilms(response.data))
             }else {
                 alert("bad request");
@@ -51,14 +35,14 @@ class AutoCompleteSearch extends Component {
             console.log(error);
         });
     }
-  
+
     render() {
         return (
             <div className = {"autocomplete"}>
                 <AutoComplete
                     hintText = "Type anything"
                     filter = {AutoComplete.caseInsensitiveFilter}
-                    dataSource = {this.state.titles}
+                    dataSource = {this.props.titles}
                     floatingLabelText = "Search"
                     maxSearchResults = {5}
                     className = {"autocomplete__field"}
@@ -71,8 +55,12 @@ class AutoCompleteSearch extends Component {
 }
 
 function mapStateToProps(state){
+    var titles = state.films.map((film) => {
+        return film.Title;
+    });
     return {
-        films: state.films
+        films: state.films,
+        titles
     }
 }
 

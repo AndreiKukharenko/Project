@@ -16,7 +16,7 @@ class SendMessage extends Component{
         let commentText = this.state.value;
         var self = this;
         axios({
-            method:'get',
+            method: "post",
             url: "http://localhost:61095/Film/AddComment",
             params: {
                 filmId: this.props.filmId,

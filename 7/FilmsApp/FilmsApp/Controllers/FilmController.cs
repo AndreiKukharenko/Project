@@ -8,6 +8,7 @@ using FilmsApp.DAL.Context;
 using Microsoft.AspNet.Identity;
 using System.Linq.Expressions;
 using FilmsApp.BLL.Interfaces;
+using FilmsApp.BLL.DTO;
 
 namespace FilmsApp.Controllers
 {
@@ -44,7 +45,7 @@ namespace FilmsApp.Controllers
         //TODO: move this logic to BLL
         public JsonResult SortAndSearch(string sortOrder, string searchString)
         {
-            var films = _filmservice.GetAllFilms();
+            var films = _filmservice.GetAll();
             if (!String.IsNullOrEmpty(searchString))
             {
                 films = films.Where(s => s.Title.ToUpper().Contains(searchString.ToUpper())).ToList();
@@ -79,16 +80,20 @@ namespace FilmsApp.Controllers
 
         public JsonResult ReturnFilms()
         {
-            var films = _filmservice.GetAllFilms();
+            var films = _filmservice.GetAll();
             return Json(films, JsonRequestBehavior.AllowGet);
         }
 
-        public ActionResult AddComment(int filmId, string text)
+        [HttpPost]
+        public ActionResult AddComment(CommentDTO comment)
         {
-            _unitOfWork.CommentsRepository.AddItem(
-                new Comment { FilmId = filmId, Text = text, UserName = CurrentUser.UserName });
-            return new HttpStatusCodeResult(200);
+            if (_filmservice.AddComment(new CommentDTO
+            {
+                FilmId = comment.FilmId,
+                Text = comment.Text,
+                UserName = CurrentUser.UserName,
+            })) return new HttpStatusCodeResult(200);
+            else return new HttpStatusCodeResult(500, "cannot add new comment");
         }
-
     }
 }

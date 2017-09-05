@@ -10,10 +10,11 @@ namespace FilmsApp.BLL.Interfaces
 {
     public interface IFilmService
     {
-        IEnumerable<FilmDTO> GetAllFilms();
+        IEnumerable<FilmDTO> GetAll();
 
         FilmDTO GetFilmById(int id);
 
         //IEnumerable<Film> SortAndSearchFilms(string sortOrder, string searchString);
+        bool AddComment(CommentDTO comment);
     }
 }
